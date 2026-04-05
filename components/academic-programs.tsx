@@ -9,26 +9,26 @@ import { ArrowRight } from "lucide-react"
 const programs = [
   {
     title: "Kindergarten",
-    description: "Early Years Foundation Stage (EYFS) - A nurturing and play-based learning environment for young learners.",
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop&q=80",
+    description: "Foundation Stage Curriculum | Early Learning",
+    image: "https://www.alshomoukh.com:443/uploads/curriculum/20200805143904-2020-08-05curriculum143902.jpg",
     href: "/kindergarten"
   },
   {
     title: "Primary School",
-    description: "Key Stages 1 & 2 | Grades 1–6 - A strong academic foundation focused on literacy, numeracy, creativity, and personal development.",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80",
+    description: "Key Stage 1 & 2 | Grades 1 – 6",
+    image: "https://www.alshomoukh.com:443/uploads/curriculum/20200805144026-2020-08-05curriculum144025.jpg",
     href: "/primary-school"
   },
   {
     title: "Lower Secondary",
-    description: "Key Stage 3 | Grades 7–8 - A balanced curriculum designed to prepare students for advanced academic pathways.",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&auto=format&fit=crop&q=80",
+    description: "Key Stage 3 | Grades 7 – 8",
+    image: "https://www.alshomoukh.com:443/uploads/curriculum/20200805164402-2020-08-05curriculum164359.jpg",
     href: "/lower-secondary"
   },
   {
     title: "Upper Secondary",
-    description: "Edexcel International | Grades 9–12 - Preparing students for IGCSE, International A Levels, and future university success.",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&auto=format&fit=crop&q=80",
+    description: "Edexcel International | Grades 9 – 12",
+    image: "https://www.alshomoukh.com:443/uploads/curriculum/20200805144412-2020-08-05curriculum144407.jpg",
     href: "/upper-secondary"
   },
 ]

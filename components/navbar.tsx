@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Search } from "lucide-react"
@@ -22,7 +23,6 @@ const navLinks = [
       { href: "/learning-support", label: "Learning Support" },
     ]
   },
-  { href: "/involvement", label: "Involvement" },
   { href: "/news", label: "News & Stories" },
   { href: "/enrichment", label: "Enrichment" },
 ]
@@ -36,9 +36,14 @@ export function Navbar() {
         <nav className="flex items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <span className="font-sans text-lg lg:text-xl xl:text-2xl font-bold tracking-[0.1em] uppercase text-primary whitespace-nowrap">
-              Al Shomoukh
-            </span>
+            <Image 
+              src="/SIS Logo-01.png" 
+              alt="SIS Logo" 
+              width={180} 
+              height={50} 
+              className="h-10 lg:h-12 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -103,8 +108,14 @@ export function Navbar() {
             </div>
             <SheetContent side="right" className="w-80 bg-white border-l border-border/50 overflow-y-auto">
               <div className="flex flex-col gap-8 mt-12 pb-12">
-                <Link href="/" className="font-bold text-2xl text-primary tracking-[0.1em] uppercase">
-                  AL SHOMOUKH
+                <Link href="/" onClick={() => setIsOpen(false)}>
+                  <Image 
+                    src="/SIS Logo-01.png" 
+                    alt="SIS Logo" 
+                    width={180} 
+                    height={50} 
+                    className="h-10 w-auto object-contain"
+                  />
                 </Link>
                 <nav className="flex flex-col gap-2">
                   {navLinks.map((link) => (

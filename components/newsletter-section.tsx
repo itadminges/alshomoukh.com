@@ -45,11 +45,11 @@ export function NewsletterSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 bg-primary overflow-hidden"
+      className="relative py-12 bg-primary overflow-hidden"
     >
       <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
         {/* Heading */}
-        <h2 className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-100 font-bold text-3xl md:text-3xl text-white tracking-tight mb-6">
+        <h2 className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-100 font-bold text-3xl md:text-3xl text-white tracking-tight mb-4">
           Subscribe to our newsletter
         </h2>
 
@@ -59,10 +59,10 @@ export function NewsletterSection() {
         </p>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-300 mt-12 max-w-2xl mx-auto">
+        <form onSubmit={handleSubmit} className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-300 mt-6 max-w-2xl mx-auto">
           {!isSubmitted ? (
             <>
-              <div className="mb-6">
+              <div className="mb-4">
                 <Input
                   type="email"
                   placeholder="Your professional email address"
@@ -74,7 +74,7 @@ export function NewsletterSection() {
               </div>
 
               {/* Checkbox */}
-              <div className="mb-10 flex items-center justify-center gap-3">
+              <div className="mb-6 flex items-center justify-center gap-3">
                 <Checkbox
                   id="terms"
                   checked={agreed}
