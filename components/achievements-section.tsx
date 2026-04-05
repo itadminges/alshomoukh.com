@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { useEffect, useRef } from 'react'
 import { Star } from 'lucide-react'
@@ -7,17 +7,17 @@ const testimonials = [
   {
     name: 'Mohammed Al Mahrooqi',
     grade: 'Grade 10B',
-    achievement: 'Marked for excellence in participation in morning assembly and Quranic recitation.',
+    achievement: 'Mohammed has recently been recognized for his active participation in the morning assembly and for his recitation of the Holy Quran.',
   },
   {
     name: 'Hayder Al Yassiri',
     grade: 'Grade 12A',
-    achievement: 'Achieved highest Chemistry grade in GCC for IAS results and served as Student Council President.',
+    achievement: 'Hayder achieved the highest Chemistry grade in the GCC for IAS results, recorded one of the highest academic achievements at IGCSE in the school’s history, and has served as Student Council President since 2018.',
   },
   {
     name: 'Lina Al Ashqar',
     grade: 'Grade 12B',
-    achievement: 'Contributed to school winning Arabic Social Studies Ministry Project award.',
+    achievement: 'Lina contributed to the school’s success in the Arabic Social Studies Ministry Project.',
   },
 ]
 
@@ -51,7 +51,7 @@ export function AchievementsSection() {
         {/* Section Header */}
         <div className="text-center mb-14">
           <h2 className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-100 font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-primary tracking-tight uppercase">
-            Student Excellence
+            Student Spotlight
           </h2>
           <div className="reveal opacity-0 scale-x-0 transition-all duration-500 delay-200 mt-5 flex justify-center">
             <div className="w-12 h-0.5 bg-secondary" />
@@ -93,13 +93,6 @@ export function AchievementsSection() {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .animate-in {
-          opacity: 1 !important;
-          transform: translateY(0) !important;
-        }
-      `}</style>
     </section>
   )
 }

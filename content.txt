@@ -1,0 +1,638 @@
+1) Navigation / Menu Issues
+Problems:
+Academic is repeated twice in menu
+Submenu items duplicated:
+Curriculum
+Kindergarten
+Lower Secondary
+Primary School
+Upper Secondary
+Learning Support
+Home Page should be just Home
+Contact with is incorrect English
+Publication should be Publications
+Career should be Careers
+Acadimic is misspelled → should be Academic
+Correct Menu:
+Home
+About Us
+Admissions
+Academic
+Curriculum
+Kindergarten
+Primary School
+Lower Secondary
+Upper Secondary
+Learning Support
+Student Life / Involvement
+News & Stories
+Enrichment
+Parent Portal
+Careers
+Calendar
+Publications
+Contact Us
+2) Homepage Issues
+Problems found:
+Lorem Ipsum dummy content still live
+Broken date format like 4-2-2020
+Duplicate academic blocks
+Repeated school hours announcement
+Student spotlight text inconsistent
+“Where Students From” bad English
+Footer text broken
+3) Corrected Homepage Content
+Hero / Intro
+
+Welcome to Al Shomoukh International School
+A leading international school in Muscat, Oman, committed to academic excellence, character development, and global citizenship.
+
+Calendar / Events
+Replace this:
+Lorem ipsum 4-2-2020
+Lorem ipsum 13-3-2020
+With:
+
+Upcoming Events
+
+April 2, 2026 – School Community Engagement Day
+April 13, 2026 – Parent-Teacher Meeting
+
+If you don’t have real events yet, hide this section instead of showing fake content.
+
+By Grade Level
+Correct version:
+Kindergarten
+
+Early Years Foundation Stage (EYFS)
+A nurturing and play-based learning environment for young learners.
+
+Primary School
+
+Key Stages 1 & 2 | Grades 1–6
+A strong academic foundation focused on literacy, numeracy, creativity, and personal development.
+
+Lower Secondary
+
+Key Stage 3 | Grades 7–8
+A balanced curriculum designed to prepare students for advanced academic pathways.
+
+Upper Secondary
+
+Edexcel International | Grades 9–12
+Preparing students for IGCSE, International A Levels, and future university success.
+
+Student Spotlight
+Correct version:
+Student Spotlight
+
+Mohammed Al Mahrooqi
+Grade 10B
+Mohammed has recently been recognized for his active participation in the morning assembly and for his recitation of the Holy Quran.
+
+Lina Al Ashqar
+Grade 12B
+Lina contributed to the school’s success in the Arabic Social Studies Ministry Project.
+
+Hayder Al Yassiri
+Grade 12A
+Hayder achieved the highest Chemistry grade in the GCC for IAS results, recorded one of the highest academic achievements at IGCSE in the school’s history, and has served as Student Council President since 2018.
+
+International Community
+Replace:
+
+Where Students From
+
+With:
+Our International Community
+
+Students at Al Shomoukh International School come from diverse cultural and national backgrounds, creating a rich and inclusive learning environment.
+
+4) About Us Page — Corrected
+Page Title
+
+About Us
+
+Welcome Section
+Correct version:
+Welcome to Al Shomoukh International School
+
+It is my pleasure to welcome you to one of the finest educational institutions in the region. Choosing the right school for your child is one of the most important decisions a parent can make.
+
+At Al Shomoukh International School, we are proud to serve over 900 students and their families. We remain deeply committed to ensuring that every student receives exceptional care, high-quality education, and the support needed to thrive.
+
+Vision
+Correct version:
+Vision
+
+To be a community of lifelong learners who demonstrate the knowledge, skills, and values required for productive global citizenship.
+
+Mission
+Correct version:
+Mission
+
+At Al Shomoukh International School, we are a community of learners. We RISE:
+
+Respect – We encourage kindness, understanding, and tolerance for others and ourselves.
+Integrity – Honesty and responsibility are at the heart of who we are.
+Success – We nurture the holistic development of every member of our community.
+Excellence – We maintain high expectations, support exploration, and promote critical thinking.
+
+Through these values, we empower students to grow academically, socially, emotionally, spiritually, and personally.
+
+History of Name / School Story
+Corrected:
+Our Story
+
+Al Shomoukh International School is a homegrown educational brand and the lifelong vision of its founder, Honourable Sheikh Salim bin Hamood Al Hashmi.
+
+The school was established by Global Education Services (GES) to provide premium education based on the UK National Curriculum for both Omani and international students.
+
+Since its launch in 2015, the school has been committed to combining the warmth of a close-knit community with the highest standards of international education. Today, Al Shomoukh International School provides quality education from Kindergarten to Grade 12, welcoming students from around the world.
+
+Our leadership team is made up of experienced international educators and administrators who share a passion for excellence in teaching and learning.
+
+Community Section
+Corrected:
+Community Engagement
+
+The Al Shomoukh International School Community Impact Statement reflects our strong relationship with Oman, our home for many years.
+
+Our training programmes provide valuable opportunities for both the local and international community. Our qualified and professional staff are always pleased to share their knowledge and experience.
+
+To join our training programmes, please contact us at:
+info@alshomoukh.com
+
+Giving Back
+Corrected:
+Giving Back to the Community
+
+Giving back to the community plays an essential role in shaping compassionate, socially responsible young people.
+
+We believe that educating students about environmental and social responsibility empowers them to make a positive difference in the world.
+
+Our Team
+Replace:
+
+Nationalities of our team
+
+With:
+Our Diverse Team
+
+Our staff represent a wide range of international backgrounds, contributing to a rich and globally minded school culture.
+
+Also fix the broken percentages formatting like %43 → 43%
+
+5) Admissions Page — Corrected
+Problems:
+Admison broken
+repeated buttons
+FAQ formatting messy
+grammar errors
+“enroling” misspelled
+some text incomplete
+Correct Admissions Hero
+Admissions
+
+“Hold fast to dreams, for if dreams die, life is a broken-winged bird that cannot fly.”
+— Langston Hughes
+
+Intro
+Correct version:
+
+Thank you for considering Al Shomoukh International School and entrusting us with your child’s education.
+
+We understand that choosing the right school is one of the most important decisions a family can make. Al Shomoukh International School is a leading international school in Muscat, Sultanate of Oman, dedicated to providing a high-quality educational experience.
+
+We aim to make our admissions process as clear and seamless as possible by providing all the information you need to make the right choice.
+
+Start Your Journey
+Start Your Journey at S.I.S
+
+Once a student is accepted after the entrance assessment, parents may proceed with the enrolment requirements.
+
+Application Process
+Application Process
+
+To apply, please download and complete the Enrolment Form.
+
+For further information, please contact the Admissions Office at:
+admission@alshomoukh.com
+
+You may also schedule a school visit or book a tour.
+
+Fees
+Fees
+
+Once the application is completed, admission is confirmed only after payment is made according to the school’s fee schedule.
+
+Please note:
+
+A seat is not secured until payment has been received.
+Younger siblings may be eligible for a 10% tuition fee discount.
+Correct FAQ
+Frequently Asked Questions
+What is the academic level criteria that must be met to admit my child to S.I.S?
+
+Students are assessed according to age-appropriate academic expectations and school placement requirements.
+
+What is the age criteria for accepting students in KG1, KG2, and Grade 1?
+KG1: Students must be 3 years old by June of the enrolling academic year.
+KG2: Students must be 4 years old by June of the enrolling academic year.
+Grade 1: Students must be 5 years old by June of the enrolling academic year.
+My child is not toilet-trained, but their age is suitable for KG1. Can I still complete the enrolment process?
+
+Please contact the Admissions Office to discuss individual readiness requirements.
+
+Can a child with special educational needs be enrolled at S.I.S?
+
+Please contact the school directly so our team can review the child’s needs and discuss available support.
+
+What is the class size?
+
+Class sizes vary by grade level and are designed to support effective teaching and learning.
+
+Can I meet the teachers?
+
+Yes, parents may meet teachers during scheduled school visits, orientation sessions, and parent meetings.
+
+What programmes are offered in Grades 11 and 12?
+
+Students may follow Edexcel International Advanced Levels (IAL) and may also have the option to pursue the Omani General Education Diploma (GED), depending on eligibility and programme structure.
+
+When do students start learning French?
+
+French is introduced as part of the academic programme in the relevant grade levels.
+
+What curriculum do you follow in the Primary School?
+
+The school follows the UK National Curriculum, adapted to meet both international standards and local requirements.
+
+Do you organize trips outside Oman?
+
+Educational visits and trips are arranged according to school policy and academic planning.
+
+6) Academic Page — Corrected
+Problems:
+URL misspelled: /acadimic
+repeated long paragraph
+formatting poor
+Better Page Title:
+Academic Curriculum
+Corrected Content:
+
+Al Shomoukh International School follows the UK National Curriculum, while also ensuring compliance with the requirements of the Ministry of Education in Oman.
+
+Students are prepared for internationally recognized qualifications, including:
+
+Pearson Edexcel IGCSE
+Pearson Edexcel International A Levels
+
+Our academic programme is structured across the following stages:
+
+Kindergarten – Foundation Stage
+Primary School – Key Stages 1 & 2
+Lower Secondary – Key Stage 3
+Upper Secondary – Grades 9–12
+7) Kindergarten Page — Corrected
+Title:
+
+Kindergarten
+
+Quote:
+
+“If a child can’t learn the way we teach, maybe we should teach the way they learn.”
+— Ignacio Estrada
+
+Content:
+The Early Years Foundation Stage (EYFS) Curriculum
+
+Al Shomoukh International School follows the Early Years Foundation Stage (EYFS) framework, adapted to meet the needs of each individual child.
+
+In KG1 and KG2, the integrated programme covers the seven areas of learning and development:
+
+Personal, Social and Emotional Development
+Communication and Language
+Physical Development
+Literacy
+Mathematics
+Understanding the World
+Expressive Arts and Design
+Characteristics of Effective Learning
+Playing and Exploring
+Active Learning
+Creating and Thinking Critically
+8) Primary School Page — Corrected
+Title:
+
+Primary School
+
+Content:
+Primary Curriculum
+
+The Primary School programme is designed to build strong academic foundations and promote curiosity, creativity, and confidence in learners.
+
+Key Stages
+Key Stage 1
+Lower Key Stage 2
+Upper Key Stage 2 (Grades 3–6)
+Reading Scheme
+
+Our reading programme supports literacy development, comprehension, fluency, and a lifelong love of reading.
+
+9) Lower Secondary Page — Corrected
+Title:
+
+Lower Secondary
+
+Content:
+Our Philosophy
+
+The Lower Secondary programme is designed to prepare students for greater academic independence and success in future secondary studies.
+
+Pearson Edexcel Curriculum
+
+Students study a broad and balanced curriculum including:
+
+English
+Mathematics
+Science (Biology, Physics, and Chemistry)
+Information Technology
+Physical Education
+Art
+Music
+French
+Social Studies
+
+Arabic, Islamic Studies, and Social Studies in Arabic are also available in accordance with local educational requirements.
+
+Also fix spelling:
+
+Physic → Physics
+Scnday → Secondary
+10) Upper Secondary Page — Corrected
+Title:
+
+Upper Secondary
+
+Corrected Content:
+Edexcel International GCSE (IGCSE) – Grades 9 & 10
+
+At Al Shomoukh International School, we offer a broad range of IGCSE subjects to suit the needs, interests, and abilities of our students.
+
+The school follows the Pearson Edexcel IGCSE curriculum.
+
+Core Subjects
+Mathematics
+English Language
+Triple Science (Biology, Physics, and Chemistry)
+Additional Subjects
+Geography
+History
+English Literature
+Business Studies
+Applied ICT
+Physical Education
+Art
+Arabic
+Edexcel International Advanced Levels (IAL) – Grades 11 & 12
+
+Subjects may include:
+
+Mathematics
+English Language
+Economics
+Physics
+Chemistry
+Biology
+Omani General Education Diploma (GED) – Grades 11 & 12
+
+Students may also have the option to study for the GED, subject to eligibility and school guidance.
+
+Also remove raw links from visible text and turn them into proper buttons:
+
+View IGCSE Curriculum
+View International A Levels Curriculum
+11) Learning Support Page — Broken / Empty
+
+Right now this page has almost no content.
+
+Replace with:
+Learning Support
+
+At Al Shomoukh International School, we are committed to supporting students with diverse learning needs.
+
+Our Learning Support team works collaboratively with teachers, students, and parents to ensure that every learner has access to the guidance and support they need to succeed academically and personally.
+
+Support may include:
+Individual learning strategies
+Classroom support
+Targeted interventions
+Academic monitoring
+Parent collaboration
+12) Involvement Page — Corrected
+Title:
+
+Get Involved
+
+Fix:
+Get Involoved → Get Involved
+broken vertical letters
+Better Content:
+
+We believe in building a strong school community through active participation and meaningful engagement.
+
+Ways to Get Involved
+Parent-Teacher Association (PTA)
+Alumni Network
+Student Council
+University Guidance and Partnerships
+University Destinations / Partnerships
+Cambridge University
+Stanford University
+Harvard University
+Yale University
+Imperial College London
+Sultan Qaboos University
+Georgetown University
+The University of Liverpool
+
+You may want to rename this section to:
+
+University Destinations
+
+instead of just Universities
+
+13) News & Stories Page — Needs Cleanup
+Major Problems:
+Too much duplicated text
+Arabic/English articles mixed without structure
+old articles from 2017/2019 shown as “latest”
+inconsistent capitalization
+broken story cards
+no filtering / no dates formatting
+What to do:
+Keep only structured cards like:
+Image
+Category
+Title
+Short description
+Date
+Read More button
+Remove or archive:
+duplicated article entries
+repeated Arabic article body text
+very old press releases from homepage view
+Suggested sections:
+Featured News
+School Events
+Press Releases
+Community Stories
+Archive
+14) Enrichment Page — Corrected
+Better heading:
+Enrichment Programmes
+Better content:
+
+At Al Shomoukh International School, enrichment is an essential part of the student experience. Our programmes encourage creativity, teamwork, confidence, and personal growth.
+
+Areas of Enrichment:
+Science Lab
+ICT
+Languages
+PE & Sports
+Educational Trips
+Art
+Festival Days
+Extra-Curricular Activities
+15) Careers Page — Major Fix Needed
+Problems:
+Very outdated jobs (2020)
+bad grammar
+poor structure
+unclear categories
+gender restriction wording may need legal review
+old vacancies still live
+Corrected Careers Intro
+Careers
+
+“If opportunity doesn’t knock, build a door.”
+
+Working at Al Shomoukh International School
+
+Join a passionate and diverse team dedicated to educational excellence, innovation, and student success.
+
+Sections:
+Why Work With Us
+Current Opportunities
+Leadership Opportunities
+Teaching Opportunities
+Staff Opportunities
+HR Forms & Resources
+Contact Human Resources
+IMPORTANT:
+
+If these jobs are no longer active, remove them immediately.
+Nothing makes a school website look abandoned faster than 2020 vacancies still online 😅
+
+16) Publications Page — Corrected
+Problems:
+The secrect of perfecting typo
+weak content
+poor structure
+Correct version:
+Publications
+Newsletter
+
+Stay updated with school highlights, student achievements, events, and important announcements.
+
+Featured Newsletter
+
+The Secret of Perfecting
+10 March 2019
+
+Yearbook
+
+Explore memories, milestones, and achievements from the academic year.
+
+If there are no real files attached, hide this section until PDFs are uploaded.
+
+17) Contact Us Page — Broken
+
+This page is one of the biggest issues.
+
+Problems:
+Contact details missing
+shows:
+Telephone no:
+Mobile:
+Address:
+with no values
+“Loading, Saving Data” visible to users
+poor inquiry form UX
+Corrected Contact Page
+Contact Us
+
+We’d love to hear from you. If you have any questions, please contact us using the details below or send us a message through the enquiry form.
+
+General Enquiry
+
+[Form fields]
+
+Full Name
+Email Address
+Phone Number
+Subject
+Message
+Submit
+Contact Information
+
+Telephone: [Add school number]
+Mobile: [Add mobile number]
+Email: info@alshomoukh.com
+ / admission@alshomoukh.com
+
+Address: [Add full school address in Muscat, Oman]
+
+Remove this immediately:
+
+Loading, Saving Data
+
+That is developer/debug text and should never be visible on production.
+
+18) Terms & Privacy Pages — Must Be Replaced
+
+This is a serious issue.
+
+Current problem:
+
+Your Terms and Privacy Policy pages contain generic template blog text, not your actual school policy.
+
+That is not legally safe and looks very unprofessional.
+
+Replace with proper real pages:
+Terms & Conditions
+
+Should include:
+
+website usage
+intellectual property
+acceptable use
+disclaimer
+external links
+limitation of liability
+governing law (Oman)
+Privacy Policy
+
+Should include:
+
+what data is collected
+contact form data
+admissions enquiry data
+cookies / analytics
+how data is stored
+who can access it
+user rights
+contact email for privacy concerns
+
+If you want, I can write both of these properly for the school.

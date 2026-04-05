@@ -6,6 +6,7 @@ import { IntroSection } from "@/components/intro-section"
 import { AcademicPrograms } from "@/components/academic-programs"
 import { AchievementsSection } from "@/components/achievements-section"
 import { CommunitySection } from "@/components/community-section"
+import { EventsSection } from "@/components/events-section"
 import { NewsletterSection } from "@/components/newsletter-section"
 import { Footer } from "@/components/footer"
 
@@ -16,8 +17,9 @@ export default function Home() {
       <HeroSection />
       <IntroSection />
       <AcademicPrograms />
-      <AchievementsSection />
       <CommunitySection />
+      <AchievementsSection />
+      <EventsSection />
       <NewsletterSection />
       <Footer />
     </main>

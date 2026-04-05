@@ -45,45 +45,45 @@ export function NewsletterSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 md:py-24 bg-secondary overflow-hidden"
+      className="relative py-24 bg-primary overflow-hidden"
     >
-      <div className="relative mx-auto max-w-2xl px-6 lg:px-8 text-center">
+      <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
         {/* Heading */}
-        <h2 className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-100 font-serif text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+        <h2 className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-100 font-bold text-3xl md:text-3xl text-white tracking-tight mb-6">
           Subscribe to our newsletter
         </h2>
 
         {/* Description */}
-        <p className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-200 mt-4 text-sm md:text-base text-white/80 max-w-lg mx-auto leading-relaxed">
+        <p className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-200 text-[15px] md:text-[16px] text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
           Stay updated with the latest news, campus events, and academic insights from Al Shomoukh International School delivered to your inbox.
         </p>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-300 mt-8">
+        <form onSubmit={handleSubmit} className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-300 mt-12 max-w-2xl mx-auto">
           {!isSubmitted ? (
             <>
-              <div className="max-w-md mx-auto">
+              <div className="mb-6">
                 <Input
                   type="email"
                   placeholder="Your professional email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full h-12 px-4 bg-white/95 border-0 text-primary placeholder:text-muted-foreground rounded-md focus:ring-2 focus:ring-white transition-all duration-200"
+                  className="w-full h-12 px-6 bg-white border-0 text-primary placeholder:text-primary/40 rounded-none focus:ring-0 transition-all duration-200"
                   required
                 />
               </div>
 
               {/* Checkbox */}
-              <div className="mt-4 flex items-center justify-center gap-2">
+              <div className="mb-10 flex items-center justify-center gap-3">
                 <Checkbox
                   id="terms"
                   checked={agreed}
                   onCheckedChange={(checked) => setAgreed(checked as boolean)}
-                  className="border-white/50 data-[state=checked]:bg-white data-[state=checked]:border-white data-[state=checked]:text-secondary"
+                  className="h-5 w-5 border-white/30 data-[state=checked]:bg-white data-[state=checked]:text-primary rounded-none"
                 />
                 <label
                   htmlFor="terms"
-                  className="text-xs text-white/70 cursor-pointer"
+                  className="text-[13px] text-white/80 cursor-pointer font-medium"
                 >
                   I agree to the Terms and Conditions and Privacy Notice.
                 </label>
@@ -92,15 +92,15 @@ export function NewsletterSection() {
               <Button
                 type="submit"
                 disabled={!agreed}
-                className="mt-6 bg-primary text-white hover:bg-primary/90 h-11 px-8 text-sm font-semibold tracking-wider uppercase transition-all duration-200 disabled:opacity-50"
+                className="bg-secondary text-white hover:bg-secondary/90 h-10 px-12 text-[12px] font-bold tracking-widest uppercase rounded-none transition-all duration-200 disabled:opacity-50"
               >
                 Subscribe Now
               </Button>
             </>
           ) : (
-            <div className="flex flex-col items-center gap-3 py-6">
-              <CheckCircle2 className="w-10 h-10 text-white" />
-              <p className="text-white text-base font-medium">Thank you for subscribing!</p>
+            <div className="flex flex-col items-center gap-4 py-8">
+              <CheckCircle2 className="w-12 h-12 text-secondary" />
+              <p className="text-white text-lg font-bold tracking-wide uppercase">Thank you for subscribing!</p>
             </div>
           )}
         </form>

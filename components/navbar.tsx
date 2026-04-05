@@ -4,72 +4,81 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
+import { Menu, Search } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#academics", label: "Academics" },
-  { href: "#admissions", label: "Admissions" },
-  { href: "#community", label: "Community" },
-  { href: "#contact", label: "Contact" },
+  { href: "/about", label: "About Us" },
+  { href: "/admissions", label: "Admissions" },
+  { 
+    label: "Academic", 
+    href: "/academics",
+    submenu: [
+      { href: "/curriculum", label: "Curriculum" },
+      { href: "/kindergarten", label: "Kindergarten" },
+      { href: "/lower-secondary", label: "Lower Secondary" },
+      { href: "/primary-school", label: "Primary School" },
+      { href: "/upper-secondary", label: "Upper Secondary" },
+      { href: "/learning-support", label: "Learning Support" },
+    ]
+  },
+  { href: "/involvement", label: "Involvement" },
+  { href: "/news", label: "News & Stories" },
+  { href: "/enrichment", label: "Enrichment" },
 ]
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-white shadow-sm py-3"
-          : "bg-transparent py-4"
-      )}
-    >
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <nav className="flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border/40 py-4 font-sans">
+      <div className="mx-auto max-w-[1400px] px-4 md:px-8 xl:px-12">
+        <nav className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="group">
-            <span className={cn(
-              "font-serif text-lg md:text-xl font-semibold tracking-wider uppercase transition-colors duration-200",
-              isScrolled ? "text-primary" : "text-white"
-            )}>
+          <Link href="/" className="shrink-0">
+            <span className="font-sans text-lg lg:text-xl xl:text-2xl font-bold tracking-[0.1em] uppercase text-primary whitespace-nowrap">
               Al Shomoukh
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-6 2xl:gap-8">
+            {/* Search Icon */}
+            <button className="text-primary/70 hover:text-primary transition-colors duration-200">
+              <Search className="h-5 w-5" />
+            </button>
+
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "text-sm font-medium tracking-wide transition-colors duration-200",
-                  isScrolled 
-                    ? "text-primary/70 hover:text-primary" 
-                    : "text-white/80 hover:text-white"
+              <div key={link.label} className="relative group">
+                <Link
+                  href={link.href || "#"}
+                  className="text-[11px] xl:text-[13px] font-bold tracking-widest text-primary/80 hover:text-primary transition-colors duration-200 py-4 uppercase whitespace-nowrap"
+                >
+                  {link.label}
+                </Link>
+                {link.submenu && (
+                  <div className="absolute left-0 top-full mt-0 w-56 bg-white border border-border/50 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="py-2">
+                      {link.submenu.map((sub) => (
+                        <Link
+                          key={sub.href}
+                          href={sub.href}
+                          className="block px-6 py-3 text-[12px] font-bold text-primary/70 hover:text-primary hover:bg-muted transition-colors tracking-widest uppercase whitespace-nowrap"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 )}
-              >
-                {link.label}
-              </Link>
+              </div>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button
-              className="bg-secondary text-white hover:bg-secondary/95 h-10 px-6 text-sm font-semibold tracking-wider uppercase transition-all duration-200"
+              className="bg-secondary text-white hover:bg-secondary/90 h-10 px-4 xl:px-8 text-[11px] xl:text-[12px] font-bold tracking-widest uppercase rounded-none transition-all duration-200 whitespace-nowrap"
             >
               Apply Now
             </Button>
@@ -77,37 +86,54 @@ export function Navbar() {
 
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button 
-                variant="ghost" 
-                size="icon"
-                className={cn(
-                  "transition-colors",
-                  isScrolled ? "text-primary hover:bg-primary/10" : "text-white hover:bg-white/10"
-                )}
-              >
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-80 bg-white border-l border-border/50">
-              <div className="flex flex-col gap-8 mt-12">
-                <Link href="/" className="font-serif text-2xl font-semibold text-primary tracking-wide">
+            <div className="flex items-center gap-4 lg:hidden">
+              <button className="text-primary/70 hover:text-primary transition-colors duration-200">
+                <Search className="h-5 w-5" />
+              </button>
+              <SheetTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className="text-primary hover:bg-primary/5"
+                >
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+            </div>
+            <SheetContent side="right" className="w-80 bg-white border-l border-border/50 overflow-y-auto">
+              <div className="flex flex-col gap-8 mt-12 pb-12">
+                <Link href="/" className="font-bold text-2xl text-primary tracking-[0.1em] uppercase">
                   AL SHOMOUKH
                 </Link>
-                <nav className="flex flex-col gap-1">
+                <nav className="flex flex-col gap-2">
                   {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className="px-4 py-3 text-base font-medium text-primary/80 hover:text-primary hover:bg-muted rounded-lg transition-all duration-200"
-                    >
-                      {link.label}
-                    </Link>
+                    <div key={link.label}>
+                      <Link
+                        href={link.href || "#"}
+                        onClick={() => !link.submenu && setIsOpen(false)}
+                        className="px-4 py-3 text-[14px] font-bold text-primary/80 hover:text-primary hover:bg-muted block tracking-widest uppercase"
+                      >
+                        {link.label}
+                      </Link>
+                      {link.submenu && (
+                        <div className="pl-6 flex flex-col gap-1 mt-1 mb-3">
+                          {link.submenu.map((sub) => (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              onClick={() => setIsOpen(false)}
+                              className="px-4 py-2 text-[12px] font-bold text-primary/60 hover:text-primary hover:bg-muted block tracking-widest uppercase"
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </nav>
-                <Button className="bg-secondary text-white hover:bg-secondary/90 w-full py-6 text-base font-medium tracking-wide">
+                <Button className="bg-secondary text-white hover:bg-secondary/90 w-full py-6 text-[14px] font-bold tracking-widest uppercase rounded-none">
                   Apply Now
                 </Button>
               </div>

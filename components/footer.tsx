@@ -11,39 +11,41 @@ const socialLinks = [
 ]
 
 const navLinks = [
-  { label: "About", href: "#" },
-  { label: "Contact Us", href: "#" },
-  { label: "FAQs", href: "#" },
-  { label: "Terms and Conditions", href: "#" },
-  { label: "Cookie Policy", href: "#" },
-  { label: "Privacy", href: "#" },
+  { label: "About Us", href: "/about" },
+  { label: "Admissions", href: "/admissions" },
+  { label: "Academic", href: "/academics" },
+  { label: "News & Stories", href: "/news" },
+  { label: "Careers", href: "/careers" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Terms & Conditions", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy" },
 ]
 
 export function Footer() {
   return (
     <footer className="relative bg-secondary">
-      <div className="mx-auto max-w-4xl px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12 py-16">
         {/* Social Links - Centered */}
-        <div className="flex justify-center gap-4 mb-8">
+        <div className="flex justify-center gap-8 mb-12">
           {socialLinks.map((social) => (
             <Link
               key={social.label}
               href={social.href}
-              className="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center transition-all duration-200 hover:bg-white/25"
+              className="text-white hover:text-white/70 transition-all duration-200"
               aria-label={social.label}
             >
-              <social.icon className="w-4 h-4 text-white" />
+              <social.icon className="w-5 h-5" />
             </Link>
           ))}
         </div>
 
         {/* Navigation Links */}
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8">
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 mb-12">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="text-xs text-white/70 hover:text-white transition-colors duration-200 uppercase tracking-wider"
+              className="text-[11px] font-bold text-white hover:text-white/70 transition-colors duration-200 tracking-[0.2em] uppercase"
             >
               {link.label}
             </Link>
@@ -51,7 +53,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="text-center text-xs text-white/50">
+        <p className="text-center text-[10px] text-white/60 font-bold tracking-[0.1em] uppercase">
           Copyright &copy; {new Date().getFullYear()} - Al Shomoukh International School
         </p>
       </div>
