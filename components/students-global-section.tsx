@@ -2,6 +2,7 @@
 
 import { Globe } from "@/components/ui/cobe-globe"
 import { motion } from "framer-motion"
+import { useMemo } from "react"
 
 const countries = [
   { name: "USA", flag: "🇺🇸", lat: 37.0902, lng: -95.7129 },
@@ -26,31 +27,31 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
+      staggerChildren: 0.05,
+      delayChildren: 0.2,
     },
   },
 } as const
 
 const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
+  hidden: { y: 15, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
       type: "spring",
-      stiffness: 100,
-      damping: 12,
+      stiffness: 80,
+      damping: 15,
     },
   },
 } as const
 
 export default function StudentsGlobalSection() {
-  const globeMarkers = countries.map((c) => ({
+  const globeMarkers = useMemo(() => countries.map((c) => ({
     id: c.name,
     location: [c.lat, c.lng] as [number, number],
     label: c.name,
-  }))
+  })), [])
 
   return (
     <section className="relative overflow-hidden bg-[radial-gradient(circle_at_center,_#123c73_0%,_#071a2b_45%,_#04111d_100%)] py-24 text-white">
@@ -150,6 +151,7 @@ export default function StudentsGlobalSection() {
               markerColor={[0.2, 0.5, 1]}
               speed={0.004}
               mapBrightness={12}
+              mapSamples={8000}
             />
           </div>
         </motion.div>

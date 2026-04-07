@@ -14,17 +14,13 @@ const affiliations = [
 
 export function AffiliationsSection() {
   return (
-    <section className="py-24 bg-muted/20 border-y border-border/50 overflow-hidden">
+    <section className="py-24 bg-muted/20 overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 mb-12 text-center lg:text-left">
         <h2 className="font-serif text-2xl text-primary font-bold tracking-tight mb-3 italic">Trusted & Accredited</h2>
         <p className="text-[13px] text-primary/60 font-medium tracking-wide uppercase">Recognized by leading global educational bodies.</p>
       </div>
 
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 overflow-hidden relative">
-        {/* Soft edge-fading gradients for a smoother transition */}
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#f9fafb] via-[#f9fafb]/80 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#f9fafb] via-[#f9fafb]/80 to-transparent z-10 pointer-events-none" />
-
         <div className="relative flex group">
           <motion.div 
             className="flex whitespace-nowrap gap-28 md:gap-36 py-8 items-center"
