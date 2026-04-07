@@ -20,36 +20,44 @@ export function AffiliationsSection() {
         <p className="text-[13px] text-primary/60 font-medium tracking-wide uppercase">Recognized by leading global educational bodies.</p>
       </div>
 
-      <div className="relative flex overflow-x-hidden group">
-        <motion.div 
-          className="flex whitespace-nowrap gap-20 py-4 items-center"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          {/* First set of logos */}
-          {[...affiliations, ...affiliations].map((aff, i) => (
-            <a 
-              key={i} 
-              href={aff.url} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-110 opacity-60 hover:opacity-100 flex-shrink-0"
-            >
-              <div className="relative w-32 h-16 md:w-44 md:h-20">
-                <Image 
-                  src={aff.img} 
-                  alt={`Accreditation ${i}`} 
-                  fill 
-                  className="object-contain" 
-                />
-              </div>
-            </a>
-          ))}
-        </motion.div>
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 overflow-hidden relative">
+        {/* Soft edge-fading gradients for a smoother transition */}
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#f9fafb] via-[#f9fafb]/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#f9fafb] via-[#f9fafb]/80 to-transparent z-10 pointer-events-none" />
+
+        <div className="relative flex group">
+          <motion.div 
+            className="flex whitespace-nowrap gap-28 md:gap-36 py-8 items-center"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              duration: 150,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          >
+            {/* Show all icons repeated for a truly seamless loop */}
+            {Array.from({ length: 6 }).map((_, setIdx) => (
+              affiliations.map((aff, i) => (
+                <a 
+                  key={`${setIdx}-${i}`} 
+                  href={aff.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="transition-all duration-700 transform hover:scale-110 opacity-100 flex-shrink-0"
+                >
+                  <div className="relative w-36 h-16 md:w-44 md:h-20">
+                    <Image 
+                      src={aff.img} 
+                      alt={`Accreditation ${i}`} 
+                      fill 
+                      className="object-contain" 
+                    />
+                  </div>
+                </a>
+              ))
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   )
