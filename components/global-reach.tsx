@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { GlobeCdn } from '@/components/ui/globe-cdn'
 
 const countries = [
   { name: 'USA', flag: 'https://www.alshomoukh.com:443/cc-content/themes/alshomoukh/assets/img/flags/usa.jpg' },
@@ -28,6 +29,28 @@ const countries = [
   { name: 'Russia', flag: 'https://www.alshomoukh.com:443/cc-content/themes/alshomoukh/assets/img/flags/russia.jpg' },
   { name: 'Jordan', flag: 'https://www.alshomoukh.com:443/cc-content/themes/alshomoukh/assets/img/flags/jordan.jpg' },
 ]
+
+const globeMarkers = [
+  { id: "usa", location: [37.0902, -95.7129] as [number, number], region: "USA" },
+  { id: "uk", location: [55.3781, -3.4360] as [number, number], region: "UK" },
+  { id: "india", location: [20.5937, 78.9629] as [number, number], region: "India" },
+  { id: "oman", location: [23.5859, 58.4059] as [number, number], region: "Oman" },
+  { id: "germany", location: [51.1657, 10.4515] as [number, number], region: "Germany" },
+  { id: "canada", location: [56.1304, -106.3468] as [number, number], region: "Canada" },
+  { id: "serbia", location: [44.0165, 21.0059] as [number, number], region: "Serbia" },
+  { id: "singapore", location: [1.3521, 103.8198] as [number, number], region: "Singapore" },
+]
+
+const globeArcs = [
+  { id: "arc-1", from: [37.0902, -95.7129] as [number, number], to: [23.5859, 58.4059] as [number, number] },
+  { id: "arc-2", from: [55.3781, -3.4360] as [number, number], to: [23.5859, 58.4059] as [number, number] },
+  { id: "arc-3", from: [20.5937, 78.9629] as [number, number], to: [23.5859, 58.4059] as [number, number] },
+  { id: "arc-4", from: [51.1657, 10.4515] as [number, number], to: [23.5859, 58.4059] as [number, number] },
+  { id: "arc-5", from: [1.3521, 103.8198] as [number, number], to: [23.5859, 58.4059] as [number, number] },
+]
+
+const GLOBE_BASE_COLOR: [number, number, number] = [0.1, 0.1, 0.2]
+const GLOBE_MARKER_COLOR: [number, number, number] = [0.73, 0.11, 0.11] // #b91c1c Al Shomoukh Red
 
 export function GlobalReach() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -74,34 +97,40 @@ export function GlobalReach() {
                   className="reveal opacity-0 translate-x-[-20px] transition-all duration-500 flex items-center gap-3 group cursor-default"
                   style={{ transitionDelay: `${200 + i * 40}ms` }}
                 >
-                  <div className="relative w-8 h-5 overflow-hidden transition-transform duration-300 group-hover:scale-110">
+                  <div className="relative w-8 h-5 overflow-hidden ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-110">
                     <Image src={country.flag} alt={country.name} fill className="object-cover" />
                   </div>
                   <span className="text-sm font-medium text-white/90 group-hover:text-secondary transition-colors duration-300">{country.name}</span>
                 </div>
               ))}
             </div>
+
+            <div className="mt-12 flex items-center gap-6 reveal opacity-0 translate-y-4 transition-all duration-500 delay-[1200ms]">
+                <div className="flex flex-col">
+                    <span className="text-5xl font-bold text-secondary">23+</span>
+                    <span className="text-xs uppercase tracking-widest font-bold text-white/60">Nationalities</span>
+                </div>
+                <div className="h-12 w-px bg-white/10" />
+                <p className="text-sm text-white/60 max-w-[200px]">
+                    Nurturing global citizens in a diverse and inclusive environment.
+                </p>
+            </div>
           </div>
           
           <div className="reveal opacity-0 scale-90 transition-all duration-1000 delay-300 flex justify-center lg:justify-end">
-            <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] group">
-              {/* This represents the Earth/Globe from the legacy site, styled for the new theme */}
-              <div className="absolute inset-0 rounded-full border border-secondary/20 animate-[spin_20s_linear_infinite]" />
-              <div className="absolute inset-4 rounded-full border border-white/10 animate-[spin_15s_linear_infinite_reverse]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                 <div className="w-full h-full rounded-full bg-secondary/5 backdrop-blur-3xl flex items-center justify-center overflow-hidden border border-white/5 shadow-2xl relative">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary via-transparent to-secondary/20" />
-                    <div className="text-secondary flex flex-col items-center">
-                       <svg viewBox="0 0 24 24" className="w-48 h-48 opacity-20 animate-pulse" fill="currentColor">
-                          <path d="M12,2C6.47,2,2,6.47,2,12s4.47,10,10,10s10-4.47,10-10S17.53,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8 S16.41,20,12,20z M11,7h2v2h-2V7z M11,11h2v6h-2V11z"/>
-                       </svg>
-                       <div className="absolute inset-0 flex flex-col items-center justify-center px-12 text-center">
-                          <span className="text-5xl md:text-7xl font-bold mb-2">23+</span>
-                          <span className="text-secondary font-bold tracking-widest uppercase text-sm md:text-base">Nationalities</span>
-                       </div>
-                    </div>
-                 </div>
-              </div>
+            <div className="relative w-full max-w-[600px] aspect-square">
+              <GlobeCdn 
+                markers={globeMarkers}
+                arcs={globeArcs}
+                className="w-full h-full"
+                dark={0}
+                baseColor={GLOBE_BASE_COLOR}
+                markerColor={GLOBE_MARKER_COLOR}
+                glowColor={GLOBE_MARKER_COLOR}
+              />
+              
+              {/* Subtle background glow for the globe */}
+              <div className="absolute inset-0 -z-10 bg-secondary/5 rounded-full blur-3xl" />
             </div>
           </div>
         </div>
@@ -109,3 +138,4 @@ export function GlobalReach() {
     </section>
   )
 }
+

@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 const affiliations = [
   { img: "https://www.alshomoukh.com:443/uploads/affiliations/20200807213934-2020-08-07affiliations213852.jpg", url: "https://home.moe.gov.om/?GetLang=en" },
@@ -13,19 +14,44 @@ const affiliations = [
 
 export function AffiliationsSection() {
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-primary text-center mb-12 uppercase tracking-wider">Our Affiliations</h2>
-        <div className="flex flex-wrap justify-center items-center gap-12 transition-all duration-500">
-          {affiliations.map((aff, i) => (
-            <a key={i} href={aff.url} target="_blank" rel="noopener noreferrer" className="transition-all duration-300">
-              <div className="relative w-32 h-20 md:w-40 md:h-24">
-                <Image src={aff.img} alt={`Affiliation ${i}`} fill className="object-contain" />
+    <section className="py-24 bg-muted/20 border-y border-border/50 overflow-hidden">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 mb-12 text-center lg:text-left">
+        <h2 className="font-serif text-2xl text-primary font-bold tracking-tight mb-3 italic">Trusted & Accredited</h2>
+        <p className="text-[13px] text-primary/60 font-medium tracking-wide uppercase">Recognized by leading global educational bodies.</p>
+      </div>
+
+      <div className="relative flex overflow-x-hidden group">
+        <motion.div 
+          className="flex whitespace-nowrap gap-20 py-4 items-center"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          {/* First set of logos */}
+          {[...affiliations, ...affiliations].map((aff, i) => (
+            <a 
+              key={i} 
+              href={aff.url} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-110 opacity-60 hover:opacity-100 flex-shrink-0"
+            >
+              <div className="relative w-32 h-16 md:w-44 md:h-20">
+                <Image 
+                  src={aff.img} 
+                  alt={`Accreditation ${i}`} 
+                  fill 
+                  className="object-contain" 
+                />
               </div>
             </a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
 }
+

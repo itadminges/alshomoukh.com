@@ -1,6 +1,38 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+@font-face {
+  font-family: 'HelveticaCustom';
+  src: url('/Font/helvetica-world-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HelveticaCustom';
+  src: url('/Font/helvetica-world-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HelveticaCustom';
+  src: url('/Font/Helvetica-Oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HelveticaCustom';
+  src: url('/Font/Helvetica-BoldOblique.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -37,6 +69,13 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Premium Design Tokens */
+  --nav-height: 80px;
+  --primary-rgb: 11, 59, 91;
+  --secondary-rgb: 193, 157, 118;
+  --shadow-premium: 0 10px 30px -10px rgba(0, 0, 50, 0.1);
+  --shadow-strong: 0 20px 40px -15px rgba(0, 0, 50, 0.15);
 }
 
 .dark {
@@ -75,8 +114,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-sans), 'Inter', system-ui, sans-serif;
-  --font-serif: var(--font-serif), 'Playfair Display', Georgia, serif;
+  --font-sans: 'HelveticaCustom', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'HelveticaCustom', ui-serif, Georgia, serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -114,6 +153,10 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Custom Utilities */
+  --shadow-premium: var(--shadow-premium);
+  --shadow-strong: var(--shadow-strong);
 }
 
 @layer base {
@@ -121,23 +164,52 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
   }
 }
 
 @layer utilities {
-  .reveal {
-    opacity: 0;
-    transform: translateY(2rem);
-    transition: all 0.7s ease-out;
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/30;
+  }
+  
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-md border border-white/10;
   }
 
-  .reveal.animate-in {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    transform: translateX(0) !important;
-    transform: scaleX(1) !important;
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.animate-in,
+  .reveal-left.animate-in,
+  .reveal-right.animate-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+  .delay-500 { transition-delay: 500ms; }
 
   @keyframes marquee {
     0% { transform: translateX(0); }
@@ -146,5 +218,9 @@
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }

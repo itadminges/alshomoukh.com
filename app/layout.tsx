@@ -1,19 +1,7 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-
-const playfair = Playfair_Display({ 
-  subsets: ["latin"],
-  variable: '--font-serif',
-  display: 'swap',
-});
-
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: '--font-sans',
-  display: 'swap',
-});
+// Fonts are loaded in globals.css from the public/Font directory
 
 export const metadata: Metadata = {
   title: 'Al Shomoukh International School',
@@ -40,15 +28,31 @@ export const metadata: Metadata = {
   },
 }
 
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
+import { SmoothScroll } from "@/components/smooth-scroll"
+import { CustomCursor } from "@/components/custom-cursor"
+import { ScrollProgress } from "@/components/scroll-progress"
+import { BackToTop } from "@/components/back-to-top"
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased bg-background text-foreground">
-        {children}
+    <html lang="en">
+      <body className="font-sans antialiased bg-background text-foreground flex flex-col min-h-screen">
+        <SmoothScroll>
+          <ScrollProgress />
+          <CustomCursor />
+          <BackToTop />
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </SmoothScroll>
         <Analytics />
       </body>
     </html>
