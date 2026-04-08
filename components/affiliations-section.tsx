@@ -19,7 +19,7 @@ export function AffiliationsSection() {
         <div className="flex flex-col items-center">
           <div className="flex items-center gap-4 mb-4">
             <div className="h-[1px] w-8 bg-gold/50" />
-            <span className="text-navy/40 font-bold tracking-[0.4em] uppercase text-[10px]">
+            <span className="text-navy/40 font-bold tracking-[0.4em] uppercase text-[11px]">
               Recognized Globally
             </span>
             <div className="h-[1px] w-8 bg-gold/50" />

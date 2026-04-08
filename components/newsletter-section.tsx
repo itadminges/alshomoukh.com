@@ -28,7 +28,7 @@ export function NewsletterSection() {
                 viewport={{ once: true }}
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <span className="text-gold font-bold tracking-[0.3em] uppercase text-[8px]">
+                  <span className="text-gold font-bold tracking-[0.3em] uppercase text-[11px]">
                     Admissions Open
                   </span>
                   <div className="h-[1px] w-6 bg-gold/30" />
@@ -39,16 +39,16 @@ export function NewsletterSection() {
                   <span className="text-gold">Learning Community</span>
                 </h2>
                 
-                <p className="text-[10px] md:text-xs text-ivory/60 leading-relaxed mb-10 max-w-sm font-medium">
+                <p className="text-xs md:text-sm text-ivory/80 leading-relaxed mb-10 max-w-sm font-medium">
                   We are now accepting applications for the upcoming academic year. Speak with our team to explore the possibilities.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                  <Button className="bg-gold text-white hover:bg-gold/90 h-12 px-8 text-[9px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+                  <Button className="bg-gold text-white hover:bg-gold/90 h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
                     Apply Now
                     <ArrowRight className="ml-2 h-3 w-3" />
                   </Button>
-                  <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-navy h-12 px-8 text-[9px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+                  <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-navy h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
                     Inquiry
                   </Button>
                 </div>
@@ -72,8 +72,8 @@ export function NewsletterSection() {
                   className="p-5 bg-white/5 border border-white/5 hover:bg-white/10 transition-colors group"
                 >
                   <item.icon className="h-3 w-3 text-gold mb-3" />
-                  <h4 className="text-[8px] font-bold text-gold uppercase tracking-widest mb-1">{item.title}</h4>
-                  <p className="text-[11px] font-bold text-white uppercase">{item.detail}</p>
+                  <h4 className="text-[10px] font-bold text-gold uppercase tracking-widest mb-1">{item.title}</h4>
+                  <p className="text-[12px] font-bold text-white uppercase">{item.detail}</p>
                 </motion.div>
               ))}
             </div>

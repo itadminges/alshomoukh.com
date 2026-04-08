@@ -57,8 +57,8 @@ export function AcademicPrograms() {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-6 pt-[20px]"
           >
-            <span className="text-gold font-bold tracking-[0.3em] uppercase text-[9px]">
-              Academic Divisions
+            <span className="text-gold font-bold tracking-[0.3em] uppercase text-[11px]">
+              Our Educational Journey
             </span>
             <div className="h-[1px] w-8 bg-gold/30" />
           </motion.div>
@@ -68,7 +68,7 @@ export function AcademicPrograms() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-2xl md:text-3xl lg:text-4xl text-navy leading-[1.2] mb-8 tracking-tight font-bold uppercase"
+            className="text-3xl md:text-4xl lg:text-5xl text-navy leading-[1.1] mb-8 tracking-tight font-bold uppercase font-heading"
           >
             Pathway to <span className="text-gold">Global Leadership</span>
           </motion.h2>
@@ -78,7 +78,7 @@ export function AcademicPrograms() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xs md:text-sm text-navy/60 leading-relaxed font-medium"
+            className="text-sm md:text-base text-navy/70 leading-relaxed font-medium max-w-2xl"
           >
             A comprehensive educational journey designed to challenge and inspire from nursery to university graduation.
           </motion.p>
@@ -109,10 +109,10 @@ export function AcademicPrograms() {
                   </div>
 
                   <div className="px-6">
-                    <h3 className="text-xl text-navy mb-3 font-bold tracking-tight uppercase group-hover:text-gold transition-colors">
+                    <h3 className="text-2xl text-navy mb-4 font-bold tracking-tight uppercase group-hover:text-gold transition-colors font-heading">
                       {program.title}
                     </h3>
-                    <p className="text-[11px] text-navy/60 leading-relaxed mb-6 font-medium line-clamp-2">
+                    <p className="text-[13px] text-navy/70 leading-relaxed mb-6 font-medium line-clamp-2">
                       {program.description}
                     </p>
                     

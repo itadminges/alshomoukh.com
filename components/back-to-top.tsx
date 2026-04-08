@@ -1,24 +1,20 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react"
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion"
 import { ArrowUp } from "lucide-react"
 
 export function BackToTop() {
   const [isVisible, setIsVisible] = useState(false)
+  const { scrollY } = useScroll()
 
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 500) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 500 && !isVisible) {
+      setIsVisible(true)
+    } else if (latest <= 500 && isVisible) {
+      setIsVisible(false)
     }
-
-    window.addEventListener("scroll", toggleVisibility)
-    return () => window.removeEventListener("scroll", toggleVisibility)
-  }, [])
+  })
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -38,6 +34,7 @@ export function BackToTop() {
           className="fixed bottom-10 right-10 z-[50] w-12 h-12 bg-secondary text-white rounded-full shadow-strong flex items-center justify-center group"
           whileHover={{ y: -5 }}
           whileTap={{ scale: 0.9 }}
+          style={{ willChange: "transform, opacity" }}
         >
           <ArrowUp className="h-6 w-6 transition-transform group-hover:-translate-y-1" />
         </motion.button>

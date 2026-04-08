@@ -47,30 +47,29 @@ export function HeroSection() {
           {/* Trust Indicator */}
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-[1px] w-6 bg-gold/50" />
-            <span className="text-gold font-bold tracking-[0.4em] uppercase text-[9px]">
+            <span className="text-gold font-bold tracking-[0.4em] uppercase text-[11px]">
               Established 1997
             </span>
             <div className="h-[1px] w-6 bg-gold/50" />
           </div>
 
-          <h1 className="text-2xl md:text-3xl lg:text-4xl text-white leading-[1.2] mb-6 tracking-tight uppercase font-bold">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl text-white leading-[1.1] mb-8 tracking-tight uppercase font-bold text-balance">
             Where Ambition Meets <br />
             <span className="text-gold">Global Excellence</span>
           </h1>
-
-          <p className="text-xs md:text-sm text-ivory/80 max-w-lg mx-auto mb-10 leading-relaxed font-medium">
+          <p className="text-sm md:text-base text-ivory/90 max-w-xl mx-auto mb-10 leading-relaxed font-medium">
             Empowering students with a world-class international education that fosters critical thinking, cultural integrity, and lifelong leadership.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button className="bg-gold text-white hover:bg-gold/90 h-12 px-8 text-[9px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+            <Button className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
               Begin Admissions
             </Button>
             <button className="flex items-center gap-3 text-white hover:text-gold transition-colors group">
               <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold transition-colors">
                 <Play className="h-3 w-3 fill-white" />
               </div>
-              <span className="text-[9px] font-bold tracking-[0.2em] uppercase">Experience SIS</span>
+              <span className="text-[11px] font-bold tracking-[0.2em] uppercase">Experience SIS</span>
             </button>
           </div>
         </motion.div>

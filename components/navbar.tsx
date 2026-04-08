@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Search, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useScroll, useMotionValueEvent } from "framer-motion"
 
 const navLinks = [
   { href: "/about", label: "About Us" },
@@ -37,13 +38,15 @@ export function Navbar() {
   const isHomePage = pathname === "/"
   const forceSolid = !isHomePage || isScrolled
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+  const { scrollY } = useScroll()
+  
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 20 && !isScrolled) {
+      setIsScrolled(true)
+    } else if (latest <= 20 && isScrolled) {
+      setIsScrolled(false)
     }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  })
 
   return (
     <header 
@@ -82,14 +85,14 @@ export function Navbar() {
                 <Link
                   href={link.href || "#"}
                   className={cn(
-                    "relative text-[9px] xl:text-[10px] font-bold tracking-[0.15em] transition-all duration-300 py-2 uppercase whitespace-nowrap flex items-center gap-1",
-                    forceSolid ? "text-primary/80 hover:text-primary" : "text-white/90 hover:text-white"
+                    "relative text-[11px] xl:text-[12px] font-bold tracking-[0.2em] transition-all duration-300 py-2 uppercase whitespace-nowrap flex items-center gap-1",
+                    forceSolid ? "text-primary/90 hover:text-primary" : "text-white hover:text-white"
                   )}
                 >
                   {link.label}
-                  {link.submenu && <ChevronDown className="h-2 w-2 transition-transform duration-300 group-hover:rotate-180" />}
+                  {link.submenu && <ChevronDown className="h-3 w-3 transition-transform duration-300 group-hover:rotate-180" />}
                   <span className={cn(
-                    "absolute bottom-0 left-0 w-0 h-[1.5px] transition-all duration-300 group-hover:w-full",
+                    "absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full",
                     forceSolid ? "bg-secondary" : "bg-white"
                   )} />
                 </Link>
@@ -100,7 +103,7 @@ export function Navbar() {
                         <Link
                           key={sub.href}
                           href={sub.href}
-                          className="block px-6 py-2.5 text-[9px] font-bold text-primary/70 hover:text-primary hover:bg-muted transition-colors tracking-widest uppercase whitespace-nowrap"
+                          className="block px-6 py-3 text-[10px] font-bold text-primary/80 hover:text-primary hover:bg-muted transition-colors tracking-[0.15em] uppercase whitespace-nowrap"
                         >
                           {sub.label}
                         </Link>
@@ -125,7 +128,7 @@ export function Navbar() {
               <Link href="/admissions">
                 <Button
                   className={cn(
-                    "px-6 text-[9px] font-extrabold tracking-[0.2em] uppercase rounded-none transition-all duration-500 h-10",
+                    "px-8 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all duration-500 h-11",
                     forceSolid 
                       ? "bg-primary text-white hover:bg-primary/90 shadow-md" 
                       : "bg-white text-primary hover:bg-secondary hover:text-white"
@@ -212,4 +215,3 @@ export function Navbar() {
     </header>
   )
 }
-

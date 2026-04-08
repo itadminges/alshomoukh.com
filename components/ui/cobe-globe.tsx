@@ -53,7 +53,7 @@ export function Globe({
   speed = 0.003,
   theta = 0.2,
   diffuse = 1.5,
-  mapSamples = 12000,
+  mapSamples = 8000,
 }: GlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const pointerInteracting = useRef<{ x: number; y: number } | null>(null)
@@ -233,6 +233,7 @@ export function Globe({
           transition: "opacity 1.2s ease",
           borderRadius: "50%",
           touchAction: "none",
+          willChange: "transform",
         }}
       />
       {markers.map((m) => (

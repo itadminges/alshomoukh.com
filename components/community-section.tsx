@@ -79,16 +79,16 @@ export function CommunitySection() {
               </span>
             </div>
             
-            <h2 className="reveal opacity-0 transition-all duration-700 delay-200 font-serif text-4xl md:text-5xl lg:text-6xl text-primary leading-[1.1] mb-8 tracking-tight">
+            <h2 className="reveal opacity-0 transition-all duration-700 delay-200 font-serif text-3xl md:text-5xl lg:text-6xl text-primary leading-[1.1] mb-8 tracking-tight">
               A Legacy of <span className="text-secondary italic">Excellence</span> & Innovation
             </h2>
             
-            <p className="reveal opacity-0 transition-all duration-700 delay-300 text-[16px] md:text-[18px] text-primary/70 leading-[1.8] mb-10 font-medium max-w-xl">
+            <p className="reveal opacity-0 transition-all duration-700 delay-300 text-sm md:text-base text-primary/70 leading-[1.8] mb-10 font-medium max-w-xl">
               Al Shomoukh International School stands as a beacon of academic distinction. We combine traditional values with modern pedagogical approaches to create a uniquely powerful learning experience.
             </p>
 
             <div className="reveal opacity-0 transition-all duration-700 delay-400">
-              <Button className="bg-primary text-white hover:bg-primary/90 h-14 px-12 text-[13px] font-extrabold tracking-widest uppercase rounded-none transition-all shadow-lg hover:shadow-xl group">
+              <Button className="bg-primary text-white hover:bg-primary/90 h-14 px-12 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-xl group">
                 Discover Our Story
                 <Globe className="ml-3 h-4 w-4 transition-transform group-hover:rotate-12" />
               </Button>
@@ -106,7 +106,7 @@ export function CommunitySection() {
                 <div className="w-14 h-14 bg-muted/50 rounded-full flex items-center justify-center text-primary mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-500">
                   <item.icon className="h-7 w-7" />
                 </div>
-                <h3 className="font-serif text-xl text-primary mb-3 font-bold tracking-tight group-hover:text-secondary transition-colors">
+                <h3 className="font-serif text-xl text-primary mb-3 font-bold tracking-tight group-hover:text-gold transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-[14px] text-primary/60 leading-[1.7] font-medium">
