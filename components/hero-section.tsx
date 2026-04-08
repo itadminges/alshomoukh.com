@@ -1,107 +1,101 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import Image from "next/image"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ChevronDown } from "lucide-react"
-import { Magnetic } from "@/components/magnetic"
+import { Play } from "lucide-react"
 
 export function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null)
+  const containerRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  })
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-in")
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    const elements = sectionRef.current?.querySelectorAll(".reveal, .reveal-left, .reveal-right")
-    elements?.forEach((el) => observer.observe(el))
-
-    return () => observer.disconnect()
-  }, [])
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, 200])
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+    <section 
+      ref={containerRef}
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-navy"
     >
-      {/* Background Image with Parallax-like feel */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Media Layer */}
+      <motion.div 
+        style={{ y: y1 }}
+        className="absolute inset-0 z-0"
+      >
         <Image
           src="/hero-bg.png"
-          alt="Al Shomoukh International School Campus"
+          alt="Al Shomoukh Campus"
           fill
-          className="object-cover scale-105 animate-pulse-slow"
+          className="object-cover scale-105"
           priority
         />
-        {/* Multilayered Overlays */}
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
-      </div>
+        <div className="absolute inset-0 bg-navy/30" />
+      </motion.div>
 
-      {/* Content Container */}
-      <div className="relative z-10 w-full max-w-[1440px] px-6 md:px-10 lg:px-20 pt-20">
-        <div className="max-w-4xl">
-          {/* Tagline */}
-          <div className="reveal-left opacity-0 transition-all duration-700 delay-100 flex items-center gap-3 mb-6">
-            <span className="w-12 h-[2px] bg-secondary" />
-            <span className="text-secondary font-bold tracking-[0.3em] uppercase text-[12px] md:text-[14px]">
-              Excellence in Education
+      {/* Content Layer */}
+      <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="max-w-4xl mx-auto"
+        >
+          {/* Trust Indicator */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-[1px] w-6 bg-gold/50" />
+            <span className="text-gold font-bold tracking-[0.4em] uppercase text-[9px]">
+              Established 1997
             </span>
+            <div className="h-[1px] w-6 bg-gold/50" />
           </div>
 
-          {/* Main Title */}
-          <h1 className="reveal opacity-0 text-white font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-10 tracking-tight">
-            Nurturing <span className="text-secondary italic">Potential</span>, <br />
-            Inspiring <span className="relative">
-              Success
-              <svg className="absolute -bottom-2 left-0 w-full h-3 text-secondary/40 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0 5 Q 25 0, 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="4" />
-              </svg>
-            </span>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl text-white leading-[1.2] mb-6 tracking-tight uppercase font-bold">
+            Where Ambition Meets <br />
+            <span className="text-gold">Global Excellence</span>
           </h1>
 
-          {/* Subtext */}
-          <p className="reveal opacity-0 transition-all duration-700 delay-300 text-white/80 text-lg md:text-xl lg:text-2xl max-w-2xl leading-relaxed mb-12 font-light tracking-wide">
-            Empowering the next generation of global citizens through a holistic academic journey in a nurturing international environment.
+          <p className="text-xs md:text-sm text-ivory/80 max-w-lg mx-auto mb-10 leading-relaxed font-medium">
+            Empowering students with a world-class international education that fosters critical thinking, cultural integrity, and lifelong leadership.
           </p>
-          {/* CTAs */}
-          <div className="reveal opacity-0 transition-all duration-700 delay-500 flex flex-wrap gap-4 md:gap-6">
-            <Magnetic>
-              <Button 
-                size="lg" 
-                className="bg-secondary text-white hover:bg-secondary/90 rounded-none px-10 h-14 text-[14px] font-bold tracking-widest uppercase flex items-center gap-3 transition-transform"
-              >
-                Start Admission <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Magnetic>
-            <Magnetic>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="bg-white/10 backdrop-blur-md text-white border-white/20 hover:bg-white/20 rounded-none px-10 h-14 text-[14px] font-bold tracking-widest uppercase transition-transform"
-              >
-                Discover SIS
-              </Button>
-            </Magnetic>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Button className="bg-gold text-white hover:bg-gold/90 h-12 px-8 text-[9px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+              Begin Admissions
+            </Button>
+            <button className="flex items-center gap-3 text-white hover:text-gold transition-colors group">
+              <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold transition-colors">
+                <Play className="h-3 w-3 fill-white" />
+              </div>
+              <span className="text-[9px] font-bold tracking-[0.2em] uppercase">Experience SIS</span>
+            </button>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3 text-white/60 animate-bounce">
-        <span className="text-[10px] uppercase tracking-[0.4em] font-bold">Discover More</span>
-        <ChevronDown className="h-5 w-5" />
-      </div>
+      {/* Trust Strip */}
+      <motion.div 
+        style={{ opacity }}
+        className="absolute bottom-10 left-0 w-full z-10 hidden lg:block"
+      >
+        <div className="mx-auto max-w-[1440px] px-20">
+          <div className="flex justify-between items-center py-6 border-t border-white/10">
+            {[
+              { label: "Accredited by", value: "Ministry of Education" },
+              { label: "Curriculum", value: "Pearson Edexcel" },
+              { label: "Community", value: "45+ Nationalities" }
+            ].map((item, i) => (
+              <div key={i} className="text-left">
+                <p className="text-[8px] font-bold text-gold uppercase tracking-widest mb-1">{item.label}</p>
+                <p className="text-[10px] text-white/80 font-bold uppercase tracking-wider">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
     </section>
   )
 }
-

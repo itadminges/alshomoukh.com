@@ -63,7 +63,7 @@ export function Navbar() {
               forceSolid ? "scale-95" : "scale-100"
             )}>
               <Image 
-                src="/SIS Logo-01.png" 
+                src={forceSolid ? "/SIS Logo-01.png" : "/White SIS Logo-01.png"} 
                 alt="SIS Logo" 
                 width={210} 
                 height={70} 
@@ -82,25 +82,25 @@ export function Navbar() {
                 <Link
                   href={link.href || "#"}
                   className={cn(
-                    "relative text-[12px] xl:text-[13px] font-bold tracking-[0.15em] transition-all duration-300 py-2 uppercase whitespace-nowrap flex items-center gap-1",
+                    "relative text-[9px] xl:text-[10px] font-bold tracking-[0.15em] transition-all duration-300 py-2 uppercase whitespace-nowrap flex items-center gap-1",
                     forceSolid ? "text-primary/80 hover:text-primary" : "text-white/90 hover:text-white"
                   )}
                 >
                   {link.label}
-                  {link.submenu && <ChevronDown className="h-3 w-3 transition-transform duration-300 group-hover:rotate-180" />}
+                  {link.submenu && <ChevronDown className="h-2 w-2 transition-transform duration-300 group-hover:rotate-180" />}
                   <span className={cn(
-                    "absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full",
+                    "absolute bottom-0 left-0 w-0 h-[1.5px] transition-all duration-300 group-hover:w-full",
                     forceSolid ? "bg-secondary" : "bg-white"
                   )} />
                 </Link>
                 {link.submenu && (
-                  <div className="absolute left-0 top-full mt-2 w-64 bg-white border border-border/10 shadow-strong opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform group-hover:translate-y-0 translate-y-2">
-                    <div className="py-3">
+                  <div className="absolute left-0 top-full mt-2 w-56 bg-white border border-border/10 shadow-strong opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform group-hover:translate-y-0 translate-y-2">
+                    <div className="py-2">
                       {link.submenu.map((sub) => (
                         <Link
                           key={sub.href}
                           href={sub.href}
-                          className="block px-8 py-3 text-[12px] font-bold text-primary/70 hover:text-primary hover:bg-muted transition-colors tracking-widest uppercase whitespace-nowrap"
+                          className="block px-6 py-2.5 text-[9px] font-bold text-primary/70 hover:text-primary hover:bg-muted transition-colors tracking-widest uppercase whitespace-nowrap"
                         >
                           {sub.label}
                         </Link>
@@ -113,19 +113,19 @@ export function Navbar() {
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-4 lg:gap-8">
+          <div className="flex items-center gap-4 lg:gap-6">
             <button className={cn(
               "hidden md:block transition-colors duration-300",
               forceSolid ? "text-primary/70 hover:text-primary" : "text-white/70 hover:text-white"
             )}>
-              <Search className="h-5 w-5" />
+              <Search className="h-4 w-4" />
             </button>
             
             <div className="hidden lg:block">
               <Link href="/admissions">
                 <Button
                   className={cn(
-                    "px-8 text-[12px] font-extrabold tracking-[0.2em] uppercase rounded-none transition-all duration-500 h-14",
+                    "px-6 text-[9px] font-extrabold tracking-[0.2em] uppercase rounded-none transition-all duration-500 h-10",
                     forceSolid 
                       ? "bg-primary text-white hover:bg-primary/90 shadow-md" 
                       : "bg-white text-primary hover:bg-secondary hover:text-white"

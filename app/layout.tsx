@@ -1,7 +1,29 @@
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
+import localFont from 'next/font/local'
 import './globals.css'
-// Fonts are loaded in globals.css from the public/Font directory
+
+const helvetica = localFont({
+  src: [
+    {
+      path: '../public/Font/Helvetica.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/Font/Helvetica-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/Font/Helvetica Neue Condensed Bold 2.ttf',
+      weight: '800',
+      style: 'normal',
+    }
+  ],
+  variable: '--font-helvetica',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Al Shomoukh International School',
@@ -41,8 +63,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="font-sans antialiased bg-background text-foreground flex flex-col min-h-screen">
+    <html lang="en" className={`${helvetica.variable}`}>
+      <body className="font-helvetica antialiased bg-background text-foreground flex flex-col min-h-screen">
         <SmoothScroll>
           <ScrollProgress />
           <CustomCursor />

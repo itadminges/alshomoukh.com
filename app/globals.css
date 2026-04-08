@@ -71,6 +71,13 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* Premium Design Tokens */
+  --ivory: #FDFCF0;
+  --ivory-dark: #F5F4E8;
+  --gold: #C19D76;
+  --gold-light: #D4B89A;
+  --navy: #0B3B5B;
+  --navy-light: #164E75;
+  
   --nav-height: 80px;
   --primary-rgb: 11, 59, 91;
   --secondary-rgb: 193, 157, 118;
@@ -115,8 +122,6 @@
 
 @theme inline {
   --font-sans: 'HelveticaCustom', ui-sans-serif, system-ui, sans-serif;
-  --font-serif: 'HelveticaCustom', ui-serif, Georgia, serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -153,6 +158,14 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Gold & Navy variants */
+  --color-ivory: var(--ivory);
+  --color-ivory-dark: var(--ivory-dark);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
 
   /* Custom Utilities */
   --shadow-premium: var(--shadow-premium);

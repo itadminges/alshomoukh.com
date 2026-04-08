@@ -57,7 +57,7 @@ export function Footer() {
           <div className="lg:col-span-4 max-w-sm">
             <Link href="/" className="inline-block mb-10">
               <Image 
-                src="/SIS Logo-01.png" 
+                src="/White SIS Logo-01.png" 
                 alt="Al Shomoukh Logo" 
                 width={200} 
                 height={60} 

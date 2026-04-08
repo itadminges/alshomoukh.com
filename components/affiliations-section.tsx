@@ -14,46 +14,56 @@ const affiliations = [
 
 export function AffiliationsSection() {
   return (
-    <section className="py-24 bg-muted/20 overflow-hidden">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 mb-12 text-center lg:text-left">
-        <h2 className="font-serif text-2xl text-primary font-bold tracking-tight mb-3 italic">Trusted & Accredited</h2>
-        <p className="text-[13px] text-primary/60 font-medium tracking-wide uppercase">Recognized by leading global educational bodies.</p>
+    <section className="py-20 bg-white overflow-hidden">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 mb-10 overflow-hidden">
+        <div className="flex flex-col items-center">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="h-[1px] w-8 bg-gold/50" />
+            <span className="text-navy/40 font-bold tracking-[0.4em] uppercase text-[10px]">
+              Recognized Globally
+            </span>
+            <div className="h-[1px] w-8 bg-gold/50" />
+          </div>
+        </div>
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 overflow-hidden relative">
-        <div className="relative flex group">
-          <motion.div 
-            className="flex whitespace-nowrap gap-28 md:gap-36 py-8 items-center"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              duration: 150,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          >
-            {/* Show all icons repeated for a truly seamless loop */}
-            {Array.from({ length: 6 }).map((_, setIdx) => (
-              affiliations.map((aff, i) => (
+      <div className="relative overflow-hidden">
+        {/* Fading Edge Overlays */}
+        <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-white to-transparent z-10" />
+        
+        <motion.div 
+          className="flex whitespace-nowrap gap-24 md:gap-32 items-center"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 40,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          {Array.from({ length: 4 }).map((_, setIdx) => (
+            <div key={setIdx} className="flex gap-24 md:gap-32 items-center">
+              {affiliations.map((aff, i) => (
                 <a 
                   key={`${setIdx}-${i}`} 
                   href={aff.url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="transition-all duration-700 transform hover:scale-110 opacity-100 flex-shrink-0"
+                  className="transition-all duration-500 opacity-60 hover:opacity-100 transform hover:scale-105"
                 >
-                  <div className="relative w-36 h-16 md:w-44 md:h-20">
+                  <div className="relative w-32 h-14 md:w-36 md:h-16">
                     <Image 
                       src={aff.img} 
-                      alt={`Accreditation ${i}`} 
+                      alt={`Accreditation Logo`} 
                       fill 
                       className="object-contain" 
                     />
                   </div>
                 </a>
-              ))
-            ))}
-          </motion.div>
-        </div>
+              ))}
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )
