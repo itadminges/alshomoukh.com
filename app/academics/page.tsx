@@ -1,107 +1,126 @@
 "use client"
 
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { useEffect, useRef } from "react"
-import { BookMarked, GraduationCap, School, Layers } from "lucide-react"
+import { useRef } from "react"
+import { motion, useInView } from "framer-motion"
+import { BookMarked, GraduationCap, School, Layers, ChevronRight } from "lucide-react"
+import { PageHero } from "@/components/page-hero"
+import Link from "next/link"
+
+const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x, y }}
+      animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x, y }}
+      transition={{ duration: 0.8, delay }}
+    >
+      {children}
+    </motion.div>
+  )
+}
 
 export default function AcademicsPage() {
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-in")
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    const elements = sectionRef.current?.querySelectorAll(".reveal")
-    elements?.forEach((el) => observer.observe(el))
-
-    return () => observer.disconnect()
-  }, [])
+  const stages = [
+    { 
+      title: "Kindergarten", 
+      icon: Layers, 
+      desc: "Foundation Stage – Play-based and nurturing environment for young learners.",
+      link: "/kindergarten"
+    },
+    { 
+      title: "Primary School", 
+      icon: BookMarked, 
+      desc: "Key Stages 1 & 2 – Strong foundation in literacy, numeracy, and creativity.",
+      link: "/primary-school"
+    },
+    { 
+      title: "Lower Secondary", 
+      icon: School, 
+      desc: "Key Stage 3 – Balanced curriculum for advanced academic pathways.",
+      link: "/lower-secondary"
+    },
+    { 
+      title: "Upper Secondary", 
+      icon: GraduationCap, 
+      desc: "Grades 9–12 – Edexcel IGCSE, International A Levels, and future success.",
+      link: "/upper-secondary"
+    }
+  ]
 
   return (
-    <main className="min-h-screen bg-white" ref={sectionRef}>
-      <Navbar />
-
-      {/* Hero Header */}
-      <section className="bg-primary py-32 mt-[76px] relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 text-center relative z-10">
-          <h1 className="reveal opacity-0 translate-y-8 transition-all duration-700 font-bold text-5xl md:text-6xl text-white tracking-tight uppercase mb-8">
-            Academic Curriculum
-          </h1>
-        </div>
-      </section>
+    <main className="min-h-screen bg-white">
+      <PageHero 
+        title="Academic Excellence" 
+        subtitle="Empowering students through the UK National Curriculum, fostering global minds in a local context."
+      />
 
       {/* Intro Section */}
       <section className="py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <div className="reveal opacity-0 translate-y-4 transition-all duration-500 text-lg text-primary/70 leading-[1.8] space-y-6 font-medium text-center">
-            <p>
-              Al Shomoukh International School follows the UK National Curriculum, while also ensuring compliance with the requirements of the Ministry of Education in Oman.
-            </p>
-            <p>
-              Students are prepared for internationally recognized qualifications, including <span className="text-secondary font-bold">Pearson Edexcel IGCSE</span> and <span className="text-secondary font-bold">Pearson Edexcel International A Levels</span>.
-            </p>
-          </div>
+          <FadeIn>
+            <div className="text-lg text-navy/70 leading-[1.8] space-y-6 font-medium text-center">
+              <p>
+                Al Shomoukh International School follows the UK National Curriculum, while also ensuring compliance with the requirements of the Ministry of Education in Oman.
+              </p>
+              <p>
+                Students are prepared for internationally recognized qualifications, including <span className="text-gold font-bold">Pearson Edexcel IGCSE</span> and <span className="text-gold font-bold">Pearson Edexcel International A Levels</span>.
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Grid of Stages */}
-      <section className="py-24 bg-[#F8F9FA]">
+      <section className="py-24 bg-ivory/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Kindergarten */}
-          <div className="reveal opacity-0 translate-y-8 transition-all duration-700 bg-white p-10 border border-border/50 h-full">
-            <div className="p-3 bg-secondary/10 w-fit mb-8">
-              <Layers className="w-8 h-8 text-secondary" />
-            </div>
-            <h3 className="font-bold text-2xl text-primary mb-6 uppercase tracking-tight">Kindergarten</h3>
-            <p className="text-primary/70 leading-[1.6] mb-8 font-medium">Foundation Stage – Play-based and nurturing environment for young learners.</p>
-          </div>
-
-          {/* Primary */}
-          <div className="reveal opacity-0 translate-y-8 transition-all duration-700 delay-100 bg-white p-10 border border-border/50 h-full">
-            <div className="p-3 bg-secondary/10 w-fit mb-8">
-              <BookMarked className="w-8 h-8 text-secondary" />
-            </div>
-            <h3 className="font-bold text-2xl text-primary mb-6 uppercase tracking-tight">Primary School</h3>
-            <p className="text-primary/70 leading-[1.6] mb-8 font-medium">Key Stages 1 & 2 – Strong foundation in literacy, numeracy, and creativity.</p>
-          </div>
-
-          {/* Lower Secondary */}
-          <div className="reveal opacity-0 translate-y-8 transition-all duration-700 delay-200 bg-white p-10 border border-border/50 h-full">
-            <div className="p-3 bg-secondary/10 w-fit mb-8">
-              <School className="w-8 h-8 text-secondary" />
-            </div>
-            <h3 className="font-bold text-2xl text-primary mb-6 uppercase tracking-tight">Lower Secondary</h3>
-            <p className="text-primary/70 leading-[1.6] mb-8 font-medium">Key Stage 3 – Balanced curriculum for advanced academic pathways.</p>
-          </div>
-
-          {/* Upper Secondary */}
-          <div className="reveal opacity-0 translate-y-8 transition-all duration-700 delay-300 bg-white p-10 border border-border/50 h-full">
-            <div className="p-3 bg-secondary/10 w-fit mb-8">
-              <GraduationCap className="w-8 h-8 text-secondary" />
-            </div>
-            <h3 className="font-bold text-2xl text-primary mb-6 uppercase tracking-tight">Upper Secondary</h3>
-            <p className="text-primary/70 leading-[1.6] mb-8 font-medium">Grades 9–12 – Edexcel IGCSE, International A Levels, and future university success.</p>
-          </div>
+          {stages.map((stage, i) => (
+            <FadeIn key={i} y={40} delay={0.1 * i}>
+              <Link href={stage.link} className="block group h-full">
+                <div className="bg-white p-10 border border-navy/5 shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col group-hover:-translate-y-2">
+                  <div className="p-4 bg-navy text-gold w-fit mb-8 transition-colors group-hover:bg-gold group-hover:text-white">
+                    <stage.icon className="w-8 h-8" />
+                  </div>
+                  <h3 className="font-bold text-xl text-navy mb-6 uppercase tracking-tight group-hover:text-gold transition-colors">{stage.title}</h3>
+                  <p className="text-navy/60 leading-relaxed mb-8 font-medium text-sm flex-grow">
+                    {stage.desc}
+                  </p>
+                  <div className="flex items-center gap-2 text-gold font-bold text-[10px] uppercase tracking-widest group-hover:gap-4 transition-all">
+                    Explore Stage <ChevronRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </Link>
+            </FadeIn>
+          ))}
         </div>
       </section>
 
-      <Footer />
-
-      <style jsx>{`
-        .animate-in {
-          opacity: 1 !important;
-          transform: translate(0) !important;
-        }
-      `}</style>
+      {/* Curriculum Highlight */}
+      <section className="py-32 bg-navy text-white relative">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <FadeIn>
+            <h2 className="text-gold font-bold tracking-[0.4em] uppercase text-[11px] mb-6">World-Class Standards</h2>
+            <h3 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-8">Guided by the UK National Curriculum</h3>
+            <p className="text-lg text-ivory/80 leading-relaxed max-w-3xl mx-auto font-medium mb-12">
+              Our academic programme is designed to challenge students, foster independent thinking, and prepare them for success in leading universities worldwide.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/10 pt-16">
+              {[
+                { label: "Accreditation", value: "Pearson Edexcel" },
+                { label: "Assessment", value: "International Standards" },
+                { label: "Outcome", value: "Global Leadership" }
+              ].map((item, i) => (
+                <div key={i}>
+                  <p className="text-gold font-bold tracking-widest uppercase text-xs mb-2">{item.label}</p>
+                  <p className="text-xl font-bold uppercase tracking-tight">{item.value}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
     </main>
   )
 }
