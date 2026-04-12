@@ -48,10 +48,10 @@ export function Footer() {
   return (
     <footer className="bg-primary text-white pt-24 pb-12 overflow-hidden border-t border-white/5">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-12 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-16 lg:gap-12 mb-24">
           
           {/* Brand Column */}
-          <div className="lg:col-span-4 flex flex-col items-start gap-8">
+          <div className="lg:col-span-4 flex flex-col items-center md:items-start gap-8 order-last lg:order-first pt-10 md:pt-0 border-t border-white/10 md:border-t-0 text-center md:text-left">
             <Link href="/" className="inline-block transition-transform hover:scale-[1.02] duration-500">
               <Image 
                 src="/White SIS Logo-01.png" 
@@ -81,16 +81,16 @@ export function Footer() {
 
           {/* Navigation Clusters */}
           {footerNav.map((cluster) => (
-            <div key={cluster.title} className="lg:col-span-2">
-              <h4 className="text-[11px] font-extrabold tracking-[0.25em] uppercase text-white/40 mb-10">
+            <div key={cluster.title} className="lg:col-span-2 flex flex-col items-center md:items-start">
+              <h4 className="text-[13px] md:text-[11px] font-extrabold tracking-widest md:tracking-[0.25em] uppercase text-white mb-6 md:text-white/40 md:mb-10 text-center md:text-left">
                 {cluster.title}
               </h4>
-              <ul className="flex flex-col gap-5">
+              <ul className="flex flex-col gap-5 items-center md:items-start text-center md:text-left">
                 {cluster.links.map((link) => (
                   <li key={link.label}>
                     <Link 
                       href={link.href}
-                      className="text-[13px] font-bold text-white/60 hover:text-white transition-all duration-300 tracking-wide uppercase group flex items-center"
+                      className="text-[15px] md:text-[13px] font-medium md:font-bold text-white/60 hover:text-white transition-all duration-300 tracking-wide md:uppercase group flex items-center"
                     >
                       <span className="relative">
                         {link.label}
@@ -104,35 +104,38 @@ export function Footer() {
           ))}
 
           {/* Contact Column */}
-          <div className="lg:col-span-2">
-            <h4 className="text-[11px] font-extrabold tracking-[0.25em] uppercase text-white/40 mb-10">
+          <div className="lg:col-span-2 flex flex-col items-center md:items-start">
+            <h4 className="text-[13px] md:text-[11px] font-extrabold tracking-widest md:tracking-[0.25em] uppercase text-white mb-6 md:text-white/40 md:mb-10 text-center md:text-left">
               Contact
             </h4>
-            <ul className="flex flex-col gap-8">
-              <li className="flex flex-col gap-2 group cursor-default">
+            <ul className="flex flex-col gap-6 md:gap-8 w-full items-center md:items-start text-center md:text-left">
+              <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
                 <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
-                  <MapPin className="h-3.5 w-3.5" />
-                  <span className="text-[10px] font-bold tracking-widest uppercase">Location</span>
+                  <span className="inline-block md:hidden"><MapPin className="h-4 w-4" /></span>
+                  <span className="hidden md:inline-block"><MapPin className="h-3.5 w-3.5" /></span>
+                  <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Location</span>
                 </div>
-                <span className="text-[13px] font-medium text-white/70 leading-relaxed pl-6.5 border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
-                  P.O. Box 71, PC 111, <br />Al Hail South, Muscat, <br />Sultanate of Oman
+                <span className="text-[15px] md:text-[13px] font-medium text-white/70 leading-relaxed md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
+                  P.O. Box 71, PC 111, <br className="hidden md:block" />Al Hail South, Muscat, <br className="hidden md:block" />Sultanate of Oman
                 </span>
               </li>
-              <li className="flex flex-col gap-2 group cursor-default">
+              <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
                 <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
-                  <Phone className="h-3.5 w-3.5" />
-                  <span className="text-[10px] font-bold tracking-widest uppercase">Inquiries</span>
+                  <span className="inline-block md:hidden"><Phone className="h-4 w-4" /></span>
+                  <span className="hidden md:inline-block"><Phone className="h-3.5 w-3.5" /></span>
+                  <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Inquiries</span>
                 </div>
-                <span className="text-[13px] font-medium text-white/70 pl-6.5 border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
+                <span className="text-[15px] md:text-[13px] font-medium text-white/70 md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
                   +968 2452 7100
                 </span>
               </li>
-              <li className="flex flex-col gap-2 group cursor-default">
+              <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
                 <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
-                  <Mail className="h-3.5 w-3.5" />
-                  <span className="text-[10px] font-bold tracking-widest uppercase">Email</span>
+                  <span className="inline-block md:hidden"><Mail className="h-4 w-4" /></span>
+                  <span className="hidden md:inline-block"><Mail className="h-3.5 w-3.5" /></span>
+                  <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Email</span>
                 </div>
-                <span className="text-[13px] font-medium text-white/70 pl-6.5 border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
+                <span className="text-[15px] md:text-[13px] font-medium text-white/70 md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
                   info@alshomoukh.com
                 </span>
               </li>
@@ -154,11 +157,15 @@ export function Footer() {
             </div>
           </div>
           
-          <div className="flex items-center gap-4 order-1 md:order-2">
-            <span className="text-[11px] font-bold text-white/20 tracking-[0.3em] uppercase">Designed for</span>
-            <div className="px-4 py-2 border border-white/10 group hover:border-white/30 transition-all duration-500 cursor-default">
-              <span className="text-[12px] font-black text-white/50 group-hover:text-white tracking-[0.4em] uppercase transition-colors">Excellence</span>
-            </div>
+          <div className="flex items-center gap-5 order-1 md:order-2">
+            <span className="text-[11px] font-bold text-white/30 tracking-[0.3em] uppercase">Provided by</span>
+            <Image 
+              src="/ges-logo.png" 
+              alt="GES" 
+              width={100} 
+              height={40} 
+              className="h-9 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+            />
           </div>
         </div>
       </div>

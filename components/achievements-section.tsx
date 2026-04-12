@@ -40,22 +40,22 @@ export function AchievementsSection() {
       <div className="relative mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-8">
           <div className="max-w-xl">
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-4 md:mb-6">
               <span className="text-gold font-bold tracking-[0.3em] uppercase text-[9px]">
                 Student Spotlights
               </span>
               <div className="h-[1px] w-8 bg-gold/30" />
             </div>
             
-            <h2 className="text-2xl md:text-3xl lg:text-4xl leading-[1.2] tracking-tight font-bold uppercase">
-              Voices of <br />
+            <h2 className="text-3xl md:text-3xl lg:text-4xl leading-[1.2] tracking-tight font-bold uppercase">
+              Voices of <br className="hidden md:block" />
               <span className="text-gold">Achievement</span>
             </h2>
           </div>
           
-          <p className="text-ivory/60 text-xs max-w-xs leading-relaxed mb-1">
+          <p className="text-ivory/60 text-xs max-w-xs leading-relaxed mb-0 md:mb-1">
             Celebrating the scholars who define the spirit and legacy of Al Shomoukh International.
           </p>
         </div>
@@ -72,7 +72,7 @@ export function AchievementsSection() {
               className="group relative"
             >
               {/* Image Card */}
-              <div className="relative w-full max-w-[220px] aspect-[4/5] overflow-hidden mb-8 border border-white/5">
+              <div className="relative w-full aspect-[4/5] sm:max-w-[240px] md:max-w-[220px] overflow-hidden mb-6 md:mb-8 border border-white/5">
                 <Image
                   src={student.image}
                   alt={student.name}
