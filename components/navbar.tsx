@@ -1,14 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Search, ChevronDown } from "lucide-react"
+import { Menu, Search, ChevronDown, X } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useScroll, useMotionValueEvent } from "framer-motion"
+import { useScroll, useMotionValueEvent, motion, AnimatePresence } from "framer-motion"
 
 const navLinks = [
   { href: "/about", label: "About Us" },
@@ -32,11 +31,25 @@ const navLinks = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [openSubmenuTitle, setOpenSubmenuTitle] = useState<string | null>(null)
   const pathname = usePathname()
   
   // Only transparent on homepage at top
   const isHomePage = pathname === "/"
   const forceSolid = !isHomePage || isScrolled
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+      setOpenSubmenuTitle(null)
+    }
+    return () => {
+      document.body.style.overflow = "unset"
+    }
+  }, [isOpen])
 
   const { scrollY } = useScroll()
   
@@ -152,31 +165,37 @@ export function Navbar() {
             </div>
 
             {/* Mobile Menu Toggle */}
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <div className="flex items-center gap-4 lg:hidden">
-                <button className={cn(
+            <div className="flex items-center gap-4 lg:hidden">
+              <button className={cn(
+                "transition-colors duration-300",
+                forceSolid ? "text-primary" : "text-white"
+              )}>
+                <Search className="h-5 w-5" />
+              </button>
+              <Button 
+                variant="ghost" 
+                size="icon"
+                onClick={() => setIsOpen(true)}
+                className={cn(
                   "transition-colors duration-300",
                   forceSolid ? "text-primary" : "text-white"
-                )}>
-                  <Search className="h-5 w-5" />
-                </button>
-                <SheetTrigger asChild>
-                  <Button 
-                    variant="ghost" 
-                    size="icon"
-                    className={cn(
-                      "transition-colors duration-300",
-                      forceSolid ? "text-primary" : "text-white"
-                    )}
-                  >
-                    <Menu className="h-6 w-6" />
-                    <span className="sr-only">Toggle menu</span>
-                  </Button>
-                </SheetTrigger>
-              </div>
-              <SheetContent side="right" className="w-[320px] bg-white border-l border-border/50 p-0 overflow-y-auto">
-                <div className="flex flex-col h-full bg-white">
-                  <div className="p-8 border-b border-border/10">
+                )}
+              >
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </div>
+
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: "-10%" }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: "-10%" }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="fixed inset-0 z-[100] bg-white flex flex-col overflow-hidden w-full h-full"
+                >
+                  <div className="flex items-center justify-between p-6 border-b border-border/10 shrink-0">
                     <Image 
                       src="/SIS Logo-01.png" 
                       alt="SIS Logo" 
@@ -184,46 +203,86 @@ export function Navbar() {
                       height={50} 
                       className="h-10 w-auto object-contain"
                     />
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      onClick={() => setIsOpen(false)}
+                      className="text-primary hover:bg-muted/50 rounded-full h-10 w-10"
+                    >
+                      <X className="h-6 w-6" />
+                    </Button>
                   </div>
-                  <nav className="flex flex-col py-6 px-4">
-                    {navLinks.map((link) => (
-                      <div key={link.label} className="mb-2">
-                        <Link
-                          href={link.href || "#"}
-                          onClick={() => !link.submenu && setIsOpen(false)}
-                          className="px-4 py-3 text-[14px] font-bold text-primary/80 hover:text-primary hover:bg-muted flex items-center justify-between tracking-widest uppercase transition-colors"
+
+                  <div className="flex-1 flex flex-col justify-start overflow-y-auto px-6 py-8 max-w-lg mx-auto w-full">
+                    <nav className="flex flex-col gap-4">
+                      {navLinks.map((link, i) => (
+                        <motion.div 
+                          key={link.label}
+                          initial={{ y: 40, opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          transition={{ delay: 0.1 + i * 0.1, type: "spring", stiffness: 150 }}
+                          className="flex flex-col"
                         >
-                          {link.label}
-                          {link.submenu && <ChevronDown className="h-4 w-4" />}
-                        </Link>
-                        {link.submenu && (
-                          <div className="mt-1 mb-2 bg-muted/30">
-                            {link.submenu.map((sub) => (
-                              <Link
-                                key={sub.href}
-                                href={sub.href}
-                                onClick={() => setIsOpen(false)}
-                                className="px-10 py-3 text-[12px] font-bold text-primary/60 hover:text-primary block tracking-widest uppercase"
+                          {link.submenu ? (
+                            <button
+                              onClick={() => setOpenSubmenuTitle(openSubmenuTitle === link.label ? null : link.label)}
+                              className="text-[16px] md:text-[18px] font-extrabold text-primary hover:text-secondary flex w-full items-start justify-between tracking-widest uppercase transition-colors text-left"
+                            >
+                              <span className="pr-4">{link.label}</span>
+                              <ChevronDown className={cn("h-4 w-4 text-primary/50 transition-transform duration-300 shrink-0 mt-0.5", openSubmenuTitle === link.label ? "rotate-180" : "")} />
+                            </button>
+                          ) : (
+                            <Link
+                              href={link.href || "#"}
+                              onClick={() => setIsOpen(false)}
+                              className="text-[16px] md:text-[18px] font-extrabold text-primary hover:text-secondary flex items-start justify-between tracking-widest uppercase transition-colors text-left w-full"
+                            >
+                              {link.label}
+                            </Link>
+                          )}
+                          
+                          <AnimatePresence>
+                            {link.submenu && openSubmenuTitle === link.label && (
+                              <motion.div 
+                                initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                                animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                                exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                                className="flex flex-col gap-4 pl-4 border-l-2 border-secondary/20 overflow-hidden"
                               >
-                                {sub.label}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </nav>
-                  <div className="mt-auto p-8 bg-muted/20 flex flex-col gap-4">
-                    <Button className="bg-secondary text-white hover:bg-secondary/90 w-full py-7 text-[14px] font-extrabold tracking-widest uppercase rounded-none shadow-md transition-all" asChild>
+                                {link.submenu.map((sub, j) => (
+                                  <Link
+                                    key={sub.href}
+                                    href={sub.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className="text-[12px] md:text-[14px] font-bold text-primary/60 hover:text-secondary block tracking-[0.2em] uppercase transition-colors"
+                                  >
+                                    {sub.label}
+                                  </Link>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </motion.div>
+                      ))}
+                    </nav>
+                  </div>
+
+                  <motion.div 
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                    className="p-6 bg-muted/10 flex flex-col sm:flex-row gap-3 mt-auto shrink-0 justify-center items-center border-t border-border/10"
+                  >
+                    <Button className="bg-secondary text-white hover:bg-secondary/90 w-full sm:w-1/2 py-5 text-[13px] font-extrabold tracking-widest uppercase rounded-sm shadow-md transition-all h-auto" asChild>
                       <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">Parent Portal</Link>
                     </Button>
-                    <Button className="bg-primary text-white hover:bg-primary/90 w-full py-7 text-[14px] font-extrabold tracking-widest uppercase rounded-none shadow-lg" asChild>
+                    <Button className="bg-primary text-white hover:bg-primary/90 w-full sm:w-1/2 py-5 text-[13px] font-extrabold tracking-widest uppercase rounded-sm shadow-lg h-auto" asChild>
                       <Link href="/admissions">Apply Now</Link>
                     </Button>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </nav>
       </div>
