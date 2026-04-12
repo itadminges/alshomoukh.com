@@ -62,7 +62,8 @@ export function Navbar() {
   })
 
   return (
-    <header 
+    <>
+      <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4 font-sans",
         forceSolid 
@@ -186,106 +187,108 @@ export function Navbar() {
               </Button>
             </div>
 
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: "-10%" }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: "-10%" }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="fixed inset-0 z-[100] bg-white flex flex-col overflow-hidden w-full h-full"
-                >
-                  <div className="flex items-center justify-between p-6 border-b border-border/10 shrink-0">
-                    <Image 
-                      src="/SIS Logo-01.png" 
-                      alt="SIS Logo" 
-                      width={180} 
-                      height={50} 
-                      className="h-10 w-auto object-contain"
-                    />
-                    <Button 
-                      variant="ghost" 
-                      size="icon" 
-                      onClick={() => setIsOpen(false)}
-                      className="text-primary hover:bg-muted/50 rounded-full h-10 w-10"
-                    >
-                      <X className="h-6 w-6" />
-                    </Button>
-                  </div>
-
-                  <div className="flex-1 flex flex-col justify-start overflow-y-auto px-6 py-8 max-w-lg mx-auto w-full">
-                    <nav className="flex flex-col gap-4">
-                      {navLinks.map((link, i) => (
-                        <motion.div 
-                          key={link.label}
-                          initial={{ y: 40, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          transition={{ delay: 0.1 + i * 0.1, type: "spring", stiffness: 150 }}
-                          className="flex flex-col"
-                        >
-                          {link.submenu ? (
-                            <button
-                              onClick={() => setOpenSubmenuTitle(openSubmenuTitle === link.label ? null : link.label)}
-                              className="text-[16px] md:text-[18px] font-extrabold text-primary hover:text-secondary flex w-full items-start justify-between tracking-widest uppercase transition-colors text-left"
-                            >
-                              <span className="pr-4">{link.label}</span>
-                              <ChevronDown className={cn("h-4 w-4 text-primary/50 transition-transform duration-300 shrink-0 mt-0.5", openSubmenuTitle === link.label ? "rotate-180" : "")} />
-                            </button>
-                          ) : (
-                            <Link
-                              href={link.href || "#"}
-                              onClick={() => setIsOpen(false)}
-                              className="text-[16px] md:text-[18px] font-extrabold text-primary hover:text-secondary flex items-start justify-between tracking-widest uppercase transition-colors text-left w-full"
-                            >
-                              {link.label}
-                            </Link>
-                          )}
-                          
-                          <AnimatePresence>
-                            {link.submenu && openSubmenuTitle === link.label && (
-                              <motion.div 
-                                initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                                animate={{ height: "auto", opacity: 1, marginTop: 16 }}
-                                exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                                className="flex flex-col gap-4 pl-4 border-l-2 border-secondary/20 overflow-hidden"
-                              >
-                                {link.submenu.map((sub, j) => (
-                                  <Link
-                                    key={sub.href}
-                                    href={sub.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="text-[12px] md:text-[14px] font-bold text-primary/60 hover:text-secondary block tracking-[0.2em] uppercase transition-colors"
-                                  >
-                                    {sub.label}
-                                  </Link>
-                                ))}
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </motion.div>
-                      ))}
-                    </nav>
-                  </div>
-
-                  <motion.div 
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    className="p-6 bg-muted/10 flex flex-col sm:flex-row gap-3 mt-auto shrink-0 justify-center items-center border-t border-border/10"
-                  >
-                    <Button className="bg-secondary text-white hover:bg-secondary/90 w-full sm:w-1/2 py-5 text-[13px] font-extrabold tracking-widest uppercase rounded-sm shadow-md transition-all h-auto" asChild>
-                      <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">Parent Portal</Link>
-                    </Button>
-                    <Button className="bg-primary text-white hover:bg-primary/90 w-full sm:w-1/2 py-5 text-[13px] font-extrabold tracking-widest uppercase rounded-sm shadow-lg h-auto" asChild>
-                      <Link href="/admissions">Apply Now</Link>
-                    </Button>
-                  </motion.div>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
         </nav>
       </div>
     </header>
+
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: "-10%" }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: "-10%" }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed inset-0 z-[100] bg-white flex flex-col overflow-hidden w-full h-full"
+        >
+          <div className="flex items-center justify-between p-6 border-b border-border/10 shrink-0">
+            <Image 
+              src="/SIS Logo-01.png" 
+              alt="SIS Logo" 
+              width={180} 
+              height={50} 
+              className="h-10 w-auto object-contain"
+            />
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={() => setIsOpen(false)}
+              className="text-primary hover:bg-muted/50 rounded-full h-10 w-10"
+            >
+              <X className="h-6 w-6" />
+            </Button>
+          </div>
+
+          <div className="flex-1 flex flex-col justify-start overflow-y-auto px-6 py-8 max-w-lg mx-auto w-full">
+            <nav className="flex flex-col gap-4">
+              {navLinks.map((link, i) => (
+                <motion.div 
+                  key={link.label}
+                  initial={{ y: 40, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.1 + i * 0.1, type: "spring", stiffness: 150 }}
+                  className="flex flex-col"
+                >
+                  {link.submenu ? (
+                    <button
+                      onClick={() => setOpenSubmenuTitle(openSubmenuTitle === link.label ? null : link.label)}
+                      className="text-[16px] md:text-[18px] font-extrabold text-primary hover:text-secondary flex w-full items-start justify-between tracking-widest uppercase transition-colors text-left"
+                    >
+                      <span className="pr-4">{link.label}</span>
+                      <ChevronDown className={cn("h-4 w-4 text-primary/50 transition-transform duration-300 shrink-0 mt-0.5", openSubmenuTitle === link.label ? "rotate-180" : "")} />
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href || "#"}
+                      onClick={() => setIsOpen(false)}
+                      className="text-[16px] md:text-[18px] font-extrabold text-primary hover:text-secondary flex items-start justify-between tracking-widest uppercase transition-colors text-left w-full"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                  
+                  <AnimatePresence>
+                    {link.submenu && openSubmenuTitle === link.label && (
+                      <motion.div 
+                        initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                        animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                        exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                        className="flex flex-col gap-4 pl-4 border-l-2 border-secondary/20 overflow-hidden"
+                      >
+                        {link.submenu.map((sub, j) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={() => setIsOpen(false)}
+                            className="text-[12px] md:text-[14px] font-bold text-primary/60 hover:text-secondary block tracking-[0.2em] uppercase transition-colors"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              ))}
+            </nav>
+          </div>
+
+          <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="p-6 bg-muted/10 flex flex-col sm:flex-row gap-3 mt-auto shrink-0 justify-center items-center border-t border-border/10"
+          >
+            <Button className="bg-secondary text-white hover:bg-secondary/90 w-full sm:w-1/2 py-5 text-[13px] font-extrabold tracking-widest uppercase rounded-sm shadow-md transition-all h-auto" asChild>
+              <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">Parent Portal</Link>
+            </Button>
+            <Button className="bg-primary text-white hover:bg-primary/90 w-full sm:w-1/2 py-5 text-[13px] font-extrabold tracking-widest uppercase rounded-sm shadow-lg h-auto" asChild>
+              <Link href="/admissions">Apply Now</Link>
+            </Button>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   )
 }
