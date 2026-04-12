@@ -40,9 +40,9 @@ export function AchievementsSection() {
       <div className="relative mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-16 gap-6 md:gap-8 text-center md:text-left">
           <div className="max-w-xl">
-            <div className="flex items-center gap-4 mb-4 md:mb-6">
+            <div className="flex items-center justify-center md:justify-start gap-4 mb-4 md:mb-6">
               <span className="text-gold font-bold tracking-[0.3em] uppercase text-[9px]">
                 Student Spotlights
               </span>
@@ -72,7 +72,7 @@ export function AchievementsSection() {
               className="group relative"
             >
               {/* Image Card */}
-              <div className="relative w-[180px] sm:w-full aspect-[4/5] sm:max-w-[240px] md:max-w-[220px] overflow-hidden mb-6 md:mb-8 border border-white/5">
+              <div className="relative w-[180px] mx-auto sm:mx-0 sm:w-full aspect-[4/5] sm:max-w-[240px] md:max-w-[220px] overflow-hidden mb-6 md:mb-8 border border-white/5">
                 <Image
                   src={student.image}
                   alt={student.name}
@@ -87,7 +87,7 @@ export function AchievementsSection() {
               </div>
 
               {/* Content */}
-              <div className="relative">
+              <div className="relative text-center sm:text-left">
                 <h3 className="text-xl mb-1 font-bold tracking-tight uppercase group-hover:text-gold transition-colors">
                   {student.name}
                 </h3>
@@ -99,7 +99,7 @@ export function AchievementsSection() {
                   {student.achievement}
                 </p>
                 
-                <div className="mt-6 flex items-center gap-1.5 opacity-40">
+                <div className="mt-6 flex items-center justify-center sm:justify-start gap-1.5 opacity-40">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="h-2 w-2 fill-gold text-gold" />
                   ))}

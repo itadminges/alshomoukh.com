@@ -64,8 +64,8 @@ export function Navbar() {
   return (
     <>
       <header 
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4 font-sans",
+        className={cn(
+          "fixed top-0 left-0 right-0 z-[100] transition-all duration-500 py-4 font-sans",
         forceSolid 
           ? "bg-white/95 backdrop-blur-md border-b border-border/40 shadow-sm py-3" 
           : "bg-transparent py-5"
@@ -166,7 +166,7 @@ export function Navbar() {
             </div>
 
             {/* Mobile Menu Toggle */}
-            <div className="flex items-center gap-4 lg:hidden">
+            <div className="flex items-center gap-4 lg:hidden relative z-[101]">
               <button className={cn(
                 "transition-colors duration-300",
                 forceSolid ? "text-primary" : "text-white"
@@ -199,7 +199,7 @@ export function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: "-10%" }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-[100] bg-white flex flex-col overflow-hidden w-full h-full"
+          className="fixed inset-0 z-[200] bg-white flex flex-col overflow-hidden w-full h-full"
         >
           <div className="flex items-center justify-between p-6 border-b border-border/10 shrink-0">
             <Image 
@@ -219,7 +219,10 @@ export function Navbar() {
             </Button>
           </div>
 
-          <div className="flex-1 flex flex-col justify-start overflow-y-auto px-6 py-8 max-w-lg mx-auto w-full">
+          <div 
+            className="flex-1 flex flex-col justify-start overflow-y-auto px-6 py-8 max-w-lg mx-auto w-full"
+            data-lenis-prevent
+          >
             <nav className="flex flex-col gap-4">
               {navLinks.map((link, i) => (
                 <motion.div 
