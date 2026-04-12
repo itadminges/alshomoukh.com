@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Sparkles, Heart, Puzzle, CheckCircle2 } from "lucide-react"
+import { Sparkles, Heart, Puzzle } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 
 const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
@@ -58,7 +58,6 @@ export default function KindergartenPage() {
             {learningAreas.map((area, i) => (
               <FadeIn key={i} x={-20} delay={0.05 * i}>
                 <div className="flex gap-4 items-center bg-ivory/20 p-6 border-l-4 border-gold group hover:bg-gold/5 transition-colors">
-                  <CheckCircle2 className="w-5 h-5 text-gold shrink-0" />
                   <span className="text-navy font-bold text-base uppercase tracking-tight">{area}</span>
                 </div>
               </FadeIn>

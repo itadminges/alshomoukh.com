@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { GraduationCap, Award, Building, BookMarked, ArrowRight, CheckCircle2 } from "lucide-react"
+import { GraduationCap, Award, Building, BookMarked, ArrowRight } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 
 const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
@@ -52,7 +52,6 @@ export default function UpperSecondaryPage() {
                 <ul className="space-y-4 font-medium text-ivory/70 relative z-10">
                   {["Mathematics", "English Language", "Triple Science (Biology, Physics, Chemistry)"].map((sub, i) => (
                     <li key={i} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
                       {sub}
                     </li>
                   ))}

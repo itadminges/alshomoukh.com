@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Heart, Users, Activity, CheckCircle2, ShieldCheck, Target, Sparkles } from "lucide-react"
+import { Heart, Users, Activity, ShieldCheck, Target, Sparkles } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 
 const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
@@ -66,9 +66,6 @@ export default function LearningSupportPage() {
                 {strategies.map((item, i) => (
                   <FadeIn key={i} x={-20} delay={0.05 * i}>
                     <div className="flex gap-4 items-center">
-                      <div className="p-1 bg-gold/10 rounded-full shrink-0">
-                        <CheckCircle2 className="w-5 h-5 text-gold" />
-                      </div>
                       <span className="text-navy font-bold text-sm uppercase tracking-tight">{item}</span>
                     </div>
                   </FadeIn>

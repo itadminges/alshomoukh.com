@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { School, CheckCircle2, BookOpen, Globe, Microscope, Calculator, Palette, Music, Cpu, Activity } from "lucide-react"
+import { School, BookOpen, Globe, Microscope, Calculator, Palette, Music, Cpu, Activity } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 
 const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
@@ -87,7 +87,6 @@ export default function LowerSecondaryPage() {
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {["Arabic Language", "Islamic Studies", "Omani Social Studies"].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-navy font-bold uppercase tracking-tight text-sm">
-                      <CheckCircle2 className="w-5 h-5 text-gold" />
                       {item}
                     </li>
                   ))}
