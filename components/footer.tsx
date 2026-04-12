@@ -1,8 +1,9 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
+import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin, ArrowRight, Plus, Minus } from "lucide-react"
 
 const socialLinks = [
   { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
@@ -45,13 +46,19 @@ const footerNav = [
 ]
 
 export function Footer() {
+  const [openSection, setOpenSection] = useState<string | null>(null)
+
+  const toggleSection = (title: string) => {
+    setOpenSection(prev => prev === title ? null : title)
+  }
+
   return (
     <footer className="bg-primary text-white pt-24 pb-12 overflow-hidden border-t border-white/5">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-16 lg:gap-12 mb-24">
+        <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-12 md:gap-16 lg:gap-12 mb-24">
           
           {/* Brand Column */}
-          <div className="lg:col-span-4 flex flex-col items-center md:items-start gap-8 order-last lg:order-first pt-10 md:pt-0 border-t border-white/10 md:border-t-0 text-center md:text-left">
+          <div className="lg:col-span-4 flex flex-col items-center md:items-start gap-8 order-last lg:order-first mt-12 pt-12 md:pt-0 border-t border-white/10 md:border-t-0 md:mt-0 text-center md:text-left">
             <Link href="/" className="inline-block transition-transform hover:scale-[1.02] duration-500">
               <Image 
                 src="/White SIS Logo-01.png" 
@@ -81,11 +88,24 @@ export function Footer() {
 
           {/* Navigation Clusters */}
           {footerNav.map((cluster) => (
-            <div key={cluster.title} className="lg:col-span-2 flex flex-col items-center md:items-start">
-              <h4 className="text-[13px] md:text-[11px] font-extrabold tracking-widest md:tracking-[0.25em] uppercase text-white mb-6 md:text-white/40 md:mb-10 text-center md:text-left">
-                {cluster.title}
-              </h4>
-              <ul className="flex flex-col gap-5 items-center md:items-start text-center md:text-left">
+            <div key={cluster.title} className="lg:col-span-2 flex flex-col items-center md:items-start w-full border-b border-white/5 md:border-b-0 py-4 md:py-0">
+              <button 
+                onClick={() => toggleSection(cluster.title)}
+                className="w-full flex items-center justify-between md:justify-start md:cursor-default"
+              >
+                <h4 className="text-[13px] md:text-[11px] font-extrabold tracking-widest md:tracking-[0.25em] uppercase text-white md:text-white/40 text-center md:text-left md:mb-10">
+                  {cluster.title}
+                </h4>
+                <div className="md:hidden text-white/40">
+                  {openSection === cluster.title ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                </div>
+              </button>
+              <div 
+                className={`overflow-hidden transition-all duration-300 ease-in-out w-full md:!max-h-[1000px] md:!opacity-100 ${
+                  openSection === cluster.title ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0 md:mt-0"
+                }`}
+              >
+              <ul className="flex flex-col gap-5 items-center md:items-start text-center md:text-left pb-2 md:pb-0">
                 {cluster.links.map((link) => (
                   <li key={link.label}>
                     <Link 
@@ -100,15 +120,29 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
+              </div>
             </div>
           ))}
 
           {/* Contact Column */}
-          <div className="lg:col-span-2 flex flex-col items-center md:items-start">
-            <h4 className="text-[13px] md:text-[11px] font-extrabold tracking-widest md:tracking-[0.25em] uppercase text-white mb-6 md:text-white/40 md:mb-10 text-center md:text-left">
-              Contact
-            </h4>
-            <ul className="flex flex-col gap-6 md:gap-8 w-full items-center md:items-start text-center md:text-left">
+          <div className="lg:col-span-2 flex flex-col items-center md:items-start w-full border-b border-white/5 md:border-b-0 py-4 md:py-0">
+            <button 
+              onClick={() => toggleSection('Contact')}
+              className="w-full flex items-center justify-between md:justify-start md:cursor-default"
+            >
+              <h4 className="text-[13px] md:text-[11px] font-extrabold tracking-widest md:tracking-[0.25em] uppercase text-white md:text-white/40 text-center md:text-left md:mb-10">
+                Contact
+              </h4>
+              <div className="md:hidden text-white/40">
+                {openSection === 'Contact' ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+              </div>
+            </button>
+            <div 
+              className={`overflow-hidden transition-all duration-300 ease-in-out w-full md:!max-h-[1000px] md:!opacity-100 ${
+                openSection === 'Contact' ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0 md:mt-0"
+              }`}
+            >
+            <ul className="flex flex-col gap-6 md:gap-8 w-full items-center md:items-start text-center md:text-left pb-2 md:pb-0">
               <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
                 <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
                   <span className="inline-block md:hidden"><MapPin className="h-4 w-4" /></span>
@@ -140,6 +174,7 @@ export function Footer() {
                 </span>
               </li>
             </ul>
+            </div>
           </div>
 
         </div>
@@ -158,13 +193,13 @@ export function Footer() {
           </div>
           
           <div className="flex items-center gap-5 order-1 md:order-2">
-            <span className="text-[11px] font-bold text-white/30 tracking-[0.3em] uppercase">Provided by</span>
+            <span className="text-[7px] font-bold text-white/60 tracking-[0.3em] uppercase">Provided by</span>
             <Image 
               src="/ges-logo.png" 
               alt="GES" 
-              width={100} 
-              height={40} 
-              className="h-9 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+              width={120} 
+              height={48} 
+              className="h-10 w-auto object-contain opacity-100 transition-opacity duration-300"
             />
           </div>
         </div>
