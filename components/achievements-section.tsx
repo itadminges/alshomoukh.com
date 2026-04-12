@@ -72,7 +72,7 @@ export function AchievementsSection() {
               className="group relative"
             >
               {/* Image Card */}
-              <div className="relative aspect-[3/4] overflow-hidden mb-8 border border-white/5">
+              <div className="relative w-full max-w-[220px] aspect-[4/5] overflow-hidden mb-8 border border-white/5">
                 <Image
                   src={student.image}
                   alt={student.name}

@@ -124,7 +124,19 @@ export function Navbar() {
               <Search className="h-4 w-4" />
             </button>
             
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex gap-4">
+              <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">
+                <Button
+                  className={cn(
+                    "px-6 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all duration-500 h-11 border border-secondary",
+                    forceSolid 
+                      ? "bg-secondary text-white hover:bg-secondary/90 shadow-md" 
+                      : "bg-secondary text-white hover:bg-white hover:text-secondary hover:border-white shadow-md"
+                  )}
+                >
+                  Parent Portal
+                </Button>
+              </Link>
               <Link href="/admissions">
                 <Button
                   className={cn(
@@ -201,7 +213,10 @@ export function Navbar() {
                       </div>
                     ))}
                   </nav>
-                  <div className="mt-auto p-8 bg-muted/20">
+                  <div className="mt-auto p-8 bg-muted/20 flex flex-col gap-4">
+                    <Button className="bg-secondary text-white hover:bg-secondary/90 w-full py-7 text-[14px] font-extrabold tracking-widest uppercase rounded-none shadow-md transition-all" asChild>
+                      <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">Parent Portal</Link>
+                    </Button>
                     <Button className="bg-primary text-white hover:bg-primary/90 w-full py-7 text-[14px] font-extrabold tracking-widest uppercase rounded-none shadow-lg" asChild>
                       <Link href="/admissions">Apply Now</Link>
                     </Button>

@@ -48,7 +48,7 @@ export function NewsletterSection() {
                     Apply Now
                     <ArrowRight className="ml-2 h-3 w-3" />
                   </Button>
-                  <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-navy h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+                  <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all bg-transparent">
                     Inquiry
                   </Button>
                 </div>
