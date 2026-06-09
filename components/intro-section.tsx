@@ -5,7 +5,7 @@ import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
-import { Scroll3DReveal } from "@/components/scroll-3d"
+import { Scroll3DReveal, useOneWayScrollProgress } from "@/components/scroll-3d"
 
 
 export function IntroSection() {
@@ -15,8 +15,10 @@ export function IntroSection() {
     offset: ["start end", "end start"]
   })
 
-  const imageY = useTransform(scrollYProgress, [0, 1], [-50, 50])
-  const textRotateY = useTransform(scrollYProgress, [0, 0.5, 1], [12, 0, -6])
+  const progress = useOneWayScrollProgress(scrollYProgress)
+
+  const imageY = useTransform(progress, [0, 1], [-50, 50])
+  const textRotateY = useTransform(progress, [0, 0.5, 1], [12, 0, -6])
 
   return (
     <section ref={containerRef} className="pt-24 md:pt-40 bg-white relative overflow-hidden scroll-3d-scene">
