@@ -15,16 +15,21 @@ export function HeroSection() {
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 200])
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  const bgRotateX = useTransform(scrollYProgress, [0, 1], [0, 14])
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.12])
+  const contentRotateX = useTransform(scrollYProgress, [0, 0.75], [0, -18])
+  const contentZ = useTransform(scrollYProgress, [0, 0.75], [0, -120])
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
   return (
     <section 
       ref={containerRef}
-      className="relative h-screen flex items-center justify-center overflow-hidden bg-navy"
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-navy scroll-3d-scene-deep"
     >
       {/* Background Media Layer */}
       <motion.div 
-        style={{ y: y1 }}
-        className="absolute inset-0 z-0"
+        style={{ y: y1, rotateX: bgRotateX, scale: bgScale, transformStyle: "preserve-3d" }}
+        className="absolute inset-0 z-0 origin-center"
       >
         <Image
           src="/hero-bg.png"
@@ -44,6 +49,9 @@ export function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
+          <motion.div
+            style={{ rotateX: contentRotateX, translateZ: contentZ, opacity: contentOpacity, transformStyle: "preserve-3d" }}
+          >
           {/* Trust Indicator */}
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-[1px] w-6 bg-gold/50" />
@@ -72,6 +80,7 @@ export function HeroSection() {
               <span className="text-[11px] font-bold tracking-[0.2em] uppercase">Experience SIS</span>
             </button>
           </div>
+          </motion.div>
         </motion.div>
       </div>
 

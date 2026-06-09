@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react"
 import { motion, useSpring, useInView, useTransform } from "framer-motion"
+import { Scroll3DReveal } from "@/components/scroll-3d"
 
 const stats = [
   { label: "Established", value: 1997, suffix: "" },
@@ -33,23 +34,21 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export function StatsSection() {
   return (
-    <section className="relative py-16 bg-white overflow-hidden border-y border-navy/5">
+    <section className="relative py-16 bg-white overflow-hidden border-y border-navy/5 scroll-3d-scene">
       <div className="relative mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {stats.map((stat, index) => (
-            <motion.div
+            <Scroll3DReveal
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              rotateAmount={14 + index * 2}
+              depth={30 + index * 8}
               className="flex flex-col items-start"
             >
               <Counter value={stat.value} suffix={stat.suffix} />
               <p className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-navy/40">
                 {stat.label}
               </p>
-            </motion.div>
+            </Scroll3DReveal>
           ))}
         </div>
       </div>

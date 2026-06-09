@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { Scroll3DCard } from "@/components/scroll-3d"
 import { Quote, Star } from "lucide-react"
 
 const testimonials = [
@@ -35,7 +36,7 @@ export function AchievementsSection() {
   return (
     <section
       ref={containerRef}
-      className="relative py-24 bg-navy text-white overflow-hidden"
+      className="relative py-24 bg-navy text-white overflow-hidden scroll-3d-scene-deep"
     >
       <div className="relative mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         
@@ -63,14 +64,7 @@ export function AchievementsSection() {
         {/* Spotlights Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
           {testimonials.map((student, index) => (
-            <motion.div
-              key={student.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="group relative"
-            >
+            <Scroll3DCard key={student.name} index={index} className="group relative">
               {/* Image Card */}
               <div className="relative w-[180px] mx-auto sm:mx-0 sm:w-full aspect-[4/5] sm:max-w-[240px] md:max-w-[220px] overflow-hidden mb-6 md:mb-8 border border-white/5">
                 <Image
@@ -105,7 +99,7 @@ export function AchievementsSection() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </Scroll3DCard>
           ))}
         </div>
       </div>

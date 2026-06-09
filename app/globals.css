@@ -211,4 +211,14 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .scroll-3d-scene {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+  }
+
+  .scroll-3d-scene-deep {
+    perspective: 1600px;
+    transform-style: preserve-3d;
+  }
 }

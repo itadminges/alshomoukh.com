@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { Calendar, ArrowRight, Rss } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import { Scroll3DCard } from "@/components/scroll-3d"
 
 const events = [
   {
@@ -35,7 +36,7 @@ export function EventsSection() {
   return (
     <section
       ref={containerRef}
-      className="relative py-24 bg-white overflow-hidden"
+      className="relative py-24 bg-white overflow-hidden scroll-3d-scene"
     >
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         
@@ -95,12 +96,9 @@ export function EventsSection() {
           <div className="lg:col-span-7">
             <div className="space-y-4">
               {events.map((event, index) => (
-                <motion.div
+                <Scroll3DCard
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  index={index}
                   className="group flex flex-col sm:flex-row gap-6 p-8 bg-white hover:bg-ivory-dark transition-colors duration-500 border border-navy/5"
                 >
                   {/* Styled Date Block */}
@@ -127,7 +125,7 @@ export function EventsSection() {
                       <ArrowRight className="h-3 w-3" />
                     </div>
                   </div>
-                </motion.div>
+                </Scroll3DCard>
               ))}
             </div>
 

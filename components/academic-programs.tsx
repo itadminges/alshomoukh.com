@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, BookOpen, GraduationCap, Microscope, Puzzle } from "lucide-react"
 import { motion } from "framer-motion"
+import { Scroll3DCard, Scroll3DReveal } from "@/components/scroll-3d"
 
 const programs = [
   {
@@ -45,12 +46,12 @@ export function AcademicPrograms() {
     <section
       ref={containerRef}
       id="academics"
-      className="relative pb-24 bg-white overflow-hidden"
+      className="relative pb-24 bg-white overflow-hidden scroll-3d-scene"
     >
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         
         {/* Section Header */}
-        <div className="max-w-xl mb-20">
+        <Scroll3DReveal className="max-w-xl mb-20" rotateAmount={12} depth={40}>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -82,18 +83,12 @@ export function AcademicPrograms() {
           >
             A comprehensive educational journey designed to challenge and inspire from nursery to university graduation.
           </motion.p>
-        </div>
+        </Scroll3DReveal>
 
         {/* Programs Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {programs.map((program, index) => (
-            <motion.div
-              key={program.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-            >
+            <Scroll3DCard key={program.title} index={index}>
               <Link href={program.href} className="group block">
                 <article className="relative bg-ivory-dark/30 hover:bg-ivory-dark transition-colors duration-500 pb-10">
                   <div className="relative aspect-[4/5] overflow-hidden mb-8">
@@ -123,7 +118,7 @@ export function AcademicPrograms() {
                   </div>
                 </article>
               </Link>
-            </motion.div>
+            </Scroll3DCard>
           ))}
         </div>
 

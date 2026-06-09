@@ -4,7 +4,8 @@ import { useRef } from "react"
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Check, ShieldCheck, Globe, Star, BookOpen, Compass, Award } from "lucide-react"
+import { Check } from "lucide-react"
+import { Scroll3DReveal } from "@/components/scroll-3d"
 
 
 export function IntroSection() {
@@ -15,13 +16,14 @@ export function IntroSection() {
   })
 
   const imageY = useTransform(scrollYProgress, [0, 1], [-50, 50])
+  const textRotateY = useTransform(scrollYProgress, [0, 0.5, 1], [12, 0, -6])
 
   return (
-    <section ref={containerRef} className="pt-24 md:pt-40 bg-white relative overflow-hidden">
+    <section ref={containerRef} className="pt-24 md:pt-40 bg-white relative overflow-hidden scroll-3d-scene">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
           
-          <div className="relative">
+          <Scroll3DReveal className="relative" rotateAmount={22} depth={70}>
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -53,7 +55,7 @@ export function IntroSection() {
               <p className="text-4xl mb-1 text-gold">27+</p>
               <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/60">Years of Excellence</p>
             </motion.div>
-          </div>
+          </Scroll3DReveal>
 
           <div>
             <motion.div
@@ -61,6 +63,7 @@ export function IntroSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              style={{ rotateY: textRotateY, transformStyle: "preserve-3d" }}
             >
               <div className="flex items-center gap-4 mb-8">
                 <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
