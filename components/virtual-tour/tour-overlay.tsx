@@ -68,13 +68,33 @@ export function TourOverlay({ onClose }: { onClose: () => void }) {
     setVisited(prev => new Set(prev).add(activeNodeId));
   }, [activeNodeId]);
 
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const btn = closeBtnRef.current;
+    if (!btn) return;
+    const handler = (e: Event) => {
+      e.preventDefault();
+      e.stopPropagation();
+      onClose();
+    };
+    btn.addEventListener('pointerdown', handler, { capture: true });
+    btn.addEventListener('click', handler, { capture: true });
+    btn.addEventListener('touchstart', handler, { capture: true });
+    return () => {
+      btn.removeEventListener('pointerdown', handler, { capture: true });
+      btn.removeEventListener('click', handler, { capture: true });
+      btn.removeEventListener('touchstart', handler, { capture: true });
+    };
+  }, [onClose]);
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-0 z-50 bg-black font-sans overflow-hidden"
+      className="fixed inset-0 z-[100] bg-black font-sans overflow-hidden"
     >
       {/* 3D Viewer */}
       <TourViewer 
@@ -89,7 +109,8 @@ export function TourOverlay({ onClose }: { onClose: () => void }) {
         {/* Brand / Title */}
         <div className="pointer-events-auto flex items-center gap-4">
           <button 
-            onClick={(e) => { e.stopPropagation(); setShowSidebar(!showSidebar); }}
+            onClickCapture={(e) => { e.stopPropagation(); setShowSidebar(!showSidebar); }}
+            onPointerDownCapture={(e) => { e.stopPropagation(); setShowSidebar(!showSidebar); }}
             className="w-12 h-12 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white hover:bg-black/60 transition-colors"
           >
             <Menu className="w-5 h-5" />
@@ -112,7 +133,7 @@ export function TourOverlay({ onClose }: { onClose: () => void }) {
             <span className="text-white text-[10px] font-bold tracking-wider">{visited.size} / {totalNodes} EXPLORED</span>
           </div>
           <button 
-            onClick={(e) => { e.stopPropagation(); onClose(); }}
+            ref={closeBtnRef}
             className="w-12 h-12 flex items-center justify-center rounded-full bg-red-500/80 backdrop-blur-md border border-white/20 text-white hover:bg-red-600 transition-colors pointer-events-auto relative z-[100]"
           >
             <X className="w-5 h-5" />
