@@ -27,7 +27,8 @@ export function TourViewer({
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    let isMounted = true;
+    let viewer: Viewer | null = null;
 
     // Convert our nodes to the format expected by VirtualTourPlugin
     const nodes = Object.values(TOUR_NODES).map(node => ({
@@ -49,60 +50,72 @@ export function TourViewer({
       }))
     }));
 
-    const viewer = new Viewer({
-      container: containerRef.current,
-      defaultYaw: 0,
-      defaultPitch: 0,
-      touchmoveTwoFingers: false,
-      mousewheelCtrlKey: false,
-      navbar: false, // We will build our own custom UI overlay
-      plugins: [
-        [MarkersPlugin, {}],
-        [VirtualTourPlugin, {
-          positionMode: 'manual',
-          renderMode: '3d',
-          nodes: nodes,
-          startNodeId: TOUR_START_NODE,
-          transitionOptions: {
-            duration: 1500, // Cinematic duration
-            zoomTo: 2 // Zoom effect when jumping
-          }
-        }],
-        [CompassPlugin, {
-          position: 'top left',
-          navigation: true,
-          hotspots: [] 
-        }],
-        [AutorotatePlugin, {
-          autostartDelay: 5000,
-          autostartOnIdle: true
-        }],
-        [GyroscopePlugin, {}]
-      ]
-    });
+    const initViewer = () => {
+      if (!isMounted || !containerRef.current) return;
 
-    viewerRef.current = viewer;
-    const virtualTour = viewer.getPlugin(VirtualTourPlugin) as VirtualTourPlugin;
+      viewer = new Viewer({
+        container: containerRef.current,
+        defaultYaw: 0,
+        defaultPitch: 0,
+        touchmoveTwoFingers: false,
+        mousewheelCtrlKey: false,
+        navbar: false, // We will build our own custom UI overlay
+        plugins: [
+          [MarkersPlugin, {}],
+          [VirtualTourPlugin, {
+            positionMode: 'manual',
+            renderMode: '3d',
+            nodes: nodes,
+            startNodeId: TOUR_START_NODE,
+            transitionOptions: {
+              duration: 1500, // Cinematic duration
+              zoomTo: 2 // Zoom effect when jumping
+            }
+          }],
+          [CompassPlugin, {
+            position: 'top left',
+            navigation: true,
+            hotspots: [] 
+          }],
+          [AutorotatePlugin, {
+            autostartDelay: 5000,
+            autostartOnIdle: true
+          }],
+          [GyroscopePlugin, {}]
+        ]
+      });
 
-    viewer.addEventListener('ready', () => {
-      setIsReady(true);
-    }, { once: true });
+      viewerRef.current = viewer;
+      const virtualTour = viewer.getPlugin(VirtualTourPlugin) as VirtualTourPlugin;
 
-    // Notify parent on node change
-    virtualTour.addEventListener('node-changed', ({ node }) => {
-      onNodeChange(node.id);
-    });
+      viewer.addEventListener('ready', () => {
+        if (!isMounted) return;
+        setIsReady(true);
+      }, { once: true });
 
-    if (onViewerReady) {
-       onViewerReady(viewer, {
-         virtualTour: viewer.getPlugin(VirtualTourPlugin),
-         autorotate: viewer.getPlugin(AutorotatePlugin),
-         gyroscope: viewer.getPlugin(GyroscopePlugin),
-       });
-    }
+      // Notify parent on node change
+      virtualTour.addEventListener('node-changed', ({ node }) => {
+        if (isMounted) onNodeChange(node.id);
+      });
+
+      if (onViewerReady) {
+         onViewerReady(viewer, {
+           virtualTour: viewer.getPlugin(VirtualTourPlugin),
+           autorotate: viewer.getPlugin(AutorotatePlugin),
+           gyroscope: viewer.getPlugin(GyroscopePlugin),
+         });
+      }
+    };
+
+    // Delay initialization slightly to bypass React StrictMode's instant mount/unmount cycle
+    const timeoutId = setTimeout(initViewer, 100);
 
     return () => {
-      viewer.destroy();
+      isMounted = false;
+      clearTimeout(timeoutId);
+      if (viewer) {
+        viewer.destroy();
+      }
     };
   }, []); // Empty dependency array ensures initialization only happens once
 
