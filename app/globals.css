@@ -221,4 +221,14 @@
     perspective: 1600px;
     transform-style: preserve-3d;
   }
+
+  @keyframes spiral-drift {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .animate-spiral-drift {
+    animation: spiral-drift 90s linear infinite;
+    transform-origin: center;
+  }
 }

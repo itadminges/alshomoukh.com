@@ -1,12 +1,15 @@
 "use client"
 
-import { useRef } from "react"
+import { useState, useRef } from "react"
 import Image from "next/image"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Play } from "lucide-react"
+import { Play, Compass } from "lucide-react"
+import { SectionSpirals } from "@/components/decorative-spirals"
+import { TourOverlay } from "@/components/virtual-tour/tour-overlay"
 
 export function HeroSection() {
+  const [showTour, setShowTour] = useState(false)
   const containerRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -22,10 +25,16 @@ export function HeroSection() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
   return (
-    <section 
-      ref={containerRef}
-      className="relative h-screen flex items-center justify-center overflow-hidden bg-navy scroll-3d-scene-deep"
-    >
+    <>
+      <AnimatePresence>
+        {showTour && <TourOverlay onClose={() => setShowTour(false)} />}
+      </AnimatePresence>
+
+      <section 
+        ref={containerRef}
+        className="relative h-screen flex items-center justify-center overflow-hidden bg-navy scroll-3d-scene-deep"
+      >
+      <SectionSpirals variant="hero" />
       {/* Background Media Layer */}
       <motion.div 
         style={{ y: y1, rotateX: bgRotateX, scale: bgScale, transformStyle: "preserve-3d" }}
@@ -73,6 +82,17 @@ export function HeroSection() {
             <Button className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
               Begin Admissions
             </Button>
+            
+            <button 
+              onClick={() => setShowTour(true)}
+              className="flex items-center gap-3 text-white hover:text-gold transition-colors group"
+            >
+              <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold transition-colors">
+                <Compass className="h-4 w-4 text-white group-hover:text-gold transition-colors" />
+              </div>
+              <span className="text-[11px] font-bold tracking-[0.2em] uppercase">Start Virtual Tour</span>
+            </button>
+            
             <button className="flex items-center gap-3 text-white hover:text-gold transition-colors group">
               <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold transition-colors">
                 <Play className="h-3 w-3 fill-white" />
@@ -105,5 +125,6 @@ export function HeroSection() {
         </div>
       </motion.div>
     </section>
+    </>
   )
 }

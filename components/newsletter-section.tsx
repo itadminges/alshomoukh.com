@@ -1,9 +1,10 @@
 "use client"
 
 import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail, Phone, Calendar } from "lucide-react"
+import { AnimatedPatternCloud } from "@/components/ui/animated-pattern-cloud"
 
 export function NewsletterSection() {
   const containerRef = useRef<HTMLElement>(null)
@@ -14,10 +15,8 @@ export function NewsletterSection() {
       className="relative py-24 bg-white overflow-hidden"
     >
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
-        <div className="relative bg-navy p-10 lg:p-16 overflow-hidden">
-          {/* Background Highlight */}
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_70%_30%,#C19D76_0%,transparent_70%)] opacity-20 pointer-events-none" />
-          
+        <div className="relative bg-primary p-10 lg:p-16 overflow-hidden">
+          <AnimatedPatternCloud variant="dark" intensity={0.28} speed={0.85} />
           <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
             
             {/* CTA Content */}

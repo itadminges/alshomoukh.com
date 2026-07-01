@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react"
 import { motion, useSpring, useInView, useTransform } from "framer-motion"
 import { Scroll3DReveal } from "@/components/scroll-3d"
+import { SectionSpirals } from "@/components/decorative-spirals"
 
 const stats = [
   { label: "Established", value: 1997, suffix: "" },
@@ -35,7 +36,8 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 export function StatsSection() {
   return (
     <section className="relative py-16 bg-white overflow-hidden border-y border-navy/5 scroll-3d-scene">
-      <div className="relative mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
+      <SectionSpirals variant="light" />
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {stats.map((stat, index) => (
             <Scroll3DReveal

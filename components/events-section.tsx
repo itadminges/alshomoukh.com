@@ -5,6 +5,7 @@ import { Calendar, ArrowRight, Rss } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { Scroll3DCard } from "@/components/scroll-3d"
+import { SectionSpirals } from "@/components/decorative-spirals"
 
 const events = [
   {
@@ -38,7 +39,8 @@ export function EventsSection() {
       ref={containerRef}
       className="relative py-24 bg-white overflow-hidden scroll-3d-scene"
     >
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
+      <SectionSpirals variant="light" />
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
           

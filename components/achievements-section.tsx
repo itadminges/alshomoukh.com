@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Scroll3DCard } from "@/components/scroll-3d"
 import { Quote, Star } from "lucide-react"
+import { AnimatedPatternCloud } from "@/components/ui/animated-pattern-cloud"
 
 const testimonials = [
   {
@@ -36,9 +37,10 @@ export function AchievementsSection() {
   return (
     <section
       ref={containerRef}
-      className="relative py-24 bg-navy text-white overflow-hidden scroll-3d-scene-deep"
+      className="relative py-24 bg-primary text-white overflow-hidden scroll-3d-scene-deep"
     >
-      <div className="relative mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
+      <AnimatedPatternCloud variant="dark" intensity={0.32} />
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-16 gap-6 md:gap-8 text-center md:text-left">

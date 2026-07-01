@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import { Scroll3DReveal, useOneWayScrollProgress } from "@/components/scroll-3d"
+import { SectionSpirals } from "@/components/decorative-spirals"
 
 
 export function IntroSection() {
@@ -22,7 +23,8 @@ export function IntroSection() {
 
   return (
     <section ref={containerRef} className="pt-24 md:pt-40 bg-white relative overflow-hidden scroll-3d-scene">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
+      <SectionSpirals variant="light" />
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
           
           <Scroll3DReveal className="relative" rotateAmount={22} depth={70}>

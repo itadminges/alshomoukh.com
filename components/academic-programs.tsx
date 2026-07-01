@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, BookOpen, GraduationCap, Microscope, Puzzle } from "lucide-react"
 import { motion } from "framer-motion"
 import { Scroll3DCard, Scroll3DReveal } from "@/components/scroll-3d"
+import { SectionSpirals } from "@/components/decorative-spirals"
 
 const programs = [
   {
@@ -48,7 +49,8 @@ export function AcademicPrograms() {
       id="academics"
       className="relative pb-24 bg-white overflow-hidden scroll-3d-scene"
     >
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
+      <SectionSpirals variant="light" />
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         
         {/* Section Header */}
         <Scroll3DReveal className="max-w-xl mb-20" rotateAmount={12} depth={40}>
