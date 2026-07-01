@@ -110,7 +110,8 @@ export function TourViewer({
   useEffect(() => {
     if (isReady && viewerRef.current) {
       const virtualTour = viewerRef.current.getPlugin(VirtualTourPlugin) as VirtualTourPlugin;
-      if (virtualTour && virtualTour.getCurrentNode()?.id !== activeNodeId) {
+      const currentNode = virtualTour?.getCurrentNode();
+      if (virtualTour && currentNode && currentNode.id !== activeNodeId) {
         // setCurrentNode returns a Promise, we can ignore it
         virtualTour.setCurrentNode(activeNodeId).catch(err => {
             console.warn("Tour node transition interrupted", err);
