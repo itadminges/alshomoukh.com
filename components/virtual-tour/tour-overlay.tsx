@@ -84,12 +84,12 @@ export function TourOverlay({ onClose }: { onClose: () => void }) {
       />
 
       {/* Top Header */}
-      <div className="absolute top-0 left-0 right-0 p-4 md:p-6 flex justify-between items-start pointer-events-none z-10">
+      <div className="absolute top-0 left-0 right-0 p-4 md:p-6 flex justify-between items-start pointer-events-none z-[100]">
         
         {/* Brand / Title */}
         <div className="pointer-events-auto flex items-center gap-4">
           <button 
-            onClick={() => setShowSidebar(!showSidebar)}
+            onClick={(e) => { e.stopPropagation(); setShowSidebar(!showSidebar); }}
             className="w-12 h-12 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white hover:bg-black/60 transition-colors"
           >
             <Menu className="w-5 h-5" />
@@ -112,8 +112,8 @@ export function TourOverlay({ onClose }: { onClose: () => void }) {
             <span className="text-white text-[10px] font-bold tracking-wider">{visited.size} / {totalNodes} EXPLORED</span>
           </div>
           <button 
-            onClick={onClose}
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-red-500/80 backdrop-blur-md border border-white/20 text-white hover:bg-red-600 transition-colors"
+            onClick={(e) => { e.stopPropagation(); onClose(); }}
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-red-500/80 backdrop-blur-md border border-white/20 text-white hover:bg-red-600 transition-colors pointer-events-auto relative z-[100]"
           >
             <X className="w-5 h-5" />
           </button>
