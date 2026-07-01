@@ -30,6 +30,14 @@ export function TourViewer({
     let isMounted = true;
     let viewer: Viewer | null = null;
 
+    // Suppress PhotoSphereViewer's unhandled promise rejection that occurs when the component is unmounted (e.g., via Hot Reload) before the initial node finishes loading.
+    const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+      if (event.reason instanceof TypeError && event.reason.message.includes("reading 'loadNode'")) {
+        event.preventDefault(); // Prevents the Next.js Error Overlay
+      }
+    };
+    window.addEventListener('unhandledrejection', handleUnhandledRejection);
+
     // Convert our nodes to the format expected by VirtualTourPlugin
     const nodes = Object.values(TOUR_NODES).map(node => ({
       id: node.id,
@@ -113,6 +121,7 @@ export function TourViewer({
     return () => {
       isMounted = false;
       clearTimeout(timeoutId);
+      window.removeEventListener('unhandledrejection', handleUnhandledRejection);
       if (viewer) {
         viewer.destroy();
       }
