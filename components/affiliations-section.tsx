@@ -56,6 +56,7 @@ export function AffiliationsSection() {
                       src={aff.img} 
                       alt={`Accreditation Logo`} 
                       fill 
+                      sizes="(max-width: 768px) 128px, 144px"
                       className="object-contain" 
                     />
                   </div>

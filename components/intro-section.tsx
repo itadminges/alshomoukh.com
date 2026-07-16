@@ -40,6 +40,7 @@ export function IntroSection() {
                   src="/school_building_premium.png" 
                   alt="Al Shomoukh Campus" 
                   fill 
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </motion.div>

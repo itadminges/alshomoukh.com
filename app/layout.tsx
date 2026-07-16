@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
-import { Inter, Poppins } from 'next/font/google'
+import { Inter, Poppins, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -16,6 +16,13 @@ const poppins = Poppins({
   display: 'swap',
 })
 
+const cormorant = Cormorant_Garamond({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Al Shomoukh International School',
@@ -54,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${inter.variable} ${poppins.variable} ${cormorant.variable}`}>
       <body className="font-sans antialiased bg-background text-foreground flex flex-col min-h-screen">
         <SmoothScroll>
           <ScrollProgress />

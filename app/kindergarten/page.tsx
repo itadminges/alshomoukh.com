@@ -38,8 +38,8 @@ export default function KindergartenPage() {
         title="Kindergarten" 
         subtitle="A nurturing foundation where curiosity meets discovery, shaping the early years of lifelong learners."
         quote={{
-          text: "If a child can’t learn the way we teach, maybe we should teach the way they learn.",
-          author: "Ignacio Estrada"
+          text: "Tell me and I forget, teach me and I may remember, involve me and I learn.",
+          author: "Benjamin Franklin"
         }}
       />
 
@@ -50,7 +50,8 @@ export default function KindergartenPage() {
               The Early Years Foundation Stage (EYFS)
             </h2>
             <p className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic">
-              Al Shomoukh International School follows the Early Years Foundation Stage (EYFS) framework, adapted to meet the needs of each individual child. In KG1 and KG2, the integrated programme covers the seven key areas of learning and development:
+              Al Shomoukh International Private School follows the Early Years Foundation Stage (EYFS) Framework which is adapted to meet the needs of each individual child. EYFS sets standards for the learning, development and care of the child. 
+              KG1 and KG2 an integrated program will cover the 7 areas of learning and development identified in the EYFS framework:
             </p>
           </FadeIn>
           
@@ -72,9 +73,9 @@ export default function KindergartenPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
+              { title: "Creating and thinking critically", icon: Puzzle, desc: "Thinking of ideas and making links between them." },
               { title: "Playing and Exploring", icon: Sparkles, desc: "Engagement through curiosity and finding out about the world." },
-              { title: "Active Learning", icon: Heart, desc: "Motivation to keep on trying and enjoying achievements." },
-              { title: "Critical Thinking", icon: Puzzle, desc: "Thinking of ideas and making links between them." }
+              { title: "Active learning", icon: Heart, desc: "Motivation to keep on trying and enjoying achievements." }
             ].map((item, i) => (
               <FadeIn key={i} y={40} delay={0.1 * i}>
                 <div className="bg-white p-10 border border-navy/5 shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow h-full">

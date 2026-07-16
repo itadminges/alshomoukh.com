@@ -38,7 +38,7 @@ export default function UpperSecondaryPage() {
             </h2>
             <p className="text-gold font-bold tracking-widest uppercase text-xs mb-4">Grades 9 & 10</p>
             <p className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic">
-              At Al Shomoukh International School, we offer a broad range of IGCSE subjects to suit the needs, interests, and abilities of our students. The school follows the prestigious Pearson Edexcel IGCSE curriculum.
+              At Al Shomoukh International Private School we provide a very broad range of IGCSE subjects to suit the needs and abilities of our students. The school follows the Pearson’s IGCSE Edexcel curriculum. All courses follow the Edexcel IGCSE Pearson’s Curriculum and includes: The Core Curriculum subjects are Mathematics, English Language, A Triple Science (Biology, Physics & Chemistry).
             </p>
           </FadeIn>
 
@@ -66,11 +66,13 @@ export default function UpperSecondaryPage() {
                 </h4>
                 <div className="grid grid-cols-1 gap-y-3 font-medium text-navy/70">
                   {[
-                    "Geography & History", 
+                    "Economics", 
+                    "Global Citizenship", 
                     "English Literature", 
                     "Business Studies", 
                     "Applied ICT", 
-                    "Physical Education & Art", 
+                    "Physical Education",
+                    "Art",
                     "Arabic Language"
                   ].map((sub, i) => (
                     <div key={i} className="flex items-center gap-3 text-sm">
@@ -85,9 +87,11 @@ export default function UpperSecondaryPage() {
 
           <FadeIn>
             <div className="mb-32 text-center">
-              <Button size="lg" className="bg-gold text-white hover:bg-gold/90 transition-all uppercase tracking-[0.25em] font-bold text-[10px] rounded-none h-14 px-12 shadow-lg hover:shadow-gold/20">
-                  View IGCSE Prospectus
-                  <ArrowRight className="ml-3 w-4 h-4" />
+              <p className="text-navy/70 mb-4 font-medium text-sm">For further information related to the Edexcel IGCSE Curriculum, please click on the link below:</p>
+              <Button size="lg" asChild className="bg-gold text-white hover:bg-gold/90 transition-all uppercase tracking-[0.25em] font-bold text-[10px] rounded-none h-14 px-12 shadow-lg hover:shadow-gold/20">
+                  <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses-and-edexcel-certificates.html" target="_blank" rel="noopener noreferrer">
+                    Pearson Edexcel IGCSE <ArrowRight className="ml-3 w-4 h-4" />
+                  </a>
               </Button>
             </div>
           </FadeIn>
@@ -103,13 +107,23 @@ export default function UpperSecondaryPage() {
               
               <div className="max-w-2xl mx-auto mb-12">
                 <p className="text-lg text-navy/70 leading-relaxed font-medium mb-6">
-                  Specialized pathways including Mathematics, Economics, Physics, Chemistry, and Biology, providing a direct route to top-tier global universities.
+                  At Al Shomoukh International Private School we provide a very broad range of A-Levels subjects to suit the needs and abilities of our students. The school follows the Pearson’s IA-Levels Edexcel Curriculum.
                 </p>
-                <div className="h-px w-20 bg-gold/30 mx-auto"></div>
+                <div className="text-left text-navy/70 text-sm font-medium mb-6 max-w-md mx-auto">
+                  <p className="mb-2 font-bold text-navy">Students are expected to select at least four subjects (AS Levels) from:</p>
+                  <ul className="list-disc pl-5 mb-4 grid grid-cols-2 gap-2">
+                    <li>Mathematics</li><li>English language</li><li>English Literature</li><li>Business Studies</li><li>Economics</li><li>Physics</li><li>Chemistry</li><li>Biology</li><li>Applied ICT</li>
+                  </ul>
+                  <p className="text-xs italic text-center text-navy/60">Please note – Students should pass at least 3 subjects from the 4 subjects selected in Grade 11 to progress to Grade 12.</p>
+                </div>
+                <div className="h-px w-20 bg-gold/30 mx-auto mb-8"></div>
               </div>
 
-              <Button variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white transition-all uppercase tracking-[0.2em] font-bold text-[10px] rounded-none h-12 px-10">
-                  Explore A-Level Pathways
+              <p className="text-navy/70 mb-4 font-medium text-sm">For further information related to the Edexcel IAL Curriculum, please click on the link below:</p>
+              <Button variant="outline" asChild className="border-navy text-navy hover:bg-navy hover:text-white transition-all uppercase tracking-[0.2em] font-bold text-[10px] rounded-none h-12 px-10">
+                  <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels.html" target="_blank" rel="noopener noreferrer">
+                    Edexcel IAL Curriculum
+                  </a>
               </Button>
             </div>
           </FadeIn>
@@ -122,11 +136,19 @@ export default function UpperSecondaryPage() {
                   <Building className="w-10 h-10" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-2xl mb-4 tracking-tight uppercase">General Education Diploma (GED)</h3>
-                  <p className="text-gold font-bold tracking-widest uppercase text-xs mb-4">Ministry of Education Pathway</p>
-                  <p className="text-ivory/70 leading-[1.8] font-medium text-sm">
-                    In addition to international qualifications, eligible students may opt for the Omani General Education Diploma under school guidance and Ministry regulations.
-                  </p>
+                  <h3 className="font-bold text-2xl mb-4 tracking-tight uppercase">Omani General Education Diploma (GED)</h3>
+                  <p className="text-gold font-bold tracking-widest uppercase text-xs mb-4">Grades 11 & 12</p>
+                  <div className="text-ivory/70 leading-[1.8] font-medium text-sm space-y-4">
+                    <p>
+                      Oman’s General Education Diploma (GED) is available to students in Grade 11 & 12 and is equivalent to the International A-Levels program. The curriculum is developed and monitored by the Ministry of Education. The Omani GED curriculum at Al Shomoukh International Private School inspires students to be compelling individuals who are curious about all areas of learning. Our highly qualified specialist teachers will provide students with the skills, competencies and knowledge to be confident individuals who will continue pursuing their further education. Al Shomoukh International Private School students have an option to study for the GED from Grade 10.
+                    </p>
+                    <p>
+                      <strong>Grade 10 Core:</strong> Mathematics, English, Triple Science (Biology, Physics & Chemistry), ICT, Physical Education, Music and Art. Compulsory for Arabic speaking learners: Arabic, Islamic and Arabic Social Studies.
+                    </p>
+                    <p>
+                      <strong>Grade 11 & 12 Core:</strong> Mathematics, English, Science (Biology, physics & Chemistry) – students must select at least one science. Options: ICT, Physical Education, Music, Art, Business. Compulsory for Arabic speaking learners: Arabic, Islamic and Arabic Social Studies.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

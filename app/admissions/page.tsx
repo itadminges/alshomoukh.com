@@ -2,21 +2,20 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { CheckCircle, Info, CreditCard } from "lucide-react"
-import { PageHero } from "@/components/page-hero"
+import { BookOpen, FileText, CheckSquare, Award, UserPlus } from "lucide-react"
+import Image from "next/image"
 
-const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
+const FadeIn = ({ children, delay = 0, y = 30, className = "" }: { children: React.ReactNode, delay?: number, y?: number, className?: string }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x, y }}
-      animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x, y }}
-      transition={{ duration: 0.8, delay }}
+      initial={{ opacity: 0, y }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
+      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+      className={className}
     >
       {children}
     </motion.div>
@@ -24,142 +23,132 @@ const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactN
 }
 
 export default function AdmissionsPage() {
+  const steps = [
+    { num: "01", title: "Inquiry", desc: "Learn about our curriculum and schedule a campus visit.", icon: BookOpen },
+    { num: "02", title: "Application", desc: "Submit the online application and required documents.", icon: FileText },
+    { num: "03", title: "Assessment", desc: "Student assessment and family meeting.", icon: CheckSquare },
+    { num: "04", title: "Offer", desc: "Receive an admission offer upon successful evaluation.", icon: Award },
+    { num: "05", title: "Enrollment", desc: "Complete registration and become part of our community.", icon: UserPlus },
+  ]
+
   return (
-    <main className="min-h-screen bg-white">
-      <PageHero 
-        title="Admissions" 
-        subtitle="Embark on an educational journey that empowers your child with excellence and global vision."
-        quote={{
-          text: "Hold fast to dreams, for if dreams die, life is a broken-winged bird that cannot fly.",
-          author: "Langston Hughes"
-        }}
-      />
-
-      {/* Intro Section */}
-      <section className="py-24">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-lg text-navy/70 leading-[1.8] space-y-6 font-medium">
-              <p>
-                Thank you for considering Al Shomoukh International School and entrusting us with your child’s education.
-              </p>
-              <p>
-                We understand that choosing the right school is one of the most important decisions a family can make. Al Shomoukh International School is a leading international school in Muscat, Sultanate of Oman, dedicated to providing a high-quality educational experience.
-              </p>
-              <p>
-                We aim to make our admissions process as clear and seamless as possible by providing all the information you need to make the right choice.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
+    <main className="min-h-screen bg-editorial-offwhite font-sans selection:bg-editorial-navy selection:text-white pb-0">
+      {/* Hero Section */}
+      <section className="pt-40 md:pt-52 pb-24 px-6 md:px-12 max-w-[1280px] mx-auto min-h-[70vh] flex flex-col justify-center">
+        <FadeIn>
+          <div className="mb-6">
+            <span className="text-editorial-mutedblue uppercase tracking-[0.4em] text-xs font-bold">
+              Admissions
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-7xl lg:text-[88px] text-editorial-navy leading-[1.05] tracking-tight mb-8 max-w-4xl font-light">
+            Begin an Extraordinary <br />
+            <span className="font-serif italic font-medium pr-4">Learning Journey.</span>
+          </h1>
+          <p className="text-editorial-slate text-lg md:text-xl leading-[1.7] max-w-[520px] font-medium">
+            At Al Shomoukh International Private School, every child begins a journey of academic excellence, personal growth, and global opportunity. Our admissions process is designed to be simple, transparent, and welcoming for every family.
+          </p>
+        </FadeIn>
       </section>
 
-      {/* Process Grid */}
-      <section className="py-24 bg-ivory/30">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Start Journey */}
-          <FadeIn y={40}>
-            <div className="bg-white p-10 border-t-4 border-gold shadow-sm h-full group hover:shadow-md transition-shadow">
-              <div className="p-3 bg-gold/10 w-fit mb-8">
-                <CheckCircle className="w-8 h-8 text-gold" />
-              </div>
-              <h3 className="font-bold text-xl text-navy mb-6 uppercase tracking-tight">Start Your Journey</h3>
-              <p className="text-navy/70 leading-[1.6] mb-8 font-medium">
-                Once a student is accepted after the entrance assessment, parents may proceed with the enrolment requirements.
-              </p>
-            </div>
-          </FadeIn>
+      {/* Thin Divider */}
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div className="h-[1px] w-full bg-black/5" />
+      </div>
 
-          {/* Application */}
-          <FadeIn y={40} delay={0.1}>
-            <div className="bg-white p-10 border-t-4 border-navy shadow-sm h-full group hover:shadow-md transition-shadow">
-              <div className="p-3 bg-navy/10 w-fit mb-8">
-                <Info className="w-8 h-8 text-navy" />
-              </div>
-              <h3 className="font-bold text-xl text-navy mb-6 uppercase tracking-tight">Application Process</h3>
-              <p className="text-navy/70 leading-[1.6] mb-8 font-medium">
-                To apply, please download and complete the Enrolment Form. For further information, contact us at: <span className="text-gold font-bold">admission@alshomoukh.com</span>
-              </p>
-              <Button className="w-full bg-gold text-white hover:bg-gold/90 transition-all uppercase tracking-[0.2em] font-bold text-[10px] rounded-none h-12">
-                Book a Tour
-              </Button>
-            </div>
-          </FadeIn>
-
-          {/* Fees */}
-          <FadeIn y={40} delay={0.2}>
-            <div className="bg-white p-10 border-t-4 border-gold shadow-sm h-full group hover:shadow-md transition-shadow">
-              <div className="p-3 bg-gold/10 w-fit mb-8">
-                <CreditCard className="w-8 h-8 text-gold" />
-              </div>
-              <h3 className="font-bold text-xl text-navy mb-6 uppercase tracking-tight">Fees</h3>
-              <p className="text-navy/70 leading-[1.6] mb-8 font-medium">
-                Admission is confirmed only after payment is made according to the fee schedule. A seat is not secured until payment has been received.
-              </p>
-              <div className="mt-4 p-4 bg-gold/5 border-l-4 border-gold">
-                <p className="text-[10px] font-bold text-gold uppercase tracking-widest">Sibling Discount</p>
-                <p className="text-sm font-medium text-navy mt-1">Younger siblings may be eligible for a 10% tuition fee discount.</p>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* FAQ Accordion */}
-      <section className="py-24">
-        <div className="mx-auto max-w-4xl px-6">
+      {/* Content Section - Two Column */}
+      <section className="py-32 px-6 md:px-12 max-w-[1280px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <FadeIn>
-            <h2 className="font-bold text-3xl text-navy mb-12 tracking-tight uppercase text-center">
-              Frequently Asked Questions
+            <div className="mb-6">
+              <span className="text-editorial-mutedblue uppercase tracking-[0.4em] text-[10px] font-bold">
+                Welcome
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl text-editorial-navy leading-[1.1] tracking-tight mb-10 font-light">
+              Choosing the Right <br className="hidden md:block"/>
+              School Begins Here
             </h2>
-            <div className="border-t border-navy/10">
-              <Accordion type="single" collapsible className="w-full">
-                {[
-                  {
-                    q: "What is the academic level criteria that must be met to admit my child to S.I.S?",
-                    a: "Students are assessed according to age-appropriate academic expectations and school placement requirements."
-                  },
-                  {
-                    q: "What is the age criteria for accepting students in KG1, KG2, and Grade 1?",
-                    a: (
-                      <ul className="space-y-4 mt-2">
-                        <li><span className="font-bold text-navy">KG1:</span> Students must be 3 years old by June of the enrolling academic year.</li>
-                        <li><span className="font-bold text-navy">KG2:</span> Students must be 4 years old by June of the enrolling academic year.</li>
-                        <li><span className="font-bold text-navy">Grade 1:</span> Students must be 5 years old by June of the enrolling academic year.</li>
-                      </ul>
-                    )
-                  },
-                  {
-                    q: "My child is not toilet-trained, but their age is suitable for KG1. Can I still complete the enrolment process?",
-                    a: "Please contact the Admissions Office to discuss individual readiness requirements."
-                  },
-                  {
-                    q: "Can a child with special educational needs be enrolled at S.I.S?",
-                    a: "Please contact the school directly so our team can review the child’s needs and discuss available support."
-                  },
-                  {
-                    q: "What is the class size?",
-                    a: "Class sizes vary by grade level and are designed to support effective teaching and learning."
-                  },
-                  {
-                    q: "Can I meet the teachers?",
-                    a: "Yes, parents may meet teachers during scheduled school visits, orientation sessions, and parent meetings."
-                  },
-                  {
-                    q: "What curriculum do you follow in the Primary School?",
-                    a: "The school follows the UK National Curriculum, adapted to meet both international standards and local requirements."
-                  }
-                ].map((item, i) => (
-                  <AccordionItem key={i} value={`item-${i}`} className="border-b border-navy/10">
-                    <AccordionTrigger className="text-base md:text-lg font-bold text-navy hover:text-gold text-left py-6 uppercase tracking-tight">
-                      {item.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-navy/70 text-base md:text-lg leading-relaxed pb-6 font-medium">
-                      {item.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+            
+            <div className="text-editorial-slate leading-[1.8] space-y-6 mb-12 text-lg">
+              <p>
+                Thank you for considering Al Shomoukh International Private School and entrusting us with your child's education. We understand that choosing the right school is one of the most important decisions you'll make for your child's future.
+              </p>
+              <p>
+                Located in the heart of Muscat, Sultanate of Oman, Al Shomoukh International Private School is a leader in providing high-quality education. We strive to make our admissions process as clear and seamless as possible, ensuring you have all the information needed to make the right choice for your child.
+              </p>
+            </div>
+
+            <div className="pl-6 border-l-2 border-editorial-navy/20 py-2">
+              <p className="text-2xl md:text-3xl text-editorial-navy font-serif italic leading-[1.4]">
+                "Our admissions team is committed to guiding your family through every step with care, transparency, and confidence."
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <div className="relative aspect-[4/5] w-full max-w-lg mx-auto lg:ml-auto rounded-[20px] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)]">
+              <Image 
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop"
+                alt="Students learning together"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Admissions Journey Stepper */}
+      <section className="py-32 px-6 md:px-12 bg-white/50 border-y border-black/5">
+        <div className="max-w-[1280px] mx-auto text-center">
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl text-editorial-navy mb-20 tracking-tight font-light">
+              Admissions Journey
+            </h2>
+          </FadeIn>
+
+          <div className="relative flex flex-col md:flex-row justify-between items-start gap-8 md:gap-4">
+            {/* Desktop Connecting Line */}
+            <div className="hidden md:block absolute top-[44px] left-[10%] right-[10%] h-[1px] bg-editorial-slate/20 -z-10" />
+            
+            {steps.map((step, idx) => (
+              <FadeIn key={step.num} delay={0.1 * idx} y={20} className="w-full md:w-1/5 flex flex-col items-center group relative z-10">
+                <div className="w-20 h-20 bg-white rounded-[20px] shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)] border border-[#EAEAEA] flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform duration-500 ease-out">
+                  <step.icon className="w-6 h-6 text-editorial-mutedblue stroke-[1.5]" />
+                </div>
+                <span className="text-editorial-gold text-xs font-bold tracking-[0.2em] mb-3">
+                  {step.num}
+                </span>
+                <h3 className="text-editorial-navy font-semibold text-lg mb-3 tracking-tight">
+                  {step.title}
+                </h3>
+                <p className="text-editorial-slate text-sm leading-[1.6] max-w-[200px] text-center">
+                  {step.desc}
+                </p>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA Section */}
+      <section className="py-32 px-6 md:px-12 bg-editorial-navy text-center">
+        <div className="max-w-2xl mx-auto">
+          <FadeIn>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-light tracking-tight mb-8">
+              Ready to Begin?
+            </h2>
+            <p className="text-white/70 text-xl leading-[1.6] mb-12 font-medium">
+              Speak with our admissions team and start your child's educational journey today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button className="w-full sm:w-auto px-10 py-5 bg-editorial-gold hover:bg-[#b5955b] text-white text-[13px] font-bold uppercase tracking-[0.2em] rounded-[12px] transition-colors duration-300">
+                Apply Now
+              </button>
+              <button className="w-full sm:w-auto px-10 py-5 bg-transparent border border-white/20 hover:bg-white/5 text-white text-[13px] font-bold uppercase tracking-[0.2em] rounded-[12px] transition-colors duration-300">
+                Contact Admissions
+              </button>
             </div>
           </FadeIn>
         </div>

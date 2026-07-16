@@ -48,16 +48,16 @@ export default function LowerSecondaryPage() {
               Our Philosophy
             </h2>
             <p className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic">
-              The Lower Secondary programme at Al Shomoukh International School is designed to foster greater academic independence and prepare students for success in their future IGCSE and A Level studies.
+              The curriculum is designed on building a strong foundation in core subjects and to support academic success. Students in lower secondary are encouraged to deepen and expand their understanding and develop life skills. Our dedicated teachers ensure students are appropriately academically challenged to achieve their potential.
             </p>
           </FadeIn>
 
           <FadeIn>
             <h3 className="font-bold text-2xl text-navy mb-8 uppercase tracking-widest text-center">
-              Pearson Edexcel Curriculum
+              Curriculum
             </h3>
             <p className="text-navy/60 text-center mb-16 font-medium">
-              A comprehensive framework that develops deeper understanding across core and foundation subjects.
+              In preparations for the Edexcel IGCSE examinations students are taught a demanding curriculum which focuses on providing children with the core knowledge they need for success in education. The Pearson’s Edexcel Curriculum and resources are used in all core subjects taught across Key stage 3, 4 and 5 to ensure consistency and is mapped in precise details.
             </p>
           </FadeIn>
           

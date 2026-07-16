@@ -36,7 +36,7 @@ export default function PrimaryPage() {
               Primary Curriculum
             </h2>
             <p className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic">
-              The Primary School programme at Al Shomoukh International School is designed to build strong academic foundations and promote curiosity, creativity, and confidence in every learner.
+              We follow the Primary Key Stage 1 and 2 UK National Curriculum. The curriculum sets a clear statutory entitlement to learning for all children which is both inclusive and challenging. Our teachers plan a range of current and relevant topics carefully matched to meet the requirements of the UK National Curriculum. Emphasis is placed on developing creativity, problem solving and physical development to support the development of the whole child. To enrich students’ learning, we engage in innovative collaboration in English, Mathematics, Science, Art, Computing, Physical Education (PE), Music and Life Skills. We aim to develop our students to be independent learners who are stimulated to be curious and ask questions.
             </p>
           </FadeIn>
 
@@ -90,7 +90,7 @@ export default function PrimaryPage() {
                 Reading <span className="text-gold">Scheme</span>
               </h3>
               <p className="text-lg text-ivory/80 leading-[1.8] font-medium relative z-10">
-                Our reading programme is central to the curriculum, supporting literacy development, comprehension, fluency, and a lifelong love of reading. We use internationally recognized schemes to ensure every child progresses at their own pace.
+                At Al Shomoukh International Private School we follow the Oxford Reading Tree program to teach reading and to ensure our students become confident readers. The reading program introduces reading challenges in Grade 2 to enrich children’s vocabulary and reading range. Guided reading is introduced in Grade 1 and is integrated into the curriculum, students have a daily guided reading session. The Oxford Reading Tree book bands indicate the reading level for each reading book and are used across different schemes.
               </p>
             </div>
           </FadeIn>

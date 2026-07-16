@@ -44,6 +44,7 @@ export function HeroSection() {
           src="/hero-bg.png"
           alt="Al Shomoukh Campus"
           fill
+          sizes="100vw"
           className="object-cover scale-105"
           priority
         />

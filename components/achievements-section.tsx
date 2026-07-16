@@ -9,25 +9,25 @@ import { AnimatedPatternCloud } from "@/components/ui/animated-pattern-cloud"
 
 const testimonials = [
   {
-    name: "Mohammed Al Mahrooqi",
-    grade: "Class of 2024",
-    achievement: "Recognized for his outstanding participation and eloquent recitation of the Holy Quran.",
+    name: "Moataman Al Radad",
+    grade: "IGCSE Scholar",
+    achievement: "We are proud to announce that Muataman has received the Certificate of Excellence from Pearson Edexcel for IGCSE!",
     image: "https://www.alshomoukh.com:443/uploads/aboutstudents/20200805160235-2020-08-05aboutstudents160234.jpg",
-    category: "Spiritual Leadership"
+    category: "Academic Excellence"
   },
   {
-    name: "Lina Al Ashqar",
-    grade: "Senior Graduate",
-    achievement: "Led the school to victory in the Arabic Social Studies Ministry Project.",
+    name: "Ali Ali",
+    grade: "A-Level Scholar",
+    achievement: "We are proud to announce that Ali has received the Certificate of Excellence from Pearson Edexcel for A level!",
     image: "https://www.alshomoukh.com:443/uploads/aboutstudents/20200805155758-2020-08-05aboutstudents155757.jpg",
     category: "Academic Excellence"
   },
   {
-    name: "Hayder Al Yassiri",
-    grade: "Executive Council",
-    achievement: "Achieved the highest Chemistry Grade in the GCC and served as Student Council President.",
+    name: "Hana Aman Beg",
+    grade: "IGCSE Scholar",
+    achievement: "We are proud to announce that Hana has received the Certificate of Excellence from Pearson Edexcel for IGCSE!",
     image: "https://www.alshomoukh.com:443/uploads/aboutstudents/20200805155505-2020-08-05aboutstudents155504.jpg",
-    category: "Scientific Innovation"
+    category: "Academic Excellence"
   },
 ]
 
@@ -73,6 +73,7 @@ export function AchievementsSection() {
                   src={student.image}
                   alt={student.name}
                   fill
+                  sizes="(max-width: 640px) 180px, (max-width: 768px) 240px, 220px"
                   className="object-cover transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                 />
                 

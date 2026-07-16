@@ -8,25 +8,53 @@ import { PageHero } from "@/components/page-hero"
 
 const newsItems = [
   {
-    title: "School Community Engagement Day",
-    date: "2 April 2026",
+    title: "MOE Leadership Workshop",
+    date: "TBA",
     category: "Events",
-    description: "Join us for a day of community building and activities at Al Shomoukh International School.",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80"
+    description: "Participating in the Ministry of Education Leadership Workshop.",
+    image: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&auto=format&fit=crop&q=80"
   },
   {
-      title: "Parent-Teacher Meeting",
-      date: "13 April 2026",
-      category: "School Info",
-      description: "Discuss your child's progress with our teaching staff during the upcoming PTM session.",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=80"
+      title: "Becoming a Cambridge Center",
+      date: "TBA",
+      category: "Academic",
+      description: "We are proud to announce our new status as an official Cambridge Center.",
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&auto=format&fit=crop&q=80"
   },
   {
-      title: "Science Exhibition Winners",
-      date: "15 March 2026",
+      title: "Cognia Accreditation",
+      date: "TBA",
+      category: "Academic",
+      description: "Achieving Cognia Accreditation to ensure excellence in education.",
+      image: "https://images.unsplash.com/photo-1546410531-bea5aad16e45?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+      title: "Collaboration with Injaz Oman",
+      date: "TBA",
       category: "Student Life",
-      description: "Celebrating the creativity and innovation of our students in this year's Science Exhibition.",
+      description: "A two-day STEM Workshop in collaboration with Injaz Oman.",
       image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+      title: "Shomoukh Nursery and School, Al Mouj",
+      date: "TBA",
+      category: "Events",
+      description: "Exciting developments and events at Shomoukh Nursery and School, Al Mouj.",
+      image: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+      title: "Graduation Ceremony 2024",
+      date: "TBA",
+      category: "Events",
+      description: "Celebrating the achievements of our graduating class of 2024.",
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+      title: "Art Exhibition 2024",
+      date: "TBA",
+      category: "Events",
+      description: "Showcasing the incredible creative talents of our students.",
+      image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&auto=format&fit=crop&q=80"
   }
 ]
 

@@ -120,24 +120,31 @@ export default function AboutPage() {
           <FadeIn x={-30}>
             <div className="flex items-center gap-4 mb-8">
               <Users className="w-10 h-10 text-gold" />
-              <h2 className="font-bold text-2xl tracking-tight uppercase">Community Engagement</h2>
+              <h2 className="font-bold text-2xl tracking-tight uppercase">Community</h2>
             </div>
             <p className="text-lg text-ivory/80 leading-[1.8] mb-8 font-medium">
-              The Al Shomoukh International School Community Impact Statement reflects our strong relationship with Oman, our home for many years.
+              At Al Shomoukh International Private School, we believe that a strong, inclusive community is the foundation of a thriving learning environment. Through events, activities and partnerships, we foster a sense of belonging that extends beyond the classroom, preparing our students to be active, responsible global citizens.
+            </p>
+            <h3 className="font-bold text-xl tracking-tight uppercase mb-4 text-gold">Develop a Statement</h3>
+            <p className="text-lg text-ivory/80 leading-[1.8] mb-8 font-medium">
+              Our training programmes are designed to provide valuable learning opportunities for both the local and international community. Whether you are an aspiring educator, a professional seeking skill enhancement, or someone passionate about lifelong learning, our programmes cater to a diverse range of needs. Led by our highly qualified and experienced staff, these training sessions offer practical insights, innovative teaching methodologies, and hands-on learning experiences.
             </p>
             <p className="text-lg text-ivory/80 leading-[1.8] mb-8 font-medium">
-              Our training programmes provide valuable opportunities for both the local and international community. Our qualified and professional staff are always pleased to share their knowledge and experience.
+              We welcome individuals from all backgrounds to join us in this enriching journey. To be part of our Training Programmes, please send an email to <span className="text-gold font-bold">info@alshomoukh.com</span> for more details.
             </p>
-            <p className="text-gold font-bold tracking-widest uppercase text-xs">Contact us at: info@alshomoukh.com</p>
           </FadeIn>
 
           <FadeIn x={30} delay={0.2}>
             <div className="flex items-center gap-4 mb-8">
               <Heart className="w-10 h-10 text-gold" />
-              <h2 className="font-bold text-2xl tracking-tight uppercase">Giving Back</h2>
+              <h2 className="font-bold text-2xl tracking-tight uppercase">Giving Back to the Community</h2>
             </div>
             <p className="text-lg text-ivory/80 leading-[1.8] mb-8 font-medium">
-              Giving back to the community plays an essential role in shaping compassionate, socially responsible young people. We believe that educating students about environmental and social responsibility empowers them to make a positive difference in the world.
+              At Al Shomoukh International Private School, we believe that community service is essential in shaping a generation that is compassionate, socially responsible, and aware of the world around them. By actively participating in initiatives that give back to society, our students develop empathy, selflessness, and a deeper understanding of the needs of others. Through volunteering, charity projects and outreach programs, we instill values of kindness and responsibility, empowering our students to make a positive impact.
+            </p>
+            <h3 className="font-bold text-xl tracking-tight uppercase mb-4 text-gold">What we have done in the community</h3>
+            <p className="text-lg text-ivory/80 leading-[1.8] mb-8 font-medium">
+              We are committed to making a positive impact on both our local and global communities. Through a range of initiatives, including charity events, environmental projects, and community outreach programs, we strive to foster a sense of responsibility and empathy in our students. Our efforts aim to inspire the next generation to contribute meaningfully to society and create a lasting, positive change.
             </p>
           </FadeIn>
         </div>

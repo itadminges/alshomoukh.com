@@ -37,6 +37,7 @@ export function PageHero({ title, subtitle, backgroundImage = "/hero-bg.png", qu
           src={backgroundImage}
           alt={title}
           fill
+          sizes="100vw"
           className="object-cover opacity-40 scale-105"
           priority
         />

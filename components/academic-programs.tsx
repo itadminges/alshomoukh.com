@@ -98,6 +98,7 @@ export function AcademicPrograms() {
                       src={program.image}
                       alt={program.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 text-[8px] font-bold tracking-widest text-navy uppercase">

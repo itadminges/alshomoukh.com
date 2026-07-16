@@ -87,6 +87,7 @@ export function Navbar() {
                 className={cn(
                   "h-12 lg:h-14 w-auto object-contain transition-all duration-500"
                 )}
+                style={{ width: "auto" }}
                 priority
               />
             </div>
