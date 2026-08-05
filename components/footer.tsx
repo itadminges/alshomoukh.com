@@ -19,7 +19,6 @@ const footerNav = [
       { label: "Our Story", href: "/about" },
       { label: "Principal's Welcome", href: "/about#welcome" },
       { label: "Vision & Mission", href: "/about#vision" },
-      { label: "Careers", href: "/careers" },
       { label: "News & Stories", href: "/news" },
     ]
   },
@@ -66,7 +65,6 @@ export function Footer() {
                 width={240} 
                 height={80} 
                 className="h-20 w-auto object-contain"
-                style={{ width: "auto" }}
                 priority
               />
             </Link>
@@ -161,7 +159,7 @@ export function Footer() {
                   <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Inquiries</span>
                 </div>
                 <span className="text-[15px] md:text-[13px] font-medium text-white/70 md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
-                  +968 2452 7100
+                  +968 24284756 / +968 24284771
                 </span>
               </li>
               <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
@@ -171,7 +169,7 @@ export function Footer() {
                   <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Email</span>
                 </div>
                 <span className="text-[15px] md:text-[13px] font-medium text-white/70 md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
-                  info@alshomoukh.com
+                  admission@alshomoukh.com
                 </span>
               </li>
             </ul>

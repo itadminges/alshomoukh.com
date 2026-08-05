@@ -6,10 +6,10 @@ import { Scroll3DReveal } from "@/components/scroll-3d"
 import { SectionSpirals } from "@/components/decorative-spirals"
 
 const stats = [
-  { label: "Established", value: 1997, suffix: "" },
+  { label: "Established", value: 2015, suffix: "" },
   { label: "Nationalities", value: 45, suffix: "+" },
-  { label: "University Entrance", value: 100, suffix: "%" },
-  { label: "Years of Excellence", value: 27, suffix: "+" },
+  { label: "University Acceptance", value: 100, suffix: "%" },
+  { label: "Years of Educational Excellence", value: 11, suffix: "+" },
 ]
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {

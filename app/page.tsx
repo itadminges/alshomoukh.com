@@ -8,10 +8,6 @@ const AcademicPrograms = dynamic(() => import("@/components/academic-programs").
   loading: () => <div className="h-96 bg-background animate-pulse" />
 })
 
-const AchievementsSection = dynamic(() => import("@/components/achievements-section").then(mod => mod.AchievementsSection), {
-  loading: () => <div className="h-96 bg-background animate-pulse" />
-})
-
 const EventsSection = dynamic(() => import("@/components/events-section").then(mod => mod.EventsSection), {
   loading: () => <div className="h-96 bg-background animate-pulse" />
 })
@@ -31,7 +27,6 @@ export default function Home() {
       <StatsSection />
       <IntroSection />
       <AcademicPrograms />
-      <AchievementsSection />
       <EventsSection />
       <NewsletterSection />
       <AffiliationsSection />

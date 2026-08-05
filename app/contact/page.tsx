@@ -60,8 +60,11 @@ export default function ContactPage() {
           <FadeIn x={40} delay={0.2}>
             <div className="space-y-12 h-full flex flex-col justify-center">
               <h2 className="font-bold text-3xl text-navy mb-4 tracking-tight uppercase">Get in Touch</h2>
-              <p className="text-navy/60 font-medium mb-12">
-                Whether you're a prospective parent, a community member, or looking for career opportunities, we'd love to hear from you.
+              <p className="text-navy/80 text-base leading-[1.8] font-medium mb-4">
+                We encourage you to visit the school and take a tour around as this is the best way to get a true insight of Al Shomoukh International School.
+              </p>
+              <p className="text-navy/80 text-base leading-[1.8] font-medium mb-10 bg-ivory/50 p-6 border-l-4 border-gold shadow-sm">
+                Please send an email to <span className="text-gold font-bold">admission@alshomoukh.com</span> or call <span className="text-gold font-bold">+968 24284756</span> / <span className="text-gold font-bold">+968 24284771</span> to discuss convenient dates and times for your visit.
               </p>
               
               <div className="space-y-10">
@@ -71,7 +74,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-navy text-xl uppercase mb-2 tracking-tight">Call Us</h4>
-                    <p className="text-navy/70 font-medium">+968 2452 7000</p>
+                    <p className="text-navy/70 font-medium">+968 24284756 / +968 24284771</p>
                     <p className="text-navy/70 font-bold text-gold">Available 7:30 AM - 3:30 PM</p>
                   </div>
                 </div>
@@ -82,8 +85,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-navy text-xl uppercase mb-2 tracking-tight">Email Us</h4>
-                    <p className="text-navy/70 font-medium">info@alshomoukh.com</p>
                     <p className="text-navy/70 font-medium">admission@alshomoukh.com</p>
+                    <p className="text-navy/70 font-medium">info@alshomoukh.com</p>
                   </div>
                 </div>
 
@@ -109,12 +112,13 @@ export default function ContactPage() {
       {/* Map Section */}
       <section className="h-[500px] w-full bg-ivory grayscale hover:grayscale-0 transition-all duration-700">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.5441113!2d58.2690!3d23.6191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM3JzA4LjgiTiA1OMKwMTYnMDguNCJF!5e0!3m2!1sen!2som!4v1620000000000!5m2!1sen!2som" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4997.835920105378!2d58.22425847533191!3d23.620108478759505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8de5b4dda92199%3A0xd6218124d8f78b32!2sAl%20Shomoukh%20International%20Private%20School!5e1!3m2!1sen!2som!4v1785906801032!5m2!1sen!2som" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 
           allowFullScreen 
           loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
         />
       </section>
     </main>

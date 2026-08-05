@@ -63,11 +63,15 @@ export function EventsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-2xl md:text-3xl lg:text-4xl text-navy leading-[1.2] mb-10 tracking-tight font-bold uppercase"
+              className="text-2xl md:text-3xl lg:text-4xl text-navy leading-[1.2] mb-4 tracking-tight font-bold uppercase"
             >
               Life at <br />
               <span className="text-gold">Al Shomoukh</span>
             </motion.h2>
+
+            <p className="text-sm md:text-base text-gold font-bold mb-4">
+              A Community Beyond the Classroom
+            </p>
             
             <motion.p 
               initial={{ opacity: 0 }}
@@ -76,7 +80,7 @@ export function EventsSection() {
               transition={{ delay: 0.2 }}
               className="text-[11px] md:text-xs text-navy/60 leading-relaxed mb-12 font-medium max-w-xl"
             >
-              Immerse yourself in our vibrant academic and social calendar. From prestigious ceremonies to community gatherings.
+              Discover a vibrant school experience where learning, celebration, and connection come together. From academic milestones and student achievements to community events and cultural celebrations, every moment contributes to the Al Shomoukh journey.
             </motion.p>
 
             <motion.div 

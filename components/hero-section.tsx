@@ -66,7 +66,7 @@ export function HeroSection() {
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-[1px] w-6 bg-gold/50" />
             <span className="text-gold font-bold tracking-[0.4em] uppercase text-[11px]">
-              Established 1997
+              Established 2015
             </span>
             <div className="h-[1px] w-6 bg-gold/50" />
           </div>
@@ -76,23 +76,13 @@ export function HeroSection() {
             <span className="text-gold">Global Excellence</span>
           </h1>
           <p className="text-sm md:text-base text-ivory/90 max-w-xl mx-auto mb-10 leading-relaxed font-medium">
-            Empowering students with a world-class international education that fosters critical thinking, cultural integrity, and lifelong leadership.
+            Empowering students through a world-class international education that inspires critical thinking, nurtures cultural identity, and prepares confident leaders for a changing world.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
               Begin Admissions
             </Button>
-            
-            <button 
-              onClick={() => setShowTour(true)}
-              className="flex items-center gap-3 text-white hover:text-gold transition-colors group"
-            >
-              <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold transition-colors">
-                <Compass className="h-4 w-4 text-white group-hover:text-gold transition-colors" />
-              </div>
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase">Start Virtual Tour</span>
-            </button>
             
             <button className="flex items-center gap-3 text-white hover:text-gold transition-colors group">
               <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold transition-colors">

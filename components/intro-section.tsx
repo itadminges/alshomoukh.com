@@ -57,8 +57,8 @@ export function IntroSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="absolute -bottom-10 -right-10 z-20 bg-navy p-10 text-white shadow-strong"
             >
-              <p className="text-4xl mb-1 text-gold">27+</p>
-              <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/60">Years of Excellence</p>
+              <p className="text-4xl mb-1 text-gold">11+</p>
+              <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/60">Years of Educational Excellence</p>
             </motion.div>
           </Scroll3DReveal>
 
@@ -72,26 +72,27 @@ export function IntroSection() {
             >
               <div className="flex items-center gap-4 mb-8">
                 <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
-                  Academic Legacy
+                  A Tradition of Excellence
                 </span>
                 <div className="h-[1px] w-12 bg-gold/30" />
               </div>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] mb-10 tracking-tight text-navy font-bold">
-                Crafting the <br />
-                <span className="text-gold">Future Leaders</span> <br />
+                Nurturing the <br />
+                <span className="text-gold">Leaders</span> <br />
                 of Tomorrow
               </h2>
 
               <p className="text-navy/70 text-sm md:text-base leading-relaxed mb-12 font-medium max-w-xl">
-                Founded on the principles of academic rigor and cultural sensitivity, Al Shomoukh International School offers a transformative education that transcends boundaries.
+                Founded on a tradition of academic excellence and a deep respect for cultural identity, Al Shomoukh International Private School provides a transformative British education that inspires curiosity, nurtures character, and prepares students to thrive in an ever-changing world.
               </p>
 
               <div className="space-y-6 mb-12">
                 {[
-                  "British National Curriculum (EYFS to A-Level)",
-                  "Global Citizenship & Local Values Integration",
-                  "State-of-the-Art Science and Arts Facilities"
+                  "British Curriculum from EYFS to A Level",
+                  "BTEC Vocational Pathways for Future Careers",
+                  "Outstanding Academic Achievement and University Pathways",
+                  "Character, Leadership and Global Citizenship"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4">
                     <div className="w-5 h-5 rounded-full bg-gold/10 flex items-center justify-center">

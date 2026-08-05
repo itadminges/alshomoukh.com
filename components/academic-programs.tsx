@@ -71,9 +71,9 @@ export function AcademicPrograms() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl text-navy leading-[1.1] mb-8 tracking-tight font-bold uppercase font-heading"
+            className="text-2xl md:text-3xl lg:text-4xl text-navy leading-[1.1] mb-8 tracking-tight font-bold uppercase font-heading"
           >
-            Pathway to <span className="text-gold">Global Leadership</span>
+            A Pathway to Excellence, Growth and <span className="text-gold">Global Success</span>
           </motion.h2>
           
           <motion.p 
@@ -83,7 +83,7 @@ export function AcademicPrograms() {
             transition={{ delay: 0.2 }}
             className="text-sm md:text-base text-navy/70 leading-relaxed font-medium max-w-2xl"
           >
-            A comprehensive educational journey designed to challenge and inspire from nursery to university graduation.
+            A carefully designed learning journey that nurtures curiosity, builds confidence, and empowers students from their earliest years through university preparation
           </motion.p>
         </Scroll3DReveal>
 
