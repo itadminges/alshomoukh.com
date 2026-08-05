@@ -36,7 +36,7 @@ export default function PrimaryPage() {
               Primary Curriculum
             </h2>
             <p className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic">
-              We follow the Primary Key Stage 1 and 2 UK National Curriculum. The curriculum sets a clear statutory entitlement to learning for all children which is both inclusive and challenging. Our teachers plan a range of current and relevant topics carefully matched to meet the requirements of the UK National Curriculum. Emphasis is placed on developing creativity, problem solving and physical development to support the development of the whole child. To enrich students’ learning, we engage in innovative collaboration in English, Mathematics, Science, Art, Computing, Physical Education (PE), Music and Life Skills. We aim to develop our students to be independent learners who are stimulated to be curious and ask questions.
+              We follow the Primary Key Stage 1 and 2 British Curriculum. The curriculum sets a clear statutory entitlement to learning for all children which is both inclusive and challenging. Our teachers plan a range of current and relevant topics carefully matched to meet the requirements of the British Curriculum. Emphasis is placed on developing creativity, problem solving and physical development to support the development of the whole child. To enrich students’ learning, we engage in innovative collaboration in English, Mathematics, Science, Art, Computing, Physical Education (PE), Music and Life Skills. We aim to develop our students to be independent learners who are stimulated to be curious and ask questions.
             </p>
           </FadeIn>
 

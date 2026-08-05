@@ -71,9 +71,14 @@ export default function CurriculumPage() {
           <FadeIn x={-40}>
             <h2 className="text-gold font-bold tracking-[0.4em] uppercase text-[11px] mb-6">Educational Vision</h2>
             <h3 className="text-3xl font-bold uppercase tracking-tight mb-8">Preparing Future Global Citizens</h3>
-            <p className="text-lg text-ivory/80 leading-relaxed font-medium mb-8">
-              We go beyond academics to instill values of leadership, empathy, and social responsibility. Our students are equipped to thrive in a globalized world while remaining rooted in their local heritage.
-            </p>
+            <div className="space-y-6 text-lg text-ivory/80 leading-relaxed font-medium mb-8">
+              <p>
+                At Al Shomoukh International Private School, we believe education extends beyond academic achievement. We nurture students with the values, skills, and mindset needed to become confident leaders, compassionate individuals, and responsible global citizens.
+              </p>
+              <p>
+                Through a balanced approach that combines international perspectives with local heritage and values, our students are prepared to thrive in an interconnected world while remaining proud of their identity and community.
+              </p>
+            </div>
             <div className="flex gap-10">
               <div className="text-center">
                 <Globe className="w-10 h-10 text-gold mx-auto mb-4" />

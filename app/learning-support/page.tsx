@@ -1,107 +1,132 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import { Heart, Users, Activity, ShieldCheck, Target, Sparkles } from "lucide-react"
+import { Heart, ShieldCheck, Target, Sparkles, Check } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
-
-const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, x, y }}
-      animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x, y }}
-      transition={{ duration: 0.8, delay }}
-    >
-      {children}
-    </motion.div>
-  )
-}
+import { Scroll3DReveal } from "@/components/scroll-3d"
+import { SectionSpirals } from "@/components/decorative-spirals"
 
 export default function LearningSupportPage() {
-  const strategies = [
-    "Individual learning strategies",
-    "Tailored classroom support",
-    "Targeted literacy & numeracy intervention",
-    "Continuous academic monitoring",
-    "Strong parent-teacher collaboration"
+  const supportItems = [
+    "Individualised learning strategies",
+    "Personalised classroom support",
+    "Targeted literacy and numeracy interventions",
+    "Continuous progress monitoring",
+    "Strong collaboration between parents, teachers, and specialists"
   ]
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white overflow-hidden scroll-3d-scene">
       <PageHero 
         title="Learning Support" 
-        subtitle="Ensuring every student has the tools, guidance, and environment they need to reach their full potential."
+        subtitle="Empowering Every Student to Thrive"
       />
 
-      <section className="py-24">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-20">
-              <div className="w-20 h-20 bg-ivory rounded-full flex items-center justify-center mx-auto mb-8 border border-gold/20 shadow-sm relative group overflow-hidden">
-                <div className="absolute inset-0 bg-gold/10 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full"></div>
-                <Heart className="w-10 h-10 text-gold relative z-10" />
-              </div>
-              <h2 className="text-gold font-bold tracking-[0.4em] uppercase text-[11px] mb-6">Our Commitment</h2>
-              <p className="text-xl md:text-2xl text-navy leading-[1.8] font-medium italic">
-                At Al Shomoukh International School, we embrace neurodiversity and are committed to supporting students with diverse learning requirements through a personalized approach.
+      {/* Overview Intro */}
+      <section className="py-20 bg-ivory/30 border-b border-navy/5 relative overflow-hidden">
+        <SectionSpirals variant="light" />
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 text-center">
+          <div className="max-w-3xl mx-auto">
+            <Scroll3DReveal rotateAmount={10} depth={30}>
+              <p className="text-navy/80 text-base md:text-xl leading-[1.8] font-medium">
+                At Al Shomoukh International Private School, we believe every student has unique strengths, abilities, and learning needs. Our Learning Support programme provides the guidance, resources, and personalised strategies needed to help students achieve their full potential.
               </p>
-            </div>
-          </FadeIn>
-
-          <FadeIn>
-            <div className="bg-ivory/20 p-12 border border-navy/5 shadow-sm mb-20 relative overflow-hidden group">
-              <div className="absolute top-0 left-0 w-1 h-full bg-gold"></div>
-              <h3 className="font-bold text-2xl text-navy mb-8 tracking-tight uppercase text-center md:text-left">
-                A Collaborative <span className="text-gold">Framework</span>
-              </h3>
-              <p className="text-lg text-navy/70 leading-[1.8] font-medium mb-12">
-                Our Learning Support team works hand-in-hand with subject teachers and parents to create an inclusive environment where academic barriers are identified and addressed early.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-                {strategies.map((item, i) => (
-                  <FadeIn key={i} x={-20} delay={0.05 * i}>
-                    <div className="flex gap-4 items-center">
-                      <span className="text-navy font-bold text-sm uppercase tracking-tight">{item}</span>
-                    </div>
-                  </FadeIn>
-                ))}
-              </div>
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "Empowerment", icon: ShieldCheck, desc: "Building student confidence and self-advocacy skills." },
-              { title: "Achievement", icon: Target, desc: "Setting clear milestones for academic and personal growth." },
-              { title: "Inspiration", icon: Sparkles, desc: "Unlocking unique strengths and specialized talents." }
-            ].map((feature, i) => (
-              <FadeIn key={i} y={40} delay={0.1 * i}>
-                <div className="bg-white p-8 border border-navy/5 text-center group hover:bg-navy hover:text-white transition-all duration-500">
-                  <feature.icon className="w-8 h-8 text-gold mx-auto mb-6 group-hover:scale-110 transition-transform" />
-                  <h4 className="font-bold text-navy uppercase tracking-widest text-xs mb-4 group-hover:text-gold">{feature.title}</h4>
-                  <p className="text-navy/60 text-[13px] font-medium leading-relaxed group-hover:text-ivory/70">{feature.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
+            </Scroll3DReveal>
           </div>
         </div>
       </section>
 
-      {/* Holistic Callout */}
-      <section className="py-24 bg-navy text-white text-center relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none flex items-center justify-center">
-          <Heart className="w-[60vw] h-[60vw] text-gold" />
+      {/* Our Commitment & Collaborative Approach */}
+      <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+        <SectionSpirals variant="light" />
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
+          <div className="max-w-4xl mx-auto space-y-16">
+            
+            {/* Our Commitment */}
+            <Scroll3DReveal rotateAmount={12} depth={40}>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-gold/20">
+                  <Heart className="w-8 h-8 text-gold" />
+                </div>
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  <div className="h-[1px] w-8 bg-gold/30" />
+                  <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">Inclusion & Care</span>
+                  <div className="h-[1px] w-8 bg-gold/30" />
+                </div>
+                <h2 className="text-3xl md:text-4xl text-navy font-bold uppercase tracking-tight mb-6">
+                  Our <span className="text-gold">Commitment</span>
+                </h2>
+                <p className="text-lg md:text-xl text-navy/80 leading-[1.8] font-medium italic bg-ivory/40 p-8 border-l-4 border-gold shadow-strong">
+                  "We embrace neurodiversity and are committed to creating an inclusive learning environment where every student is valued, supported, and empowered to succeed."
+                </p>
+              </div>
+            </Scroll3DReveal>
+
+            {/* A Collaborative Approach */}
+            <Scroll3DReveal rotateAmount={14} depth={45}>
+              <div className="bg-white p-8 md:p-12 border border-navy/10 shadow-strong relative overflow-hidden">
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">Partnership</span>
+                  <div className="h-[1px] w-12 bg-gold/30" />
+                </div>
+                
+                <h3 className="font-bold text-2xl md:text-3xl text-navy mb-6 tracking-tight uppercase">
+                  A Collaborative <span className="text-gold">Approach</span>
+                </h3>
+                <p className="text-base md:text-lg text-navy/80 leading-[1.8] font-medium mb-10">
+                  Our Learning Support team works closely with classroom teachers, school leaders, and families to identify individual needs, remove learning barriers, and develop effective strategies that promote academic progress and personal growth.
+                </p>
+                
+                <div className="border-t border-navy/10 pt-8">
+                  <h4 className="font-bold text-lg text-navy uppercase tracking-wider mb-6 text-gold">
+                    Our Support Includes:
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {supportItems.map((item, i) => (
+                      <div key={i} className="flex items-start gap-4 p-4 bg-ivory/40 border-l-2 border-gold">
+                        <div className="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center mt-0.5 shrink-0">
+                          <Check className="h-3.5 w-3.5 text-navy font-bold" />
+                        </div>
+                        <span className="text-navy font-bold text-sm leading-relaxed">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Scroll3DReveal>
+
+            {/* Feature Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { title: "Empowerment", icon: ShieldCheck, desc: "Building student confidence and self-advocacy skills." },
+                { title: "Achievement", icon: Target, desc: "Setting clear milestones for academic and personal growth." },
+                { title: "Inspiration", icon: Sparkles, desc: "Unlocking unique strengths and specialized talents." }
+              ].map((feature, i) => (
+                <Scroll3DReveal key={i} rotateAmount={10 + i * 2} depth={30}>
+                  <div className="bg-white p-8 border border-navy/5 shadow-strong text-center group hover:bg-navy hover:text-white transition-all duration-500 h-full flex flex-col justify-between">
+                    <div>
+                      <feature.icon className="w-8 h-8 text-gold mx-auto mb-6 group-hover:scale-110 transition-transform" />
+                      <h4 className="font-bold text-navy uppercase tracking-widest text-xs mb-4 group-hover:text-gold">{feature.title}</h4>
+                      <p className="text-navy/60 text-[13px] font-medium leading-relaxed group-hover:text-ivory/80">{feature.desc}</p>
+                    </div>
+                  </div>
+                </Scroll3DReveal>
+              ))}
+            </div>
+
+          </div>
         </div>
+      </section>
+
+      {/* Holistic Quote Callout */}
+      <section className="py-24 md:py-32 bg-navy text-white text-center relative overflow-hidden">
+        <SectionSpirals variant="dark" />
         <div className="mx-auto max-w-4xl px-6 relative z-10">
-          <FadeIn>
-            <h2 className="text-3xl font-bold uppercase tracking-tight mb-8 italic">"Every child learns differently, and every child can succeed."</h2>
-            <div className="h-1 w-20 bg-gold mx-auto"></div>
-          </FadeIn>
+          <Scroll3DReveal rotateAmount={10} depth={35}>
+            <h2 className="text-2xl md:text-4xl font-bold uppercase tracking-tight mb-8 italic">
+              "Every child learns differently, and every child can succeed."
+            </h2>
+            <div className="h-1 w-20 bg-gold mx-auto" />
+          </Scroll3DReveal>
         </div>
       </section>
     </main>
