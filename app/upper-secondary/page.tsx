@@ -2,8 +2,6 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { GraduationCap, Award, Building, BookMarked, ArrowRight } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 
 const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
@@ -34,123 +32,94 @@ export default function UpperSecondaryPage() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn>
             <h2 className="font-bold text-3xl text-navy mb-8 tracking-tight uppercase border-l-4 border-gold pl-6">
-              Edexcel International GCSE (IGCSE)
+              Pearson Edexcel International GCSE (IGCSE) Programme
             </h2>
             <p className="text-gold font-bold tracking-widest uppercase text-xs mb-4">Grades 9 & 10</p>
-            <p className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic">
-              At Al Shomoukh International Private School we provide a very broad range of IGCSE subjects to suit the needs and abilities of our students. The school follows the Pearson’s IGCSE Edexcel curriculum. All courses follow the Edexcel IGCSE Pearson’s Curriculum and includes: The Core Curriculum subjects are Mathematics, English Language, A Triple Science (Biology, Physics & Chemistry).
-            </p>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-            <FadeIn x={-30} delay={0.2}>
-              <div className="bg-navy p-10 text-white h-full relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gold"></div>
-                <h4 className="flex gap-3 items-center font-bold text-xl mb-8 uppercase tracking-wider relative z-10">
-                  <Award className="w-6 h-6 text-gold" /> Core Subjects
-                </h4>
-                <ul className="space-y-4 font-medium text-ivory/70 relative z-10">
-                  {["Mathematics", "English Language", "Triple Science (Biology, Physics, Chemistry)"].map((sub, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      {sub}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-
-            <FadeIn x={30} delay={0.3}>
-              <div className="bg-ivory/30 p-10 border border-navy/5 h-full group">
-                <h4 className="flex gap-3 items-center font-bold text-xl text-navy mb-8 uppercase tracking-wider">
-                  <BookMarked className="w-6 h-6 text-gold" /> Additional Options
-                </h4>
-                <div className="grid grid-cols-1 gap-y-3 font-medium text-navy/70">
-                  {[
-                    "Economics", 
-                    "Global Citizenship", 
-                    "English Literature", 
-                    "Business Studies", 
-                    "Applied ICT", 
-                    "Physical Education",
-                    "Art",
-                    "Arabic Language"
-                  ].map((sub, i) => (
-                    <div key={i} className="flex items-center gap-3 text-sm">
-                      <div className="w-1.5 h-1.5 bg-gold rounded-full shrink-0"></div>
-                      {sub}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-
-          <FadeIn>
-            <div className="mb-32 text-center">
-              <p className="text-navy/70 mb-4 font-medium text-sm">For further information related to the Edexcel IGCSE Curriculum, please click on the link below:</p>
-              <Button size="lg" asChild className="bg-gold text-white hover:bg-gold/90 transition-all uppercase tracking-[0.25em] font-bold text-[10px] rounded-none h-14 px-12 shadow-lg hover:shadow-gold/20">
-                  <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses-and-edexcel-certificates.html" target="_blank" rel="noopener noreferrer">
-                    Pearson Edexcel IGCSE <ArrowRight className="ml-3 w-4 h-4" />
-                  </a>
-              </Button>
+            <div className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic space-y-6">
+              <p>
+                At Al Shomoukh International Private School, students in Grades 9 and 10 follow the Pearson Edexcel International GCSE (IGCSE) Programme, a globally recognised British qualification designed for learners aged 14–16. Studied in over 80 countries worldwide, Pearson Edexcel International GCSEs are equivalent to UK GCSE qualifications and provide students with the academic knowledge, practical skills, and critical thinking required for progression to International A Levels, BTEC Level 3 qualifications, university, and future careers. The curriculum has been specifically designed for international learners, combining rigorous academic standards with relevant global perspectives.
+              </p>
+              <p>
+                Our International GCSE programme offers a broad and balanced curriculum that enables students to develop subject mastery while preparing for internationally benchmarked external examinations. Students study a carefully selected range of core and optional subjects, including English Language, English Literature, Mathematics, Biology, Chemistry, Physics, Business, Information and Communication Technology (ICT), Global Citizenship, Arabic, Art, French, Economics, Physical Education, and other elective subjects. Through analytical thinking, research, practical application, collaboration, and independent study, students develop the confidence and academic resilience needed to excel in higher education and an increasingly competitive global environment.
+              </p>
+              <p>
+                Teaching is delivered by highly qualified specialist teachers using innovative teaching methodologies, practical investigations, digital learning technologies, and evidence-based assessment practices. Continuous formative assessment, mock examinations, and personalised feedback enable teachers to monitor progress closely, identify areas for improvement, and ensure students are fully prepared for Pearson Edexcel external examinations. This structured approach promotes high academic achievement while encouraging students to become reflective, independent, and self-motivated learners.
+              </p>
+              <p>
+                Beyond academic success, our International GCSE programme is committed to developing well-rounded global citizens. Students are encouraged to demonstrate leadership, integrity, resilience, creativity, and social responsibility through enrichment activities, community engagement, wellbeing initiatives, and character education. By combining academic excellence with personal development, we prepare our students to become confident, responsible, and internationally minded young people who are equipped to succeed in further education and make meaningful contributions to society.
+              </p>
             </div>
           </FadeIn>
 
           <FadeIn>
-            <div className="bg-white p-12 border-t-8 border-navy shadow-sm mb-20 text-center relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 -translate-y-1/2 translate-x-1/2 rotate-45"></div>
-              <GraduationCap className="mx-auto w-16 h-16 text-gold mb-8" />
-              <h3 className="font-bold text-2xl text-navy mb-4 tracking-tight uppercase">
-                International Advanced Levels (IAL)
+            <div className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic space-y-6">
+              <h2 className="font-bold text-3xl text-navy mb-8 tracking-tight uppercase border-l-4 border-gold pl-6">
+                Pearson Edexcel International Advanced Level (IAL) Programme
+              </h2>
+              <p className="text-gold font-bold tracking-widest uppercase text-xs mb-4">Grades 11 & 12</p>
+              <p>
+                At Al Shomoukh International Private School, students in Grades 11 and 12 follow the Pearson Edexcel International Advanced Level (IAL) Programme, one of the world&apos;s most respected pre-university qualifications. Designed for learners aged 16–19, the programme provides an academically rigorous pathway that prepares students for admission to leading universities in the United Kingdom, Europe, North America, the Middle East, and around the world.
+              </p>
+              <p>
+                Our International Advanced Level curriculum enables students to specialise in subjects aligned with their university aspirations and future career pathways. Students study a carefully selected combination of subjects, including Mathematics, Biology, Chemistry, Physics, Business, Economics, Information Technology, English, and other specialist options. Through advanced academic study, independent research, analytical thinking, and practical application, students develop the knowledge, intellectual curiosity, and critical thinking skills required to succeed in higher education and an increasingly competitive global environment.
+              </p>
+              <p>
+                Teaching is delivered by experienced subject specialists using innovative teaching strategies, practical investigations, academic research, and technology-enhanced learning. The modular structure of Pearson Edexcel International A Levels allows students to complete assessments throughout their programme of study, providing opportunities to monitor progress, receive targeted feedback, and continually strengthen their academic performance. This personalised approach encourages resilience, independent learning, and academic excellence while ensuring students are exceptionally well prepared for university-level study.
+              </p>
+              <p>
+                Beyond academic achievement, our International Advanced Level programme is committed to developing confident, ethical, and globally minded young adults. Through leadership opportunities, community engagement, career guidance, wellbeing initiatives, and enrichment programmes, students are encouraged to become resilient, innovative, and socially responsible leaders. By combining outstanding academic preparation with character development and global citizenship, we empower our graduates to make informed choices, embrace lifelong learning, and achieve success in higher education and their future careers.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn>
+            <div className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic space-y-6">
+              <h2 className="font-bold text-3xl text-navy mb-8 tracking-tight uppercase border-l-4 border-gold pl-6">
+                Pearson BTEC International Level 3 Extended Diploma
+              </h2>
+              <p>
+                The Pearson BTEC International Level 3 Extended Diploma is a globally recognised, career-focused qualification designed for students aged 16–19 who wish to combine academic study with practical, real-world learning. Equivalent in size to three International A Levels, the qualification provides students with the knowledge, technical skills, and professional competencies required for progression to university, higher education, apprenticeships, or employment.
+              </p>
+              <p>
+                At Al Shomoukh International Private School, students benefit from an engaging learning experience that develops critical thinking, problem-solving, communication, teamwork, leadership, and independent research skills through authentic vocational scenarios. Assessment is based primarily on coursework, projects, presentations, and practical assignments, allowing students to demonstrate their understanding in meaningful contexts while building a professional portfolio of evidence.
+              </p>
+              <p>
+                Our BTEC programme is designed to bridge the gap between education and industry by enabling students to apply theoretical knowledge to real business challenges. Learners gain valuable transferable skills that prepare them for success in higher education and the modern workplace while developing confidence, creativity, and resilience.
+              </p>
+              <h3 className="font-bold text-2xl text-navy mb-6 tracking-tight uppercase">
+                Why Choose the Pearson BTEC International Level 3 Extended Diploma?
               </h3>
-              <p className="text-gold font-bold tracking-widest uppercase text-xs mb-8">Grades 11 & 12</p>
-              
-              <div className="max-w-2xl mx-auto mb-12">
-                <p className="text-lg text-navy/70 leading-relaxed font-medium mb-6">
-                  At Al Shomoukh International Private School we provide a very broad range of A-Levels subjects to suit the needs and abilities of our students. The school follows the Pearson’s IA-Levels Edexcel Curriculum.
-                </p>
-                <div className="text-left text-navy/70 text-sm font-medium mb-6 max-w-md mx-auto">
-                  <p className="mb-2 font-bold text-navy">Students are expected to select at least four subjects (AS Levels) from:</p>
-                  <ul className="list-disc pl-5 mb-4 grid grid-cols-2 gap-2">
-                    <li>Mathematics</li><li>English language</li><li>English Literature</li><li>Business Studies</li><li>Economics</li><li>Physics</li><li>Chemistry</li><li>Biology</li><li>Applied ICT</li>
-                  </ul>
-                  <p className="text-xs italic text-center text-navy/60">Please note – Students should pass at least 3 subjects from the 4 subjects selected in Grade 11 to progress to Grade 12.</p>
-                </div>
-                <div className="h-px w-20 bg-gold/30 mx-auto mb-8"></div>
-              </div>
-
-              <p className="text-navy/70 mb-4 font-medium text-sm">For further information related to the Edexcel IAL Curriculum, please click on the link below:</p>
-              <Button variant="outline" asChild className="border-navy text-navy hover:bg-navy hover:text-white transition-all uppercase tracking-[0.2em] font-bold text-[10px] rounded-none h-12 px-10">
-                  <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels.html" target="_blank" rel="noopener noreferrer">
-                    Edexcel IAL Curriculum
-                  </a>
-              </Button>
+              <ul className="list-disc pl-6 space-y-3">
+                <li>Internationally recognised qualification equivalent to three International A Levels.</li>
+                <li>Accepted by many universities and higher education institutions worldwide.</li>
+                <li>Career-focused curriculum that develops practical, workplace-ready skills.</li>
+                <li>Assessment through coursework and applied learning rather than relying solely on final examinations.</li>
+                <li>Develops leadership, communication, teamwork, research, analytical thinking, and project management skills.</li>
+                <li>Provides clear progression pathways to university, higher education, and professional careers.</li>
+              </ul>
+              <p>
+                At Al Shomoukh International Private School, we are committed to providing students with innovative learning opportunities that prepare them to become confident, skilled, and globally competitive learners, equipped for success in higher education and their future careers.
+              </p>
             </div>
           </FadeIn>
 
           <FadeIn>
-            <div className="bg-navy p-12 text-white relative overflow-hidden group">
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gold"></div>
-              <div className="flex flex-col md:flex-row gap-10 items-center relative z-10">
-                <div className="p-5 bg-gold/10 text-gold rounded-full border border-gold/20 shrink-0">
-                  <Building className="w-10 h-10" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-2xl mb-4 tracking-tight uppercase">Omani General Education Diploma (GED)</h3>
-                  <p className="text-gold font-bold tracking-widest uppercase text-xs mb-4">Grades 11 & 12</p>
-                  <div className="text-ivory/70 leading-[1.8] font-medium text-sm space-y-4">
-                    <p>
-                      Oman’s General Education Diploma (GED) is available to students in Grade 11 & 12 and is equivalent to the International A-Levels program. The curriculum is developed and monitored by the Ministry of Education. The Omani GED curriculum at Al Shomoukh International Private School inspires students to be compelling individuals who are curious about all areas of learning. Our highly qualified specialist teachers will provide students with the skills, competencies and knowledge to be confident individuals who will continue pursuing their further education. Al Shomoukh International Private School students have an option to study for the GED from Grade 10.
-                    </p>
-                    <p>
-                      <strong>Grade 10 Core:</strong> Mathematics, English, Triple Science (Biology, Physics & Chemistry), ICT, Physical Education, Music and Art. Compulsory for Arabic speaking learners: Arabic, Islamic and Arabic Social Studies.
-                    </p>
-                    <p>
-                      <strong>Grade 11 & 12 Core:</strong> Mathematics, English, Science (Biology, physics & Chemistry) – students must select at least one science. Options: ICT, Physical Education, Music, Art, Business. Compulsory for Arabic speaking learners: Arabic, Islamic and Arabic Social Studies.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic space-y-6">
+              <h2 className="font-bold text-3xl text-navy mb-8 tracking-tight uppercase border-l-4 border-gold pl-6">
+                Omani Bilingual Curriculum (Grades 10–12)
+              </h2>
+              <p>
+                At Al Shomoukh International Private School, students in Grades 10 to 12 have the opportunity to follow the Omani Bilingual Curriculum, a Ministry of Education-approved programme that combines the academic requirements of the Sultanate of Oman. The curriculum provides students with a strong bilingual foundation, delivering key academic subjects in English while preparing learners for the Omani General Education Diploma (GED). This nationally recognised qualification enables students to progress to higher education institutions in Oman and is also recognised by many universities internationally.
+              </p>
+              <p>
+                The programme offers a broad and balanced curriculum designed to promote academic excellence, bilingual proficiency, and personal development. Students study a comprehensive range of subjects, including Mathematics, Physics, Chemistry, Biology, English Language, Information Technology, Arabic Language, Physical Education, Business, Economics and Ministry of Education compulsory subjects. Through rigorous academic study, practical investigations, research, and collaborative learning, students develop critical thinking, problem-solving, communication, and independent learning skills that prepare them for higher education and future careers. The curriculum is carefully aligned with Ministry of Education requirements while supporting students in becoming confident bilingual learners.
+              </p>
+              <p>
+                Teaching is delivered by experienced and highly qualified educators who use innovative teaching strategies, practical applications, digital technologies, and continuous assessment to maximise student achievement. Regular formative assessments, mock examinations, and targeted feedback enable teachers to monitor progress closely, personalise learning, and ensure students are fully prepared for the Ministry of Education General Education Diploma examinations. This structured approach promotes high academic standards while fostering resilience, responsibility, and a commitment to lifelong learning.
+              </p>
+              <p>
+                Alongside academic success, our Omani Bilingual Curriculum is committed to developing well-rounded, responsible, and globally aware young adults. Through leadership opportunities, character education, wellbeing initiatives, and community engagement, students are encouraged to demonstrate integrity, respect, resilience, and social responsibility. By combining academic excellence with strong bilingual communication skills and the values of the Sultanate of Oman, we prepare our graduates to thrive in higher education, contribute positively to society, and succeed in an increasingly interconnected world.
+              </p>
             </div>
           </FadeIn>
         </div>

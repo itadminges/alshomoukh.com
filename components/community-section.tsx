@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ShieldCheck, Globe, Users, Lightbulb, Trophy, Target } from "lucide-react"
 
@@ -84,7 +83,7 @@ export function CommunitySection() {
             </h2>
             
             <p className="reveal opacity-0 transition-all duration-700 delay-300 text-sm md:text-base text-primary/70 leading-[1.8] mb-10 font-medium max-w-xl">
-              Al Shomoukh International School stands as a beacon of academic distinction. We combine traditional values with modern pedagogical approaches to create a uniquely powerful learning experience.
+              Al Shomoukh International Private School stands as a beacon of academic distinction. We combine traditional values with modern pedagogical approaches to create a uniquely powerful learning experience.
             </p>
 
             <div className="reveal opacity-0 transition-all duration-700 delay-400">
@@ -121,4 +120,3 @@ export function CommunitySection() {
     </section>
   )
 }
-

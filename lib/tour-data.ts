@@ -29,7 +29,7 @@ export const TOUR_NODES: Record<string, TourNode> = {
     name: "Main Entrance",
     panorama: defaultPanorama,
     thumbnail: defaultThumb,
-    description: "The grand entrance to Al Shomoukh International School, welcoming students and visitors to a world of excellence.",
+    description: "The grand entrance to Al Shomoukh International Private School, welcoming students and visitors to a world of excellence.",
     category: "Entrance",
     floor: "Ground Floor",
     links: [

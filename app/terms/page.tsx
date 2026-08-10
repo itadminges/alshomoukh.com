@@ -24,11 +24,11 @@ export default function TermsPage() {
   const sections = [
     {
       title: "1. Website Usage",
-      content: "Welcome to the Al Shomoukh International School website. By accessing and using this website, you agree to comply with and be bound by the following terms and conditions of use. If you disagree with any part of these terms, please do not use our website."
+      content: "Welcome to the Al Shomoukh International Private School website. By accessing and using this website, you agree to comply with and be bound by the following terms and conditions of use. If you disagree with any part of these terms, please do not use our website."
     },
     {
       title: "2. Intellectual Property",
-      content: "All content on this website, including but not limited to text, graphics, logos, images, and software, is the property of Al Shomoukh International School and is protected by international copyright laws. Any unauthorized use of the content is strictly prohibited."
+      content: "All content on this website, including but not limited to text, graphics, logos, images, and software, is the property of Al Shomoukh International Private School and is protected by international copyright laws. Any unauthorized use of the content is strictly prohibited."
     },
     {
       title: "3. Acceptable Use",
@@ -40,7 +40,7 @@ export default function TermsPage() {
     },
     {
       title: "5. Limitation of Liability",
-      content: "Al Shomoukh International School will not be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website."
+      content: "Al Shomoukh International Private School will not be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website."
     },
     {
       title: "6. Governing Law",
@@ -52,7 +52,7 @@ export default function TermsPage() {
     <main className="min-h-screen bg-white">
       <PageHero 
         title="Terms & Conditions" 
-        subtitle="Governing the use of our digital platforms and your interaction with Al Shomoukh International School's online services."
+        subtitle="Governing the use of our digital platforms and your interaction with Al Shomoukh International Private School's online services."
       />
 
       <section className="py-24">

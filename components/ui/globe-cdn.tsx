@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useCallback, useState } from "react"
+import { useEffect, useRef, useCallback } from "react"
 import createGlobe from "cobe"
 
 interface CdnMarker {
@@ -50,7 +50,7 @@ const defaultArcs: CdnArc[] = [
 
 export function GlobeCdn({
   markers = defaultMarkers,
-  arcs = defaultArcs,
+  arcs: _arcs = defaultArcs,
   className = "",
   speed = 0.003,
   dark = 0,
@@ -64,22 +64,6 @@ export function GlobeCdn({
   const phiOffsetRef = useRef(0)
   const thetaOffsetRef = useRef(0)
   const isPausedRef = useRef(false)
-  const [traffic, setTraffic] = useState<{ id: string; value: number }[]>([])
-
-  useEffect(() => {
-    // Initialize traffic on the client to avoid hydration mismatch
-    setTraffic(arcs.map((a) => ({ id: a.id, value: Math.floor(Math.random() * 300) + 100 })))
-
-    const interval = setInterval(() => {
-      setTraffic((data) =>
-        data.map((t) => ({
-          ...t,
-          value: Math.max(50, t.value + Math.floor(Math.random() * 21) - 10),
-        }))
-      )
-    }, 2500)
-    return () => clearInterval(interval)
-  }, [arcs])
 
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
     pointerInteracting.current = { x: e.clientX, y: e.clientY }
@@ -183,28 +167,6 @@ export function GlobeCdn({
       if (globe) globe.destroy()
     }
   }, [markers, speed, dark])
-
-  const pyramidFaceStyle = (nth: number): React.CSSProperties => {
-    const transforms = [
-      "rotateY(0deg) translateZ(4px) rotateX(19.5deg)",
-      "rotateY(120deg) translateZ(4px) rotateX(19.5deg)",
-      "rotateY(240deg) translateZ(4px) rotateX(19.5deg)",
-      "rotateX(-90deg) rotateZ(60deg) translateY(4px)",
-    ]
-    const colors = ["#b91c1c", "#991b1b", "#7f1d1d", "#dc2626"] // Shades of red for Al Shomoukh
-    return {
-      position: "absolute",
-      left: -0.5,
-      top: 0,
-      width: 0,
-      height: 0,
-      borderLeft: "6.5px solid transparent",
-      borderRight: "6.5px solid transparent",
-      borderBottom: `13px solid ${colors[nth]}`,
-      transformOrigin: "center bottom",
-      transform: transforms[nth],
-    }
-  }
 
   return (
     <div className={`relative aspect-square select-none ${className}`}>

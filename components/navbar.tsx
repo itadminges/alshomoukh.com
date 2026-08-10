@@ -87,6 +87,7 @@ export function Navbar() {
                 className={cn(
                   "h-12 lg:h-14 w-auto object-contain transition-all duration-500"
                 )}
+                style={{ width: "auto" }}
                 priority
               />
             </div>
@@ -208,6 +209,7 @@ export function Navbar() {
               width={180} 
               height={50} 
               className="h-10 w-auto object-contain"
+              style={{ width: "auto" }}
             />
             <Button 
               variant="ghost" 
@@ -258,7 +260,7 @@ export function Navbar() {
                         exit={{ height: 0, opacity: 0, marginTop: 0 }}
                         className="flex flex-col gap-4 pl-4 border-l-2 border-secondary/20 overflow-hidden"
                       >
-                        {link.submenu.map((sub, j) => (
+                        {link.submenu.map((sub) => (
                           <Link
                             key={sub.href}
                             href={sub.href}

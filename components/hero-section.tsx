@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Play, Compass } from "lucide-react"
+import { Play } from "lucide-react"
 import { SectionSpirals } from "@/components/decorative-spirals"
 import { TourOverlay } from "@/components/virtual-tour/tour-overlay"
 
@@ -87,7 +87,11 @@ export function HeroSection() {
               </Button>
             </Link>
             
-            <button className="flex items-center gap-3 text-white hover:text-gold transition-colors group">
+            <button
+              type="button"
+              onClick={() => setShowTour(true)}
+              className="flex items-center gap-3 text-white hover:text-gold transition-colors group"
+            >
               <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold transition-colors">
                 <Play className="h-3 w-3 fill-white" />
               </div>

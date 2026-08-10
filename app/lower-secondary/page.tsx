@@ -2,7 +2,6 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { School, BookOpen, Globe, Microscope, Calculator, Palette, Music, Cpu, Activity } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 
 const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
@@ -22,22 +21,10 @@ const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactN
 }
 
 export default function LowerSecondaryPage() {
-  const subjects = [
-    { name: "English", icon: BookOpen },
-    { name: "Mathematics", icon: Calculator },
-    { name: "Science", icon: Microscope },
-    { name: "Information Technology", icon: Cpu },
-    { name: "Physical Education", icon: Activity },
-    { name: "Art & Design", icon: Palette },
-    { name: "Music", icon: Music },
-    { name: "French", icon: Globe },
-    { name: "Social Studies", icon: Globe }
-  ]
-
   return (
     <main className="min-h-screen bg-white">
       <PageHero 
-        title="Lower Secondary" 
+        title="iLowerSecondary"
         subtitle="Bridging the gap between primary and upper secondary with a rigorous, balanced, and inspiring academic programme."
       />
 
@@ -45,68 +32,21 @@ export default function LowerSecondaryPage() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn>
             <h2 className="font-bold text-3xl text-navy mb-8 tracking-tight uppercase border-l-4 border-gold pl-6">
-              Our Philosophy
+              Pearson Edexcel iLowerSecondary Curriculum
             </h2>
-            <p className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic">
-              The curriculum is designed on building a strong foundation in core subjects and to support academic success. Students in lower secondary are encouraged to deepen and expand their understanding and develop life skills. Our dedicated teachers ensure students are appropriately academically challenged to achieve their potential.
-            </p>
-          </FadeIn>
-
-          <FadeIn>
-            <h3 className="font-bold text-2xl text-navy mb-8 uppercase tracking-widest text-center">
-              Curriculum
-            </h3>
-            <p className="text-navy/60 text-center mb-16 font-medium">
-              In preparations for the Edexcel IGCSE examinations students are taught a demanding curriculum which focuses on providing children with the core knowledge they need for success in education. The Pearson’s Edexcel Curriculum and resources are used in all core subjects taught across Key stage 3, 4 and 5 to ensure consistency and is mapped in precise details.
-            </p>
-          </FadeIn>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-24">
-            {subjects.map((subject, i) => (
-              <FadeIn key={i} y={20} delay={0.05 * i}>
-                <div className="bg-ivory/20 p-6 border border-navy/5 flex flex-col items-center text-center group hover:bg-navy hover:text-white transition-all duration-500">
-                  <div className="p-3 bg-navy/5 rounded-none mb-4 group-hover:bg-gold/20 transition-colors">
-                    <subject.icon className="w-6 h-6 text-navy group-hover:text-gold transition-colors" />
-                  </div>
-                  <span className="font-bold text-xs uppercase tracking-widest leading-tight">{subject.name}</span>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-
-          <FadeIn>
-            <div className="bg-ivory/30 p-12 border-t-4 border-gold shadow-sm">
-              <h3 className="flex gap-4 items-center font-bold text-2xl mb-8 tracking-tight uppercase text-navy">
-                <School className="w-10 h-10 text-gold" />
-                Additional Studies
-              </h3>
-              <div className="space-y-6">
-                <p className="text-lg text-navy/80 leading-[1.8] font-medium">
-                  In accordance with local educational requirements and to foster cultural integrity, we provide mandated courses in:
-                </p>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {["Arabic Language", "Islamic Studies", "Omani Social Studies"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-navy font-bold uppercase tracking-tight text-sm">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Preparation Callout */}
-      <section className="py-24 bg-navy text-white text-center">
-        <div className="mx-auto max-w-4xl px-6">
-          <FadeIn>
-            <h2 className="text-3xl font-bold uppercase tracking-tight mb-6">Preparing for Excellence</h2>
-            <p className="text-lg text-ivory/80 leading-relaxed font-medium mb-12">
-              Our Lower Secondary curriculum serves as the crucial foundation for the IGCSE years, ensuring every student has the skills and knowledge to excel in their chosen academic pathways.
-            </p>
-            <div className="inline-block px-10 py-4 border border-gold text-gold font-bold uppercase tracking-widest text-xs">
-              Pathway to IGCSE
+            <div className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic space-y-6">
+              <p>
+                At Al Shomoukh International Private School, students in Grades 7 and 8 follow the Pearson Edexcel iLowerSecondary Curriculum, an internationally recognised British programme designed for learners aged 11–14. The curriculum provides a seamless transition from iPrimary and prepares students for the academic rigour of Pearson Edexcel International GCSE qualifications in Grades 9 and 10. Built upon the latest UK National Curriculum and adapted for international learners, the programme develops deep subject knowledge, critical thinking, creativity, and independent learning while supporting students whose first language is not English.
+              </p>
+              <p>
+                Our iLowerSecondary curriculum offers a broad and balanced education through English, Mathematics, Science, Computing, Global Citizenship, Physical Education, Art, Music, French and Arabic and Islamic Studies in accordance with the requirements of the Ministry of Education. Learning experiences are designed to challenge students academically while encouraging enquiry, collaboration, communication, problem-solving, and innovation. As students progress through Grades 7 and 8, they develop the confidence, resilience, and analytical skills required for future academic success and lifelong learning.
+              </p>
+              <p>
+                Teaching is supported by high-quality Pearson resources, inquiry-based learning, practical investigations, collaborative projects, and the purposeful integration of educational technology. Regular formative assessments, together with Pearson Progress Tests and internationally benchmarked Achievement Tests, enable teachers to monitor student progress, personalise learning, and ensure every learner is well prepared for the transition into International GCSE courses.
+              </p>
+              <p>
+                Alongside academic excellence, our iLowerSecondary programme places a strong emphasis on developing well-rounded young people. Through leadership opportunities, global citizenship, wellbeing initiatives, and character education, students are encouraged to become responsible, respectful, compassionate, and confident individuals who are prepared to contribute positively to their local and global communities. By fostering intellectual curiosity, resilience, and a growth mindset, we equip every learner with the knowledge, skills, and values needed to thrive in an increasingly interconnected world.
+              </p>
             </div>
           </FadeIn>
         </div>

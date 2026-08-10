@@ -61,7 +61,7 @@ export default function ContactPage() {
             <div className="space-y-12 h-full flex flex-col justify-center">
               <h2 className="font-bold text-3xl text-navy mb-4 tracking-tight uppercase">Get in Touch</h2>
               <p className="text-navy/80 text-base leading-[1.8] font-medium mb-4">
-                We encourage you to visit the school and take a tour around as this is the best way to get a true insight of Al Shomoukh International School.
+                We encourage you to visit the school and take a tour around as this is the best way to get a true insight of Al Shomoukh International Private School.
               </p>
               <p className="text-navy/80 text-base leading-[1.8] font-medium mb-10 bg-ivory/50 p-6 border-l-4 border-gold shadow-sm">
                 Please send an email to <span className="text-gold font-bold">admission@alshomoukh.com</span> or call <span className="text-gold font-bold">+968 24284756</span> / <span className="text-gold font-bold">+968 24284771</span> to discuss convenient dates and times for your visit.
@@ -97,7 +97,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-bold text-navy text-xl uppercase mb-2 tracking-tight">Our Location</h4>
                     <p className="text-navy/70 font-medium max-w-[350px] leading-relaxed">
-                      Al Shomoukh International School<br />
+                      Al Shomoukh International Private School<br />
                       Al Mouj, Muscat<br />
                       Sultanate of Oman
                     </p>

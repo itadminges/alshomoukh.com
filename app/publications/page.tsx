@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { FileText, Book, Calendar, Mail, Download, ArrowRight, BookOpen } from "lucide-react"
+import { Book, Calendar, Mail, Download, ArrowRight, BookOpen } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 
 const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
@@ -85,7 +85,7 @@ export default function PublicationsPage() {
                   
                   <div className="mt-12 p-6 border-l-2 border-gold bg-ivory/10">
                     <p className="text-navy/60 text-sm font-medium leading-relaxed">
-                      Our annual yearbook is a cherished publication that captures the spirit and diversity of Al Shomoukh International School.
+                      Our annual yearbook is a cherished publication that captures the spirit and diversity of Al Shomoukh International Private School.
                     </p>
                   </div>
                 </div>

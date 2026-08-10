@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin, ArrowRight, Plus, Minus } from "lucide-react"
+import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin, Plus, Minus } from "lucide-react"
 
 const socialLinks = [
   { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
@@ -182,7 +182,7 @@ export function Footer() {
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 order-2 md:order-1">
             <p className="text-[11px] font-bold text-white/30 tracking-[0.2em] uppercase">
-              &copy; {new Date().getFullYear()} Al Shomoukh International School
+              &copy; {new Date().getFullYear()} Al Shomoukh International Private School
             </p>
             <div className="hidden md:block h-3 w-[1px] bg-white/10" />
             <div className="flex gap-8">
@@ -206,4 +206,3 @@ export function Footer() {
     </footer>
   )
 }
-

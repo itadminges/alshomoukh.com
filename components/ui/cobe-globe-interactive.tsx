@@ -51,8 +51,6 @@ export function GlobeInteractive({
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const pointerInteracting = useRef<{ x: number; y: number } | null>(null)
   const pointerInteractionStart = useRef(0)
-  const rotationPhi = useRef(phi)
-  const rotationTheta = useRef(theta)
   const dragOffset = useRef({ phi: 0, theta: 0 })
 
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
@@ -86,7 +84,7 @@ export function GlobeInteractive({
     if (!canvasRef.current) return
 
     let globePhi = phi
-    let globeTheta = theta
+    const globeTheta = theta
     let width = 0
 
     const onResize = () => {

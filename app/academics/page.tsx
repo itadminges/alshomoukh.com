@@ -11,25 +11,25 @@ export default function AcademicsPage() {
     { 
       title: "Kindergarten", 
       icon: Layers, 
-      desc: "Foundation Stage – Play-based and nurturing environment for young learners.",
+      desc: "Early Years Foundation Stage (EYFS) for children aged 3-5.",
       link: "/kindergarten"
     },
     { 
       title: "Primary School", 
       icon: BookMarked, 
-      desc: "Key Stages 1 & 2 – Strong foundation in literacy, numeracy, and creativity.",
+      desc: "Pearson Edexcel iPrimary Curriculum for Grades 1-6.",
       link: "/primary-school"
     },
     { 
-      title: "Lower Secondary", 
+      title: "iLowerSecondary",
       icon: School, 
-      desc: "Key Stage 3 – Balanced curriculum for advanced academic pathways.",
+      desc: "Pearson Edexcel iLowerSecondary Curriculum for Grades 7-8.",
       link: "/lower-secondary"
     },
     { 
       title: "Upper Secondary", 
       icon: GraduationCap, 
-      desc: "Grades 9–12 – Edexcel IGCSE, International A Levels, and future success.",
+      desc: "International GCSE, IAL, BTEC, and Omani Bilingual pathways.",
       link: "/upper-secondary"
     }
   ]
@@ -38,7 +38,7 @@ export default function AcademicsPage() {
     <main className="min-h-screen bg-white overflow-hidden scroll-3d-scene">
       <PageHero 
         title="Academic Excellence" 
-        subtitle="Empowering students through the British Curriculum, fostering global minds in a local context."
+        subtitle="Empowering students through world-class academic pathways, fostering global minds in a local context."
       />
 
       {/* Intro Section */}
@@ -61,10 +61,10 @@ export default function AcademicsPage() {
 
               <div className="bg-ivory/40 p-8 md:p-12 border-l-4 border-gold shadow-strong space-y-6 text-navy/80 text-base md:text-xl leading-[1.8] font-medium">
                 <p>
-                  Al Shomoukh International Private School follows the British Curriculum, while also ensuring compliance with the requirements of the Ministry of Education in Oman.
+                  Al Shomoukh International Private School provides a structured academic pathway from the Early Years Foundation Stage through Pearson Edexcel iPrimary, iLowerSecondary, International GCSE, International Advanced Level, BTEC, and the Omani Bilingual Curriculum.
                 </p>
                 <p>
-                  Students are prepared for internationally recognized qualifications, including <span className="text-gold font-bold">Pearson Edexcel IGCSE</span> and <span className="text-gold font-bold">Pearson Edexcel International A Levels</span>.
+                  Our programmes combine high academic standards, international perspectives, Ministry of Education requirements, and a strong commitment to student wellbeing, character, leadership, and lifelong learning.
                 </p>
               </div>
             </Scroll3DReveal>
@@ -125,18 +125,18 @@ export default function AcademicsPage() {
               </div>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight mb-8">
-                Guided by the <span className="text-gold">British Curriculum</span>
+                Guided by <span className="text-gold">Academic Pathways</span>
               </h2>
 
               <p className="text-lg md:text-xl text-ivory/80 leading-relaxed max-w-3xl mx-auto font-medium mb-12">
-                Our academic programme is designed to challenge students, foster independent thinking, and prepare them for success in leading universities worldwide.
+                Our academic programme is designed to build knowledge progressively, develop independent thinking, and prepare students for success in higher education, future careers, and meaningful contributions to society.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-16">
                 {[
-                  { label: "Accreditation", value: "Pearson Edexcel" },
-                  { label: "Assessment", value: "International Standards" },
-                  { label: "Outcome", value: "Global Leadership" }
+                  { label: "Foundation", value: "EYFS & iPrimary" },
+                  { label: "Secondary", value: "IGCSE & IAL" },
+                  { label: "Pathways", value: "BTEC & GED" }
                 ].map((item, i) => (
                   <div key={i} className="bg-white/5 p-6 border border-white/10">
                     <p className="text-gold font-bold tracking-widest uppercase text-xs mb-2">{item.label}</p>

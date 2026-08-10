@@ -1,10 +1,15 @@
 "use client"
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Map, Info, Maximize, Minimize, Compass, RotateCw, ZoomIn, ZoomOut, Search, ChevronRight, Menu } from 'lucide-react';
+import { X, Map, Maximize, Minimize, RotateCw, ZoomIn, ZoomOut, Search, ChevronRight, Menu } from 'lucide-react';
 import { TOUR_NODES, TOUR_START_NODE, getNodesByFloor } from '@/lib/tour-data';
-import { TourViewer } from './tour-viewer';
 import { TourMinimap } from './tour-minimap';
+
+const TourViewer = dynamic(() => import('./tour-viewer').then((mod) => mod.TourViewer), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 z-0 bg-black" />,
+});
 
 export function TourOverlay({ onClose }: { onClose: () => void }) {
   const [activeNodeId, setActiveNodeId] = useState(TOUR_START_NODE);
@@ -19,10 +24,10 @@ export function TourOverlay({ onClose }: { onClose: () => void }) {
   const activeNode = TOUR_NODES[activeNodeId];
   const floors = getNodesByFloor();
 
-  const handleViewerReady = (viewer: any, plugins: any) => {
+  const handleViewerReady = useCallback((viewer: any, plugins: any) => {
     viewerRef.current = viewer;
     viewerPluginsRef.current = plugins;
-  };
+  }, []);
 
   const handleZoom = (direction: 'in' | 'out') => {
     if (!viewerRef.current) return;

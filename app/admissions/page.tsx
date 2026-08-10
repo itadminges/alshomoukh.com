@@ -1,6 +1,6 @@
 "use client"
 
-import { BookOpen, FileText, CheckSquare, Award, UserPlus, ArrowRight } from "lucide-react"
+import { BookOpen, FileText, CheckSquare, Award, UserPlus } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"

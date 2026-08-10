@@ -57,8 +57,8 @@ export default function StudentsGlobalSection() {
     <section className="relative overflow-hidden bg-[radial-gradient(circle_at_center,_#123c73_0%,_#071a2b_45%,_#04111d_100%)] py-24 text-white">
       {/* Decorative background elements */}
       <div className="absolute left-0 top-0 h-full w-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[10%] left-[5%] w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-[10%] right-[5%] w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-[10%] left-[5%] h-72 w-72 rounded-full bg-blue-600/10 blur-[120px] md:h-[400px] md:w-[400px]" />
+        <div className="absolute bottom-[10%] right-[5%] h-80 w-80 rounded-full bg-indigo-600/10 blur-[150px] md:h-[500px] md:w-[500px]" />
       </div>
 
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
@@ -79,7 +79,7 @@ export default function StudentsGlobalSection() {
 
           <motion.h2 
             variants={itemVariants}
-            className="text-5xl font-bold leading-[1.1] md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 text-balance"
+            className="text-4xl font-bold leading-[1.1] sm:text-5xl md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 text-balance"
           >
             Where Our <span className="text-blue-400">Students</span>
             <br />
@@ -90,7 +90,7 @@ export default function StudentsGlobalSection() {
             variants={itemVariants}
             className="mt-8 max-w-lg text-lg leading-8 text-slate-400 text-balance"
           >
-            Al Shomoukh International School is home to a vibrant international
+            Al Shomoukh International Private School is home to a vibrant international
             student community representing over 23 nationalities, creating a rich
             environment of cultural exchange and global perspective.
           </motion.p>
@@ -137,14 +137,14 @@ export default function StudentsGlobalSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative flex items-center justify-center lg:h-[700px]"
+          className="relative flex min-h-[320px] items-center justify-center sm:min-h-[420px] lg:h-[700px]"
         >
           {/* Animated glow rings */}
-          <div className="absolute h-[500px] w-[500px] rounded-full border border-blue-500/20" />
-          <div className="absolute h-[600px] w-[600px] rounded-full border border-blue-500/10" />
-          <div className="absolute h-[550px] w-[550px] rounded-full bg-blue-500/10 blur-[100px] animate-pulse" />
+          <div className="absolute aspect-square w-[86vw] max-w-[500px] rounded-full border border-blue-500/20" />
+          <div className="absolute aspect-square w-[96vw] max-w-[600px] rounded-full border border-blue-500/10" />
+          <div className="absolute aspect-square w-[90vw] max-w-[550px] rounded-full bg-blue-500/10 blur-[100px]" />
           
-          <div className="relative w-full h-full max-w-[600px] max-h-[600px]">
+          <div className="relative aspect-square w-full max-w-[600px]">
             <Globe 
               className="w-full h-full" 
               markers={globeMarkers}
@@ -159,4 +159,3 @@ export default function StudentsGlobalSection() {
     </section>
   )
 }
-

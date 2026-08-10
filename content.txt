@@ -44,7 +44,7 @@ Footer text broken
 3) Corrected Homepage Content
 Hero / Intro
 
-Welcome to Al Shomoukh International School
+Welcome to Al Shomoukh International Private School
 A leading international school in Muscat, Oman, committed to academic excellence, character development, and global citizenship.
 
 Calendar / Events
@@ -106,7 +106,7 @@ Where Students From
 With:
 Our International Community
 
-Students at Al Shomoukh International School come from diverse cultural and national backgrounds, creating a rich and inclusive learning environment.
+Students at Al Shomoukh International Private School come from diverse cultural and national backgrounds, creating a rich and inclusive learning environment.
 
 4) About Us Page — Corrected
 Page Title
@@ -115,11 +115,11 @@ About Us
 
 Welcome Section
 Correct version:
-Welcome to Al Shomoukh International School
+Welcome to Al Shomoukh International Private School
 
 It is my pleasure to welcome you to one of the finest educational institutions in the region. Choosing the right school for your child is one of the most important decisions a parent can make.
 
-At Al Shomoukh International School, we are proud to serve over 900 students and their families. We remain deeply committed to ensuring that every student receives exceptional care, high-quality education, and the support needed to thrive.
+At Al Shomoukh International Private School, we are proud to serve over 900 students and their families. We remain deeply committed to ensuring that every student receives exceptional care, high-quality education, and the support needed to thrive.
 
 Vision
 Correct version:
@@ -131,7 +131,7 @@ Mission
 Correct version:
 Mission
 
-At Al Shomoukh International School, we are a community of learners. We RISE:
+At Al Shomoukh International Private School, we are a community of learners. We RISE:
 
 Respect – We encourage kindness, understanding, and tolerance for others and ourselves.
 Integrity – Honesty and responsibility are at the heart of who we are.
@@ -144,11 +144,11 @@ History of Name / School Story
 Corrected:
 Our Story
 
-Al Shomoukh International School is a homegrown educational brand and the lifelong vision of its founder, Honourable Sheikh Salim bin Hamood Al Hashmi.
+Al Shomoukh International Private School is a homegrown educational brand and the lifelong vision of its founder, Honourable Sheikh Salim bin Hamood Al Hashmi.
 
 The school was established by Global Education Services (GES) to provide premium education based on the UK National Curriculum for both Omani and international students.
 
-Since its launch in 2015, the school has been committed to combining the warmth of a close-knit community with the highest standards of international education. Today, Al Shomoukh International School provides quality education from Kindergarten to Grade 12, welcoming students from around the world.
+Since its launch in 2015, the school has been committed to combining the warmth of a close-knit community with the highest standards of international education. Today, Al Shomoukh International Private School provides quality education from Kindergarten to Grade 12, welcoming students from around the world.
 
 Our leadership team is made up of experienced international educators and administrators who share a passion for excellence in teaching and learning.
 
@@ -156,7 +156,7 @@ Community Section
 Corrected:
 Community Engagement
 
-The Al Shomoukh International School Community Impact Statement reflects our strong relationship with Oman, our home for many years.
+The Al Shomoukh International Private School Community Impact Statement reflects our strong relationship with Oman, our home for many years.
 
 Our training programmes provide valuable opportunities for both the local and international community. Our qualified and professional staff are always pleased to share their knowledge and experience.
 
@@ -200,9 +200,9 @@ Admissions
 Intro
 Correct version:
 
-Thank you for considering Al Shomoukh International School and entrusting us with your child’s education.
+Thank you for considering Al Shomoukh International Private School and entrusting us with your child’s education.
 
-We understand that choosing the right school is one of the most important decisions a family can make. Al Shomoukh International School is a leading international school in Muscat, Sultanate of Oman, dedicated to providing a high-quality educational experience.
+We understand that choosing the right school is one of the most important decisions a family can make. Al Shomoukh International Private School is a leading international school in Muscat, Sultanate of Oman, dedicated to providing a high-quality educational experience.
 
 We aim to make our admissions process as clear and seamless as possible by providing all the information you need to make the right choice.
 
@@ -281,7 +281,7 @@ Better Page Title:
 Academic Curriculum
 Corrected Content:
 
-Al Shomoukh International School follows the UK National Curriculum, while also ensuring compliance with the requirements of the Ministry of Education in Oman.
+Al Shomoukh International Private School follows the UK National Curriculum, while also ensuring compliance with the requirements of the Ministry of Education in Oman.
 
 Students are prepared for internationally recognized qualifications, including:
 
@@ -307,7 +307,7 @@ Quote:
 Content:
 The Early Years Foundation Stage (EYFS) Curriculum
 
-Al Shomoukh International School follows the Early Years Foundation Stage (EYFS) framework, adapted to meet the needs of each individual child.
+Al Shomoukh International Private School follows the Early Years Foundation Stage (EYFS) framework, adapted to meet the needs of each individual child.
 
 In KG1 and KG2, the integrated programme covers the seven areas of learning and development:
 
@@ -378,7 +378,7 @@ Upper Secondary
 Corrected Content:
 Edexcel International GCSE (IGCSE) – Grades 9 & 10
 
-At Al Shomoukh International School, we offer a broad range of IGCSE subjects to suit the needs, interests, and abilities of our students.
+At Al Shomoukh International Private School, we offer a broad range of IGCSE subjects to suit the needs, interests, and abilities of our students.
 
 The school follows the Pearson Edexcel IGCSE curriculum.
 
@@ -420,7 +420,7 @@ Right now this page has almost no content.
 Replace with:
 Learning Support
 
-At Al Shomoukh International School, we are committed to supporting students with diverse learning needs.
+At Al Shomoukh International Private School, we are committed to supporting students with diverse learning needs.
 
 Our Learning Support team works collaboratively with teachers, students, and parents to ensure that every learner has access to the guidance and support they need to succeed academically and personally.
 
@@ -494,7 +494,7 @@ Better heading:
 Enrichment Programmes
 Better content:
 
-At Al Shomoukh International School, enrichment is an essential part of the student experience. Our programmes encourage creativity, teamwork, confidence, and personal growth.
+At Al Shomoukh International Private School, enrichment is an essential part of the student experience. Our programmes encourage creativity, teamwork, confidence, and personal growth.
 
 Areas of Enrichment:
 Science Lab
@@ -518,7 +518,7 @@ Careers
 
 “If opportunity doesn’t knock, build a door.”
 
-Working at Al Shomoukh International School
+Working at Al Shomoukh International Private School
 
 Join a passionate and diverse team dedicated to educational excellence, innovation, and student success.
 

@@ -1,31 +1,50 @@
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
-import { Inter, Poppins, Cormorant_Garamond } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
-const inter = Inter({
-  subsets: ['latin'],
+const inter = localFont({
+  src: '../public/Font/helvetica-world-regular.ttf',
   variable: '--font-inter',
   display: 'swap',
 })
 
-const poppins = Poppins({
-  weight: ['400', '500', '600', '700', '800'],
-  subsets: ['latin'],
+const poppins = localFont({
+  src: [
+    {
+      path: '../public/Font/HelveticaNeue-MediumCond.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/Font/HelveticaNeue-BoldCond.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
   variable: '--font-poppins',
   display: 'swap',
 })
 
-const cormorant = Cormorant_Garamond({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  style: ['normal', 'italic'],
+const cormorant = localFont({
+  src: [
+    {
+      path: '../public/Font/Helvetica-Oblique.ttf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../public/Font/Helvetica-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
   variable: '--font-cormorant',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Al Shomoukh International School',
+  title: 'Al Shomoukh International Private School',
   description: 'Empowering the next generation of global citizens through excellence in education',
   generator: 'v0.app',
   icons: {

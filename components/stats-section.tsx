@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect, useState } from "react"
+import { useRef, useEffect } from "react"
 import { motion, useSpring, useInView, useTransform } from "framer-motion"
 import { Scroll3DReveal } from "@/components/scroll-3d"
 import { SectionSpirals } from "@/components/decorative-spirals"

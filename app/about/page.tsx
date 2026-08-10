@@ -1,6 +1,6 @@
 "use client"
 
-import { Target, CheckCircle, BookOpen, Users, Heart, Check, Compass, Award } from "lucide-react"
+import { Target, CheckCircle, BookOpen, Users, Heart, Check } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { Scroll3DReveal } from "@/components/scroll-3d"
 import { SectionSpirals } from "@/components/decorative-spirals"
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 </div>
                 
                 <p className="text-navy/80 text-base md:text-lg leading-relaxed font-medium mb-6">
-                  At Al Shomoukh International School, we are a community of learners. We RISE:
+                  At Al Shomoukh International Private School, we are a community of learners. We RISE:
                 </p>
 
                 <div className="space-y-4">

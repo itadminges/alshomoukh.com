@@ -2,7 +2,6 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Sparkles, Heart, Puzzle } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 
 const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
@@ -22,16 +21,6 @@ const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactN
 }
 
 export default function KindergartenPage() {
-  const learningAreas = [
-    "Personal, Social and Emotional Development",
-    "Communication and Language",
-    "Physical Development",
-    "Literacy",
-    "Mathematics",
-    "Understanding the World",
-    "Expressive Arts and Design"
-  ]
-
   return (
     <main className="min-h-screen bg-white">
       <PageHero 
@@ -47,62 +36,22 @@ export default function KindergartenPage() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn>
             <h2 className="font-bold text-3xl text-navy mb-8 tracking-tight uppercase">
-              The Early Years Foundation Stage (EYFS)
+              Early Years Foundation Stage (EYFS)
             </h2>
-            <p className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic">
-              Al Shomoukh International Private School follows the Early Years Foundation Stage (EYFS) Framework which is adapted to meet the needs of each individual child. EYFS sets standards for the learning, development and care of the child. 
-              KG1 and KG2 an integrated program will cover the 7 areas of learning and development identified in the EYFS framework:
-            </p>
-          </FadeIn>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
-            {learningAreas.map((area, i) => (
-              <FadeIn key={i} x={-20} delay={0.05 * i}>
-                <div className="flex gap-4 items-center bg-ivory/20 p-6 border-l-4 border-gold group hover:bg-gold/5 transition-colors">
-                  <span className="text-navy font-bold text-base uppercase tracking-tight">{area}</span>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-
-          <FadeIn>
-            <h3 className="font-bold text-2xl text-navy mb-12 uppercase tracking-widest text-center">
-              Characteristics of Effective Learning
-            </h3>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "Creating and thinking critically", icon: Puzzle, desc: "Thinking of ideas and making links between them." },
-              { title: "Playing and Exploring", icon: Sparkles, desc: "Engagement through curiosity and finding out about the world." },
-              { title: "Active learning", icon: Heart, desc: "Motivation to keep on trying and enjoying achievements." }
-            ].map((item, i) => (
-              <FadeIn key={i} y={40} delay={0.1 * i}>
-                <div className="bg-white p-10 border border-navy/5 shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow h-full">
-                  <div className="p-4 bg-navy text-gold rounded-none mb-6 transition-colors group-hover:bg-gold group-hover:text-white">
-                    <item.icon className="w-8 h-8" />
-                  </div>
-                  <h4 className="font-bold text-lg text-navy uppercase tracking-tight mb-4">{item.title}</h4>
-                  <p className="text-navy/60 text-sm font-medium leading-relaxed">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Play-Based Learning Callout */}
-      <section className="py-24 bg-navy text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-          <div className="text-[30vw] font-bold text-gold -translate-x-1/4 -translate-y-1/4">PLAY</div>
-        </div>
-        <div className="mx-auto max-w-4xl px-6 text-center relative z-10">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-8">Nurturing Through Play</h2>
-            <p className="text-lg text-ivory/80 leading-relaxed font-medium mb-10">
-              Our kindergarten environment is carefully designed to encourage exploration, creativity, and social interaction, ensuring every child feels safe, valued, and inspired.
-            </p>
-            <div className="h-1 w-20 bg-gold mx-auto"></div>
+            <div className="text-lg text-navy/70 leading-[1.8] font-medium mb-12 italic space-y-6">
+              <p>
+                At Al Shomoukh International Private School, our Kindergarten Department follows the Early Years Foundation Stage (EYFS) Curriculum, a world-renowned British framework that provides children aged 3–5 with the strongest possible foundation for lifelong learning. The EYFS curriculum recognises that young children learn best through purposeful play, exploration, and meaningful experiences, fostering confidence, curiosity, creativity, and independence in a safe, nurturing, and stimulating environment. Every learning experience is carefully designed to support each child&apos;s individual development while preparing them for a successful transition into Primary education. The EYFS framework is built around seven interconnected areas of learning and development, ensuring that every child develops academically, socially, emotionally, and physically.
+              </p>
+              <p>
+                Our Kindergarten curriculum provides a rich and engaging programme centred on the three prime areas of learning—Communication and Language, Personal, Social and Emotional Development, and Physical Development—which form the foundation for children&apos;s future success. These are complemented by the four specific areas of learning: Literacy, Mathematics, Understanding the World, and Expressive Arts and Design. Through carefully planned play-based learning, inquiry, storytelling, outdoor exploration, creative activities, and practical experiences, children develop essential early literacy and numeracy skills while building confidence, resilience, problem-solving abilities, collaboration, and a genuine love of learning.
+              </p>
+              <p>
+                Our experienced Early Years teachers create warm, inclusive, and inspiring classrooms where every child feels valued, supported, and encouraged to thrive. Learning is personalised through continuous observation, formative assessment, and strong partnerships with parents, enabling teachers to celebrate progress and respond to each child&apos;s individual needs and interests. This child-centred approach ensures that every learner develops the knowledge, skills, and confidence needed for a successful transition into the Primary curriculum.
+              </p>
+              <p>
+                Beyond academic development, our EYFS programme places equal importance on nurturing children&apos;s wellbeing, character, and personal growth. We encourage every child to develop independence, kindness, respect, resilience, and a sense of responsibility while fostering curiosity about the world around them. By combining outstanding early years practice with a caring and supportive environment, we inspire confident, happy, and capable learners who are well prepared for the next stage of their educational journey and equipped with the foundations for lifelong success.
+              </p>
+            </div>
           </FadeIn>
         </div>
       </section>

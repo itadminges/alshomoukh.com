@@ -9,6 +9,7 @@ import {
   useMotionValue,
   useMotionValueEvent,
   type MotionValue,
+  type UseScrollOptions,
 } from "framer-motion"
 import { cn } from "@/lib/utils"
 
@@ -32,7 +33,7 @@ type Scroll3DRevealProps = {
   className?: string
   rotateAmount?: number
   depth?: number
-  offset?: [string, string]
+  offset?: UseScrollOptions["offset"]
 }
 
 /** Scroll-driven 3D reveal — content tilts forward into view as you scroll */
@@ -58,7 +59,7 @@ export function Scroll3DReveal({
   }
 
   return (
-    <div ref={ref} className={cn("scroll-3d-scene", className)}>
+    <div ref={ref} className={cn("relative scroll-3d-scene", className)}>
       <motion.div
         style={{
           rotateX,
@@ -100,7 +101,7 @@ export function Scroll3DCard({ children, className, index = 0 }: Scroll3DCardPro
   }
 
   return (
-    <div ref={ref} className={cn("scroll-3d-scene", className)}>
+    <div ref={ref} className={cn("relative scroll-3d-scene", className)}>
       <motion.div
         style={{
           rotateY,
@@ -120,7 +121,7 @@ type Scroll3DParallaxProps = {
   className?: string
   rotateRange?: [number, number]
   depthRange?: [number, number]
-  offset?: [string, string]
+  offset?: UseScrollOptions["offset"]
 }
 
 /** Depth parallax with subtle 3D rotation tied to scroll progress */
@@ -145,7 +146,7 @@ export function Scroll3DParallax({
   }
 
   return (
-    <div ref={ref} className={cn("scroll-3d-scene overflow-hidden", className)}>
+    <div ref={ref} className={cn("relative scroll-3d-scene overflow-hidden", className)}>
       <motion.div
         style={{
           rotateX,

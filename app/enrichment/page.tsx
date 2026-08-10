@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Sparkles, Palette, Activity, Globe, FlaskConical, Laptop, Languages, Plane, Music, Trophy } from "lucide-react"
+import { Sparkles, Palette, Activity, FlaskConical, Laptop, Languages, Plane, Music, Trophy } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 
 const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactNode, delay?: number, x?: number, y?: number }) => {
@@ -45,7 +45,7 @@ export default function EnrichmentPage() {
           <FadeIn>
             <h2 className="text-gold font-bold tracking-[0.4em] uppercase text-[11px] mb-6">Holistic Development</h2>
             <p className="text-xl md:text-2xl text-navy leading-[1.8] font-medium italic">
-              At Al Shomoukh International School, enrichment is an essential part of the student journey, fostering creativity, confidence, and lifelong leadership.
+              At Al Shomoukh International Private School, enrichment is an essential part of the student journey, fostering creativity, confidence, and lifelong leadership.
             </p>
           </FadeIn>
         </div>

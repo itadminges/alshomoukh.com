@@ -87,7 +87,7 @@ export function GlobalReach() {
               Where Our <span className="text-secondary">Students</span> Come From
             </h2>
             <p className="reveal opacity-0 translate-y-4 transition-all duration-500 delay-100 text-lg text-white/80 mb-12 max-w-xl">
-              Al Shomoukh International School is a vibrant global community, hosting students from over 20 different countries, fostering cross-cultural understanding and global perspectives.
+              Al Shomoukh International Private School is a vibrant global community, hosting students from over 20 different countries, fostering cross-cultural understanding and global perspectives.
             </p>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-6">

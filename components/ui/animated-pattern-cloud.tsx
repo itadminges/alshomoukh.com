@@ -31,27 +31,27 @@ function getThemePalette(variant: "dark" | "light"): {
   }
 }
 
-function parseRgb(value: string, fallback: number[]): Rgb {
+function parseRgb(value: string, fallback: Rgb): Rgb {
   const parts = value
     .split(",")
     .map((n) => Number(n.trim()))
     .filter((n) => !Number.isNaN(n))
-  if (parts.length < 3) return fallback as Rgb
-  return [parts[0], parts[1], parts[2]] as Rgb
+  if (parts.length < 3) return fallback
+  return [parts[0], parts[1], parts[2]]
 }
 
-function parseHex(value: string, fallback: number[]): Rgb {
+function parseHex(value: string, fallback: Rgb): Rgb {
   const hex = value.trim().replace("#", "")
-  if (hex.length !== 6) return fallback as Rgb
+  if (hex.length !== 6) return fallback
   return [
     parseInt(hex.slice(0, 2), 16),
     parseInt(hex.slice(2, 4), 16),
     parseInt(hex.slice(4, 6), 16),
-  ] as Rgb
+  ]
 }
 
 function toUnit([r, g, b]: Rgb): Rgb {
-  return [r / 255, g / 255, b / 255] as Rgb
+  return [r / 255, g / 255, b / 255]
 }
 
 type AnimatedPatternCloudProps = {

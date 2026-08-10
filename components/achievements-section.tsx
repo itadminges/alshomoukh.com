@@ -2,9 +2,8 @@
 
 import { useRef } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
 import { Scroll3DCard } from "@/components/scroll-3d"
-import { Quote, Star } from "lucide-react"
+import { Star } from "lucide-react"
 import { AnimatedPatternCloud } from "@/components/ui/animated-pattern-cloud"
 
 const testimonials = [
@@ -109,4 +108,3 @@ export function AchievementsSection() {
     </section>
   )
 }
-

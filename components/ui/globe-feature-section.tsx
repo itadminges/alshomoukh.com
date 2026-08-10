@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import createGlobe, { COBEOptions } from "cobe"
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
 
 export default function Featured_05() {
@@ -14,7 +14,7 @@ export default function Featured_05() {
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
             Discover a <span className="text-primary">Global Perspective</span>{" "}
             <span className="text-gray-500 dark:text-gray-400 block mt-4 text-lg md:text-xl font-normal">
-              Join a community of students from 23+ nationalities at Al Shomoukh International School. 
+              Join a community of students from 23+ nationalities at Al Shomoukh International Private School.
               Fostering cross-cultural understanding and excellence.
             </span>
           </h1>

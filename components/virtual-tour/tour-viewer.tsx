@@ -126,7 +126,7 @@ export function TourViewer({
         viewer.destroy();
       }
     };
-  }, []); // Empty dependency array ensures initialization only happens once
+  }, [onNodeChange, onViewerReady]);
 
   // Update viewer node if changed externally (e.g. from minimap or search)
   useEffect(() => {

@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { Calendar, ArrowRight, Rss } from "lucide-react"
+import { Calendar, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { Scroll3DCard } from "@/components/scroll-3d"
@@ -155,4 +155,3 @@ export function EventsSection() {
     </section>
   )
 }
-

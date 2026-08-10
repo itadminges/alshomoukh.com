@@ -24,7 +24,7 @@ export default function PrivacyPage() {
   const sections = [
     {
       title: "1. Information Collection",
-      content: "At Al Shomoukh International School, we are committed to protecting the privacy of our students, parents, and website visitors. We collect personal information when you submit an enquiry through our contact form, admissions portal, or other online applications."
+      content: "At Al Shomoukh International Private School, we are committed to protecting the privacy of our students, parents, and website visitors. We collect personal information when you submit an enquiry through our contact form, admissions portal, or other online applications."
     },
     {
       title: "2. Use of Information",

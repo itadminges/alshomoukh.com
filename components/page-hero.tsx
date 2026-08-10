@@ -56,7 +56,7 @@ export function PageHero({ title, subtitle, backgroundImage = "/hero-bg.png", qu
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-[1px] w-6 bg-gold/50" />
             <span className="text-gold font-bold tracking-[0.4em] uppercase text-[10px]">
-              Al Shomoukh International School
+              Al Shomoukh International Private School
             </span>
             <div className="h-[1px] w-6 bg-gold/50" />
           </div>

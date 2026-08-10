@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useCallback, useMemo } from "react"
+import { useEffect, useRef, useCallback } from "react"
 import createGlobe from "cobe"
 
 interface Marker {
@@ -36,9 +36,12 @@ interface GlobeProps {
   mapSamples?: number
 }
 
+const EMPTY_MARKERS: Marker[] = []
+const EMPTY_ARCS: Arc[] = []
+
 export function Globe({
-  markers = [],
-  arcs = [],
+  markers = EMPTY_MARKERS,
+  arcs = EMPTY_ARCS,
   className = "",
   markerColor = [0.3, 0.45, 0.85],
   baseColor = [1, 1, 1],
@@ -201,7 +204,7 @@ export function Globe({
         globeRef.current = null
       }
     }
-  }, [theta, dark, mapBrightness, baseColor, markerColor, glowColor, markerElevation, arcColor, arcWidth, arcHeight, speed, diffuse, mapSamples])
+  }, [theta, dark, mapBrightness, baseColor, markerColor, glowColor, markerElevation, markers, markerSize, arcs, arcColor, arcWidth, arcHeight, speed, diffuse, mapSamples])
 
   useEffect(() => {
     if (globeRef.current) {
