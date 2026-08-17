@@ -3,20 +3,21 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin, Plus, Minus } from "lucide-react"
+import { Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, Phone, MapPin, Plus, Minus } from "lucide-react"
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: Facebook, href: "https://www.facebook.com/sismuscat/", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/alshomoukhschool/", label: "Instagram" },
+  { icon: Twitter, href: "https://x.com/ShomoukhSchool", label: "X (Twitter)" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/al-shomoukh-international-school-953aa0171/", label: "LinkedIn" },
+  { icon: Youtube, href: "https://www.youtube.com/channel/UC7ftr6kS9rUbVWTL-3f_NOw", label: "YouTube" },
 ]
 
 const footerNav = [
   {
     title: "About",
     links: [
-      { label: "Our Story", href: "/about" },
+      { label: "Our Story", href: "/about#story" },
       { label: "Principal's Welcome", href: "/about#welcome" },
       { label: "Vision & Mission", href: "/about#vision" },
       { label: "News & Stories", href: "/news" },
@@ -25,9 +26,9 @@ const footerNav = [
   {
     title: "Admissions",
     links: [
-      { label: "Admission Process", href: "/admissions" },
+      { label: "Admission Process", href: "/admissions#process" },
       { label: "Fees & Finance", href: "/admissions#fees" },
-      { label: "Book a Tour", href: "/contact#visit" },
+      { label: "Book a Tour", href: "/book-a-tour" },
       { label: "Apply Online", href: "/admissions#apply" },
       { label: "Scholarships", href: "/admissions#scholarships" },
     ]
@@ -71,11 +72,13 @@ export function Footer() {
             <p className="text-white/70 text-[15px] leading-[1.8] font-medium font-sans max-w-sm">
               Providing a world-class education that empowers students to lead with integrity, innovate with passion, and succeed with purpose in a global community.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <Link
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-500"
                   aria-label={social.label}
                 >
@@ -159,7 +162,7 @@ export function Footer() {
                   <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Inquiries</span>
                 </div>
                 <span className="text-[15px] md:text-[13px] font-medium text-white/70 md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
-                  +968 24284756 / +968 24284771
+                  +968 24 284771 / +968 24 284756
                 </span>
               </li>
               <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">

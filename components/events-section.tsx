@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+import Link from "next/link"
 import { Calendar, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
@@ -105,32 +106,36 @@ export function EventsSection() {
                 <Scroll3DCard
                   key={index}
                   index={index}
-                  className="group flex flex-col sm:flex-row gap-6 p-8 bg-white hover:bg-ivory-dark transition-colors duration-500 border border-navy/5"
                 >
-                  {/* Styled Date Block */}
-                  <div className="flex flex-col items-center justify-center min-w-[70px] h-[70px] bg-navy text-white transition-all duration-500 shrink-0">
-                    <span className="text-xl font-bold text-gold">{event.day}</span>
-                    <span className="text-[8px] font-bold tracking-[0.3em] uppercase opacity-60">{event.month}</span>
-                  </div>
-
-                  {/* Event Details */}
-                  <div className="flex-grow flex flex-col justify-center">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-[8px] font-bold tracking-[0.2em] text-gold uppercase">
-                        {event.type}
-                      </span>
+                  <Link 
+                    href="/news"
+                    className="group flex flex-col sm:flex-row gap-6 p-8 bg-white hover:bg-ivory-dark transition-colors duration-500 border border-navy/5 block"
+                  >
+                    {/* Styled Date Block */}
+                    <div className="flex flex-col items-center justify-center min-w-[70px] h-[70px] bg-navy text-white transition-all duration-500 shrink-0">
+                      <span className="text-xl font-bold text-gold">{event.day}</span>
+                      <span className="text-[8px] font-bold tracking-[0.3em] uppercase opacity-60">{event.month}</span>
                     </div>
-                    <h3 className="text-base md:text-lg text-navy leading-tight group-hover:text-gold transition-colors mb-1 font-bold uppercase">
-                      {event.title}
-                    </h3>
-                  </div>
 
-                  {/* Arrow CTA */}
-                  <div className="flex items-center sm:justify-end">
-                    <div className="w-10 h-10 rounded-full border border-navy/10 flex items-center justify-center text-navy group-hover:bg-gold group-hover:text-white group-hover:border-gold transition-all duration-500">
-                      <ArrowRight className="h-3 w-3" />
+                    {/* Event Details */}
+                    <div className="flex-grow flex flex-col justify-center">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-[8px] font-bold tracking-[0.2em] text-gold uppercase">
+                          {event.type}
+                        </span>
+                      </div>
+                      <h3 className="text-base md:text-lg text-navy leading-tight group-hover:text-gold transition-colors mb-1 font-bold uppercase">
+                        {event.title}
+                      </h3>
                     </div>
-                  </div>
+
+                    {/* Arrow CTA */}
+                    <div className="flex items-center sm:justify-end">
+                      <div className="w-10 h-10 rounded-full border border-navy/10 flex items-center justify-center text-navy group-hover:bg-gold group-hover:text-white group-hover:border-gold transition-all duration-500">
+                        <ArrowRight className="h-3 w-3" />
+                      </div>
+                    </div>
+                  </Link>
                 </Scroll3DCard>
               ))}
             </div>
@@ -143,10 +148,12 @@ export function EventsSection() {
               transition={{ delay: 0.5 }}
               className="mt-12 flex justify-center lg:justify-start"
             >
-              <Button variant="ghost" className="text-navy hover:text-gold text-[9px] font-bold tracking-[0.2em] uppercase group flex items-center gap-2">
-                All Calendar
-                <Calendar className="h-3 w-3" />
-              </Button>
+              <Link href="/news">
+                <Button variant="ghost" className="text-navy hover:text-gold text-[9px] font-bold tracking-[0.2em] uppercase group flex items-center gap-2">
+                  All Calendar & News
+                  <Calendar className="h-3 w-3" />
+                </Button>
+              </Link>
             </motion.div>
           </div>
 

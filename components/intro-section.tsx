@@ -4,6 +4,7 @@ import { useRef } from "react"
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { Check } from "lucide-react"
 import { Scroll3DReveal, useOneWayScrollProgress } from "@/components/scroll-3d"
 import { SectionSpirals } from "@/components/decorative-spirals"
@@ -89,7 +90,7 @@ export function IntroSection() {
 
               <div className="space-y-6 mb-12">
                 {[
-                  "British Curriculum from EYFS to A Level",
+                  "British Curriculum from EYFS to A levels",
                   "BTEC Vocational Pathways for Future Careers",
                   "Outstanding Academic Achievement and University Pathways",
                   "Character, Leadership and Global Citizenship"
@@ -103,12 +104,14 @@ export function IntroSection() {
                 ))}
               </div>
 
-              <Button className="bg-navy text-white hover:bg-navy/90 h-16 px-12 text-xs font-bold tracking-[0.2em] uppercase rounded-none transition-all group overflow-hidden relative">
-                <span className="relative z-10">Our Philosophy</span>
-                <motion.div 
-                  className="absolute inset-0 bg-gold -translate-x-full group-hover:translate-x-0 transition-transform duration-500"
-                />
-              </Button>
+              <Link href="/about">
+                <Button className="bg-navy text-white hover:bg-navy/90 h-16 px-12 text-xs font-bold tracking-[0.2em] uppercase rounded-none transition-all group overflow-hidden relative">
+                  <span className="relative z-10">Our Philosophy</span>
+                  <motion.div 
+                    className="absolute inset-0 bg-gold -translate-x-full group-hover:translate-x-0 transition-transform duration-500"
+                  />
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

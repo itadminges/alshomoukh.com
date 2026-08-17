@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ShieldCheck, Globe, Users, Lightbulb, Trophy, Target } from "lucide-react"
 
@@ -87,10 +88,12 @@ export function CommunitySection() {
             </p>
 
             <div className="reveal opacity-0 transition-all duration-700 delay-400">
-              <Button className="bg-primary text-white hover:bg-primary/90 h-14 px-12 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-xl group">
-                Discover Our Story
-                <Globe className="ml-3 h-4 w-4 transition-transform group-hover:rotate-12" />
-              </Button>
+              <Link href="/about">
+                <Button className="bg-primary text-white hover:bg-primary/90 h-14 px-12 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-xl group">
+                  Discover Our Story
+                  <Globe className="ml-3 h-4 w-4 transition-transform group-hover:rotate-12" />
+                </Button>
+              </Link>
             </div>
           </div>
 

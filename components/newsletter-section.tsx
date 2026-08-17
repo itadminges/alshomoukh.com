@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail, Phone, Calendar } from "lucide-react"
 import { AnimatedPatternCloud } from "@/components/ui/animated-pattern-cloud"
 
+import Link from "next/link"
+
 export function NewsletterSection() {
   const containerRef = useRef<HTMLElement>(null)
   
@@ -43,13 +45,17 @@ export function NewsletterSection() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                  <Button className="bg-gold text-white hover:bg-gold/90 h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
-                    Apply Now
-                    <ArrowRight className="ml-2 h-3 w-3" />
-                  </Button>
-                  <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all bg-transparent">
-                    Inquiry
-                  </Button>
+                  <Link href="/admissions#apply">
+                    <Button className="bg-gold text-white hover:bg-gold/90 h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+                      Apply Now
+                      <ArrowRight className="ml-2 h-3 w-3" />
+                    </Button>
+                  </Link>
+                  <Link href="/contact">
+                    <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all bg-transparent">
+                      Inquiry
+                    </Button>
+                  </Link>
                 </div>
               </motion.div>
             </div>
@@ -57,10 +63,10 @@ export function NewsletterSection() {
             {/* Quick Contact Grid */}
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { icon: Phone, title: "Call Us", detail: "+968 2442 3456" },
-                { icon: Mail, title: "Email", detail: "info@alshomoukh.com" },
-                { icon: Calendar, title: "Book a Tour", detail: "Monday - Thursday" },
-                { icon: Phone, title: "WhatsApp", detail: "+968 9123 4567" },
+                { icon: Phone, title: "Call Us", detail: "+968 24 284771", href: "tel:+96824284771" },
+                { icon: Mail, title: "Email", detail: "admission@alshomoukh.com", href: "mailto:admission@alshomoukh.com" },
+                { icon: Calendar, title: "Book a Tour", detail: "Sunday - Thursday", href: "/book-a-tour" },
+                { icon: Phone, title: "WhatsApp", detail: "+968 24 284771", href: "https://wa.me/96824284771" },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -68,11 +74,15 @@ export function NewsletterSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-5 bg-white/5 border border-white/5 hover:bg-white/10 transition-colors group"
                 >
-                  <item.icon className="h-3 w-3 text-gold mb-3" />
-                  <h4 className="text-[10px] font-bold text-gold uppercase tracking-widest mb-1">{item.title}</h4>
-                  <p className="text-[12px] font-bold text-white uppercase">{item.detail}</p>
+                  <Link 
+                    href={item.href}
+                    className="block p-5 bg-white/5 border border-white/5 hover:bg-white/10 transition-colors group"
+                  >
+                    <item.icon className="h-3 w-3 text-gold mb-3" />
+                    <h4 className="text-[10px] font-bold text-gold uppercase tracking-widest mb-1">{item.title}</h4>
+                    <p className="text-[12px] font-bold text-white uppercase">{item.detail}</p>
+                  </Link>
                 </motion.div>
               ))}
             </div>

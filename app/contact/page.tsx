@@ -64,7 +64,7 @@ export default function ContactPage() {
                 We encourage you to visit the school and take a tour around as this is the best way to get a true insight of Al Shomoukh International Private School.
               </p>
               <p className="text-navy/80 text-base leading-[1.8] font-medium mb-10 bg-ivory/50 p-6 border-l-4 border-gold shadow-sm">
-                Please send an email to <span className="text-gold font-bold">admission@alshomoukh.com</span> or call <span className="text-gold font-bold">+968 24284756</span> / <span className="text-gold font-bold">+968 24284771</span> to discuss convenient dates and times for your visit.
+                Please send an email to <span className="text-gold font-bold">admission@alshomoukh.com</span> or call <span className="text-gold font-bold">+968 24 284771</span> / <span className="text-gold font-bold">+968 24 284756</span> to discuss convenient dates and times for your visit (Sunday – Thursday).
               </p>
               
               <div className="space-y-10">
@@ -74,8 +74,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-navy text-xl uppercase mb-2 tracking-tight">Call Us</h4>
-                    <p className="text-navy/70 font-medium">+968 24284756 / +968 24284771</p>
-                    <p className="text-navy/70 font-bold text-gold">Available 7:30 AM - 3:30 PM</p>
+                    <p className="text-navy/70 font-medium">+968 24 284771 / +968 24 284756</p>
+                    <p className="text-navy/70 font-bold text-gold">Sunday – Thursday: 7:30 AM – 3:30 PM</p>
                   </div>
                 </div>
 
@@ -85,8 +85,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-navy text-xl uppercase mb-2 tracking-tight">Email Us</h4>
-                    <p className="text-navy/70 font-medium">admission@alshomoukh.com</p>
-                    <p className="text-navy/70 font-medium">info@alshomoukh.com</p>
+                    <p className="text-navy/70 font-medium">admission@alshomoukh.com (Admissions)</p>
+                    <p className="text-navy/70 font-medium">info@alshomoukh.com (General Inquiries)</p>
                   </div>
                 </div>
 
@@ -98,8 +98,8 @@ export default function ContactPage() {
                     <h4 className="font-bold text-navy text-xl uppercase mb-2 tracking-tight">Our Location</h4>
                     <p className="text-navy/70 font-medium max-w-[350px] leading-relaxed">
                       Al Shomoukh International Private School<br />
-                      Al Mouj, Muscat<br />
-                      Sultanate of Oman
+                      P.O. Box 71, PC 111, Al Hail South<br />
+                      Muscat, Sultanate of Oman
                     </p>
                   </div>
                 </div>

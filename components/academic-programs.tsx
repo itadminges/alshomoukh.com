@@ -33,7 +33,7 @@ const programs = [
   {
     title: "Upper Secondary",
     division: "Key Stage 4 & 5",
-    description: "Rigorous preparation for IGCSE and A-Level examinations.",
+    description: "Rigorous preparation for IGCSE and A levels examinations.",
     image: "https://www.alshomoukh.com:443/uploads/curriculum/20200805144412-2020-08-05curriculum144407.jpg",
     href: "/upper-secondary"
   },

@@ -16,8 +16,8 @@ const testimonials = [
   },
   {
     name: "Ali Ali",
-    grade: "A-Level Scholar",
-    achievement: "We are proud to announce that Ali has received the Certificate of Excellence from Pearson Edexcel for A level!",
+    grade: "A levels Scholar",
+    achievement: "We are proud to announce that Ali has received the Certificate of Excellence from Pearson Edexcel for A levels!",
     image: "https://www.alshomoukh.com:443/uploads/aboutstudents/20200805155758-2020-08-05aboutstudents155757.jpg",
     category: "Academic Excellence"
   },

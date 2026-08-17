@@ -14,7 +14,7 @@ export default function AboutPage() {
       />
 
       {/* Welcome Section */}
-      <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+      <section id="welcome" className="py-24 md:py-32 bg-white relative overflow-hidden">
         <SectionSpirals variant="light" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
           <div className="max-w-4xl mx-auto">
@@ -48,7 +48,7 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission Section */}
-      <section className="py-24 md:py-32 bg-ivory/30 relative overflow-hidden border-y border-navy/5">
+      <section id="vision" className="py-24 md:py-32 bg-ivory/30 relative overflow-hidden border-y border-navy/5">
         <SectionSpirals variant="light" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -125,7 +125,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+      <section id="story" className="py-24 md:py-32 bg-white relative overflow-hidden">
         <SectionSpirals variant="light" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
           <div className="max-w-4xl mx-auto">
@@ -169,7 +169,7 @@ export default function AboutPage() {
       </section>
 
       {/* Community & Giving Back Section */}
-      <section className="py-24 md:py-32 bg-navy text-white relative overflow-hidden">
+      <section id="community" className="py-24 md:py-32 bg-navy text-white relative overflow-hidden">
         <SectionSpirals variant="dark" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -209,7 +209,7 @@ export default function AboutPage() {
                       Our training programmes are designed to provide valuable learning opportunities for both the local and international community. Whether you are an aspiring educator, a professional seeking skill enhancement, or someone passionate about lifelong learning, our programmes cater to a diverse range of needs. Led by our highly qualified and experienced staff, these training sessions offer practical insights, innovative teaching methodologies, and hands-on learning experiences.
                     </p>
                     <p className="text-ivory/80 text-base md:text-lg leading-[1.8] font-medium bg-white/5 p-4 border-l-2 border-gold">
-                      We welcome individuals from all backgrounds to join us in this enriching journey. To be part of our Training Programmes, please send an email to <span className="text-gold font-bold">info@alshomoukh.com</span> for more details.
+                      We welcome individuals from all backgrounds to join us in this enriching journey. To be part of our Training Programmes, please send an email to <span className="text-gold font-bold">hr@alshomoukh.com</span> or <span className="text-gold font-bold">info@alshomoukh.com</span> for more details.
                     </p>
                   </div>
                 </div>

@@ -17,7 +17,7 @@ export default function EnrichmentPage() {
       heading="A richer school life for confident, capable students."
       intro={[
         "Enrichment is an essential part of the student journey at Al Shomoukh International Private School. It gives students space to explore interests, build confidence, and apply learning in authentic contexts.",
-        "Our programmes span science, digital innovation, languages, sport, creative arts, performing arts, leadership, and educational travel, helping learners discover strengths beyond traditional classroom measures.",
+        "Our programmes span science, digital innovation, languages, sport, art, music, leadership, and educational travel, helping learners discover strengths beyond traditional classroom measures.",
         "Through clubs, events, competitions, celebrations, and student-led opportunities, learners develop teamwork, creativity, communication, leadership, resilience, and a stronger sense of belonging.",
       ]}
       features={[
@@ -33,7 +33,7 @@ export default function EnrichmentPage() {
         },
         {
           title: "Expression",
-          description: "Visual arts, music, drama, and performance give students meaningful ways to communicate and create.",
+          description: "Art and music give students meaningful ways to communicate, explore creativity, and express themselves.",
           icon: Palette,
         },
         {
@@ -48,8 +48,8 @@ export default function EnrichmentPage() {
         "Modern Languages",
         "Sports & Athletics",
         "Global Expeditions",
-        "Creative Arts",
-        "Performing Arts",
+        "Art",
+        "Music",
         "Student Leadership",
       ]}
       pathway={[
