@@ -11,9 +11,8 @@ export default function CurriculumPage() {
       eyebrow="Academic Framework"
       heading="International standards shaped by local identity."
       intro={[
-        "Our curriculum is based on the National Curriculum for England and Pearson Edexcel pathways, providing a broad, balanced, and stimulating programme of study from the early years through upper secondary.",
-        "The framework prepares students for the demands of the 21st century while respecting Omani cultural values, Ministry of Education requirements, bilingual development, and each learner's personal growth.",
-        "Across every stage, students develop academic confidence, character, wellbeing, leadership, creativity, and the skills needed to thrive in higher education and an interconnected world.",
+        "At Al Shomoukh International Private School, our curriculum is designed to provide every student with a high-quality, inclusive, and internationally focused education that promotes academic excellence and personal development. Underpinned by the National Curriculum for England and Pearson Edexcel International pathways, our curriculum combines the latest English educational standards with an international approach, providing clear progression from the Early Years through to Upper Secondary. Learning is made meaningful and accessible through engaging, culturally relevant examples and resources, while integrating Omani cultural values and Ministry of Education requirements.",
+        "Through engaging, challenging, and differentiated learning experiences, we ensure that students develop secure knowledge and are able to retain, apply, and build upon their learning as they progress through the school. Our curriculum develops critical thinking, creativity, communication, leadership, independence, and resilience, while recognising the individual strengths and needs of every learner. Students are appropriately supported and challenged to achieve their full potential, equipping them with the knowledge, skills, values, confidence, and internationally recognised qualifications required to succeed in higher education, future careers, and an increasingly interconnected world.",
       ]}
       features={[
         {
