@@ -1,13 +1,16 @@
 "use client"
 
-import { useRef } from "react"
+import { useState, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { Play } from "lucide-react"
 import { SectionSpirals } from "@/components/decorative-spirals"
+import { TourOverlay } from "@/components/virtual-tour/tour-overlay"
 
 export function HeroSection() {
+  const [showTour, setShowTour] = useState(false)
   const containerRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -23,94 +26,103 @@ export function HeroSection() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
   return (
-    <section 
-      ref={containerRef}
-      className="relative h-screen flex items-center justify-center overflow-hidden bg-navy scroll-3d-scene-deep"
-    >
-      <SectionSpirals variant="hero" />
-      {/* Background Media Layer */}
-      <motion.div 
-        style={{ y: y1, rotateX: bgRotateX, scale: bgScale, transformStyle: "preserve-3d" }}
-        className="absolute inset-0 z-0 origin-center"
-      >
-        <Image
-          src="/hero-bg.png"
-          alt="Al Shomoukh Campus"
-          fill
-          sizes="100vw"
-          className="object-cover scale-105"
-          priority
-        />
-        {/* Multi-layer High-contrast Dark Overlay for maximum text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/70 to-navy/90" />
-        <div className="absolute inset-0 bg-black/25" />
-      </motion.div>
+    <>
+      <AnimatePresence>
+        {showTour && <TourOverlay onClose={() => setShowTour(false)} />}
+      </AnimatePresence>
 
-      {/* Content Layer */}
-      <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 text-center">
+      <section
+        ref={containerRef}
+        className="relative h-screen flex items-center justify-center overflow-hidden bg-navy scroll-3d-scene-deep"
+      >
+        <SectionSpirals variant="hero" />
+        {/* Background Media Layer */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="max-w-4xl mx-auto"
+          style={{ y: y1, rotateX: bgRotateX, scale: bgScale, transformStyle: "preserve-3d" }}
+          className="absolute inset-0 z-0 origin-center"
         >
-          <motion.div
-            style={{ rotateX: contentRotateX, translateZ: contentZ, opacity: contentOpacity, transformStyle: "preserve-3d" }}
-          >
-            {/* Trust Indicator - High Contrast Badge */}
-            <div className="inline-flex items-center justify-center gap-3 mb-6 px-5 py-2 rounded-full bg-navy/90 border border-gold/50 shadow-lg backdrop-blur-md">
-              <div className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-gold-light font-extrabold tracking-[0.35em] uppercase text-[11px] md:text-[12px]">
-                Established 2015
-              </span>
-              <div className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="text-3xl md:text-5xl lg:text-7xl text-white leading-[1.1] mb-8 tracking-tight uppercase font-bold text-balance drop-shadow-md">
-              Where Ambition Meets <br />
-              <span className="text-[#E8C589] font-extrabold drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
-                Global Excellence
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-sm md:text-base text-ivory/95 max-w-xl mx-auto mb-10 leading-relaxed font-medium drop-shadow-sm">
-              Empowering students through a world-class international education that inspires critical thinking, nurtures cultural identity, and prepares confident leaders for a changing world.
-            </p>
-
-            {/* CTA Button */}
-            <div className="flex items-center justify-center">
-              <Link href="/admissions">
-                <Button className="bg-gold text-white hover:bg-gold-light hover:text-navy h-14 px-12 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all shadow-xl hover:shadow-gold/30">
-                  Begin Admissions
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
+          <Image
+            src="/hero-bg.png"
+            alt="Al Shomoukh Campus"
+            fill
+            sizes="100vw"
+            className="object-cover scale-105"
+            priority
+          />
+          <div className="absolute inset-0 bg-navy/30" />
         </motion.div>
-      </div>
 
-      {/* Trust Strip */}
-      <motion.div 
-        style={{ opacity }}
-        className="absolute bottom-10 left-0 w-full z-10 hidden lg:block"
-      >
-        <div className="mx-auto max-w-[1440px] px-20">
-          <div className="flex justify-between items-center py-6 border-t border-white/15">
-            {[
-              { label: "Accredited by", value: "Ministry of Education" },
-              { label: "Curriculum", value: "Pearson Edexcel & BTEC" },
-              { label: "Community", value: "45+ Nationalities" }
-            ].map((item, i) => (
-              <div key={i} className="text-left">
-                <p className="text-[9px] font-bold text-gold-light uppercase tracking-widest mb-1 drop-shadow-sm">{item.label}</p>
-                <p className="text-[11px] text-white font-bold uppercase tracking-wider drop-shadow-sm">{item.value}</p>
+        {/* Content Layer */}
+        <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="max-w-4xl mx-auto"
+          >
+            <motion.div
+              style={{ rotateX: contentRotateX, translateZ: contentZ, opacity: contentOpacity, transformStyle: "preserve-3d" }}
+            >
+              {/* Trust Indicator */}
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="h-[1px] w-6 bg-gold/50" />
+                <span className="text-gold font-bold tracking-[0.4em] uppercase text-[11px]">
+                  Established 2015
+                </span>
+                <div className="h-[1px] w-6 bg-gold/50" />
               </div>
-            ))}
-          </div>
+
+              <h1 className="text-3xl md:text-5xl lg:text-7xl text-white leading-[1.1] mb-8 tracking-tight uppercase font-bold text-balance">
+                Where Ambition Meets <br />
+                <span className="text-gold">Global Excellence</span>
+              </h1>
+              <p className="text-sm md:text-base text-ivory/90 max-w-xl mx-auto mb-10 leading-relaxed font-medium">
+                Empowering students through a world-class international education that inspires critical thinking, nurtures cultural identity, and prepares confident leaders for a changing world.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link href="/admissions">
+                  <Button className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
+                    Begin Admissions
+                  </Button>
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={() => setShowTour(true)}
+                  className="flex items-center gap-3 text-white hover:text-gold transition-colors group"
+                >
+                  <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold transition-colors">
+                    <Play className="h-3 w-3 fill-white" />
+                  </div>
+                  <span className="text-[11px] font-bold tracking-[0.2em] uppercase">Experience SIS</span>
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </motion.div>
-    </section>
+
+        {/* Trust Strip */}
+        <motion.div
+          style={{ opacity }}
+          className="absolute bottom-10 left-0 w-full z-10 hidden lg:block"
+        >
+          <div className="mx-auto max-w-[1440px] px-20">
+            <div className="flex justify-between items-center py-6 border-t border-white/10">
+              {[
+                { label: "Accredited by", value: "Ministry of Education" },
+                { label: "Curriculum", value: "Pearson Edexcel" },
+                { label: "Community", value: "45+ Nationalities" }
+              ].map((item, i) => (
+                <div key={i} className="text-left">
+                  <p className="text-[8px] font-bold text-gold uppercase tracking-widest mb-1">{item.label}</p>
+                  <p className="text-[10px] text-white/80 font-bold uppercase tracking-wider">{item.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </section>
+    </>
   )
 }
