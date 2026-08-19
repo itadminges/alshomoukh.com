@@ -41,7 +41,6 @@ export function IntroSection() {
                   src="/school_building_premium.png" 
                   alt="Al Shomoukh Campus" 
                   fill 
-                  unoptimized
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
