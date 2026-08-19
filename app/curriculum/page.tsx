@@ -1,80 +1,110 @@
 "use client"
 
-import { BookMarked, CheckSquare, GraduationCap, School } from "lucide-react"
 import { AcademicSubPageLayout } from "@/components/academic-subpage-layout"
 
 export default function CurriculumPage() {
   return (
     <AcademicSubPageLayout
       title="Our Curriculum"
-      subtitle="A world-class educational framework that blends British excellence with Omani cultural heritage."
-      eyebrow="Academic Framework"
-      heading="International standards shaped by local identity."
+      subtitle="A world-class educational framework that blends British academic excellence with Omani cultural heritage."
+      cardTitle="OUR CURRICULUM"
+      cardSubtitle="International Standards & Local Identity"
+      cardImage="/academics_premium.png"
       intro={[
-        "At Al Shomoukh International Private School, our curriculum is designed to provide every student with a high-quality, inclusive, and internationally focused education that promotes academic excellence and personal development. Underpinned by the National Curriculum for England and Pearson Edexcel International pathways, our curriculum combines the latest English educational standards with an international approach, providing clear progression from the Early Years through to Upper Secondary. Learning is made meaningful and accessible through engaging, culturally relevant examples and resources, while integrating Omani cultural values and Ministry of Education requirements.",
-        "Through engaging, challenging, and differentiated learning experiences, we ensure that students develop secure knowledge and are able to retain, apply, and build upon their learning as they progress through the school. Our curriculum develops critical thinking, creativity, communication, leadership, independence, and resilience, while recognising the individual strengths and needs of every learner. Students are appropriately supported and challenged to achieve their full potential, equipping them with the knowledge, skills, values, confidence, and internationally recognised qualifications required to succeed in higher education, future careers, and an increasingly interconnected world.",
+        "At Al Shomoukh International Private School, our curriculum is designed to provide every student with a high-quality, inclusive, and internationally focused education that promotes academic excellence and personal development.",
+        "Underpinned by the National Curriculum for England and Pearson Edexcel International pathways, our curriculum combines the latest English educational standards with an international approach, providing clear progression from the Early Years through to Upper Secondary.",
+        "Learning is made meaningful and accessible through engaging, culturally relevant examples and resources, while integrating Omani cultural values and Ministry of Education requirements.",
+        "Through engaging, challenging, and differentiated learning experiences, we ensure that students develop secure knowledge, critical thinking, creativity, communication, leadership, independence, and resilience.",
       ]}
+      highlights={[
+        {
+          title: "UK Framework",
+          description: "National Curriculum for England",
+        },
+        {
+          title: "Pearson Edexcel",
+          description: "iPrimary to IAL & BTEC accreditations",
+        },
+        {
+          title: "MoE Aligned",
+          description: "Omani Heritage & Bilingual STEM",
+        },
+        {
+          title: "University Ready",
+          description: "Direct global admissions preparation",
+        },
+      ]}
+      featuresSubtitle="Curriculum Principles"
+      featuresHeading="Guiding Pillars of Our Learning Framework"
       features={[
         {
           title: "Broad & Balanced",
-          description: "A wide subject offer supports academic, creative, physical, and personal development.",
-          icon: BookMarked,
+          badge: "Holistic",
+          description: "A wide subject offer supports academic, creative, scientific, physical, and personal development across all stages.",
         },
         {
           title: "Internationally Recognised",
-          description: "Pearson Edexcel routes prepare students for IGCSE, IAL, BTEC, and university progression.",
-          icon: GraduationCap,
+          badge: "Global Standard",
+          description: "Pearson Edexcel routes prepare students for IGCSE, IAL, BTEC, and prestigious university progression globally.",
         },
         {
-          title: "Culturally Responsive",
-          description: "Local values, Arabic, Islamic Studies, and Ministry requirements are integrated with care.",
-          icon: School,
+          title: "Culturally Grounded",
+          badge: "Omani Heritage",
+          description: "National identity, Arabic language, Islamic Studies, and Ministry of Education requirements are integrated with care.",
         },
         {
           title: "Student Centered",
-          description: "Assessment and classroom support help teachers respond to individual strengths and needs.",
-          icon: CheckSquare,
+          badge: "Differentiated",
+          description: "Continuous assessment and classroom support help teachers respond to individual strengths, learning styles, and needs.",
         },
       ]}
+      subjectsHeading="Curriculum Qualifications & Programmes"
       subjects={[
-        "EYFS",
-        "Pearson Edexcel iPrimary",
-        "Pearson Edexcel iLowerSecondary",
-        "International GCSE",
-        "International Advanced Level",
-        "BTEC International Level 3",
-        "Omani Bilingual Curriculum",
-        "General Education Diploma",
+        "Early Years Foundation Stage (EYFS)",
+        "Pearson Edexcel iPrimary (Grades 1–6)",
+        "Pearson Edexcel iLowerSecondary (Grades 7–8)",
+        "International GCSE (Grades 9–10)",
+        "International Advanced Level - IAL (Grades 11–12)",
+        "Pearson BTEC International Level 3 Extended Diploma",
+        "Omani Bilingual Curriculum (Grades 10–12)",
+        "General Education Diploma (GED)",
       ]}
+      pathwayHeading="Progression With Purpose"
+      pathwaySubtitle="Structured Trajectory"
       pathway={[
         {
-          label: "Start",
-          title: "Kindergarten",
-          description: "Purposeful EYFS learning builds curiosity, independence, and early academic confidence.",
+          label: "Ages 3–5",
+          title: "Kindergarten (EYFS)",
+          description: "Purposeful EYFS learning builds curiosity, independence, and early academic confidence through play and inquiry.",
+          highlights: ["7 Areas of Learning", "Phonics & Numeracy", "Motor Skills"],
         },
         {
-          label: "G1-G6",
-          title: "Primary School",
-          description: "Pearson Edexcel iPrimary creates strong foundations across core and wider subjects.",
+          label: "Grades 1–6",
+          title: "Primary School (iPrimary)",
+          description: "Pearson Edexcel iPrimary creates strong foundations across English, Mathematics, Sciences, and National Subjects.",
+          highlights: ["Inquiry Labs", "Progress Tests", "Bilingual Proficiency"],
         },
         {
-          label: "G7-G8",
-          title: "Lower Secondary",
-          description: "Students bridge into more rigorous secondary learning and future qualification choices.",
+          label: "Grades 7–8",
+          title: "Lower Secondary (iLowerSecondary)",
+          description: "Students bridge into rigorous secondary learning, subject specialist teaching, and future IGCSE qualification choices.",
+          highlights: ["Specialist Labs", "Analytical Projects", "Checkpoint Readiness"],
         },
         {
-          label: "G9-G12",
-          title: "Upper Secondary",
-          description: "Students choose international, vocational, or national bilingual routes for future progression.",
+          label: "Grades 9–12",
+          title: "Upper Secondary & Pre-University",
+          description: "Students choose international (IGCSE/IAL), vocational (BTEC), or national bilingual (GED) routes for future university admission.",
+          highlights: ["International GCSE & IAL", "BTEC Level 3 Diploma", "Omani Bilingual GED"],
         },
       ]}
       quote={{
         text: "We prepare future global citizens who are confident in the world and proud of their identity.",
+        author: "Al Shomoukh Academic Leadership",
       }}
       nextLink={{
-        href: "/academics",
-        label: "Academic Pathways",
-        description: "View all stages and explore the school journey from Kindergarten to Upper Secondary.",
+        href: "/kindergarten",
+        label: "Kindergarten Stage (EYFS)",
+        description: "Explore how we nurture curiosity, creativity, and joyful discovery in the early formative years.",
       }}
     />
   )
