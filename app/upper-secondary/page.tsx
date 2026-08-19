@@ -1,10 +1,12 @@
 "use client"
 
 import { 
-  CheckCircle2
+  Check, 
+  CheckCircle2, 
+  ArrowRight
 } from "lucide-react"
 import { AcademicSubPageLayout } from "@/components/academic-subpage-layout"
-import { Scroll3DReveal } from "@/components/scroll-3d"
+import { Scroll3DReveal, Scroll3DCard } from "@/components/scroll-3d"
 import Image from "next/image"
 
 export default function UpperSecondaryPage() {
@@ -45,35 +47,34 @@ export default function UpperSecondaryPage() {
   ]
 
   const customPathwayComparison = (
-    <section className="py-20 md:py-28 bg-[#FDFCF7] relative overflow-hidden">
+    <section className="py-24 md:py-36 bg-[#FDFCF7] border-y border-navy/5 relative overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-[1px] w-8 bg-gold/40" />
-            <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
-              Tailored Educational Routes
+        <div className="max-w-2xl mb-16">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-gold font-bold tracking-[0.3em] uppercase text-[11px]">
+              Tailored Senior Education
             </span>
-            <div className="h-[1px] w-8 bg-gold/40" />
+            <div className="h-[1px] w-8 bg-gold/30" />
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy font-bold uppercase tracking-tight font-heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy leading-[1.1] mb-6 tracking-tight font-bold uppercase font-heading">
             Four Distinct <span className="text-gold">Senior Pathways</span>
           </h2>
-          <p className="text-navy/70 text-sm md:text-base font-medium mt-4">
+          <p className="text-navy/70 text-sm md:text-base leading-relaxed font-medium">
             Al Shomoukh provides students with the flexibility to choose an academic trajectory that perfectly aligns with their strengths, career ambitions, and university aspirations.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {pathwayCards.map((card, idx) => (
-            <Scroll3DReveal key={idx} rotateAmount={10 + idx * 2} depth={28}>
-              <div className="bg-white p-7 md:p-8 border border-navy/10 shadow-strong h-full flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-500 relative">
+            <Scroll3DCard key={idx} index={idx}>
+              <div className="bg-white border border-navy/5 p-8 h-full flex flex-col justify-between hover:border-gold/40 transition-colors duration-500 shadow-sm">
                 <div>
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-6">
                     <span className="text-gold font-bold text-xs uppercase tracking-widest">
                       Pathway {card.num}
                     </span>
-                    <span className="text-[10px] font-bold px-2.5 py-0.5 bg-ivory border border-navy/10 text-navy">
+                    <span className="text-[9px] font-bold px-2 py-0.5 bg-ivory text-navy">
                       {card.grades}
                     </span>
                   </div>
@@ -82,18 +83,18 @@ export default function UpperSecondaryPage() {
                     {card.title}
                   </h3>
 
-                  <p className="text-xs font-bold text-gold uppercase tracking-wider mb-4">
+                  <p className="text-[11px] font-bold text-gold uppercase tracking-wider mb-4">
                     {card.framework}
                   </p>
 
-                  <p className="text-navy/75 text-xs md:text-sm leading-relaxed font-medium mb-6">
+                  <p className="text-navy/70 text-xs md:text-sm leading-relaxed font-medium mb-6">
                     {card.desc}
                   </p>
 
-                  <div className="space-y-2 pt-4 border-t border-navy/10 mb-6">
+                  <div className="space-y-2 pt-4 border-t border-navy/5 mb-6">
                     {card.features.map((f, fIdx) => (
-                      <div key={fIdx} className="flex items-center gap-2 text-xs font-semibold text-navy/85">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" />
+                      <div key={fIdx} className="flex items-center gap-2 text-xs font-semibold text-navy/80">
+                        <Check className="w-3.5 h-3.5 text-gold shrink-0" />
                         <span>{f}</span>
                       </div>
                     ))}
@@ -101,28 +102,28 @@ export default function UpperSecondaryPage() {
                 </div>
 
                 {card.hasLogo && (
-                  <div className="pt-4 border-t border-navy/10 flex items-center justify-center">
+                  <div className="pt-4 border-t border-navy/5 flex items-center justify-center">
                     <Image
                       src="/pearson-btec-approved-centre.png"
                       alt="Pearson BTEC Approved Centre"
                       width={140}
                       height={50}
-                      className="h-9 w-auto object-contain"
+                      className="h-8 w-auto object-contain"
                     />
                   </div>
                 )}
               </div>
-            </Scroll3DReveal>
+            </Scroll3DCard>
           ))}
         </div>
 
         {/* University Destinations Banner */}
-        <Scroll3DReveal rotateAmount={8} depth={28}>
-          <div className="bg-navy text-white p-8 md:p-12 border border-gold/30 shadow-strong">
+        <Scroll3DReveal rotateAmount={6} depth={20}>
+          <div className="bg-navy text-white p-8 md:p-14 shadow-strong">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8 items-center">
               <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">Global Recognition</span>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-gold font-bold tracking-[0.3em] uppercase text-[11px]">Global Recognition</span>
                   <div className="h-[1px] w-6 bg-gold/40" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-white mb-4 font-heading">
@@ -136,7 +137,7 @@ export default function UpperSecondaryPage() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="bg-white/5 border border-white/10 p-5">
                   <p className="text-gold font-bold text-xs uppercase tracking-wider mb-1">UK & Europe</p>
-                  <p className="text-sm font-bold text-white uppercase">Russell Group & Top Universities</p>
+                  <p className="text-sm font-bold text-white uppercase">Russell Group & Premier Universities</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 p-5">
                   <p className="text-gold font-bold text-xs uppercase tracking-wider mb-1">USA & Canada</p>
@@ -159,7 +160,7 @@ export default function UpperSecondaryPage() {
     <AcademicSubPageLayout
       title="Upper Secondary & Pre-University"
       subtitle="Comprehensive British and National pathways empowering students aged 14–19 to excel in International GCSE, IAL, Pearson BTEC Level 3, and Omani Bilingual qualifications."
-      cardTitle="INTERNATIONAL GCSE (GRADES 9–10)"
+      cardTitle="International GCSE (Grades 9–10)"
       cardSubtitle="Grades 9–10 • Ages 14–16 • Pearson Edexcel IGCSE"
       cardImage="/school_building_premium.png"
       intro={[
@@ -230,12 +231,6 @@ export default function UpperSecondaryPage() {
             "Builds critical analytical, research, and examination mastery.",
             "Recognized by universities and educational authorities worldwide."
           ],
-          highlights: [
-            { title: "80+ Countries", description: "Studied across the globe" },
-            { title: "Pearson Certified", description: "External UK Board examination" },
-            { title: "Pre-A Level", description: "Direct progression to senior years" },
-            { title: "Global Mindset", description: "International curriculum design" }
-          ]
         },
         {
           title: "International Advanced Level (IAL)",
@@ -255,12 +250,6 @@ export default function UpperSecondaryPage() {
             "Supported by personalized UCAS and international university application mentoring.",
             "Proven track record of high achievement and prestigious placements."
           ],
-          highlights: [
-            { title: "Gold Standard", description: "UK pre-university level" },
-            { title: "Modular Route", description: "Flexible exam sittings" },
-            { title: "Russell Group", description: "Accepted by leading universities" },
-            { title: "Specialisation", description: "Tailored to chosen university degrees" }
-          ]
         },
         {
           title: "Pearson BTEC International Level 3 Extended Diploma",
@@ -285,12 +274,6 @@ export default function UpperSecondaryPage() {
             "Develops leadership, communication, teamwork, research, and project management skills.",
             "Provides clear progression pathways to university, higher education, and professional careers.",
           ],
-          highlights: [
-            { title: "3 A Levels Equiv.", description: "Full diploma status" },
-            { title: "Coursework Based", description: "Applied practical assignments" },
-            { title: "Approved Centre", description: "Official Pearson BTEC certified" },
-            { title: "University Entry", description: "Direct undergraduate access" }
-          ]
         },
         {
           title: "Omani Bilingual Curriculum (Grades 10–12)",
@@ -310,12 +293,6 @@ export default function UpperSecondaryPage() {
             "Provides a comprehensive balance between international standards and local heritage.",
             "Dedicated preparation for national examination success and university scholarships."
           ],
-          highlights: [
-            { title: "MoE Approved", description: "National GED diploma" },
-            { title: "Bilingual STEM", description: "Delivered in English & Arabic" },
-            { title: "SQU & Regional", description: "Direct local university entry" },
-            { title: "Cultural Pride", description: "Omani values & heritage" }
-          ]
         },
       ]}
       quote={{

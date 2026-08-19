@@ -43,10 +43,14 @@ const cormorant = localFont({
   display: 'swap',
 })
 
+import { SCHOOL_INFO, SCHOOL_SCHEMA_JSON_LD } from '@/lib/school-info'
+
 export const metadata: Metadata = {
-  title: 'Al Shomoukh International Private School',
-  description: 'Empowering the next generation of global citizens through excellence in education',
-  generator: 'v0.app',
+  title: {
+    default: 'Al Shomoukh International Private School',
+    template: '%s | Al Shomoukh International Private School',
+  },
+  description: 'Providing a world-class British and Omani education that empowers students to lead with integrity, innovate with passion, and succeed with purpose.',
   icons: {
     icon: [
       {
@@ -66,6 +70,13 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-touch-icon.png',
   },
+  openGraph: {
+    title: 'Al Shomoukh International Private School',
+    description: 'Providing a world-class British and Omani education that empowers students to lead with integrity, innovate with passion, and succeed with purpose.',
+    type: 'website',
+    locale: 'en_OM',
+    siteName: 'Al Shomoukh International Private School',
+  }
 }
 
 import { Navbar } from "@/components/navbar"
@@ -81,6 +92,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} ${cormorant.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHOOL_SCHEMA_JSON_LD) }}
+        />
+      </head>
       <body className="font-sans antialiased bg-background text-foreground flex flex-col min-h-screen">
         <SmoothScroll>
           <ScrollProgress />

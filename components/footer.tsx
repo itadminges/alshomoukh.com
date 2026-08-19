@@ -42,6 +42,7 @@ const footerNav = [
       { label: "Lower Secondary", href: "/lower-secondary" },
       { label: "Upper Secondary", href: "/upper-secondary" },
       { label: "Learning Support", href: "/learning-support" },
+      { label: "Academic Calendar", href: "/calendar" },
     ]
   }
 ]
@@ -57,15 +58,15 @@ export function Footer() {
     <footer className="bg-primary text-white pt-24 pb-12 overflow-hidden border-t border-white/5">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16">
         <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-12 md:gap-16 lg:gap-12 mb-24">
-          
+
           {/* Brand Column */}
           <div className="lg:col-span-4 flex flex-col items-center md:items-start gap-8 order-last lg:order-first mt-12 pt-12 md:pt-0 border-t border-white/10 md:border-t-0 md:mt-0 text-center md:text-left">
             <Link href="/" className="inline-block transition-transform hover:scale-[1.02] duration-500">
-              <Image 
-                src="/White SIS Logo-01.png" 
-                alt="Al Shomoukh Logo" 
-                width={240} 
-                height={80} 
+              <Image
+                src="/White SIS Logo-01.png"
+                alt="Al Shomoukh Logo"
+                width={240}
+                height={80}
                 className="h-20 w-auto object-contain"
                 priority
               />
@@ -92,7 +93,7 @@ export function Footer() {
           {/* Navigation Clusters */}
           {footerNav.map((cluster) => (
             <div key={cluster.title} className="lg:col-span-2 flex flex-col items-center md:items-start w-full border-b border-white/5 md:border-b-0 py-4 md:py-0">
-              <button 
+              <button
                 onClick={() => toggleSection(cluster.title)}
                 className="w-full flex items-center justify-between md:justify-start md:cursor-default"
               >
@@ -103,33 +104,32 @@ export function Footer() {
                   {openSection === cluster.title ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                 </div>
               </button>
-              <div 
-                className={`overflow-hidden transition-all duration-300 ease-in-out w-full md:!max-h-[1000px] md:!opacity-100 ${
-                  openSection === cluster.title ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0 md:mt-0"
-                }`}
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out w-full md:!max-h-[1000px] md:!opacity-100 ${openSection === cluster.title ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0 md:mt-0"
+                  }`}
               >
-              <ul className="flex flex-col gap-5 items-center md:items-start text-center md:text-left pb-2 md:pb-0">
-                {cluster.links.map((link) => (
-                  <li key={link.label}>
-                    <Link 
-                      href={link.href}
-                      className="text-[15px] md:text-[13px] font-medium md:font-bold text-white/60 hover:text-white transition-all duration-300 tracking-wide md:uppercase group flex items-center"
-                    >
-                      <span className="relative">
-                        {link.label}
-                        <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-secondary/50 transition-all duration-300 group-hover:w-full" />
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                <ul className="flex flex-col gap-5 items-center md:items-start text-center md:text-left pb-2 md:pb-0">
+                  {cluster.links.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="text-[15px] md:text-[13px] font-medium md:font-bold text-white/60 hover:text-white transition-all duration-300 tracking-wide md:uppercase group flex items-center"
+                      >
+                        <span className="relative">
+                          {link.label}
+                          <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-secondary/50 transition-all duration-300 group-hover:w-full" />
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
 
           {/* Contact Column */}
           <div className="lg:col-span-2 flex flex-col items-center md:items-start w-full border-b border-white/5 md:border-b-0 py-4 md:py-0">
-            <button 
+            <button
               onClick={() => toggleSection('Contact')}
               className="w-full flex items-center justify-between md:justify-start md:cursor-default"
             >
@@ -140,43 +140,51 @@ export function Footer() {
                 {openSection === 'Contact' ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
               </div>
             </button>
-            <div 
-              className={`overflow-hidden transition-all duration-300 ease-in-out w-full md:!max-h-[1000px] md:!opacity-100 ${
-                openSection === 'Contact' ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0 md:mt-0"
-              }`}
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-in-out w-full md:!max-h-[1000px] md:!opacity-100 ${openSection === 'Contact' ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0 md:mt-0"
+                }`}
             >
-            <ul className="flex flex-col gap-6 md:gap-8 w-full items-center md:items-start text-center md:text-left pb-2 md:pb-0">
-              <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
-                <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
-                  <span className="inline-block md:hidden"><MapPin className="h-4 w-4" /></span>
-                  <span className="hidden md:inline-block"><MapPin className="h-3.5 w-3.5" /></span>
-                  <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Location</span>
-                </div>
-                <span className="text-[15px] md:text-[13px] font-medium text-white/70 leading-relaxed md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
-                  P.O. Box 71, PC 111, <br className="hidden md:block" />Al Hail South, Muscat, <br className="hidden md:block" />Sultanate of Oman
-                </span>
-              </li>
-              <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
-                <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
-                  <span className="inline-block md:hidden"><Phone className="h-4 w-4" /></span>
-                  <span className="hidden md:inline-block"><Phone className="h-3.5 w-3.5" /></span>
-                  <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Inquiries</span>
-                </div>
-                <span className="text-[15px] md:text-[13px] font-medium text-white/70 md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
-                  +968 24 284771 / +968 24 284756
-                </span>
-              </li>
-              <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
-                <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
-                  <span className="inline-block md:hidden"><Mail className="h-4 w-4" /></span>
-                  <span className="hidden md:inline-block"><Mail className="h-3.5 w-3.5" /></span>
-                  <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Email</span>
-                </div>
-                <span className="text-[15px] md:text-[13px] font-medium text-white/70 md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
-                  admission@alshomoukh.com
-                </span>
-              </li>
-            </ul>
+              <ul className="flex flex-col gap-6 md:gap-8 w-full items-center md:items-start text-center md:text-left pb-2 md:pb-0">
+                <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
+                  <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
+                    <span className="inline-block md:hidden"><MapPin className="h-4 w-4" /></span>
+                    <span className="hidden md:inline-block"><MapPin className="h-3.5 w-3.5" /></span>
+                    <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Location</span>
+                  </div>
+                  <span className="text-[15px] md:text-[13px] font-medium text-white/70 leading-relaxed md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
+                    Road 106, Way 208, Building 323<br className="hidden md:block" />
+                    Hay Al Hail, Al Jadeed Al Hail South<br className="hidden md:block" />
+                    P.O. Box 1756, PC: 111, Airport Heights<br className="hidden md:block" />
+                    Muscat, Sultanate of Oman
+                  </span>
+                </li>
+                <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
+                  <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
+                    <span className="inline-block md:hidden"><Phone className="h-4 w-4" /></span>
+                    <span className="hidden md:inline-block"><Phone className="h-3.5 w-3.5" /></span>
+                    <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Inquiries</span>
+                  </div>
+                  <a
+                    href="tel:+96824284771"
+                    className="text-[15px] md:text-[13px] font-medium text-white/70 hover:text-white md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300"
+                  >
+                    +968 24 284771
+                  </a>
+                </li>
+                <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
+                  <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
+                    <span className="inline-block md:hidden"><Mail className="h-4 w-4" /></span>
+                    <span className="hidden md:inline-block"><Mail className="h-3.5 w-3.5" /></span>
+                    <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Email</span>
+                  </div>
+                  <a
+                    href="mailto:admission@alshomoukh.com"
+                    className="text-[15px] md:text-[13px] font-medium text-white/70 hover:text-white md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300"
+                  >
+                    admission@alshomoukh.com
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -194,14 +202,13 @@ export function Footer() {
               <Link href="/terms" className="text-[11px] font-bold text-white/30 tracking-[0.2em] uppercase hover:text-white transition-colors">Terms of Service</Link>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-5 order-1 md:order-2">
-            <span className="text-[7px] font-bold text-white/60 tracking-[0.3em] uppercase">Provided by</span>
-            <Image 
-              src="/ges-logo.png" 
-              alt="GES" 
-              width={120} 
-              height={48} 
+            <Image
+              src="/ges-logo.png"
+              alt="Global Educational Services (GES)"
+              width={200}
+              height={51}
               className="h-10 w-auto object-contain opacity-100 transition-opacity duration-300"
             />
           </div>

@@ -1,5 +1,11 @@
 "use client"
 
+import { 
+  BookOpen, 
+  Award, 
+  Landmark, 
+  GraduationCap
+} from "lucide-react"
 import { AcademicSubPageLayout } from "@/components/academic-subpage-layout"
 
 export default function CurriculumPage() {
@@ -7,8 +13,9 @@ export default function CurriculumPage() {
     <AcademicSubPageLayout
       title="Our Curriculum"
       subtitle="A world-class educational framework that blends British academic excellence with Omani cultural heritage."
+      cardIcon={BookOpen}
       cardTitle="OUR CURRICULUM"
-      cardSubtitle="International Standards & Local Identity"
+      cardSubtitle="(INTERNATIONAL STANDARDS & LOCAL IDENTITY)"
       cardImage="/academics_premium.png"
       intro={[
         "At Al Shomoukh International Private School, our curriculum is designed to provide every student with a high-quality, inclusive, and internationally focused education that promotes academic excellence and personal development.",
@@ -18,18 +25,22 @@ export default function CurriculumPage() {
       ]}
       highlights={[
         {
+          icon: Award,
           title: "UK Framework",
           description: "National Curriculum for England",
         },
         {
+          icon: BookOpen,
           title: "Pearson Edexcel",
           description: "iPrimary to IAL & BTEC accreditations",
         },
         {
+          icon: Landmark,
           title: "MoE Aligned",
           description: "Omani Heritage & Bilingual STEM",
         },
         {
+          icon: GraduationCap,
           title: "University Ready",
           description: "Direct global admissions preparation",
         },

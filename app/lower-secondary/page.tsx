@@ -4,7 +4,7 @@ import {
   Award
 } from "lucide-react"
 import { AcademicSubPageLayout } from "@/components/academic-subpage-layout"
-import { Scroll3DReveal } from "@/components/scroll-3d"
+import { Scroll3DReveal, Scroll3DCard } from "@/components/scroll-3d"
 
 export default function LowerSecondaryPage() {
   const transitionPillars = [
@@ -31,34 +31,33 @@ export default function LowerSecondaryPage() {
   ]
 
   const customLowerSecondarySection = (
-    <section className="py-20 md:py-28 bg-[#FDFCF7] relative overflow-hidden">
+    <section className="py-24 md:py-36 bg-[#FDFCF7] border-y border-navy/5 relative overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-[1px] w-8 bg-gold/40" />
-            <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
+        <div className="max-w-2xl mb-16">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-gold font-bold tracking-[0.3em] uppercase text-[11px]">
               Secondary Transition
             </span>
-            <div className="h-[1px] w-8 bg-gold/40" />
+            <div className="h-[1px] w-8 bg-gold/30" />
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy font-bold uppercase tracking-tight font-heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy leading-[1.1] mb-6 tracking-tight font-bold uppercase font-heading">
             Bridging to <span className="text-gold">Academic Mastery</span>
           </h2>
-          <p className="text-navy/70 text-sm md:text-base font-medium mt-4">
+          <p className="text-navy/70 text-sm md:text-base leading-relaxed font-medium">
             Grades 7 and 8 serve as the essential bridge from primary foundations to the rigorous requirements of Pearson Edexcel International GCSEs.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {transitionPillars.map((pillar, idx) => (
-            <Scroll3DReveal key={idx} rotateAmount={10 + idx * 2} depth={28}>
-              <div className="bg-white p-7 md:p-8 border border-navy/10 shadow-strong h-full flex flex-col justify-between hover:border-gold/60 transition-all duration-300">
+            <Scroll3DCard key={idx} index={idx}>
+              <div className="bg-white p-8 border border-navy/5 h-full flex flex-col justify-between hover:border-gold/40 transition-colors duration-500 shadow-sm">
                 <div>
                   <span className="text-gold font-bold text-xs uppercase tracking-widest block mb-4">
                     {pillar.tag}
                   </span>
-                  <h3 className="text-base md:text-lg text-navy font-bold uppercase tracking-tight mb-2 font-heading">
+                  <h3 className="text-xl text-navy font-bold uppercase tracking-tight mb-2 font-heading">
                     {pillar.title}
                   </h3>
                   <p className="text-navy/70 text-xs md:text-sm leading-relaxed font-medium">
@@ -69,18 +68,18 @@ export default function LowerSecondaryPage() {
                   Grades 7–8 Standard
                 </div>
               </div>
-            </Scroll3DReveal>
+            </Scroll3DCard>
           ))}
         </div>
 
         {/* Pearson Achievement Tests Banner */}
-        <Scroll3DReveal rotateAmount={8} depth={28}>
-          <div className="bg-navy text-white p-8 md:p-10 border border-gold/30 shadow-strong flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <Scroll3DReveal rotateAmount={6} depth={20}>
+          <div className="bg-navy text-white p-8 md:p-12 shadow-strong flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <span className="text-gold font-bold text-xs uppercase tracking-widest block mb-2">
                 External Benchmarking
               </span>
-              <h4 className="text-xl md:text-2xl font-bold uppercase tracking-tight text-white mb-2 font-heading">
+              <h4 className="text-2xl font-bold uppercase tracking-tight text-white mb-2 font-heading">
                 Pearson Edexcel iLowerSecondary Achievement Tests
               </h4>
               <p className="text-ivory/80 text-xs md:text-sm max-w-2xl font-medium leading-relaxed">
@@ -88,7 +87,7 @@ export default function LowerSecondaryPage() {
               </p>
             </div>
             <div className="shrink-0">
-              <span className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 border border-white/20 text-gold text-xs font-bold uppercase tracking-wider">
+              <span className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 border border-white/20 text-gold text-xs font-bold uppercase tracking-wider">
                 <Award className="w-4 h-4" /> UK Validated
               </span>
             </div>
@@ -103,7 +102,7 @@ export default function LowerSecondaryPage() {
     <AcademicSubPageLayout
       title="iLowerSecondary (Grades 7–8)"
       subtitle="An internationally recognised British programme designed for learners aged 11–14, developing deep subject knowledge, critical thinking, and seamless preparation for International GCSEs."
-      cardTitle="PEARSON EDEXCEL iLOWERSECONDARY"
+      cardTitle="Pearson Edexcel iLowerSecondary"
       cardSubtitle="Grades 7–8 • Ages 11–14"
       cardImage="/school_building_premium.png"
       intro={[

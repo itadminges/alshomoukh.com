@@ -89,7 +89,7 @@ export default function InvolvementPage() {
 
               <div className="mt-20 pt-12 border-t border-white/10 text-center">
                 <p className="text-ivory/60 text-sm font-medium italic">
-                  Our graduates are accepted into the world's most prestigious institutions, reflecting the high academic standards at SIS.
+                  Our graduates are accepted into the world's most prestigious institutions, reflecting the high academic standards at Al Shomoukh International Private School.
                 </p>
               </div>
             </div>

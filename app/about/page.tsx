@@ -209,7 +209,7 @@ export default function AboutPage() {
                       Our training programmes are designed to provide valuable learning opportunities for both the local and international community. Whether you are an aspiring educator, a professional seeking skill enhancement, or someone passionate about lifelong learning, our programmes cater to a diverse range of needs. Led by our highly qualified and experienced staff, these training sessions offer practical insights, innovative teaching methodologies, and hands-on learning experiences.
                     </p>
                     <p className="text-ivory/80 text-base md:text-lg leading-[1.8] font-medium bg-white/5 p-4 border-l-2 border-gold">
-                      We welcome individuals from all backgrounds to join us in this enriching journey. To be part of our Training Programmes, please send an email to <span className="text-gold font-bold">hr@alshomoukh.com</span> or <span className="text-gold font-bold">info@alshomoukh.com</span> for more details.
+                      We welcome individuals from all backgrounds to join us in this enriching journey. To be part of our Training Programmes, please send an email to <a href="mailto:hr@alshomoukh.com" className="text-gold font-bold hover:underline">hr@alshomoukh.com</a> or <a href="mailto:info@alshomoukh.com" className="text-gold font-bold hover:underline">info@alshomoukh.com</a> for more details.
                     </p>
                   </div>
                 </div>

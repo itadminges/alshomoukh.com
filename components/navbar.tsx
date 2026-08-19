@@ -22,6 +22,7 @@ const navLinks = [
       { href: "/lower-secondary", label: "Lower Secondary" },
       { href: "/upper-secondary", label: "Upper Secondary" },
       { href: "/learning-support", label: "Learning Support" },
+      { href: "/calendar", label: "Academic Calendar" },
     ]
   },
   { href: "/news", label: "News & Stories" },
@@ -81,7 +82,7 @@ export function Navbar() {
             )}>
               <Image 
                 src={forceSolid ? "/SIS Logo-01.png" : "/White SIS Logo-01.png"} 
-                alt="SIS Logo" 
+                alt="Al Shomoukh International Private School Logo" 
                 width={210} 
                 height={70} 
                 className={cn(
@@ -205,7 +206,7 @@ export function Navbar() {
           <div className="flex items-center justify-between p-6 border-b border-border/10 shrink-0">
             <Image 
               src="/SIS Logo-01.png" 
-              alt="SIS Logo" 
+              alt="Al Shomoukh International Private School Logo" 
               width={180} 
               height={50} 
               className="h-10 w-auto object-contain"

@@ -1,11 +1,11 @@
 "use client"
 
 import { 
-  CheckCircle2, 
+  Check, 
   Award
 } from "lucide-react"
 import { AcademicSubPageLayout } from "@/components/academic-subpage-layout"
-import { Scroll3DReveal } from "@/components/scroll-3d"
+import { Scroll3DReveal, Scroll3DCard } from "@/components/scroll-3d"
 
 export default function PrimaryPage() {
   const primaryDivisions = [
@@ -34,72 +34,71 @@ export default function PrimaryPage() {
   ]
 
   const customPrimarySection = (
-    <section className="py-20 md:py-28 bg-[#FDFCF7] relative overflow-hidden">
+    <section className="py-24 md:py-36 bg-[#FDFCF7] border-y border-navy/5 relative overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-[1px] w-8 bg-gold/40" />
-            <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
+        <div className="max-w-2xl mb-16">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-gold font-bold tracking-[0.3em] uppercase text-[11px]">
               Academic Framework
             </span>
-            <div className="h-[1px] w-8 bg-gold/40" />
+            <div className="h-[1px] w-8 bg-gold/30" />
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy font-bold uppercase tracking-tight font-heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy leading-[1.1] mb-6 tracking-tight font-bold uppercase font-heading">
             Primary Stage <span className="text-gold">Progression Structure</span>
           </h2>
-          <p className="text-navy/70 text-sm md:text-base font-medium mt-4">
+          <p className="text-navy/70 text-sm md:text-base leading-relaxed font-medium">
             Our Pearson Edexcel iPrimary curriculum provides a progressive, two-tier learning structure designed to build mastery from foundational literacy to independent analytical inquiry.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {primaryDivisions.map((div, idx) => (
-            <Scroll3DReveal key={idx} rotateAmount={10 + idx * 2} depth={28}>
-              <div className="bg-white p-8 md:p-10 border border-navy/10 shadow-strong h-full flex flex-col justify-between">
+            <Scroll3DCard key={idx} index={idx}>
+              <div className="bg-white p-8 md:p-12 border border-navy/5 h-full flex flex-col justify-between shadow-sm hover:border-gold/40 transition-colors duration-500">
                 <div>
-                  <div className="flex items-center justify-between gap-4 mb-4">
+                  <div className="flex items-center justify-between gap-4 mb-6">
                     <span className="text-gold font-bold text-xs uppercase tracking-widest">
                       {div.level}
                     </span>
-                    <span className="text-xs font-bold px-3 py-1 bg-ivory border border-navy/10 text-navy">
+                    <span className="text-xs font-bold px-3 py-1 bg-ivory text-navy">
                       {div.grades}
                     </span>
                   </div>
 
-                  <h3 className="text-xl md:text-2xl text-navy font-bold uppercase tracking-tight mb-4 font-heading">
+                  <h3 className="text-2xl text-navy font-bold uppercase tracking-tight mb-4 font-heading">
                     {div.level} Development
                   </h3>
 
-                  <p className="text-navy/75 text-sm md:text-base leading-relaxed font-medium mb-6">
+                  <p className="text-navy/70 text-sm md:text-base leading-relaxed font-medium mb-6">
                     {div.desc}
                   </p>
 
-                  <div className="space-y-3 pt-4 border-t border-navy/10">
+                  <div className="space-y-3 pt-4 border-t border-navy/5">
                     {div.points.map((pt, pIdx) => (
                       <div key={pIdx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-                        <span className="text-xs md:text-sm font-semibold text-navy/85">{pt}</span>
+                        <Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                        <span className="text-xs md:text-sm font-semibold text-navy/80">{pt}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-navy/10 text-gold font-bold text-[10px] uppercase tracking-widest">
+                <div className="pt-6 mt-6 border-t border-navy/5 text-gold font-bold text-[10px] uppercase tracking-widest">
                   Pearson Edexcel Standards
                 </div>
               </div>
-            </Scroll3DReveal>
+            </Scroll3DCard>
           ))}
         </div>
 
         {/* Assessment Banner */}
-        <Scroll3DReveal rotateAmount={8} depth={28}>
-          <div className="bg-navy text-white p-8 md:p-10 border border-gold/30 shadow-strong flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <Scroll3DReveal rotateAmount={6} depth={20}>
+          <div className="bg-navy text-white p-8 md:p-12 shadow-strong flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <span className="text-gold font-bold text-xs uppercase tracking-widest block mb-2">
                 International Benchmarking
               </span>
-              <h4 className="text-xl md:text-2xl font-bold uppercase tracking-tight text-white mb-2 font-heading">
+              <h4 className="text-2xl font-bold uppercase tracking-tight text-white mb-2 font-heading">
                 Pearson Edexcel iPrimary Assessments
               </h4>
               <p className="text-ivory/80 text-xs md:text-sm max-w-2xl font-medium leading-relaxed">
@@ -107,7 +106,7 @@ export default function PrimaryPage() {
               </p>
             </div>
             <div className="shrink-0">
-              <span className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 border border-white/20 text-gold text-xs font-bold uppercase tracking-wider">
+              <span className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 border border-white/20 text-gold text-xs font-bold uppercase tracking-wider">
                 <Award className="w-4 h-4" /> Global Benchmark
               </span>
             </div>
@@ -122,7 +121,7 @@ export default function PrimaryPage() {
     <AcademicSubPageLayout
       title="Primary Curriculum (Grades 1–6)"
       subtitle="A world-class British international programme combining high academic standards with inquiry, creativity, bilingual proficiency, and character."
-      cardTitle="PEARSON EDEXCEL iPRIMARY"
+      cardTitle="Pearson Edexcel iPrimary"
       cardSubtitle="Grades 1–6 • Ages 5–11"
       cardImage="/academics_premium.png"
       intro={[

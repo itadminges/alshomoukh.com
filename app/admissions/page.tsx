@@ -259,7 +259,9 @@ export default function AdmissionsPage() {
                   <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-6 border-t border-white/10">
                     <div>
                       <p className="text-xs text-gold font-bold uppercase tracking-widest mb-1">Admissions Finance Team</p>
-                      <p className="text-sm font-medium text-white/90">admission@alshomoukh.com</p>
+                      <a href="mailto:admission@alshomoukh.com" className="text-sm font-medium text-white/90 hover:text-gold transition-colors">
+                        admission@alshomoukh.com
+                      </a>
                     </div>
                     <Link href="tel:+96824284771">
                       <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white h-12 px-6 text-[10px] font-bold tracking-[0.2em] uppercase rounded-none bg-transparent">
@@ -470,7 +472,7 @@ export default function AdmissionsPage() {
               </h3>
 
               <p className="text-ivory/80 text-base md:text-xl leading-[1.7] mb-12 font-medium">
-                Our admissions team is ready to guide your family through the application and placement test process. Feel free to contact the Administration at <span className="text-gold font-bold">admission@alshomoukh.com</span> or call <span className="text-gold font-bold">+968 24 284771</span>.
+                Our admissions team is ready to guide your family through the application and placement test process. Feel free to contact the Administration at <a href="mailto:admission@alshomoukh.com" className="text-gold font-bold hover:underline">admission@alshomoukh.com</a> or call <a href="tel:+96824284771" className="text-gold font-bold hover:underline">+968 24 284771</a>.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

@@ -2,13 +2,12 @@
 
 import { 
   BookOpen, 
-  ChevronRight, 
-  CheckCircle2, 
-  Award, 
-  ArrowRight
+  ArrowRight,
+  ChevronRight,
+  Check
 } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
-import { Scroll3DReveal } from "@/components/scroll-3d"
+import { Scroll3DReveal, Scroll3DCard } from "@/components/scroll-3d"
 import { SectionSpirals } from "@/components/decorative-spirals"
 import { AcademicTabs } from "@/components/academic-tabs"
 import Link from "next/link"
@@ -18,49 +17,54 @@ export default function AcademicsPage() {
   const stages = [
     { 
       title: "Kindergarten", 
-      badge: "Ages 3–5 • Nursery & KG",
-      framework: "Early Years Foundation Stage (EYFS)",
+      division: "Early Years (EYFS)",
+      badge: "Ages 3–5",
       desc: "Nurturing curiosity, confidence, and joyful inquiry through British EYFS standards and purposeful play.",
-      highlights: ["7 Areas of Learning", "Early Literacy & Phonics", "Nurturing Classrooms"],
-      link: "/kindergarten"
+      highlights: ["7 Areas of Learning", "Early Phonics", "Nurturing Spaces"],
+      link: "/kindergarten",
+      image: "/kindergarten_premium.png"
     },
     { 
       title: "Primary School", 
-      badge: "Grades 1–6 • Ages 5–11",
-      framework: "Pearson Edexcel iPrimary",
+      division: "Pearson iPrimary",
+      badge: "Grades 1–6",
       desc: "Building strong academic foundations in core subjects with internationally benchmarked assessments.",
-      highlights: ["iPrimary Framework", "Inquiry-Led Science", "Bilingual Proficiency"],
-      link: "/primary-school"
+      highlights: ["iPrimary Framework", "Inquiry Science", "Bilingual Mastery"],
+      link: "/primary-school",
+      image: "/academics_premium.png"
     },
     { 
       title: "Lower Secondary",
-      badge: "Grades 7–8 • Ages 11–14",
-      framework: "Pearson Edexcel iLowerSecondary",
+      division: "Pearson iLowerSecondary",
+      badge: "Grades 7–8",
       desc: "Fostering analytical thinking, subject specialization, and seamless preparation for International GCSEs.",
-      highlights: ["Specialist Teaching", "Lab Investigations", "IGCSE Readiness"],
-      link: "/lower-secondary"
+      highlights: ["Specialist Labs", "Critical Thinking", "IGCSE Readiness"],
+      link: "/lower-secondary",
+      image: "/school_building_premium.png"
     },
     { 
       title: "Upper Secondary", 
-      badge: "Grades 9–12 • Ages 14–19",
-      framework: "IGCSE, IAL, BTEC & Bilingual GED",
+      division: "IGCSE, IAL & BTEC",
+      badge: "Grades 9–12",
       desc: "Four flexible pathways preparing students for top universities in Oman, the UK, US, and worldwide.",
-      highlights: ["International GCSE & IAL", "BTEC Extended Diploma", "Omani GED Pathway"],
-      link: "/upper-secondary"
+      highlights: ["International GCSE & IAL", "BTEC Diploma", "Omani GED"],
+      link: "/upper-secondary",
+      image: "/hero-bg.png"
     },
     { 
       title: "Learning Support", 
-      badge: "All Stages • Individualised Care",
-      framework: "Inclusive Education & SENCO",
+      division: "Inclusive Education",
+      badge: "All Grades",
       desc: "Empowering every learner through tailored interventions, multi-tiered support, and neurodiversity care.",
-      highlights: ["Tiered Support Model", "Personalised IEPs", "Parent Partnership"],
-      link: "/learning-support"
+      highlights: ["3-Tier Model", "Individual IEPs", "Parent Partnership"],
+      link: "/learning-support",
+      image: "/panorama.jpg"
     }
   ]
 
   const stats = [
-    { value: "Ages 3–18", label: "Complete Learning Spectrum", sub: "Nursery through Grade 12" },
-    { value: "5 Pathways", label: "Tailored Academic Choices", sub: "British & Omani Curricula" },
+    { value: "Ages 3–18", label: "Complete Spectrum", sub: "Nursery through Grade 12" },
+    { value: "5 Pathways", label: "Tailored Choices", sub: "British & Omani Curricula" },
     { value: "100%", label: "International Recognition", sub: "Pearson Edexcel & MoE Oman" },
     { value: "1:1", label: "Personalised Guidance", sub: "University & Career Counseling" },
   ]
@@ -125,155 +129,152 @@ export default function AcademicsPage() {
       />
       <AcademicTabs />
 
-      {/* Main Overview Showcase Card (Sharp Architecture) */}
-      <section className="py-16 md:py-24 bg-[#FAFAFA] relative overflow-hidden">
+      {/* Main Editorial Intro Section (Matching Home Page IntroSection) */}
+      <section className="pt-20 md:pt-32 pb-16 md:pb-24 bg-white relative overflow-hidden scroll-3d-scene">
         <SectionSpirals variant="light" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
-          
-          <Scroll3DReveal rotateAmount={8} depth={30}>
-            <div className="bg-white border border-navy/10 shadow-strong p-8 md:p-12 lg:p-14 relative overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 md:gap-14 items-center">
-                
-                {/* Left Column */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-[1px] w-8 bg-gold/50" />
-                    <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
-                      Academic Framework
-                    </span>
-                  </div>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            
+            {/* Left Column */}
+            <Scroll3DReveal rotateAmount={8} depth={30}>
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-gold font-bold tracking-[0.3em] uppercase text-[11px]">
+                    British & Omani Pathways
+                  </span>
+                  <div className="h-[1px] w-12 bg-gold/30" />
+                </div>
 
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl text-navy font-bold uppercase tracking-tight font-heading leading-tight">
-                    ACADEMIC EXCELLENCE
-                  </h2>
-                  <p className="text-gold font-bold text-lg md:text-xl uppercase tracking-tight mt-1 font-heading">
-                    (BRITISH & OMANI BILINGUAL PATHWAYS)
+                <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.12] mb-8 tracking-tight text-navy font-bold uppercase font-heading">
+                  Academic Framework & Excellence
+                </h2>
+
+                <div className="space-y-4 text-navy/70 text-sm md:text-base leading-relaxed font-medium mb-8 max-w-xl">
+                  <p>
+                    At Al Shomoukh International Private School, our academic framework provides a structured pathway from the Early Years Foundation Stage through Pearson Edexcel iPrimary, iLowerSecondary, International GCSE, International A Level, BTEC, and the Omani Bilingual Curriculum.
                   </p>
-
-                  <div className="w-14 h-1 bg-gold my-5" />
-
-                  <div className="space-y-4 text-navy/75 text-sm md:text-base leading-[1.85] font-medium">
-                    <p>
-                      At Al Shomoukh International Private School, our academic framework provides a structured pathway from the Early Years Foundation Stage through Pearson Edexcel iPrimary, iLowerSecondary, International GCSE, International A Level, BTEC, and the Omani Bilingual Curriculum.
-                    </p>
-                    <p>
-                      Our programmes combine high academic standards, international perspectives, Ministry of Education requirements, and a strong commitment to student wellbeing, character, leadership, and lifelong learning.
-                    </p>
-                  </div>
-
-                  <div className="mt-8 flex flex-wrap items-center gap-3.5 pt-4">
-                    <Link
-                      href="/curriculum"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-gold text-xs font-bold uppercase tracking-wider hover:bg-gold hover:text-navy transition-all duration-300 shadow-sm"
-                    >
-                      <BookOpen className="w-4 h-4" /> Explore Curriculum
-                    </Link>
-                    <Link
-                      href="/upper-secondary"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-white text-navy border border-navy/15 text-xs font-bold uppercase tracking-wider hover:border-gold/60 transition-all duration-300 shadow-xs"
-                    >
-                      <span>Senior Pathways</span>
-                      <ChevronRight className="w-4 h-4 text-gold" />
-                    </Link>
-                  </div>
+                  <p>
+                    Our programmes combine high academic standards, international perspectives, Ministry of Education requirements, and a strong commitment to student wellbeing, character, leadership, and lifelong learning.
+                  </p>
                 </div>
 
-                {/* Right Column: Photography Card */}
-                <div className="relative aspect-[16/10] md:aspect-[4/3] w-full overflow-hidden shadow-strong border border-navy/10">
-                  <Image
-                    src="/school_building_premium.png"
-                    alt="Al Shomoukh Academic Excellence"
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent" />
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <Link
+                    href="/curriculum"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-navy text-gold text-xs font-bold uppercase tracking-[0.2em] hover:bg-gold hover:text-navy transition-all duration-300 shadow-sm"
+                  >
+                    <BookOpen className="w-4 h-4" /> Explore Curriculum
+                  </Link>
+                  <Link
+                    href="/upper-secondary"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-white text-navy border border-navy/15 text-xs font-bold uppercase tracking-[0.2em] hover:border-gold hover:text-navy transition-all duration-300"
+                  >
+                    <span>Senior Pathways</span>
+                    <ArrowRight className="w-4 h-4 text-gold" />
+                  </Link>
                 </div>
-
               </div>
-            </div>
-          </Scroll3DReveal>
+            </Scroll3DReveal>
 
-          {/* Bottom 4-Column Highlights Strip */}
-          <Scroll3DReveal rotateAmount={6} depth={20}>
-            <div className="bg-white border border-navy/10 shadow-strong p-6 md:p-8 mt-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                {stats.map((stat, idx) => (
-                  <div key={idx} className="border-l-2 border-gold pl-5 py-1">
-                    <h4 className="text-base md:text-lg font-bold text-navy uppercase tracking-tight font-heading">
-                      {stat.value}
-                    </h4>
-                    <p className="text-xs text-navy/70 font-medium leading-relaxed mt-1">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
+            {/* Right Column: Photography with Floating Accents */}
+            <Scroll3DReveal rotateAmount={12} depth={40} className="relative">
+              <div className="relative z-10 aspect-[4/3] overflow-hidden shadow-strong">
+                <Image
+                  src="/school_building_premium.png"
+                  alt="Al Shomoukh Academic Excellence"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </div>
-          </Scroll3DReveal>
+              <div className="absolute -top-8 -left-8 w-40 h-40 border border-navy/5 -z-0" />
+              <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-ivory -z-0" />
+            </Scroll3DReveal>
 
+          </div>
         </div>
       </section>
 
-      {/* Grid of Stages */}
-      <section className="py-24 md:py-32 bg-[#FDFCF7] border-y border-navy/5 relative overflow-hidden">
+      {/* Highlights / Stats Band (Matching Home Page StatsSection) */}
+      <section className="relative py-16 bg-white overflow-hidden border-y border-navy/5 scroll-3d-scene">
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {stats.map((stat, idx) => (
+              <Scroll3DReveal
+                key={idx}
+                rotateAmount={10 + idx * 2}
+                depth={20}
+                className="flex flex-col items-start"
+              >
+                <div className="text-2xl md:text-3xl lg:text-4xl text-navy font-bold tracking-tight mb-1 font-heading">
+                  <span>{stat.value}</span>
+                </div>
+                <p className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-navy/50 leading-relaxed">
+                  {stat.label}
+                </p>
+              </Scroll3DReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Educational Stages Grid (Matching AcademicPrograms on Home Page) */}
+      <section className="py-24 md:py-36 bg-[#FDFCF7] border-y border-navy/5 relative overflow-hidden">
         <SectionSpirals variant="light" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
           
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-[1px] w-8 bg-gold/40" />
-              <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">Structured Progression</span>
-              <div className="h-[1px] w-8 bg-gold/40" />
+          <div className="max-w-2xl mb-16">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="text-gold font-bold tracking-[0.3em] uppercase text-[11px]">
+                Educational Stages
+              </span>
+              <div className="h-[1px] w-8 bg-gold/30" />
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy font-bold uppercase tracking-tight font-heading">
-              Explore Our <span className="text-gold">Educational Stages</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy leading-[1.1] mb-6 tracking-tight font-bold uppercase font-heading">
+              Explore Our <span className="text-gold">Learning Stages</span>
             </h2>
-            <p className="text-navy/70 text-sm md:text-base font-medium mt-4">
+            <p className="text-navy/70 text-sm md:text-base leading-relaxed font-medium">
               Select a stage to explore curriculum details, subject offerings, assessment structures, and developmental outcomes.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
-            {stages.map((stage, i) => (
-              <Scroll3DReveal key={i} rotateAmount={10 + i * 2} depth={28}>
-                <Link href={stage.link} className="block group h-full">
-                  <div className="bg-white p-7 md:p-8 border border-navy/10 shadow-strong hover:border-gold/60 transition-all duration-500 h-full flex flex-col justify-between group-hover:-translate-y-2 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {stages.map((stage, index) => (
+              <Scroll3DCard key={stage.title} index={index}>
+                <Link href={stage.link} className="group block h-full">
+                  <article className="relative bg-white border border-navy/5 hover:border-gold/40 transition-colors duration-500 pb-8 h-full flex flex-col justify-between shadow-sm">
                     <div>
-                      {/* Badge */}
-                      <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-gold bg-ivory px-2.5 py-1 border border-gold/30 mb-6">
-                        {stage.badge}
-                      </span>
+                      <div className="relative aspect-[4/3] overflow-hidden mb-6">
+                        <Image
+                          src={stage.image}
+                          alt={stage.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-0.5 text-[8px] font-bold tracking-widest text-navy uppercase">
+                          {stage.badge}
+                        </div>
+                      </div>
 
-                      <h3 className="font-bold text-xl text-navy mb-2 uppercase tracking-tight group-hover:text-gold transition-colors font-heading">
-                        {stage.title}
-                      </h3>
-
-                      <p className="text-[11px] font-bold text-gold uppercase tracking-wider mb-4">
-                        {stage.framework}
-                      </p>
-
-                      <p className="text-navy/70 leading-relaxed font-medium text-xs md:text-sm mb-6">
-                        {stage.desc}
-                      </p>
-
-                      {/* Highlights */}
-                      <div className="space-y-1.5 pt-4 border-t border-navy/5 mb-6">
-                        {stage.highlights.map((item, hIdx) => (
-                          <div key={hIdx} className="flex items-center gap-2 text-[11px] text-navy/75 font-semibold">
-                            <span className="w-1.5 h-1.5 bg-gold shrink-0" />
-                            <span>{item}</span>
-                          </div>
-                        ))}
+                      <div className="px-6">
+                        <h3 className="text-xl text-navy mb-2 font-bold tracking-tight uppercase group-hover:text-gold transition-colors font-heading">
+                          {stage.title}
+                        </h3>
+                        <p className="text-[11px] font-bold text-gold uppercase tracking-wider mb-3">
+                          {stage.division}
+                        </p>
+                        <p className="text-xs text-navy/70 leading-relaxed font-medium mb-4 line-clamp-3">
+                          {stage.desc}
+                        </p>
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between text-gold font-bold text-[10px] uppercase tracking-widest pt-4 border-t border-navy/5 group-hover:text-navy transition-colors">
-                      <span>View Stage</span>
-                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <div className="px-6 pt-4 border-t border-navy/5 flex items-center justify-between text-gold font-bold text-[9px] tracking-widest uppercase">
+                      <span>Explore Stage</span>
+                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
-                  </div>
+                  </article>
                 </Link>
-              </Scroll3DReveal>
+              </Scroll3DCard>
             ))}
           </div>
 
@@ -281,77 +282,79 @@ export default function AcademicsPage() {
       </section>
 
       {/* Learning Journey Roadmap */}
-      <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+      <section className="py-24 md:py-36 bg-white relative overflow-hidden">
         <SectionSpirals variant="light" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
           
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-[1px] w-8 bg-gold/40" />
-              <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">Educational Trajectory</span>
-              <div className="h-[1px] w-8 bg-gold/40" />
+          <div className="max-w-2xl mb-16">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="text-gold font-bold tracking-[0.3em] uppercase text-[11px]">
+                Educational Trajectory
+              </span>
+              <div className="h-[1px] w-8 bg-gold/30" />
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy font-bold uppercase tracking-tight font-heading">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy leading-[1.1] mb-6 tracking-tight font-bold uppercase font-heading">
               The Al Shomoukh <span className="text-gold">Learning Journey</span>
             </h2>
-            <p className="text-navy/70 text-sm md:text-base font-medium mt-4">
+            <p className="text-navy/70 text-sm md:text-base leading-relaxed font-medium">
               A structured roadmap providing clear progression from early childhood to global university readiness.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {roadmapSteps.map((step, idx) => (
-              <Scroll3DReveal key={idx} rotateAmount={8 + idx * 2} depth={25}>
-                <div className="bg-ivory/40 p-6 md:p-7 border border-navy/10 shadow-strong h-full flex flex-col justify-between hover:border-gold/50 transition-all duration-300">
+              <Scroll3DCard key={idx} index={idx}>
+                <div className="bg-ivory-dark/30 hover:bg-ivory-dark/60 p-7 h-full flex flex-col justify-between transition-colors duration-500">
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-gold font-bold text-xs uppercase tracking-widest">
                         Step 0{idx + 1}
                       </span>
-                      <span className="text-[10px] font-bold text-navy/70 bg-white px-2 py-0.5 border border-navy/10">
+                      <span className="text-[9px] font-bold text-navy/70 bg-white px-2 py-0.5">
                         {step.grade}
                       </span>
                     </div>
-                    <h3 className="font-bold text-base md:text-lg text-navy uppercase tracking-tight mb-2 font-heading">
+                    <h3 className="font-bold text-base text-navy uppercase tracking-tight mb-2 font-heading">
                       {step.title}
                     </h3>
                     <p className="text-xs text-navy/70 leading-relaxed font-medium">
                       {step.description}
                     </p>
                   </div>
-                  <div className="pt-4 mt-4 border-t border-navy/10 text-[10px] font-bold text-gold uppercase tracking-wider">
+                  <div className="pt-4 mt-4 border-t border-navy/10 text-[9px] font-bold text-gold uppercase tracking-wider">
                     {step.stage} Phase
                   </div>
                 </div>
-              </Scroll3DReveal>
+              </Scroll3DCard>
             ))}
           </div>
 
         </div>
       </section>
 
-      {/* Core Academic Pillars */}
-      <section className="py-24 md:py-32 bg-navy text-white relative overflow-hidden">
+      {/* Core Academic Pillars (Dark Band Theme) */}
+      <section className="py-24 md:py-36 bg-navy text-white relative overflow-hidden">
         <SectionSpirals variant="dark" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
           
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-[1px] w-8 bg-gold/50" />
-              <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">Excellence & Rigour</span>
+          <div className="max-w-2xl mb-16">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="text-gold font-bold tracking-[0.3em] uppercase text-[11px]">
+                Excellence & Rigour
+              </span>
               <div className="h-[1px] w-8 bg-gold/50" />
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight font-heading">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight font-heading mb-4">
               Our Academic <span className="text-gold">Pillars</span>
             </h2>
-            <p className="text-ivory/80 text-sm md:text-base font-medium mt-4">
+            <p className="text-ivory/80 text-sm md:text-base font-medium">
               Guiding principles that define teaching and learning at Al Shomoukh International Private School.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {pillars.map((pillar, pIdx) => (
-              <Scroll3DReveal key={pIdx} rotateAmount={10 + pIdx * 2} depth={28}>
+              <Scroll3DReveal key={pIdx} rotateAmount={8 + pIdx * 2} depth={20}>
                 <div className="bg-white/5 border border-white/10 p-8 h-full flex flex-col justify-between hover:bg-white/10 transition-colors duration-300">
                   <div>
                     <span className="text-gold font-bold text-xs uppercase tracking-widest block mb-4">
@@ -365,7 +368,7 @@ export default function AcademicsPage() {
                     </p>
                   </div>
                   <div className="pt-6 mt-6 border-t border-white/10 text-gold font-bold text-[10px] uppercase tracking-widest">
-                    Core Quality Standard
+                    Core Standard
                   </div>
                 </div>
               </Scroll3DReveal>
@@ -391,32 +394,29 @@ export default function AcademicsPage() {
         </div>
       </section>
 
-      {/* Next Step / Admissions CTA */}
-      <section className="py-20 bg-[#FAFAFA] border-t border-navy/10 relative overflow-hidden">
+      {/* Navigation CTA */}
+      <section className="py-20 md:py-28 bg-[#FAFAFA] border-t border-navy/5">
         <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
-          <div className="bg-white border border-navy/10 shadow-premium p-8 md:p-12 lg:p-14 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <div className="max-w-2xl">
+          <Link
+            href="/curriculum"
+            className="group flex flex-col md:flex-row md:items-center md:justify-between gap-8 bg-white border border-navy/10 shadow-strong p-8 md:p-14 hover:border-gold/60 transition-all duration-500"
+          >
+            <div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">Join Our Community</span>
-                <div className="h-[1px] w-8 bg-gold/40" />
+                <div className="h-[1px] w-6 bg-gold/40" />
               </div>
-              <h2 className="text-2xl md:text-4xl text-navy font-bold uppercase tracking-tight mb-3 font-heading">
+              <h2 className="text-2xl md:text-4xl text-navy font-bold uppercase tracking-tight mb-2 group-hover:text-gold transition-colors font-heading">
                 Experience Academic Excellence Firsthand
               </h2>
-              <p className="text-navy/70 text-sm md:text-base font-medium leading-relaxed">
-                Connect with our academic leadership team, tour our state-of-the-art campus, or learn more about our admissions and pathway options.
+              <p className="text-navy/70 font-medium text-sm md:text-base leading-relaxed max-w-xl">
+                Explore our full curriculum, visit our state-of-the-art campus, or learn more about admissions and pathway options.
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-4 shrink-0">
-              <Link
-                href="/curriculum"
-                className="inline-flex items-center gap-2 px-7 py-4 bg-navy text-gold text-xs font-bold uppercase tracking-wider hover:bg-gold hover:text-navy transition-all duration-300 shadow-md"
-              >
-                <span>Curriculum Details</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+            <div className="w-16 h-16 bg-navy text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-navy transition-colors duration-500 shrink-0">
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </div>
-          </div>
+          </Link>
         </div>
       </section>
     </main>

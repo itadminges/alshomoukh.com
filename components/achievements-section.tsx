@@ -58,7 +58,7 @@ export function AchievementsSection() {
           </div>
           
           <p className="text-ivory/60 text-xs max-w-xs leading-relaxed mb-0 md:mb-1">
-            Celebrating the scholars who define the spirit and legacy of Al Shomoukh International.
+            Celebrating the scholars who define the spirit and legacy of Al Shomoukh International Private School.
           </p>
         </div>
 

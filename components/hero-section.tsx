@@ -87,7 +87,7 @@ export function HeroSection() {
                   </Button>
                 </Link>
 
-                <button
+                {/* <button
                   type="button"
                   onClick={() => setShowTour(true)}
                   className="flex items-center gap-3 text-white hover:text-gold transition-colors group"
@@ -96,7 +96,7 @@ export function HeroSection() {
                     <Play className="h-3 w-3 fill-white" />
                   </div>
                   <span className="text-[11px] font-bold tracking-[0.2em] uppercase">Experience SIS</span>
-                </button>
+                </button> */}
               </div>
             </motion.div>
           </motion.div>

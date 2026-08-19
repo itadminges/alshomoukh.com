@@ -81,7 +81,9 @@ export default function BookATourPage() {
                     </div>
                     <div>
                       <h4 className="font-bold text-navy text-base uppercase tracking-tight mb-1">Direct Phone</h4>
-                      <p className="text-navy/70 text-sm font-medium">+968 24 284771 / +968 24 284756</p>
+                      <p className="text-navy/70 text-sm font-medium">
+                        <a href="tel:+96824284771" className="hover:text-gold transition-colors">+968 24 284771</a>
+                      </p>
                     </div>
                   </div>
 
@@ -91,7 +93,9 @@ export default function BookATourPage() {
                     </div>
                     <div>
                       <h4 className="font-bold text-navy text-base uppercase tracking-tight mb-1">Admissions Email</h4>
-                      <p className="text-navy/70 text-sm font-medium">admission@alshomoukh.com</p>
+                      <p className="text-navy/70 text-sm font-medium">
+                        <a href="mailto:admission@alshomoukh.com" className="hover:text-gold transition-colors">admission@alshomoukh.com</a>
+                      </p>
                     </div>
                   </div>
                 </div>

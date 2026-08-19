@@ -44,7 +44,7 @@ export const TOUR_NODES: Record<string, TourNode> = {
     panorama: defaultPanorama,
     thumbnail: defaultThumb,
     description: "Our main reception area where our friendly staff is ready to assist parents, students, and guests.",
-    openingHours: "Mon-Fri: 7:30 AM - 4:00 PM",
+    openingHours: "Sun-Thu: 7:30 AM - 3:30 PM",
     category: "Administration",
     floor: "Ground Floor",
     links: [
@@ -183,7 +183,7 @@ export const TOUR_NODES: Record<string, TourNode> = {
     thumbnail: defaultThumb,
     description: "A spacious dining area offering healthy meals and snacks for students and staff.",
     capacity: 200,
-    openingHours: "Mon-Fri: 8:00 AM - 2:00 PM",
+    openingHours: "Sun-Thu: 8:00 AM - 2:00 PM",
     category: "Facilities",
     floor: "Ground Floor",
     links: [

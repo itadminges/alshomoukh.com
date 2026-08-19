@@ -40,11 +40,11 @@ const newsItems = [
     image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80"
   },
   {
-    id: "al-mouj-expansion",
-    title: "Shomoukh Nursery and School, Al Mouj",
+    id: "early-years-open-day",
+    title: "Early Years Community Open Day",
     date: "Aug 20, 2024",
     category: "Events",
-    description: "Exciting developments and community open days celebrating our expanding early learning environment and nurturing spaces at Al Mouj.",
+    description: "Exciting developments and community open days celebrating our expanding early learning environment and nurturing spaces at Al Shomoukh International Private School.",
     image: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop&q=80"
   },
   {
@@ -85,6 +85,39 @@ const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactN
 
 export default function NewsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
+  const [email, setEmail] = useState("")
+  const [subStatus, setSubStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [subMessage, setSubMessage] = useState("")
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+
+    setSubStatus("loading")
+    setSubMessage("")
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      })
+
+      const data = await res.json()
+
+      if (res.ok && data.success) {
+        setSubStatus("success")
+        setSubMessage(data.message || "Thank you for subscribing to Al Shomoukh International Private School eNews!")
+        setEmail("")
+      } else {
+        setSubStatus("error")
+        setSubMessage(data.message || "Failed to subscribe. Please try again.")
+      }
+    } catch (err) {
+      setSubStatus("error")
+      setSubMessage("Network error. Please check your connection and try again.")
+    }
+  }
 
   const filteredNews = selectedCategory === "All" 
     ? newsItems 
@@ -159,25 +192,45 @@ export default function NewsPage() {
         </div>
       </section>
 
-      {/* Newsletter Subscription */}
+      {/* Al Shomoukh International Private School eNews */}
       <section className="py-24 bg-ivory/30 border-y border-navy/5">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <FadeIn>
-            <h3 className="text-2xl font-bold uppercase tracking-tight text-navy mb-6">Join Our Mailing List</h3>
+            <h3 className="text-2xl font-bold uppercase tracking-tight text-navy mb-6">
+              Al Shomoukh International Private School eNews
+            </h3>
             <p className="text-navy/60 font-medium mb-10 max-w-lg mx-auto leading-relaxed">
               Subscribe to receive weekly updates, academic calendars, and school newsletters directly in your inbox.
             </p>
-            <form onSubmit={(e) => { e.preventDefault(); alert("Thank you for subscribing!"); }} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input 
                 type="email" 
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address" 
-                className="flex-grow bg-white border border-navy/10 px-6 py-4 text-sm font-medium focus:outline-none focus:border-gold transition-colors"
+                disabled={subStatus === "loading"}
+                className="flex-grow bg-white border border-navy/10 px-6 py-4 text-sm font-medium focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
               />
-              <button type="submit" className="bg-navy text-white px-8 py-4 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-gold transition-all duration-500">
-                Subscribe
+              <button 
+                type="submit" 
+                disabled={subStatus === "loading"}
+                className="bg-navy text-white px-8 py-4 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-gold transition-all duration-500 disabled:opacity-60 flex items-center justify-center min-w-[130px]"
+              >
+                {subStatus === "loading" ? "Subscribing..." : "Subscribe"}
               </button>
             </form>
+
+            {subMessage && (
+              <div className={`mt-6 text-sm font-semibold max-w-md mx-auto p-4 border ${
+                subStatus === "success" 
+                  ? "bg-green-50 text-green-800 border-green-200" 
+                  : "bg-red-50 text-red-800 border-red-200"
+              }`}>
+                {subMessage}
+              </div>
+            )}
           </FadeIn>
         </div>
       </section>

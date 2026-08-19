@@ -1,10 +1,11 @@
 "use client"
 
 import { 
+  Check, 
   CheckCircle2
 } from "lucide-react"
 import { AcademicSubPageLayout } from "@/components/academic-subpage-layout"
-import { Scroll3DReveal } from "@/components/scroll-3d"
+import { Scroll3DReveal, Scroll3DCard } from "@/components/scroll-3d"
 
 export default function KindergartenPage() {
   const primeAreas = [
@@ -49,45 +50,44 @@ export default function KindergartenPage() {
   ]
 
   const customEyfsSection = (
-    <section className="py-20 md:py-28 bg-[#FDFCF7] relative overflow-hidden">
+    <section className="py-24 md:py-36 bg-[#FDFCF7] border-y border-navy/5 relative overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-[1px] w-8 bg-gold/40" />
-            <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
+        <div className="max-w-2xl mb-16">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-gold font-bold tracking-[0.3em] uppercase text-[11px]">
               EYFS Learning Architecture
             </span>
-            <div className="h-[1px] w-8 bg-gold/40" />
+            <div className="h-[1px] w-8 bg-gold/30" />
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy font-bold uppercase tracking-tight font-heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy leading-[1.1] mb-6 tracking-tight font-bold uppercase font-heading">
             The 7 Areas of <span className="text-gold">Learning & Development</span>
           </h2>
-          <p className="text-navy/70 text-sm md:text-base font-medium mt-4">
+          <p className="text-navy/70 text-sm md:text-base leading-relaxed font-medium">
             The British Early Years Foundation Stage framework is structured around three prime areas and four specific areas that empower children to thrive holistically.
           </p>
         </div>
 
         {/* 3 Prime Areas */}
-        <div className="mb-14">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-navy font-bold uppercase tracking-wider text-xs md:text-sm bg-gold/20 px-3.5 py-1 border border-gold/40">
+        <div className="mb-16">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-navy font-bold uppercase tracking-wider text-xs md:text-sm bg-gold/20 px-3.5 py-1">
               3 Prime Areas
             </span>
-            <span className="text-navy/60 text-xs font-semibold">
+            <span className="text-navy/50 text-xs font-semibold">
               Foundational for all future learning and relationships
             </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {primeAreas.map((area, idx) => (
-              <Scroll3DReveal key={idx} rotateAmount={10 + idx * 2} depth={28}>
-                <div className="bg-navy text-white p-7 md:p-8 border border-gold/30 shadow-strong h-full flex flex-col justify-between relative overflow-hidden">
+              <Scroll3DCard key={idx} index={idx}>
+                <div className="bg-navy text-white p-8 md:p-10 h-full flex flex-col justify-between shadow-strong">
                   <div>
                     <span className="text-gold font-bold text-[10px] uppercase tracking-widest block mb-4">
                       {area.tag}
                     </span>
-                    <h3 className="text-lg md:text-xl font-bold uppercase tracking-tight text-white mb-3 font-heading">
+                    <h3 className="text-xl font-bold uppercase tracking-tight text-white mb-3 font-heading">
                       {area.title}
                     </h3>
                     <p className="text-ivory/80 text-xs md:text-sm leading-relaxed font-medium">
@@ -95,34 +95,34 @@ export default function KindergartenPage() {
                     </p>
                   </div>
                   <div className="pt-6 mt-6 border-t border-white/10 flex items-center gap-2 text-gold text-xs font-bold uppercase tracking-wider">
-                    <CheckCircle2 className="w-4 h-4" /> Core Foundation
+                    <Check className="w-4 h-4" /> Core Foundation
                   </div>
                 </div>
-              </Scroll3DReveal>
+              </Scroll3DCard>
             ))}
           </div>
         </div>
 
         {/* 4 Specific Areas */}
         <div>
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-navy font-bold uppercase tracking-wider text-xs md:text-sm bg-white px-3.5 py-1 border border-navy/10 shadow-xs">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-navy font-bold uppercase tracking-wider text-xs md:text-sm bg-white px-3.5 py-1 border border-navy/10">
               4 Specific Areas
             </span>
-            <span className="text-navy/60 text-xs font-semibold">
+            <span className="text-navy/50 text-xs font-semibold">
               Strengthening and applying the prime skills in structured contexts
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {specificAreas.map((area, idx) => (
-              <Scroll3DReveal key={idx} rotateAmount={12 + idx * 2} depth={28}>
-                <div className="bg-white p-7 md:p-8 border border-navy/10 shadow-strong h-full flex flex-col justify-between hover:border-gold/50 transition-all duration-300">
+              <Scroll3DCard key={idx} index={idx}>
+                <div className="bg-white p-8 border border-navy/5 h-full flex flex-col justify-between hover:border-gold/40 transition-colors duration-500 shadow-sm">
                   <div>
                     <span className="text-gold font-bold text-[10px] uppercase tracking-widest block mb-4">
                       {area.tag}
                     </span>
-                    <h3 className="text-base md:text-lg text-navy font-bold uppercase tracking-tight mb-2 font-heading">
+                    <h3 className="text-lg text-navy font-bold uppercase tracking-tight mb-2 font-heading">
                       {area.title}
                     </h3>
                     <p className="text-navy/70 text-xs md:text-sm leading-relaxed font-medium">
@@ -133,7 +133,7 @@ export default function KindergartenPage() {
                     Applied Learning
                   </div>
                 </div>
-              </Scroll3DReveal>
+              </Scroll3DCard>
             ))}
           </div>
         </div>
@@ -146,7 +146,7 @@ export default function KindergartenPage() {
     <AcademicSubPageLayout
       title="Early Years Foundation Stage (EYFS)"
       subtitle="A nurturing, play-based British framework that provides children aged 3–5 with the strongest possible foundation for lifelong learning."
-      cardTitle="KINDERGARTEN (EYFS)"
+      cardTitle="Kindergarten (EYFS)"
       cardSubtitle="Ages 3–5 • Nursery (FS1) & KG (FS2)"
       cardImage="/kindergarten_premium.png"
       intro={[
@@ -162,11 +162,11 @@ export default function KindergartenPage() {
         },
         {
           title: "7 EYFS Areas",
-          description: "Prime & specific domains",
+          description: "Prime & specific learning domains",
         },
         {
           title: "Nurturing Care",
-          description: "Warm & stimulating spaces",
+          description: "Warm & stimulating classrooms",
         },
         {
           title: "Parent Partner",
