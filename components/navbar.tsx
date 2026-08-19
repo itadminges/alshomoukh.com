@@ -18,8 +18,8 @@ const navLinks = [
     submenu: [
       { href: "/curriculum", label: "Curriculum" },
       { href: "/kindergarten", label: "Kindergarten" },
-      { href: "/lower-secondary", label: "Lower Secondary" },
       { href: "/primary-school", label: "Primary School" },
+      { href: "/lower-secondary", label: "Lower Secondary" },
       { href: "/upper-secondary", label: "Upper Secondary" },
       { href: "/learning-support", label: "Learning Support" },
     ]

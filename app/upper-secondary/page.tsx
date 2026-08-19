@@ -28,6 +28,12 @@ export default function UpperSecondaryPage() {
         },
         {
           title: "Pearson BTEC International Level 3 Extended Diploma",
+          logo: {
+            src: "/pearson-btec-approved-centre.png",
+            alt: "Pearson BTEC Approved Centre Logo",
+            width: 220,
+            height: 90,
+          },
           paragraphs: [
             "The Pearson BTEC International Level 3 Extended Diploma is a globally recognised, career-focused qualification designed for students aged 16–19 who wish to combine academic study with practical, real-world learning. Equivalent in size to three International A levels, the qualification provides students with the knowledge, technical skills, and professional competencies required for progression to university, higher education, apprenticeships, or employment.",
             "At Al Shomoukh International Private School, students benefit from an engaging learning experience that develops critical thinking, problem-solving, communication, teamwork, leadership, and independent research skills through authentic vocational scenarios. Assessment is based primarily on coursework, projects, presentations, and practical assignments, allowing students to demonstrate their understanding in meaningful contexts while building a professional portfolio of evidence.",

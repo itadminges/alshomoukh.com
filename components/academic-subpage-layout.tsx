@@ -3,9 +3,11 @@
 import type { LucideIcon } from "lucide-react"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { PageHero } from "@/components/page-hero"
 import { Scroll3DReveal } from "@/components/scroll-3d"
 import { SectionSpirals } from "@/components/decorative-spirals"
+import { AcademicTabs } from "@/components/academic-tabs"
 
 type AcademicFeature = {
   title: string
@@ -23,6 +25,12 @@ type AcademicDetailSection = {
   eyebrow?: string
   title: string
   subtitle?: string
+  logo?: {
+    src: string
+    alt: string
+    width?: number
+    height?: number
+  }
   paragraphs: string[]
   bulletsHeading?: string
   bullets?: string[]
@@ -65,6 +73,7 @@ export function AcademicSubPageLayout({
   return (
     <main className="min-h-screen bg-white overflow-hidden scroll-3d-scene">
       <PageHero title={title} subtitle={subtitle} />
+      <AcademicTabs />
 
       {intro.length > 0 && (
         <section className="py-20 md:py-28 bg-white relative overflow-hidden">
@@ -206,22 +215,37 @@ export function AcademicSubPageLayout({
               {detailSections.map((section, index) => (
                 <Scroll3DReveal key={section.title} rotateAmount={10 + index * 2} depth={36}>
                   <article className="bg-white border border-navy/10 shadow-strong p-7 md:p-10 lg:p-12">
-                    {section.eyebrow && (
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="h-[1px] w-10 bg-gold/40" />
-                        <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
-                          {section.eyebrow}
-                        </span>
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+                      <div>
+                        {section.eyebrow && (
+                          <div className="flex items-center gap-4 mb-4">
+                            <div className="h-[1px] w-10 bg-gold/40" />
+                            <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
+                              {section.eyebrow}
+                            </span>
+                          </div>
+                        )}
+                        <h2 className="text-2xl md:text-4xl text-navy font-bold uppercase tracking-tight mb-3">
+                          {section.title}
+                        </h2>
+                        {section.subtitle && (
+                          <p className="text-gold font-bold tracking-widest uppercase text-xs">
+                            {section.subtitle}
+                          </p>
+                        )}
                       </div>
-                    )}
-                    <h2 className="text-2xl md:text-4xl text-navy font-bold uppercase tracking-tight mb-3">
-                      {section.title}
-                    </h2>
-                    {section.subtitle && (
-                      <p className="text-gold font-bold tracking-widest uppercase text-xs mb-8">
-                        {section.subtitle}
-                      </p>
-                    )}
+                      {section.logo && (
+                        <div className="shrink-0 p-3 bg-ivory/50 border border-navy/10 rounded-sm">
+                          <Image
+                            src={section.logo.src}
+                            alt={section.logo.alt}
+                            width={section.logo.width || 180}
+                            height={section.logo.height || 80}
+                            className="h-14 md:h-16 w-auto object-contain"
+                          />
+                        </div>
+                      )}
+                    </div>
                     <div className="space-y-5 text-navy/75 text-base md:text-lg leading-[1.8] font-medium">
                       {section.paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>

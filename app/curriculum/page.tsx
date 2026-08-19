@@ -59,7 +59,7 @@ export default function CurriculumPage() {
         },
         {
           label: "G7-G8",
-          title: "iLowerSecondary",
+          title: "Lower Secondary",
           description: "Students bridge into more rigorous secondary learning and future qualification choices.",
         },
         {

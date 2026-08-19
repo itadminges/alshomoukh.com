@@ -1,13 +1,20 @@
 "use client"
 
-import { BookMarked, GraduationCap, School, Layers, ChevronRight } from "lucide-react"
+import { BookOpen, BookMarked, GraduationCap, School, Layers, ChevronRight } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { Scroll3DReveal } from "@/components/scroll-3d"
 import { SectionSpirals } from "@/components/decorative-spirals"
+import { AcademicTabs } from "@/components/academic-tabs"
 import Link from "next/link"
 
 export default function AcademicsPage() {
   const stages = [
+    { 
+      title: "Curriculum", 
+      icon: BookOpen, 
+      desc: "World-class British international curriculum framework integrating Omani values.",
+      link: "/curriculum"
+    },
     { 
       title: "Kindergarten", 
       icon: Layers, 
@@ -21,7 +28,7 @@ export default function AcademicsPage() {
       link: "/primary-school"
     },
     { 
-      title: "iLowerSecondary",
+      title: "Lower Secondary",
       icon: School, 
       desc: "Pearson Edexcel iLowerSecondary Curriculum for Grades 7-8.",
       link: "/lower-secondary"
@@ -29,7 +36,7 @@ export default function AcademicsPage() {
     { 
       title: "Upper Secondary", 
       icon: GraduationCap, 
-      desc: "International GCSE, IAL, BTEC, and Omani Bilingual pathways.",
+      desc: "International GCSE, IAL, Pearson BTEC, and Omani Bilingual pathways.",
       link: "/upper-secondary"
     }
   ]
@@ -40,6 +47,7 @@ export default function AcademicsPage() {
         title="Academic Excellence" 
         subtitle="Empowering students through world-class academic pathways, fostering global minds in a local context."
       />
+      <AcademicTabs />
 
       {/* Intro Section */}
       <section className="py-24 md:py-32 bg-white relative overflow-hidden">
@@ -87,7 +95,7 @@ export default function AcademicsPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
             {stages.map((stage, i) => (
               <Scroll3DReveal key={i} rotateAmount={14 + i * 2} depth={30 + i * 8}>
                 <Link href={stage.link} className="block group h-full">

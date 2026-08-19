@@ -36,6 +36,7 @@ const footerNav = [
   {
     title: "Academics",
     links: [
+      { label: "Curriculum", href: "/curriculum" },
       { label: "Kindergarten", href: "/kindergarten" },
       { label: "Primary School", href: "/primary-school" },
       { label: "Lower Secondary", href: "/lower-secondary" },

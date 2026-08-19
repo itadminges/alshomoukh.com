@@ -4,12 +4,13 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 
 const affiliations = [
-  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20200807213934-2020-08-07affiliations213852.jpg", url: "https://home.moe.gov.om/?GetLang=en" },
-  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20200807213952-2020-08-07affiliations213944.jpg", url: "https://www.cognia.org/" },
-  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20200807214011-2020-08-07affiliations214001.jpg", url: "https://www.ecis.org/" },
-  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20200808182038-2020-08-08affiliations182014.jpg", url: "https://qualifications.pearson.com/en/home.html" },
-  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20221208222839-2022-12-08affiliations222835.jpg", url: "https://shomoukh.com" },
-  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20221208222244-2022-12-08affiliations222240.jpeg", url: "https://www.ges.om/" },
+  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20200807213934-2020-08-07affiliations213852.jpg", url: "https://home.moe.gov.om/?GetLang=en", alt: "Ministry of Education" },
+  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20200807213952-2020-08-07affiliations213944.jpg", url: "https://www.cognia.org/", alt: "Cognia" },
+  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20200807214011-2020-08-07affiliations214001.jpg", url: "https://www.ecis.org/", alt: "ECIS" },
+  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20200808182038-2020-08-08affiliations182014.jpg", url: "https://qualifications.pearson.com/en/home.html", alt: "Pearson Edexcel" },
+  { img: "/pearson-btec-approved-centre.png", url: "https://qualifications.pearson.com/en/qualifications/btec-international-level-3.html", alt: "Pearson BTEC Approved Centre" },
+  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20221208222839-2022-12-08affiliations222835.jpg", url: "https://shomoukh.com", alt: "Al Shomoukh" },
+  { img: "https://www.alshomoukh.com:443/uploads/affiliations/20221208222244-2022-12-08affiliations222240.jpeg", url: "https://www.ges.om/", alt: "GES" },
 ]
 
 export function AffiliationsSection() {
