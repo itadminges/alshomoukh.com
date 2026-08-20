@@ -48,7 +48,7 @@ export function HeroSection() {
             className="object-cover object-center scale-105"
             priority
           />
-          <div className="absolute inset-0 bg-navy/30" />
+          <div className="absolute inset-0 bg-black/55" />
         </motion.div>
 
         {/* Content Layer */}
@@ -65,7 +65,7 @@ export function HeroSection() {
               {/* Trust Indicator */}
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="h-[1px] w-6 bg-gold/50" />
-                <span className="text-white font-bold tracking-[0.4em] uppercase text-[11px]">
+                <span className="text-gold font-bold tracking-[0.4em] uppercase text-[11px]">
                   Established 2015
                 </span>
                 <div className="h-[1px] w-6 bg-gold/50" />
@@ -73,7 +73,7 @@ export function HeroSection() {
 
               <h1 className="text-3xl md:text-5xl lg:text-7xl text-white leading-[1.1] mb-8 tracking-tight uppercase font-bold text-balance">
                 Where Ambition Meets <br />
-                <span className="inline-block text-white">
+                <span className="inline-block text-gold">
                   Global Excellence
                 </span>
               </h1>
