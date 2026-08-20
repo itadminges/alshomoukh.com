@@ -38,8 +38,8 @@ export function IntroSection() {
             >
               <motion.div style={{ y: imageY }} className="absolute inset-x-0 -inset-y-20">
                 <Image 
-                  src="/school_building_premium.png" 
-                  alt="Al Shomoukh Campus" 
+                  src="/images/final/primary-project.webp" 
+                  alt="Al Shomoukh students learning together" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"

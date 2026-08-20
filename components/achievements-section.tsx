@@ -11,21 +11,21 @@ const testimonials = [
     name: "Moataman Al Radad",
     grade: "IGCSE Scholar",
     achievement: "We are proud to announce that Muataman has received the Certificate of Excellence from Pearson Edexcel for IGCSE!",
-    image: "https://www.alshomoukh.com:443/uploads/aboutstudents/20200805160235-2020-08-05aboutstudents160234.jpg",
+    image: "/images/final/art-studio-boys.webp",
     category: "Academic Excellence"
   },
   {
     name: "Ali Ali",
     grade: "A levels Scholar",
     achievement: "We are proud to announce that Ali has received the Certificate of Excellence from Pearson Edexcel for A levels!",
-    image: "https://www.alshomoukh.com:443/uploads/aboutstudents/20200805155758-2020-08-05aboutstudents155757.jpg",
+    image: "/images/final/upper-secondary-students.webp",
     category: "Academic Excellence"
   },
   {
     name: "Hana Aman Beg",
     grade: "IGCSE Scholar",
     achievement: "We are proud to announce that Hana has received the Certificate of Excellence from Pearson Edexcel for IGCSE!",
-    image: "https://www.alshomoukh.com:443/uploads/aboutstudents/20200805155505-2020-08-05aboutstudents155504.jpg",
+    image: "/images/final/art-studio-girl.webp",
     category: "Academic Excellence"
   },
 ]

@@ -18,10 +18,10 @@ export interface TourLink {
   position: { yaw: number; pitch: number };
 }
 
-// Since we only have one panorama image currently, we use it for all nodes.
-// Once more images are available, simply update the 'panorama' paths.
-const defaultPanorama = "/panorama.jpg";
-const defaultThumb = "/panorama.jpg";
+// The tour currently uses an authorized school photograph for all nodes.
+// Replace it only with another image from the approved FINAL IMAGES collection.
+const defaultPanorama = "/images/final/primary-friends.webp";
+const defaultThumb = "/images/final/primary-friends.webp";
 
 export const TOUR_NODES: Record<string, TourNode> = {
   "main-entrance": {

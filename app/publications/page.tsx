@@ -27,6 +27,7 @@ export default function PublicationsPage() {
       <PageHero 
         title="Publications" 
         subtitle="Exploring our school's journey through newsletters, yearbooks, and academic reports."
+        backgroundImage="/images/final/student-art.webp"
       />
 
       <section className="py-24">
@@ -75,7 +76,7 @@ export default function PublicationsPage() {
                   </p>
                   
                   <div className="bg-navy p-10 text-white relative overflow-hidden h-[240px] flex flex-col items-center justify-center text-center">
-                    <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=800&auto=format&fit=crop&q=80')] bg-cover bg-center grayscale"></div>
+                    <div className="absolute inset-0 opacity-10 bg-[url('/images/final/art-studio-boys.webp')] bg-cover bg-center grayscale"></div>
                     <div className="relative z-10">
                       <Book className="w-12 h-12 text-gold/30 mx-auto mb-6" />
                       <p className="font-bold text-ivory/40 tracking-[0.3em] uppercase text-xs">Yearbook 2025/26</p>

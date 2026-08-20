@@ -66,6 +66,7 @@ export default function AdmissionsPage() {
       <PageHero 
         title="Admissions" 
         subtitle="Begin Your Child’s Journey Towards Excellence."
+        backgroundImage="/images/final/primary-students.webp"
       />
 
       {/* Intro Overview Section */}
@@ -119,8 +120,8 @@ export default function AdmissionsPage() {
             <Scroll3DReveal rotateAmount={18} depth={60}>
               <div className="relative aspect-[4/5] w-full max-w-lg mx-auto lg:ml-auto shadow-strong overflow-hidden border border-navy/10">
                 <Image 
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop"
-                  alt="Students learning together"
+                  src="/images/final/primary-friends.webp"
+                  alt="Al Shomoukh students together at school"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
@@ -401,8 +402,8 @@ export default function AdmissionsPage() {
 
               <div className="relative aspect-[4/3] w-full border border-white/10 shadow-strong overflow-hidden">
                 <Image 
-                  src="/school_building_premium.png"
-                  alt="Al Shomoukh Campus Tour"
+                  src="/images/final/primary-project.webp"
+                  alt="Learning at Al Shomoukh International Private School"
                   fill
                   className="object-cover"
                 />

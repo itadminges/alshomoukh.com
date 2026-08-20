@@ -13,10 +13,11 @@ export default function CurriculumPage() {
     <AcademicSubPageLayout
       title="Our Curriculum"
       subtitle="A world-class educational framework that blends British academic excellence with Omani cultural heritage."
+      heroImage="/images/final/primary-project.webp"
       cardIcon={BookOpen}
       cardTitle="OUR CURRICULUM"
       cardSubtitle="(INTERNATIONAL STANDARDS & LOCAL IDENTITY)"
-      cardImage="/academics_premium.png"
+      cardImage="/images/final/primary-boys.webp"
       intro={[
         "At Al Shomoukh International Private School, our curriculum is designed to provide every student with a high-quality, inclusive, and internationally focused education that promotes academic excellence and personal development.",
         "Underpinned by the National Curriculum for England and Pearson Edexcel International pathways, our curriculum combines the latest English educational standards with an international approach, providing clear progression from the Early Years through to Upper Secondary.",

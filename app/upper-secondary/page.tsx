@@ -160,9 +160,10 @@ export default function UpperSecondaryPage() {
     <AcademicSubPageLayout
       title="Upper Secondary & Pre-University"
       subtitle="Comprehensive British and National pathways empowering students aged 14–19 to excel in International GCSE, IAL, Pearson BTEC Level 3, and Omani Bilingual qualifications."
+      heroImage="/images/final/upper-secondary-students.webp"
       cardTitle="International GCSE (Grades 9–10)"
       cardSubtitle="Grades 9–10 • Ages 14–16 • Pearson Edexcel IGCSE"
-      cardImage="/school_building_premium.png"
+      cardImage="/images/final/upper-secondary-class.webp"
       intro={[
         "At Al Shomoukh International Private School, students in Grades 9 and 10 follow the Pearson Edexcel International GCSE (IGCSE) Programme, a globally recognised British qualification designed for learners aged 14–16.",
         "Studied in over 80 countries worldwide, Pearson Edexcel International GCSEs are equivalent to UK GCSE qualifications and provide students with the academic knowledge, practical skills, and critical thinking required for progression to International A levels, BTEC Level 3 qualifications, university, and future careers.",

@@ -5,7 +5,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Play } from "lucide-react"
 import { SectionSpirals } from "@/components/decorative-spirals"
 import { TourOverlay } from "@/components/virtual-tour/tour-overlay"
 
@@ -42,11 +41,11 @@ export function HeroSection() {
           className="absolute inset-0 z-0 origin-center"
         >
           <Image
-            src="/hero-bg.png"
-            alt="Al Shomoukh Campus"
+            src="/images/final/kindergarten-story.webp"
+            alt="Al Shomoukh kindergarten students learning together during story time"
             fill
             sizes="100vw"
-            className="object-cover scale-105"
+            className="object-cover object-center scale-105"
             priority
           />
           <div className="absolute inset-0 bg-navy/30" />
@@ -66,7 +65,7 @@ export function HeroSection() {
               {/* Trust Indicator */}
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="h-[1px] w-6 bg-gold/50" />
-                <span className="text-gold font-bold tracking-[0.4em] uppercase text-[11px]">
+                <span className="text-white font-bold tracking-[0.4em] uppercase text-[11px]">
                   Established 2015
                 </span>
                 <div className="h-[1px] w-6 bg-gold/50" />
@@ -74,7 +73,9 @@ export function HeroSection() {
 
               <h1 className="text-3xl md:text-5xl lg:text-7xl text-white leading-[1.1] mb-8 tracking-tight uppercase font-bold text-balance">
                 Where Ambition Meets <br />
-                <span className="text-gold">Global Excellence</span>
+                <span className="inline-block text-white">
+                  Global Excellence
+                </span>
               </h1>
               <p className="text-sm md:text-base text-ivory/90 max-w-xl mx-auto mb-10 leading-relaxed font-medium">
                 Empowering students through a world-class international education that inspires critical thinking, nurtures cultural identity, and prepares confident leaders for a changing world.

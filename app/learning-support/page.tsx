@@ -109,6 +109,7 @@ export default function LearningSupportPage() {
       <PageHero 
         title="Learning Support" 
         subtitle="Empowering every student through personalized guidance, targeted interventions, and an unwavering commitment to inclusive education and neurodiversity."
+        backgroundImage="/images/final/teacher-support.webp"
       />
       <AcademicTabs />
 
@@ -147,8 +148,8 @@ export default function LearningSupportPage() {
             <Scroll3DReveal rotateAmount={12} depth={40} className="relative">
               <div className="relative z-10 aspect-[4/3] overflow-hidden shadow-strong">
                 <Image
-                  src="/academics_premium.png"
-                  alt="Learning Support"
+                  src="/images/final/learning-support.webp"
+                  alt="Students receiving focused learning support"
                   fill
                   className="object-cover"
                 />

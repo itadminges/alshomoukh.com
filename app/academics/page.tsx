@@ -22,7 +22,7 @@ export default function AcademicsPage() {
       desc: "Nurturing curiosity, confidence, and joyful inquiry through British EYFS standards and purposeful play.",
       highlights: ["7 Areas of Learning", "Early Phonics", "Nurturing Spaces"],
       link: "/kindergarten",
-      image: "/kindergarten_premium.png"
+      image: "/images/final/kindergarten-story.webp"
     },
     { 
       title: "Primary School", 
@@ -31,7 +31,7 @@ export default function AcademicsPage() {
       desc: "Building strong academic foundations in core subjects with internationally benchmarked assessments.",
       highlights: ["iPrimary Framework", "Inquiry Science", "Bilingual Mastery"],
       link: "/primary-school",
-      image: "/academics_premium.png"
+      image: "/images/final/primary-classroom.webp"
     },
     { 
       title: "Lower Secondary",
@@ -40,7 +40,7 @@ export default function AcademicsPage() {
       desc: "Fostering analytical thinking, subject specialization, and seamless preparation for International GCSEs.",
       highlights: ["Specialist Labs", "Critical Thinking", "IGCSE Readiness"],
       link: "/lower-secondary",
-      image: "/school_building_premium.png"
+      image: "/images/final/computer-lab.webp"
     },
     { 
       title: "Upper Secondary", 
@@ -49,7 +49,7 @@ export default function AcademicsPage() {
       desc: "Four flexible pathways preparing students for top universities in Oman, the UK, US, and worldwide.",
       highlights: ["International GCSE & IAL", "BTEC Diploma", "Omani GED"],
       link: "/upper-secondary",
-      image: "/hero-bg.png"
+      image: "/images/final/upper-secondary-class.webp"
     },
     { 
       title: "Learning Support", 
@@ -58,7 +58,7 @@ export default function AcademicsPage() {
       desc: "Empowering every learner through tailored interventions, multi-tiered support, and neurodiversity care.",
       highlights: ["3-Tier Model", "Individual IEPs", "Parent Partnership"],
       link: "/learning-support",
-      image: "/panorama.jpg"
+      image: "/images/final/teacher-support.webp"
     }
   ]
 
@@ -126,6 +126,7 @@ export default function AcademicsPage() {
       <PageHero 
         title="Academic Excellence" 
         subtitle="Empowering students through world-class British and Omani academic pathways, fostering global minds with deep cultural values."
+        backgroundImage="/images/final/primary-project.webp"
       />
       <AcademicTabs />
 
@@ -180,8 +181,8 @@ export default function AcademicsPage() {
             <Scroll3DReveal rotateAmount={12} depth={40} className="relative">
               <div className="relative z-10 aspect-[4/3] overflow-hidden shadow-strong">
                 <Image
-                  src="/school_building_premium.png"
-                  alt="Al Shomoukh Academic Excellence"
+                  src="/images/final/primary-boys.webp"
+                  alt="Al Shomoukh students in a primary classroom"
                   fill
                   className="object-cover"
                 />

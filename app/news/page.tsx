@@ -13,7 +13,7 @@ const newsItems = [
     date: "Nov 14, 2024",
     category: "Academic",
     description: "Al Shomoukh leadership team participated in the Ministry of Education Leadership Workshop, collaborating with educational leaders across Oman to discuss modern instructional strategies.",
-    image: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&auto=format&fit=crop&q=80"
+    image: "/images/final/upper-secondary-students.webp"
   },
   {
     id: "cambridge-center",
@@ -21,7 +21,7 @@ const newsItems = [
     date: "Oct 28, 2024",
     category: "Academic",
     description: "We are proud to celebrate our accredited status as an official Cambridge Center, providing our students with internationally recognised benchmarks and qualifications.",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&auto=format&fit=crop&q=80"
+    image: "/images/final/primary-project.webp"
   },
   {
     id: "cognia-accreditation",
@@ -29,7 +29,7 @@ const newsItems = [
     date: "Sep 19, 2024",
     category: "Academic",
     description: "Al Shomoukh International Private School has achieved Cognia Accreditation, affirming our commitment to educational excellence, institutional quality, and continuous improvement.",
-    image: "https://images.unsplash.com/photo-1546410531-bea5aad16e45?w=800&auto=format&fit=crop&q=80"
+    image: "/images/final/primary-students.webp"
   },
   {
     id: "injaz-oman",
@@ -37,7 +37,7 @@ const newsItems = [
     date: "May 12, 2024",
     category: "Student Life",
     description: "Students participated in an immersive two-day STEM Workshop in collaboration with Injaz Oman, solving real-world challenges through technology, engineering, and teamwork.",
-    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80"
+    image: "/images/final/primary-craft.webp"
   },
   {
     id: "early-years-open-day",
@@ -45,7 +45,7 @@ const newsItems = [
     date: "Aug 20, 2024",
     category: "Events",
     description: "Exciting developments and community open days celebrating our expanding early learning environment and nurturing spaces at Al Shomoukh International Private School.",
-    image: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop&q=80"
+    image: "/images/final/kindergarten-story.webp"
   },
   {
     id: "graduation-2024",
@@ -53,7 +53,7 @@ const newsItems = [
     date: "Jun 06, 2024",
     category: "Events",
     description: "Honouring the achievements, perseverance, and university milestones of our graduating seniors as they embark on higher education around the world.",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80"
+    image: "/images/final/upper-secondary-class.webp"
   },
   {
     id: "art-exhibition-2024",
@@ -61,7 +61,7 @@ const newsItems = [
     date: "Apr 25, 2024",
     category: "Events",
     description: "Showcasing the extraordinary creative talents, paintings, sculptures, and musical performances of our students across all year groups.",
-    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&auto=format&fit=crop&q=80"
+    image: "/images/final/art-studio-students.webp"
   }
 ]
 
@@ -128,6 +128,7 @@ export default function NewsPage() {
       <PageHero 
         title="News & Stories" 
         subtitle="Stay updated with the latest events, achievements, and announcements from our vibrant school community."
+        backgroundImage="/images/final/art-studio-students.webp"
       />
 
       <section className="py-24">

@@ -146,9 +146,10 @@ export default function KindergartenPage() {
     <AcademicSubPageLayout
       title="Early Years Foundation Stage (EYFS)"
       subtitle="A nurturing, play-based British framework that provides children aged 3–5 with the strongest possible foundation for lifelong learning."
+      heroImage="/images/final/kindergarten-story.webp"
       cardTitle="Kindergarten (EYFS)"
       cardSubtitle="Ages 3–5 • Nursery (FS1) & KG (FS2)"
-      cardImage="/kindergarten_premium.png"
+      cardImage="/images/final/kindergarten-learning.webp"
       intro={[
         "At Al Shomoukh International Private School, our Kindergarten Department follows the Early Years Foundation Stage (EYFS) Curriculum, a world-renowned British framework that provides children aged 3–5 with the strongest possible foundation for lifelong learning.",
         "The EYFS curriculum recognises that young children learn best through purposeful play, exploration, and meaningful experiences, fostering confidence, curiosity, creativity, and independence in a safe, nurturing, and stimulating environment.",

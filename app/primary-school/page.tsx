@@ -121,9 +121,10 @@ export default function PrimaryPage() {
     <AcademicSubPageLayout
       title="Primary Curriculum (Grades 1–6)"
       subtitle="A world-class British international programme combining high academic standards with inquiry, creativity, bilingual proficiency, and character."
+      heroImage="/images/final/primary-students.webp"
       cardTitle="Pearson Edexcel iPrimary"
       cardSubtitle="Grades 1–6 • Ages 5–11"
-      cardImage="/academics_premium.png"
+      cardImage="/images/final/primary-classroom.webp"
       intro={[
         "At Al Shomoukh International Private School, our Primary Department follows the Pearson Edexcel iPrimary Curriculum, a world-class British international programme that provides a strong academic foundation while nurturing curiosity, creativity, confidence, and a lifelong love of learning.",
         "Designed for children aged 5–11, the curriculum combines high academic standards with an international perspective, preparing pupils for a seamless progression to iLowerSecondary, International GCSEs, and beyond.",

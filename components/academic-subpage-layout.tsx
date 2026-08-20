@@ -59,6 +59,7 @@ export type AcademicDetailSection = {
 export type AcademicSubPageProps = {
   title: string
   subtitle?: string
+  heroImage?: string
   eyebrow?: string
   heading?: string
   metaBadge?: string
@@ -93,12 +94,13 @@ export type AcademicSubPageProps = {
 export function AcademicSubPageLayout({
   title,
   subtitle,
+  heroImage,
   eyebrow,
   heading,
   metaBadge,
   cardTitle,
   cardSubtitle,
-  cardImage = "/school_building_premium.png",
+  cardImage = "/images/final/primary-project.webp",
   intro,
   highlights = [],
   featuresHeading,
@@ -117,7 +119,7 @@ export function AcademicSubPageLayout({
 }: AcademicSubPageProps) {
   return (
     <main className="min-h-screen bg-white overflow-hidden scroll-3d-scene">
-      <PageHero title={title} subtitle={subtitle} />
+      <PageHero title={title} subtitle={subtitle} backgroundImage={heroImage} />
       <AcademicTabs />
 
       {/* Main Feature Section (Seamless Editorial Layout Matching Home Page IntroSection) */}
@@ -300,7 +302,7 @@ export function AcademicSubPageLayout({
                     >
                       <div className="relative z-10 aspect-[4/3] overflow-hidden shadow-strong">
                         <Image
-                          src={section.image || "/school_building_premium.png"}
+                          src={section.image || "/images/final/primary-project.webp"}
                           alt={section.title}
                           fill
                           className="object-cover"

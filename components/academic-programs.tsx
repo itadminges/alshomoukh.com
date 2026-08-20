@@ -13,28 +13,28 @@ const programs = [
     title: "Kindergarten",
     division: "Early Years",
     description: "Nurturing curiosity through physical, social, and emotional discovery.",
-    image: "/kindergarten_premium.png",
+    image: "/images/final/kindergarten-learning.webp",
     href: "/kindergarten"
   },
   {
     title: "Primary School",
     division: "Key Stage 1 & 2",
     description: "Forging strong academic foundations through inquiry-based learning.",
-    image: "/academics_premium.png",
+    image: "/images/final/primary-classroom.webp",
     href: "/primary-school"
   },
   {
     title: "Lower Secondary",
     division: "Key Stage 3",
     description: "Developing critical thinking and independence in specialized subjects.",
-    image: "https://www.alshomoukh.com:443/uploads/curriculum/20200805164402-2020-08-05curriculum164359.jpg",
+    image: "/images/final/art-studio-girl.webp",
     href: "/lower-secondary"
   },
   {
     title: "Upper Secondary",
     division: "Key Stage 4 & 5",
     description: "Rigorous preparation for IGCSE and A levels examinations.",
-    image: "https://www.alshomoukh.com:443/uploads/curriculum/20200805144412-2020-08-05curriculum144407.jpg",
+    image: "/images/final/secondary-collaboration.webp",
     href: "/upper-secondary"
   },
 ]

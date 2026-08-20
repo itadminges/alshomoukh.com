@@ -102,9 +102,10 @@ export default function LowerSecondaryPage() {
     <AcademicSubPageLayout
       title="iLowerSecondary (Grades 7–8)"
       subtitle="An internationally recognised British programme designed for learners aged 11–14, developing deep subject knowledge, critical thinking, and seamless preparation for International GCSEs."
+      heroImage="/images/final/computer-lab.webp"
       cardTitle="Pearson Edexcel iLowerSecondary"
       cardSubtitle="Grades 7–8 • Ages 11–14"
-      cardImage="/school_building_premium.png"
+      cardImage="/images/final/learning-support.webp"
       intro={[
         "At Al Shomoukh International Private School, students in Grades 7 and 8 follow the Pearson Edexcel iLowerSecondary Curriculum, an internationally recognised British programme designed for learners aged 11–14.",
         "The curriculum provides a seamless transition from iPrimary and prepares students for the academic rigour of Pearson Edexcel International GCSE qualifications in Grades 9 and 10.",

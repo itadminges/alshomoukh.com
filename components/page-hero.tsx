@@ -14,7 +14,7 @@ interface PageHeroProps {
   }
 }
 
-export function PageHero({ title, subtitle, backgroundImage = "/hero-bg.png", quote }: PageHeroProps) {
+export function PageHero({ title, subtitle, backgroundImage = "/images/final/primary-friends.webp", quote }: PageHeroProps) {
   const containerRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
