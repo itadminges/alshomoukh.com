@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 
 const organisations = [
@@ -40,37 +42,53 @@ const organisations = [
 
 export function AffiliationsSection() {
   return (
-    <section className="overflow-hidden bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <div className="mb-10 flex items-center justify-center gap-4">
-          <div className="h-px w-8 bg-gold/50" />
-          <span className="text-center text-[11px] font-bold uppercase tracking-[0.3em] text-navy/45">
-            Accreditations & Affiliations
-          </span>
-          <div className="h-px w-8 bg-gold/50" />
-        </div>
-
-        <div className="grid grid-cols-2 items-center gap-6 sm:grid-cols-3 lg:grid-cols-4">
-          {organisations.map((organisation) => (
-            <a
-              key={organisation.alt}
-              href={organisation.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-24 items-center justify-center border border-navy/10 bg-white p-5 transition-all hover:border-gold/40 hover:shadow-sm"
-              aria-label={organisation.alt}
-            >
-              <div className="relative h-12 w-full max-w-[180px]">
+    <section className="overflow-hidden bg-white py-12 md:py-16">
+      <div className="relative mx-auto w-full max-w-7xl px-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div className="flex w-max animate-marquee items-center hover:[animation-play-state:paused]">
+          {/* First set of logos */}
+          <div className="flex shrink-0 items-center gap-12 md:gap-16 pr-12 md:pr-16">
+            {organisations.map((org, idx) => (
+              <a
+                key={`org-1-${idx}`}
+                href={org.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex h-14 w-32 md:h-18 md:w-44 shrink-0 items-center justify-center transition-transform duration-300 hover:scale-105"
+                aria-label={org.alt}
+              >
                 <Image
-                  src={organisation.image}
-                  alt={organisation.alt}
+                  src={org.image}
+                  alt={org.alt}
                   fill
-                  sizes="(max-width: 768px) 160px, 200px"
+                  sizes="(max-width: 768px) 128px, 176px"
                   className="object-contain"
                 />
-              </div>
-            </a>
-          ))}
+              </a>
+            ))}
+          </div>
+
+          {/* Duplicated set of logos for seamless infinite auto-scroll */}
+          <div className="flex shrink-0 items-center gap-12 md:gap-16 pr-12 md:pr-16" aria-hidden="true">
+            {organisations.map((org, idx) => (
+              <a
+                key={`org-2-${idx}`}
+                href={org.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={-1}
+                className="relative flex h-14 w-32 md:h-18 md:w-44 shrink-0 items-center justify-center transition-transform duration-300 hover:scale-105"
+                aria-label={org.alt}
+              >
+                <Image
+                  src={org.image}
+                  alt={org.alt}
+                  fill
+                  sizes="(max-width: 768px) 128px, 176px"
+                  className="object-contain"
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
