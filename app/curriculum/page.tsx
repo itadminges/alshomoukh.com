@@ -33,7 +33,7 @@ export default function CurriculumPage() {
         {
           icon: BookOpen,
           title: "Pearson Edexcel",
-          description: "iPrimary to IAL & BTEC accreditations",
+          description: "iPrimary to IAL & BTEC programmes",
         },
         {
           icon: Landmark,
@@ -43,7 +43,7 @@ export default function CurriculumPage() {
         {
           icon: GraduationCap,
           title: "University Ready",
-          description: "Direct global admissions preparation",
+          description: "University and career preparation",
         },
       ]}
       featuresSubtitle="Curriculum Principles"
@@ -57,7 +57,7 @@ export default function CurriculumPage() {
         {
           title: "Internationally Recognised",
           badge: "Global Standard",
-          description: "Pearson Edexcel routes prepare students for IGCSE, IAL, BTEC, and prestigious university progression globally.",
+          description: "Pearson Edexcel routes prepare students for IGCSE, IAL, BTEC, and progression to further study or employment.",
         },
         {
           title: "Culturally Grounded",

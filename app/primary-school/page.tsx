@@ -134,7 +134,7 @@ export default function PrimaryPage() {
       highlights={[
         {
           title: "UK iPrimary",
-          description: "Pearson Edexcel accredited British framework",
+          description: "Pearson Edexcel international framework",
         },
         {
           title: "Bilingual STEM",

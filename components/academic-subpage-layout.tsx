@@ -5,8 +5,6 @@ import type { LucideIcon } from "lucide-react"
 import { 
   ArrowRight, 
   Check, 
-  CheckCircle2, 
-  Award, 
   Compass
 } from "lucide-react"
 import Link from "next/link"
@@ -109,7 +107,7 @@ export function AcademicSubPageLayout({
   subjectsHeading,
   subjects = [],
   pathwayHeading,
-  pathwaySubtitle,
+  pathwaySubtitle: _pathwaySubtitle,
   pathway = [],
   detailSectionsHeading,
   detailSections = [],

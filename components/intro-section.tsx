@@ -58,8 +58,8 @@ export function IntroSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="absolute -bottom-10 -right-10 z-20 bg-navy p-10 text-white shadow-strong"
             >
-              <p className="text-4xl mb-1 text-gold">11+</p>
-              <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/60">Years of Educational Excellence</p>
+              <p className="text-4xl mb-1 text-gold">KG–12</p>
+              <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/60">Complete Learning Journey</p>
             </motion.div>
           </Scroll3DReveal>
 

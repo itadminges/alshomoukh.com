@@ -3,28 +3,16 @@
 import { useState, useMemo, useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { 
-  Calendar as CalendarIcon, 
   Clock, 
-  Sparkles, 
   Search, 
   Printer, 
-  Download, 
-  CheckCircle2, 
-  ArrowRight, 
-  BookOpen, 
-  FileText,
   AlertCircle,
   CalendarDays
 } from "lucide-react"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { Button } from "@/components/ui/button"
-import { 
-  ACADEMIC_CALENDAR_2026_2027, 
-  CalendarEvent, 
-  getUpcomingEvents,
-  getEventsGroupedByMonth 
-} from "@/lib/academic-calendar"
+import { ACADEMIC_CALENDAR_2026_2027 } from "@/lib/academic-calendar"
 
 const ALL_MONTHS = [
   "August 2026",
@@ -92,8 +80,6 @@ export default function CalendarPage() {
     })
   }, [filteredEvents])
 
-  const upcomingEvents = useMemo(() => getUpcomingEvents(3), [])
-
   const handlePrint = () => {
     if (typeof window !== "undefined") {
       window.print()
@@ -104,7 +90,7 @@ export default function CalendarPage() {
     <main className="min-h-screen bg-white">
       <PageHero 
         title="Academic Calendar 2026–2027" 
-        subtitle="Official school calendar including term commencement dates, revision periods, examinations, student breaks, and national holidays."
+        subtitle="School planning calendar for term dates, examinations, student breaks, and holidays. Families should confirm time-sensitive dates through the Parent Portal."
       />
 
       {/* Quick Stats / Term Highlights */}

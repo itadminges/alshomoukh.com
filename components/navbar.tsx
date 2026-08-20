@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, Search, ChevronDown, X } from "lucide-react"
+import { Menu, ChevronDown, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useScroll, useMotionValueEvent, motion, AnimatePresence } from "framer-motion"
 
@@ -133,13 +133,6 @@ export function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-4 lg:gap-6">
-            <button className={cn(
-              "hidden md:block transition-colors duration-300",
-              forceSolid ? "text-primary/70 hover:text-primary" : "text-white/70 hover:text-white"
-            )}>
-              <Search className="h-4 w-4" />
-            </button>
-            
             <div className="hidden lg:flex gap-4">
               <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">
                 <Button
@@ -169,12 +162,6 @@ export function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <div className="flex items-center gap-4 lg:hidden relative z-[101]">
-              <button className={cn(
-                "transition-colors duration-300",
-                forceSolid ? "text-primary" : "text-white"
-              )}>
-                <Search className="h-5 w-5" />
-              </button>
               <Button 
                 variant="ghost" 
                 size="icon"

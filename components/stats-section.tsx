@@ -1,34 +1,17 @@
-"use client"
-
-import { useRef, useEffect } from "react"
-import { motion, useSpring, useInView, useTransform } from "framer-motion"
 import { Scroll3DReveal } from "@/components/scroll-3d"
 import { SectionSpirals } from "@/components/decorative-spirals"
 
 const stats = [
-  { label: "Established", value: 2015, suffix: "" },
-  { label: "Nationalities", value: 45, suffix: "+" },
-  { label: "University Acceptance", value: 100, suffix: "%" },
-  { label: "Years of Educational Excellence", value: 11, suffix: "+" },
+  { label: "Established", value: "2015" },
+  { label: "Student Age Range", value: "3–18" },
+  { label: "Learning Journey", value: "KG–12" },
+  { label: "Academic Framework", value: "British" },
 ]
 
-function Counter({ value, suffix }: { value: number; suffix: string }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  const spring = useSpring(0, { stiffness: 40, damping: 20 })
-  
-  useEffect(() => {
-    if (isInView) {
-      spring.set(value)
-    }
-  }, [isInView, spring, value])
-
-  const display = useTransform(spring, (latest) => Math.floor(latest))
-
+function StatValue({ value }: { value: string }) {
   return (
-    <div ref={ref} className="text-3xl md:text-4xl lg:text-5xl text-navy font-bold tracking-tight mb-2">
-      <motion.span>{display}</motion.span>
-      <span className="text-gold">{suffix}</span>
+    <div className="text-3xl md:text-4xl lg:text-5xl text-navy font-bold tracking-tight mb-2">
+      {value}
     </div>
   )
 }
@@ -46,7 +29,7 @@ export function StatsSection() {
               depth={30 + index * 8}
               className="flex flex-col items-start"
             >
-              <Counter value={stat.value} suffix={stat.suffix} />
+              <StatValue value={stat.value} />
               <p className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-navy/40">
                 {stat.label}
               </p>

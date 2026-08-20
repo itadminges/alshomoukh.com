@@ -6,16 +6,10 @@ import {
   CheckSquare, 
   Award, 
   UserPlus, 
-  DollarSign, 
-  GraduationCap, 
   Calendar, 
   Clock, 
-  Phone, 
-  Mail, 
   HelpCircle, 
-  ChevronRight,
-  Sparkles,
-  Users
+  Sparkles
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -27,7 +21,7 @@ import { Button } from "@/components/ui/button"
 export default function AdmissionsPage() {
   const steps = [
     { num: "01", title: "Inquiry", desc: "Discover our curriculum, learn about our programmes, and arrange a visit to experience our campus.", icon: BookOpen },
-    { num: "02", title: "Application", desc: "Complete the online application and submit the required documents to begin the admissions process.", icon: FileText },
+    { num: "02", title: "Application", desc: "Contact Admissions and submit the required documents according to the current application guidance.", icon: FileText },
     { num: "03", title: "Assessment", desc: "Participate in an age-appropriate student placement assessment to understand learning readiness.", icon: CheckSquare },
     { num: "04", title: "Offer", desc: "Receive an admission decision and offer of placement following the assessment process.", icon: Award },
     { num: "05", title: "Enrollment", desc: "Complete registration requirements and welcome your child into the Al Shomoukh community.", icon: UserPlus },
@@ -39,24 +33,24 @@ export default function AdmissionsPage() {
       a: "At Al Shomoukh International Private School, all students undergo an age-appropriate placement test to assess academic readiness and ensure they are placed in the ideal grade level to thrive in our British and international curriculum."
     },
     {
-      q: "What is the age criteria for Kindergarten and Grade 1?",
-      a: "• KG1: Children must be 3 years old and 2 months by September 1st of the enrolling academic year.\n• KG2: Children must be 4 years and 2 months old by September 1st of the academic year.\n• Grade 1: Children must be 6 years and 2 months old by September 1st of the academic year."
+      q: "What are the age requirements for Kindergarten and Grade 1?",
+      a: "Age requirements follow the current Ministry of Education and school admissions policy for the enrolling academic year. Please contact Admissions to confirm the applicable cut-off dates before applying."
     },
     {
-      q: "Is there a sibling discount available?",
-      a: "Yes! Younger siblings enrolled at Al Shomoukh International Private School may be eligible for a 10% tuition fee discount."
+      q: "Are fee discounts or payment options available?",
+      a: "Fee policies can change by academic year. Please request the current fee schedule from Admissions and ask about any available sibling-discount eligibility or payment arrangements."
     },
     {
       q: "Can parents meet teachers and visit the campus before enrolling?",
       a: "Absolutely. We warmly encourage campus visits from Sunday to Thursday (7:30 AM – 3:30 PM). Parents can meet our academic leaders and teachers during scheduled tours and orientation sessions."
     },
     {
-      q: "When do students start learning additional languages like French?",
-      a: "Students begin learning French from Grade 1 as part of our foreign language curriculum, building bilingual fluency and global communication skills early."
+      q: "Which documents are required for an application?",
+      a: "Admissions will provide the current document checklist for the student's year group. Requirements may include identification, previous school records, and other supporting documents."
     },
     {
-      q: "Are educational trips organized for students?",
-      a: "Yes, we organize local excursions across Oman to explore cultural heritage and science, as well as supervised overseas trips for older students to broaden their international perspectives."
+      q: "How can families confirm current programmes and activities?",
+      a: "Programme and activity availability may vary by year group and term. Contact the school for the latest confirmed options before making arrangements."
     }
   ]
 
@@ -190,8 +184,8 @@ export default function AdmissionsPage() {
             <div className="lg:col-span-5">
               <Scroll3DReveal rotateAmount={14} depth={40}>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-2.5 bg-gold/10 text-gold">
-                    <DollarSign className="w-6 h-6" />
+                  <div className="flex h-11 w-11 items-center justify-center bg-gold/10 text-gold" aria-label="Omani rial">
+                    <span className="text-sm font-extrabold" dir="rtl">ر.ع.</span>
                   </div>
                   <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
                     Tuition & Finance
@@ -210,9 +204,9 @@ export default function AdmissionsPage() {
                   <div className="flex items-start gap-3">
                     <Sparkles className="w-5 h-5 text-gold shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-bold text-navy text-sm uppercase tracking-wide mb-1">10% Sibling Discount</h4>
+                      <h4 className="font-bold text-navy text-sm uppercase tracking-wide mb-1">Current Fee Guidance</h4>
                       <p className="text-navy/70 text-sm font-medium leading-relaxed">
-                        Younger siblings enrolled at Al Shomoukh International Private School are eligible for a 10% discount on tuition fees.
+                        Request the current fee schedule and ask Admissions about any available sibling-discount eligibility or payment arrangements.
                       </p>
                     </div>
                   </div>
@@ -239,14 +233,14 @@ export default function AdmissionsPage() {
               <Scroll3DReveal rotateAmount={16} depth={45}>
                 <div className="bg-primary text-white p-8 md:p-12 shadow-strong border border-white/10 space-y-8">
                   <div className="border-b border-white/10 pb-6">
-                    <h3 className="text-2xl font-bold uppercase tracking-tight text-white mb-2">What Our Tuition Covers</h3>
-                    <p className="text-ivory/70 text-sm font-medium">Delivering an exceptional international standard of holistic learning and student care.</p>
+                    <h3 className="text-2xl font-bold uppercase tracking-tight text-white mb-2">The Learning Experience</h3>
+                    <p className="text-ivory/70 text-sm font-medium">An overview of the curriculum, facilities, support, and enrichment available to students.</p>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-6">
                     {[
                       { title: "British Curriculum", desc: "Pearson Edexcel iPrimary, iLowerSecondary, IGCSE & International A levels." },
-                      { title: "Specialist Facilities", desc: "State-of-the-art science labs, modern IT suites, libraries, and arts studios." },
+                      { title: "Specialist Facilities", desc: "Science laboratories, IT learning spaces, libraries, and arts studios." },
                       { title: "Personalised Care", desc: "Individualised learning support and dedicated pastoral wellbeing guidance." },
                       { title: "Enrichment & Clubs", desc: "Diverse after-school clubs, student leadership, sports, and cultural events." },
                     ].map((item, i) => (
@@ -274,70 +268,6 @@ export default function AdmissionsPage() {
               </Scroll3DReveal>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* Scholarships Section */}
-      <section id="scholarships" className="py-24 md:py-32 bg-ivory/30 border-y border-navy/5 relative overflow-hidden">
-        <SectionSpirals variant="light" />
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-[1px] w-8 bg-gold/30" />
-              <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
-                Academic Recognition
-              </span>
-              <div className="h-[1px] w-8 bg-gold/30" />
-            </div>
-
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy leading-[1.1] tracking-tight mb-6 font-bold uppercase">
-              Scholarships & <span className="text-gold">Excellence</span>
-            </h2>
-
-            <p className="text-navy/80 text-base md:text-lg leading-[1.8] font-medium">
-              Al Shomoukh International Private School celebrates and supports outstanding academic potential, leadership, and exemplary character. We recognize exceptional student achievements and provide avenues to support high-performing scholars.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: GraduationCap,
-                title: "Academic Excellence",
-                desc: "Awarded to students demonstrating superior performance in Pearson Edexcel IGCSE and International A levels entrance evaluations and past academic records."
-              },
-              {
-                icon: Award,
-                title: "Excellence in Arts & STEM",
-                desc: "Recognizing outstanding creative achievements, musical ability, scientific research, and innovation showcased during assessments and student portfolios."
-              },
-              {
-                icon: Users,
-                title: "Leadership & Community",
-                desc: "Honoring students who show exceptional initiative, community service, global citizenship, and positive peer mentorship."
-              }
-            ].map((item, idx) => (
-              <Scroll3DReveal key={idx} rotateAmount={12 + idx * 2} depth={30 + idx * 5}>
-                <div className="bg-white p-8 border border-navy/5 shadow-strong h-full flex flex-col justify-between hover:border-gold/30 transition-colors duration-500">
-                  <div>
-                    <div className="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-6">
-                      <item.icon className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-navy font-bold text-xl uppercase tracking-tight mb-3">{item.title}</h3>
-                    <p className="text-navy/70 text-sm leading-[1.7] font-medium">{item.desc}</p>
-                  </div>
-                </div>
-              </Scroll3DReveal>
-            ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <Link href="mailto:admission@alshomoukh.com?subject=Scholarship%20Inquiry">
-              <Button className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
-                Inquire About Scholarships
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
@@ -389,7 +319,7 @@ export default function AdmissionsPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/book-a-tour">
                     <Button className="bg-gold text-white hover:bg-gold/90 h-14 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
-                      Schedule Tour Online
+                      Request a Campus Tour
                     </Button>
                   </Link>
                   <Link href="tel:+96824284771">
@@ -479,7 +409,7 @@ export default function AdmissionsPage() {
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Link href="/contact">
                   <Button className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
-                    Apply Now
+                    Contact Admissions
                   </Button>
                 </Link>
                 <Link href="/book-a-tour">

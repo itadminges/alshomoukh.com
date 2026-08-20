@@ -1,10 +1,6 @@
 "use client"
 
-import { 
-  Check, 
-  CheckCircle2, 
-  ArrowRight
-} from "lucide-react"
+import { Check } from "lucide-react"
 import { AcademicSubPageLayout } from "@/components/academic-subpage-layout"
 import { Scroll3DReveal, Scroll3DCard } from "@/components/scroll-3d"
 import Image from "next/image"
@@ -130,22 +126,22 @@ export default function UpperSecondaryPage() {
                   University & Career <span className="text-gold">Guidance</span>
                 </h3>
                 <p className="text-ivory/80 text-xs md:text-sm leading-relaxed font-medium">
-                  Our dedicated higher education advisors provide personalised guidance for UCAS applications, Common App, IELTS/TOEFL preparation, and admissions to premier universities in Oman, the UK, US, Canada, Europe, and the GCC.
+                  Upper Secondary programmes support university and career planning. Families should contact the school to confirm the application guidance and preparation services currently available for each pathway.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="bg-white/5 border border-white/10 p-5">
-                  <p className="text-gold font-bold text-xs uppercase tracking-wider mb-1">UK & Europe</p>
-                  <p className="text-sm font-bold text-white uppercase">Russell Group & Premier Universities</p>
+                  <p className="text-gold font-bold text-xs uppercase tracking-wider mb-1">Higher Education</p>
+                  <p className="text-sm font-bold text-white uppercase">Application Preparation</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 p-5">
-                  <p className="text-gold font-bold text-xs uppercase tracking-wider mb-1">USA & Canada</p>
-                  <p className="text-sm font-bold text-white uppercase">Direct Credits & Degree Pathways</p>
+                  <p className="text-gold font-bold text-xs uppercase tracking-wider mb-1">Future Planning</p>
+                  <p className="text-sm font-bold text-white uppercase">Academic & Career Choices</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 p-5">
-                  <p className="text-gold font-bold text-xs uppercase tracking-wider mb-1">Oman & GCC</p>
-                  <p className="text-sm font-bold text-white uppercase">SQU, GUtech & Regional Entry</p>
+                  <p className="text-gold font-bold text-xs uppercase tracking-wider mb-1">Pathway Advice</p>
+                  <p className="text-sm font-bold text-white uppercase">Local & International Options</p>
                 </div>
               </div>
             </div>
@@ -180,7 +176,7 @@ export default function UpperSecondaryPage() {
         },
         {
           title: "Pathway to Success",
-          description: "Direct progression to A Levels, BTEC & University",
+          description: "Progression options for A Levels, BTEC & higher education",
         },
         {
           title: "Future Focused",
@@ -197,14 +193,14 @@ export default function UpperSecondaryPage() {
           description: "Options spanning academic IGCSE/IAL, applied vocational BTEC, and national bilingual GED programmes.",
         },
         {
-          title: "World University Entry",
+          title: "Recognised Qualifications",
           badge: "Global Standard",
-          description: "Internationally certified qualifications recognized by top universities across the UK, US, Europe, and GCC.",
+          description: "International qualifications that support applications to higher education in Oman and abroad.",
         },
         {
-          title: "1:1 University Counselling",
+          title: "Application Guidance",
           badge: "Personalised",
-          description: "Dedicated advisors assisting with UCAS, college applications, portfolio creation, and career mapping.",
+          description: "Guidance for higher-education applications and career planning, according to each student's pathway and current school provision.",
         },
         {
           title: "Leadership & Ethics",
@@ -235,21 +231,21 @@ export default function UpperSecondaryPage() {
         },
         {
           title: "International Advanced Level (IAL)",
-          subtitle: "Grades 11–12 (Ages 16–19) • Premier Pre-University Qualification",
+          subtitle: "Grades 11–12 (Ages 16–19) • Pre-University Qualification",
           tags: ["Pure Mathematics", "Statistics & Mechanics", "Biology", "Chemistry", "Physics", "Business Studies", "Economics", "Information Technology", "English Literature"],
           paragraphs: [
-            "At Al Shomoukh International Private School, students in Grades 11 and 12 follow the Pearson Edexcel International Advanced Level (IAL) Programme, one of the world's most respected pre-university qualifications. Designed for learners aged 16–19, the programme provides an academically rigorous pathway that prepares students for admission to leading universities worldwide.",
+            "At Al Shomoukh International Private School, students in Grades 11 and 12 follow the Pearson Edexcel International Advanced Level (IAL) Programme. Designed for learners aged 16–19, the programme provides an academically rigorous pathway that supports applications to universities in Oman and internationally.",
             "The modular structure of Pearson Edexcel International A levels allows students to complete assessments throughout their programme of study, providing opportunities to monitor progress, receive targeted feedback, and continually strengthen academic performance.",
             "Through advanced academic study, independent research, analytical thinking, and practical application, students develop the intellectual curiosity and critical thinking skills required to succeed in higher education and competitive global careers.",
           ],
           bulletsHeading: "Why Choose International Advanced Levels (IAL)?",
           bullets: [
             "Modular structure offering progressive assessment and performance optimization.",
-            "Recognised for direct undergraduate admissions by top global universities.",
+            "Recognised by higher education institutions in many countries, subject to each institution's entry requirements.",
             "Enables deep academic specialisation tailored to career aspirations (Medicine, Engineering, Business, Law).",
             "Develops independent research, university-level essay writing, and analytical problem-solving.",
-            "Supported by personalized UCAS and international university application mentoring.",
-            "Proven track record of high achievement and prestigious placements."
+            "Supports preparation for UCAS and other higher-education application processes.",
+            "Offers subject combinations that can be aligned with future study and career interests."
           ],
         },
         {
@@ -289,10 +285,10 @@ export default function UpperSecondaryPage() {
           bullets: [
             "Official Ministry of Education accreditation preparing students for the General Education Diploma (GED).",
             "Core STEM disciplines delivered in English ensuring strong bilingual communication.",
-            "Direct progression to Sultan Qaboos University and prestigious colleges across Oman and the region.",
+            "Supports applications to universities and colleges in Oman and the region, subject to entry requirements.",
             "Integrates national identity, Arabic language mastery, and Islamic values.",
             "Provides a comprehensive balance between international standards and local heritage.",
-            "Dedicated preparation for national examination success and university scholarships."
+            "Dedicated preparation for national examinations and higher-education applications."
           ],
         },
       ]}

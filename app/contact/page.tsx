@@ -25,6 +25,21 @@ const FadeIn = ({ children, delay = 0, x = 0, y = 30 }: { children: React.ReactN
 }
 
 export default function ContactPage() {
+  const handleEnquiry = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const form = new FormData(event.currentTarget)
+    const subject = String(form.get("subject") || "General enquiry")
+    const body = [
+      `Name: ${String(form.get("name") || "")}`,
+      `Email: ${String(form.get("email") || "")}`,
+      `Phone: ${String(form.get("phone") || "")}`,
+      "",
+      String(form.get("message") || ""),
+    ].join("\n")
+
+    window.location.href = `mailto:info@alshomoukh.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  }
+
   return (
     <main className="min-h-screen bg-white">
       <PageHero 
@@ -38,20 +53,23 @@ export default function ContactPage() {
           <FadeIn x={-40}>
             <div className="bg-white p-10 border border-navy/5 shadow-sm">
               <h2 className="font-bold text-3xl text-navy mb-8 tracking-tight uppercase">General Enquiry</h2>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleEnquiry}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Input placeholder="Full Name" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
-                  <Input placeholder="Email Address" type="email" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
+                  <Input name="name" aria-label="Full name" required autoComplete="name" placeholder="Full Name" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
+                  <Input name="email" aria-label="Email address" required autoComplete="email" placeholder="Email Address" type="email" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Input placeholder="Phone Number" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
-                  <Input placeholder="Subject" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
+                  <Input name="phone" aria-label="Phone number" autoComplete="tel" placeholder="Phone Number" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
+                  <Input name="subject" aria-label="Subject" required placeholder="Subject" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
                 </div>
-                <Textarea placeholder="Message" className="border-navy/10 min-h-[150px] rounded-none focus:border-gold transition-colors" />
-                <Button className="bg-gold text-white hover:bg-gold/90 w-full h-14 uppercase tracking-[0.25em] font-bold rounded-none flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-gold/20">
+                <Textarea name="message" aria-label="Message" required placeholder="Message" className="border-navy/10 min-h-[150px] rounded-none focus:border-gold transition-colors" />
+                <Button type="submit" className="bg-gold text-white hover:bg-gold/90 w-full h-14 uppercase tracking-[0.25em] font-bold rounded-none flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-gold/20">
                   <Send className="w-4 h-4" />
-                  Submit Enquiry
+                  Prepare Email
                 </Button>
+                <p className="text-xs font-medium leading-relaxed text-navy/55">
+                  This button opens your email application with the enquiry prepared. The message is sent only after you review and send it there.
+                </p>
               </form>
             </div>
           </FadeIn>

@@ -1,15 +1,13 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { SectionSpirals } from "@/components/decorative-spirals"
-import { TourOverlay } from "@/components/virtual-tour/tour-overlay"
 
 export function HeroSection() {
-  const [showTour, setShowTour] = useState(false)
   const containerRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -25,11 +23,6 @@ export function HeroSection() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
   return (
-    <>
-      <AnimatePresence>
-        {showTour && <TourOverlay onClose={() => setShowTour(false)} />}
-      </AnimatePresence>
-
       <section
         ref={containerRef}
         className="relative h-screen flex items-center justify-center overflow-hidden bg-navy scroll-3d-scene-deep"
@@ -88,16 +81,6 @@ export function HeroSection() {
                   </Button>
                 </Link>
 
-                {/* <button
-                  type="button"
-                  onClick={() => setShowTour(true)}
-                  className="flex items-center gap-3 text-white hover:text-gold transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold transition-colors">
-                    <Play className="h-3 w-3 fill-white" />
-                  </div>
-                  <span className="text-[11px] font-bold tracking-[0.2em] uppercase">Experience SIS</span>
-                </button> */}
               </div>
             </motion.div>
           </motion.div>
@@ -111,9 +94,9 @@ export function HeroSection() {
           <div className="mx-auto max-w-[1440px] px-20">
             <div className="flex justify-between items-center py-6 border-t border-white/10">
               {[
-                { label: "Accredited by", value: "Ministry of Education" },
+                { label: "Local Requirements", value: "Ministry of Education" },
                 { label: "Curriculum", value: "Pearson Edexcel" },
-                { label: "Community", value: "45+ Nationalities" }
+                { label: "Student Journey", value: "Ages 3–18" }
               ].map((item, i) => (
                 <div key={i} className="text-left">
                   <p className="text-[8px] font-bold text-gold uppercase tracking-widest mb-1">{item.label}</p>
@@ -124,6 +107,5 @@ export function HeroSection() {
           </div>
         </motion.div>
       </section>
-    </>
   )
 }

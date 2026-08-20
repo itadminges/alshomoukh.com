@@ -43,7 +43,7 @@ const cormorant = localFont({
   display: 'swap',
 })
 
-import { SCHOOL_INFO, SCHOOL_SCHEMA_JSON_LD } from '@/lib/school-info'
+import { SCHOOL_SCHEMA_JSON_LD } from '@/lib/school-info'
 
 export const metadata: Metadata = {
   title: {

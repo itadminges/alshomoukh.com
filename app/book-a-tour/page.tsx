@@ -1,9 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
-import { Calendar, Clock, MapPin, Phone, Mail, CheckCircle2, Send, Sparkles } from "lucide-react"
-import Image from "next/image"
+import { Calendar, Clock, Phone, Mail, CheckCircle2, Send, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { Scroll3DReveal } from "@/components/scroll-3d"
@@ -13,11 +11,24 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 export default function BookATourPage() {
-  const [submitted, setSubmitted] = useState(false)
+  const [emailPrepared, setEmailPrepared] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const form = new FormData(event.currentTarget)
+    const body = [
+      `Parent name: ${String(form.get("parentName") || "")}`,
+      `Email: ${String(form.get("email") || "")}`,
+      `Phone / WhatsApp: ${String(form.get("phone") || "")}`,
+      `Grade / year group: ${String(form.get("grade") || "")}`,
+      `Preferred date: ${String(form.get("date") || "")}`,
+      `Preferred time: ${String(form.get("time") || "")}`,
+      "",
+      `Questions or comments: ${String(form.get("comments") || "")}`,
+    ].join("\n")
+
+    setEmailPrepared(true)
+    window.location.href = `mailto:admission@alshomoukh.com?subject=${encodeURIComponent("Campus Tour Request")}&body=${encodeURIComponent(body)}`
   }
 
   return (
@@ -104,7 +115,7 @@ export default function BookATourPage() {
                   <div className="p-6 bg-navy text-white flex items-center justify-between">
                     <div>
                       <h4 className="font-bold text-gold text-sm uppercase tracking-wider mb-1">Can’t visit in person today?</h4>
-                      <p className="text-ivory/70 text-xs font-medium">Explore our interactive 360° virtual campus tour.</p>
+                      <p className="text-ivory/70 text-xs font-medium">Contact the school to ask about current remote visit or information options.</p>
                     </div>
                     <Link href="/contact">
                       <Button className="bg-gold text-white hover:bg-gold/90 text-[10px] font-bold tracking-widest uppercase rounded-none h-11 px-5">
@@ -125,66 +136,69 @@ export default function BookATourPage() {
                     <h3 className="font-bold text-2xl text-navy uppercase tracking-tight">Schedule Your Tour</h3>
                   </div>
 
-                  {submitted ? (
+                  {emailPrepared ? (
                     <div className="py-16 text-center space-y-6">
                       <div className="w-16 h-16 bg-gold/10 text-gold rounded-full flex items-center justify-center mx-auto border border-gold/20">
                         <CheckCircle2 className="w-8 h-8" />
                       </div>
-                      <h4 className="text-2xl font-bold text-navy uppercase tracking-tight">Thank You!</h4>
+                      <h4 className="text-2xl font-bold text-navy uppercase tracking-tight">Email Prepared</h4>
                       <p className="text-navy/70 text-base max-w-md mx-auto font-medium">
-                        Your campus tour request has been received. Our admissions team will contact you shortly to confirm your scheduled appointment.
+                        Your email application should open with the tour details filled in. The request is sent only after you review and send the email there.
                       </p>
                       <Button 
-                        onClick={() => setSubmitted(false)}
+                        onClick={() => setEmailPrepared(false)}
                         className="bg-navy text-white hover:bg-navy/90 text-xs font-bold tracking-widest uppercase rounded-none h-12 px-8"
                       >
-                        Submit Another Request
+                        Edit Request
                       </Button>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label className="text-xs font-bold text-navy uppercase tracking-wider">Parent Full Name *</label>
-                          <Input required placeholder="e.g. Salim Al Hashmi" className="border-navy/15 h-12 rounded-none focus:border-gold" />
+                          <label htmlFor="tour-parent-name" className="text-xs font-bold text-navy uppercase tracking-wider">Parent Full Name *</label>
+                          <Input id="tour-parent-name" name="parentName" required autoComplete="name" placeholder="e.g. Salim Al Hashmi" className="border-navy/15 h-12 rounded-none focus:border-gold" />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-xs font-bold text-navy uppercase tracking-wider">Email Address *</label>
-                          <Input required type="email" placeholder="e.g. parent@example.com" className="border-navy/15 h-12 rounded-none focus:border-gold" />
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <label className="text-xs font-bold text-navy uppercase tracking-wider">Phone / WhatsApp Number *</label>
-                          <Input required type="tel" placeholder="+968 9XXXXXXX" className="border-navy/15 h-12 rounded-none focus:border-gold" />
-                        </div>
-                        <div className="space-y-2">
-                          <label className="text-xs font-bold text-navy uppercase tracking-wider">Grade / Year Group Interested In *</label>
-                          <Input required placeholder="e.g. KG1, Primary, Grade 9 (IGCSE)" className="border-navy/15 h-12 rounded-none focus:border-gold" />
+                          <label htmlFor="tour-email" className="text-xs font-bold text-navy uppercase tracking-wider">Email Address *</label>
+                          <Input id="tour-email" name="email" required type="email" autoComplete="email" placeholder="e.g. parent@example.com" className="border-navy/15 h-12 rounded-none focus:border-gold" />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label className="text-xs font-bold text-navy uppercase tracking-wider">Preferred Tour Date (Sun - Thu) *</label>
-                          <Input required type="date" className="border-navy/15 h-12 rounded-none focus:border-gold" />
+                          <label htmlFor="tour-phone" className="text-xs font-bold text-navy uppercase tracking-wider">Phone / WhatsApp Number *</label>
+                          <Input id="tour-phone" name="phone" required type="tel" autoComplete="tel" placeholder="+968 9XXXXXXX" className="border-navy/15 h-12 rounded-none focus:border-gold" />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-xs font-bold text-navy uppercase tracking-wider">Preferred Time Slot *</label>
-                          <Input required placeholder="e.g. 9:00 AM or 1:00 PM" className="border-navy/15 h-12 rounded-none focus:border-gold" />
+                          <label htmlFor="tour-grade" className="text-xs font-bold text-navy uppercase tracking-wider">Grade / Year Group Interested In *</label>
+                          <Input id="tour-grade" name="grade" required placeholder="e.g. KG1, Primary, Grade 9 (IGCSE)" className="border-navy/15 h-12 rounded-none focus:border-gold" />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <label htmlFor="tour-date" className="text-xs font-bold text-navy uppercase tracking-wider">Preferred Tour Date (Sun - Thu) *</label>
+                          <Input id="tour-date" name="date" required type="date" className="border-navy/15 h-12 rounded-none focus:border-gold" />
+                        </div>
+                        <div className="space-y-2">
+                          <label htmlFor="tour-time" className="text-xs font-bold text-navy uppercase tracking-wider">Preferred Time Slot *</label>
+                          <Input id="tour-time" name="time" required placeholder="e.g. 9:00 AM or 1:00 PM" className="border-navy/15 h-12 rounded-none focus:border-gold" />
                         </div>
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-xs font-bold text-navy uppercase tracking-wider">Additional Questions or Comments</label>
-                        <Textarea placeholder="Please tell us about your child's interests or any specific areas of the school you would like to explore." className="border-navy/15 min-h-[120px] rounded-none focus:border-gold" />
+                        <label htmlFor="tour-comments" className="text-xs font-bold text-navy uppercase tracking-wider">Additional Questions or Comments</label>
+                        <Textarea id="tour-comments" name="comments" placeholder="Please tell us about your child's interests or any specific areas of the school you would like to explore." className="border-navy/15 min-h-[120px] rounded-none focus:border-gold" />
                       </div>
 
                       <Button type="submit" className="w-full bg-gold text-white hover:bg-gold/90 h-14 uppercase tracking-[0.25em] font-bold rounded-none flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-gold/20">
                         <Send className="w-4 h-4" />
-                        Confirm Tour Request
+                        Prepare Tour Request Email
                       </Button>
+                      <p className="text-xs font-medium leading-relaxed text-navy/55">
+                        This opens your email application. Your request is not sent until you review and send the prepared email.
+                      </p>
                     </form>
                   )}
                 </div>

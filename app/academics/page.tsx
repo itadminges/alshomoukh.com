@@ -3,8 +3,7 @@
 import { 
   BookOpen, 
   ArrowRight,
-  ChevronRight,
-  Check
+  ChevronRight
 } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { Scroll3DReveal, Scroll3DCard } from "@/components/scroll-3d"
@@ -46,7 +45,7 @@ export default function AcademicsPage() {
       title: "Upper Secondary", 
       division: "IGCSE, IAL & BTEC",
       badge: "Grades 9–12",
-      desc: "Four flexible pathways preparing students for top universities in Oman, the UK, US, and worldwide.",
+      desc: "Multiple academic and vocational pathways supporting progression to higher education and future careers.",
       highlights: ["International GCSE & IAL", "BTEC Diploma", "Omani GED"],
       link: "/upper-secondary",
       image: "/images/final/upper-secondary-class.webp"
@@ -64,9 +63,9 @@ export default function AcademicsPage() {
 
   const stats = [
     { value: "Ages 3–18", label: "Complete Spectrum", sub: "Nursery through Grade 12" },
-    { value: "5 Pathways", label: "Tailored Choices", sub: "British & Omani Curricula" },
-    { value: "100%", label: "International Recognition", sub: "Pearson Edexcel & MoE Oman" },
-    { value: "1:1", label: "Personalised Guidance", sub: "University & Career Counseling" },
+    { value: "KG–12", label: "Learning Journey", sub: "Early Years through Upper Secondary" },
+    { value: "British", label: "Academic Framework", sub: "Pearson Edexcel programmes" },
+    { value: "IGCSE–IAL", label: "Senior Qualifications", sub: "Academic and vocational options" },
   ]
 
   const roadmapSteps = [
@@ -98,7 +97,7 @@ export default function AcademicsPage() {
       stage: "Pre-University",
       grade: "Grades 11–12",
       title: "IAL • BTEC • Bilingual GED",
-      description: "Advanced specialisation leading to direct admissions into premier global and regional universities."
+      description: "Advanced specialisation supporting applications to higher education and progression into future careers."
     }
   ]
 
@@ -298,7 +297,7 @@ export default function AcademicsPage() {
               The Al Shomoukh <span className="text-gold">Learning Journey</span>
             </h2>
             <p className="text-navy/70 text-sm md:text-base leading-relaxed font-medium">
-              A structured roadmap providing clear progression from early childhood to global university readiness.
+              A structured roadmap providing clear progression from early childhood to higher education and career readiness.
             </p>
           </div>
 
@@ -411,7 +410,7 @@ export default function AcademicsPage() {
                 Experience Academic Excellence Firsthand
               </h2>
               <p className="text-navy/70 font-medium text-sm md:text-base leading-relaxed max-w-xl">
-                Explore our full curriculum, visit our state-of-the-art campus, or learn more about admissions and pathway options.
+                Explore our full curriculum, arrange a campus visit, or learn more about admissions and pathway options.
               </p>
             </div>
             <div className="w-16 h-16 bg-navy text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-navy transition-colors duration-500 shrink-0">

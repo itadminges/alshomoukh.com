@@ -1,11 +1,8 @@
 "use client"
 
-import { 
-  Check, 
-  CheckCircle2
-} from "lucide-react"
+import { Check } from "lucide-react"
 import { AcademicSubPageLayout } from "@/components/academic-subpage-layout"
-import { Scroll3DReveal, Scroll3DCard } from "@/components/scroll-3d"
+import { Scroll3DCard } from "@/components/scroll-3d"
 
 export default function KindergartenPage() {
   const primeAreas = [

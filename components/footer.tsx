@@ -30,7 +30,6 @@ const footerNav = [
       { label: "Fees & Finance", href: "/admissions#fees" },
       { label: "Book a Tour", href: "/book-a-tour" },
       { label: "Apply Online", href: "/admissions#apply" },
-      { label: "Scholarships", href: "/admissions#scholarships" },
     ]
   },
   {

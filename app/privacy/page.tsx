@@ -24,27 +24,27 @@ export default function PrivacyPage() {
   const sections = [
     {
       title: "1. Information Collection",
-      content: "At Al Shomoukh International Private School, we are committed to protecting the privacy of our students, parents, and website visitors. We collect personal information when you submit an enquiry through our contact form, admissions portal, or other online applications."
+      content: "The website does not directly store messages entered into the enquiry or tour forms; those forms prepare an email in your own email application. Personal information may be provided separately when you email the school or use the external Parent Portal."
     },
     {
       title: "2. Use of Information",
-      content: "The information collected is used solely for the purposeful business of the school, such as responding to enquiries, processing admissions, and communicating school updates. We do not sell or lease your personal information to third parties."
+      content: "Information you choose to send to the school may be used to respond to enquiries, support admissions, arrange visits, and provide requested school information. Information submitted through an external service is also subject to that service's privacy terms."
     },
     {
       title: "3. Data Security",
-      content: "We implement a variety of security measures to maintain the safety of your personal information. Your data is stored securely and is only accessible by authorized personnel with a legitimate need to use the information."
+      content: "Please avoid sending sensitive information through ordinary email unless requested by an authorized school representative. For questions about how school records are handled, contact the school directly."
     },
     {
       title: "4. Cookies & Analytics",
-      content: "Our website uses cookies to enhance the user experience and analyze website traffic. This information is used on an aggregated basis and does not identify individual users."
+      content: "The website uses Vercel Analytics to understand aggregate website usage and may use essential browser storage required for site operation. External services, including maps and the Parent Portal, may apply their own cookies or analytics policies."
     },
     {
       title: "5. User Rights",
-      content: "You have the right to request access to the personal information we hold about you, to request corrections, or to request that we delete your information from our records."
+      content: "You may contact the school to ask about access, correction, or deletion of personal information, subject to applicable law and school record-retention requirements."
     },
     {
       title: "6. Contact Us",
-      content: "If you have any questions or concerns about our privacy policy, please contact us at privacy@alshomoukh.com."
+      content: "For privacy questions, contact the school at info@alshomoukh.com or call +968 24 284771."
     }
   ]
 

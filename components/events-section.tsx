@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
 import { Scroll3DCard } from "@/components/scroll-3d"
 import { SectionSpirals } from "@/components/decorative-spirals"
-import { ACADEMIC_CALENDAR_2026_2027, getUpcomingEvents, CalendarEvent } from "@/lib/academic-calendar"
+import { ACADEMIC_CALENDAR_2026_2027, getUpcomingEvents } from "@/lib/academic-calendar"
 
 type FilterTab = "upcoming" | "term-1" | "term-2" | "term-3" | "all"
 
@@ -218,7 +218,7 @@ export function EventsSection() {
 
             {/* Asterisk note for Islamic/National holidays */}
             <p className="mt-4 text-[10px] text-navy/50 italic">
-              * Dates marked with an asterisk are subject to official moon sightings and Sultanate of Oman government announcements.
+              Please confirm time-sensitive dates through the Parent Portal. Dates marked with an asterisk are subject to official moon sightings and Sultanate of Oman government announcements.
             </p>
 
             {/* Bottom Actions */}
