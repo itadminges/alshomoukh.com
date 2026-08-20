@@ -29,7 +29,7 @@ const footerNav = [
       { label: "Admission Process", href: "/admissions#process" },
       { label: "Fees & Finance", href: "/admissions#fees" },
       { label: "Book a Tour", href: "/book-a-tour" },
-      { label: "Apply Online", href: "/admissions#apply" },
+      { label: "Contact Admissions", href: "/admissions#apply" },
     ]
   },
   {
@@ -54,7 +54,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-[#0B3958] text-white pb-0 pt-0 overflow-hidden border-t border-white/5 md:pb-12 md:pt-24">
+    <footer id="site-footer" className="scroll-mt-20 bg-[#0B3958] text-white pb-0 pt-0 overflow-hidden border-t border-white/5 md:pb-12 md:pt-24">
       <div className="mx-auto max-w-[1440px] px-0 md:px-10 lg:px-16">
         <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-12 md:gap-16 lg:gap-12 mb-0 md:mb-24">
 
@@ -199,7 +199,7 @@ export function Footer() {
         {/* Lower Footer */}
         <div className="mt-10 border-t border-white/10 flex flex-col md:mt-0 md:pt-12 md:flex-row md:justify-between md:items-center md:gap-10">
           <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8 order-2 md:order-1 px-6 py-7 md:px-0 md:py-0">
-            <p className="max-w-[310px] text-center text-[12px] font-normal leading-relaxed text-white/55 tracking-normal md:max-w-none md:text-left md:text-[11px] md:font-bold md:text-white/30 md:tracking-[0.2em] md:uppercase">
+            <p className="max-w-[260px] text-center text-[12px] font-normal leading-relaxed text-white/55 tracking-normal md:max-w-none md:text-left md:text-[11px] md:font-bold md:text-white/30 md:tracking-[0.2em] md:uppercase">
               &copy; {new Date().getFullYear()} Al Shomoukh International Private School
             </p>
             <div className="hidden md:block h-3 w-[1px] bg-white/10" />

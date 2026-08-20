@@ -47,7 +47,7 @@ export function NewsletterSection() {
                 <div className="flex flex-col sm:flex-row gap-6">
                   <Link href="/admissions#apply">
                     <Button className="bg-gold text-white hover:bg-gold/90 h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
-                      Apply Now
+                      Admissions
                       <ArrowRight className="ml-2 h-3 w-3" />
                     </Button>
                   </Link>

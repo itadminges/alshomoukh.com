@@ -103,9 +103,9 @@ export default function RootLayout({
           <ScrollProgress />
           <BackToTop />
           <Navbar />
-          <main className="flex-grow">
+          <div className="flex-grow">
             {children}
-          </main>
+          </div>
           <Footer />
         </SmoothScroll>
         <Analytics />

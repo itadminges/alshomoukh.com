@@ -22,7 +22,7 @@ const AffiliationsSection = dynamic(() => import("@/components/affiliations-sect
 
 export default function Home() {
   return (
-    <>
+    <main>
       <HeroSection />
       <StatsSection />
       <IntroSection />
@@ -30,9 +30,8 @@ export default function Home() {
       <EventsSection />
       <NewsletterSection />
       <AffiliationsSection />
-    </>
+    </main>
   )
 }
-
 
 

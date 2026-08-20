@@ -193,6 +193,7 @@ export default function CalendarPage() {
                 <Search className="w-4 h-4 text-navy/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
+                  aria-label="Search calendar events"
                   placeholder="Search events, exams, dates..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -287,9 +288,7 @@ export default function CalendarPage() {
                           <Clock className="w-6 h-6 mb-2 opacity-30" />
                           <p className="text-xs font-semibold uppercase tracking-wider">No specific events shown</p>
                           <p className="text-[10px] text-navy/40 mt-1 max-w-[200px]">
-                            {group.monthName === "April 2027" 
-                              ? "Term 3 regular curriculum and classes continue."
-                              : "Summer break for students."}
+                            No events match the selected filters for this month.
                           </p>
                         </div>
                       )}
@@ -317,7 +316,7 @@ export default function CalendarPage() {
                     <strong>Holy Month of Ramadan:</strong> Special Ramadan school hours and timetable adjustments will be communicated to parents prior to commencement on February 08, 2027*.
                   </li>
                   <li>
-                    <strong>Examination Schedules:</strong> Detailed individual exam timetables for Cambridge IGCSE, Pearson Edexcel, and school assessments will be issued to students by their respective academic coordinators.
+                    <strong>Examination Schedules:</strong> Detailed individual exam timetables for Pearson Edexcel and school assessments will be issued to students by their respective academic coordinators.
                   </li>
                 </ul>
               </div>

@@ -380,7 +380,7 @@ export default function AdmissionsPage() {
         </div>
       </section>
 
-      {/* Apply Online & Next Steps */}
+      {/* Admissions Contact & Next Steps */}
       <section id="apply" className="py-24 md:py-32 bg-navy text-white relative overflow-hidden">
         <SectionSpirals variant="dark" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 text-center">

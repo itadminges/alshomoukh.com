@@ -34,7 +34,7 @@ const programs = [
     title: "Upper Secondary",
     division: "Key Stage 4 & 5",
     description: "Rigorous preparation for IGCSE and A levels examinations.",
-    image: "/images/final/secondary-collaboration.webp",
+    image: "/images/final/IMG_3687.png",
     href: "/upper-secondary"
   },
 ]

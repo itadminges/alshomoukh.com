@@ -113,7 +113,7 @@ export default function UpperSecondaryPage() {
           ))}
         </div>
 
-        {/* University Destinations Banner */}
+        {/* University and Career Guidance Banner */}
         <Scroll3DReveal rotateAmount={6} depth={20}>
           <div className="bg-navy text-white p-8 md:p-14 shadow-strong">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8 items-center">

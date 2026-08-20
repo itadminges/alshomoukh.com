@@ -100,6 +100,7 @@ export function Navbar() {
               <div key={link.label} className="relative group px-3 xl:px-4">
                 <Link
                   href={link.href || "#"}
+                  aria-haspopup={link.submenu ? "menu" : undefined}
                   className={cn(
                     "relative text-[11px] xl:text-[12px] font-bold tracking-[0.2em] transition-all duration-300 py-2 uppercase whitespace-nowrap flex items-center gap-1",
                     forceSolid ? "text-primary/90 hover:text-primary" : "text-white hover:text-white"
@@ -155,7 +156,7 @@ export function Navbar() {
                       : "bg-white text-primary hover:bg-secondary hover:text-white"
                   )}
                 >
-                  Apply Now
+                  Admissions
                 </Button>
               </Link>
             </div>
@@ -166,13 +167,14 @@ export function Navbar() {
                 variant="ghost" 
                 size="icon"
                 onClick={() => setIsOpen(true)}
+                aria-label="Open navigation menu"
+                aria-expanded={isOpen}
                 className={cn(
-                  "transition-colors duration-300",
+                  "h-11 w-11 transition-colors duration-300",
                   forceSolid ? "text-primary" : "text-white"
                 )}
               >
                 <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle menu</span>
               </Button>
             </div>
 
@@ -203,7 +205,8 @@ export function Navbar() {
               variant="ghost" 
               size="icon" 
               onClick={() => setIsOpen(false)}
-              className="text-primary hover:bg-muted/50 rounded-full h-10 w-10"
+              aria-label="Close navigation menu"
+              className="text-primary hover:bg-muted/50 rounded-full h-11 w-11"
             >
               <X className="h-6 w-6" />
             </Button>
@@ -224,7 +227,9 @@ export function Navbar() {
                 >
                   {link.submenu ? (
                     <button
+                      type="button"
                       onClick={() => setOpenSubmenuTitle(openSubmenuTitle === link.label ? null : link.label)}
+                      aria-expanded={openSubmenuTitle === link.label}
                       className="text-[16px] md:text-[18px] font-extrabold text-primary hover:text-secondary flex w-full items-start justify-between tracking-widest uppercase transition-colors text-left"
                     >
                       <span className="pr-4">{link.label}</span>
@@ -276,7 +281,7 @@ export function Navbar() {
               <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">Parent Portal</Link>
             </Button>
             <Button className="bg-primary text-white hover:bg-primary/90 w-full sm:w-1/2 py-5 text-[13px] font-extrabold tracking-widest uppercase rounded-sm shadow-lg h-auto" asChild>
-              <Link href="/admissions">Apply Now</Link>
+              <Link href="/admissions">Admissions</Link>
             </Button>
           </motion.div>
         </motion.div>

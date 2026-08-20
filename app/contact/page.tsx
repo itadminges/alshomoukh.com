@@ -41,7 +41,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen overflow-x-hidden bg-white">
       <PageHero 
         title="Contact Us" 
         subtitle="We are here to help. Reach out to us for any enquiries or to schedule a visit to our campus."
