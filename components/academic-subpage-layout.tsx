@@ -303,6 +303,7 @@ export function AcademicSubPageLayout({
                           src={section.image || "/images/final/primary-project.webp"}
                           alt={section.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
                           className="object-cover"
                         />
                       </div>

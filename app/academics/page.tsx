@@ -183,6 +183,7 @@ export default function AcademicsPage() {
                   src="/images/final/primary-boys.webp"
                   alt="Al Shomoukh students in a primary classroom"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -248,6 +249,7 @@ export default function AcademicsPage() {
                           src={stage.image}
                           alt={stage.title}
                           fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 20vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-0.5 text-[8px] font-bold tracking-widest text-navy uppercase">

@@ -135,30 +135,32 @@ export function Navbar() {
           {/* Actions */}
           <div className="flex items-center gap-4 lg:gap-6">
             <div className="hidden lg:flex gap-4">
-              <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">
-                <Button
-                  className={cn(
-                    "px-6 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all duration-500 h-11 border border-secondary",
-                    forceSolid 
-                      ? "bg-secondary text-white hover:bg-secondary/90 shadow-md" 
-                      : "bg-secondary text-white hover:bg-white hover:text-secondary hover:border-white shadow-md"
-                  )}
-                >
+              <Button
+                asChild
+                className={cn(
+                  "px-6 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all duration-500 h-11 border border-secondary",
+                  forceSolid
+                    ? "bg-secondary text-white hover:bg-secondary/90 shadow-md"
+                    : "bg-secondary text-white hover:bg-white hover:text-secondary hover:border-white shadow-md"
+                )}
+              >
+                <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">
                   Parent Portal
-                </Button>
-              </Link>
-              <Link href="/admissions">
-                <Button
-                  className={cn(
-                    "px-8 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all duration-500 h-11",
-                    forceSolid 
-                      ? "bg-primary text-white hover:bg-primary/90 shadow-md" 
-                      : "bg-white text-primary hover:bg-secondary hover:text-white"
-                  )}
-                >
+                </Link>
+              </Button>
+              <Button
+                asChild
+                className={cn(
+                  "px-8 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all duration-500 h-11",
+                  forceSolid
+                    ? "bg-primary text-white hover:bg-primary/90 shadow-md"
+                    : "bg-white text-primary hover:bg-secondary hover:text-white"
+                )}
+              >
+                <Link href="/admissions">
                   Admissions
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
 
             {/* Mobile Menu Toggle */}

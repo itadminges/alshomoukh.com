@@ -91,14 +91,14 @@ export function IntroSection() {
                 ))}
               </div>
 
-              <Link href="/about">
-                <Button className="bg-navy text-white hover:bg-navy/90 h-16 px-12 text-xs font-bold tracking-[0.2em] uppercase rounded-none transition-all group overflow-hidden relative">
+              <Button asChild className="bg-navy text-white hover:bg-navy/90 h-16 px-12 text-xs font-bold tracking-[0.2em] uppercase rounded-none transition-all group overflow-hidden relative">
+                <Link href="/about">
                   <span className="relative z-10">Our Philosophy</span>
                   <motion.div 
                     className="absolute inset-0 bg-gold -translate-x-full group-hover:translate-x-0 transition-transform duration-500"
                   />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </div>

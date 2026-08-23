@@ -45,17 +45,17 @@ export function NewsletterSection() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                  <Link href="/admissions#apply">
-                    <Button className="bg-gold text-white hover:bg-gold/90 h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+                  <Button asChild className="bg-gold text-white hover:bg-gold/90 h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+                    <Link href="/admissions#apply">
                       Admissions
                       <ArrowRight className="ml-2 h-3 w-3" />
-                    </Button>
-                  </Link>
-                  <Link href="/contact">
-                    <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all bg-transparent">
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all bg-transparent">
+                    <Link href="/contact">
                       Inquiry
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </div>
               </motion.div>
             </div>
@@ -80,7 +80,7 @@ export function NewsletterSection() {
                     className="block p-5 bg-white/5 border border-white/5 hover:bg-white/10 transition-colors group"
                   >
                     <item.icon className="h-3 w-3 text-gold mb-3" />
-                    <h4 className="text-[10px] font-bold text-gold uppercase tracking-widest mb-1">{item.title}</h4>
+                    <h3 className="text-[10px] font-bold text-gold uppercase tracking-widest mb-1">{item.title}</h3>
                     <p className="text-[12px] font-bold text-white uppercase">{item.detail}</p>
                   </Link>
                 </motion.div>

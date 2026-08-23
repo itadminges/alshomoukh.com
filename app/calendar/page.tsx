@@ -332,16 +332,16 @@ export default function CalendarPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">
-              <Link href="/contact">
-                <Button className="bg-navy text-white hover:bg-gold hover:text-navy text-[10px] font-bold tracking-widest uppercase h-11 px-6 rounded-none transition-all">
+              <Button asChild className="bg-navy text-white hover:bg-gold hover:text-navy text-[10px] font-bold tracking-widest uppercase h-11 px-6 rounded-none transition-all">
+                <Link href="/contact">
                   Contact School
-                </Button>
-              </Link>
-              <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-gold text-navy hover:bg-navy hover:text-white text-[10px] font-bold tracking-widest uppercase h-11 px-6 rounded-none transition-all">
+                </Link>
+              </Button>
+              <Button asChild className="bg-gold text-navy hover:bg-navy hover:text-white text-[10px] font-bold tracking-widest uppercase h-11 px-6 rounded-none transition-all">
+                <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">
                   Parent Portal
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
 

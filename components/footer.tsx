@@ -101,9 +101,9 @@ export function Footer() {
                 className="h-[66px] w-full px-6 flex items-center justify-between md:h-auto md:px-0 md:justify-start md:cursor-default"
                 aria-expanded={openSection === cluster.title}
               >
-                <h4 className="text-[13px] md:text-[11px] font-extrabold tracking-[0.16em] md:tracking-[0.25em] uppercase text-white md:text-white/40 text-center md:text-left md:mb-10">
+                <h2 className="text-[13px] md:text-[11px] font-extrabold tracking-[0.16em] md:tracking-[0.25em] uppercase text-white md:text-white/40 text-center md:text-left md:mb-10">
                   {cluster.title}
-                </h4>
+                </h2>
                 <div className="md:hidden text-[#BB9268]">
                   {openSection === cluster.title ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
                 </div>
@@ -139,9 +139,9 @@ export function Footer() {
               className="h-[66px] w-full px-6 flex items-center justify-between md:h-auto md:px-0 md:justify-start md:cursor-default"
               aria-expanded={openSection === 'Contact'}
             >
-              <h4 className="text-[13px] md:text-[11px] font-extrabold tracking-[0.16em] md:tracking-[0.25em] uppercase text-white md:text-white/40 text-center md:text-left md:mb-10">
+              <h2 className="text-[13px] md:text-[11px] font-extrabold tracking-[0.16em] md:tracking-[0.25em] uppercase text-white md:text-white/40 text-center md:text-left md:mb-10">
                 Contact
-              </h4>
+              </h2>
               <div className="md:hidden text-[#BB9268]">
                 {openSection === 'Contact' ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
               </div>
@@ -204,9 +204,9 @@ export function Footer() {
             </p>
             <div className="hidden md:block h-3 w-[1px] bg-white/10" />
             <div className="flex items-center gap-2 text-white/45">
-              <Link href="/privacy" className="text-[12px] font-normal tracking-normal hover:text-white transition-colors md:text-[11px] md:font-bold md:text-white/30 md:tracking-[0.2em] md:uppercase">Privacy Policy</Link>
+              <Link href="/privacy" className="inline-flex min-h-11 items-center text-[12px] font-normal tracking-normal hover:text-white transition-colors md:min-h-0 md:text-[11px] md:font-bold md:text-white/30 md:tracking-[0.2em] md:uppercase">Privacy Policy</Link>
               <span className="text-[10px] md:hidden" aria-hidden="true">•</span>
-              <Link href="/terms" className="text-[12px] font-normal tracking-normal hover:text-white transition-colors md:text-[11px] md:font-bold md:text-white/30 md:tracking-[0.2em] md:uppercase">Terms of Service</Link>
+              <Link href="/terms" className="inline-flex min-h-11 items-center text-[12px] font-normal tracking-normal hover:text-white transition-colors md:min-h-0 md:text-[11px] md:font-bold md:text-white/30 md:tracking-[0.2em] md:uppercase">Terms of Service</Link>
             </div>
           </div>
 

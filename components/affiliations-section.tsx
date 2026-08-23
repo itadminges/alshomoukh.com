@@ -70,23 +70,18 @@ export function AffiliationsSection() {
           {/* Duplicated set of logos for seamless infinite auto-scroll */}
           <div className="flex shrink-0 items-center gap-12 md:gap-16 pr-12 md:pr-16" aria-hidden="true">
             {organisations.map((org, idx) => (
-              <a
+              <div
                 key={`org-2-${idx}`}
-                href={org.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                tabIndex={-1}
                 className="relative flex h-14 w-32 md:h-18 md:w-44 shrink-0 items-center justify-center transition-transform duration-300 hover:scale-105"
-                aria-label={org.alt}
               >
                 <Image
                   src={org.image}
-                  alt={org.alt}
+                  alt=""
                   fill
                   sizes="(max-width: 768px) 128px, 176px"
                   className="object-contain"
                 />
-              </a>
+              </div>
             ))}
           </div>
         </div>

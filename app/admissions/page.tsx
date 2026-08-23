@@ -221,11 +221,11 @@ export default function AdmissionsPage() {
                   </div>
                 </div>
 
-                <Link href="mailto:admission@alshomoukh.com?subject=Fee%20Structure%20Inquiry">
-                  <Button className="bg-navy text-white hover:bg-navy/90 h-14 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+                <Button asChild className="bg-navy text-white hover:bg-navy/90 h-14 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+                  <Link href="mailto:admission@alshomoukh.com?subject=Fee%20Structure%20Inquiry">
                     Request Full Fee Schedule
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </Scroll3DReveal>
             </div>
 
@@ -258,11 +258,11 @@ export default function AdmissionsPage() {
                         admission@alshomoukh.com
                       </a>
                     </div>
-                    <Link href="tel:+96824284771">
-                      <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white h-12 px-6 text-[10px] font-bold tracking-[0.2em] uppercase rounded-none bg-transparent">
+                    <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white h-12 px-6 text-[10px] font-bold tracking-[0.2em] uppercase rounded-none bg-transparent">
+                      <Link href="tel:+96824284771">
                         Call +968 24 284771
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </Scroll3DReveal>
@@ -317,16 +317,16 @@ export default function AdmissionsPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/book-a-tour">
-                    <Button className="bg-gold text-white hover:bg-gold/90 h-14 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+                  <Button asChild className="bg-gold text-white hover:bg-gold/90 h-14 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
+                    <Link href="/book-a-tour">
                       Request a Campus Tour
-                    </Button>
-                  </Link>
-                  <Link href="tel:+96824284771">
-                    <Button variant="outline" className="border-white/40 text-white hover:bg-white hover:text-navy h-14 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none bg-transparent">
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" className="border-white/40 text-white hover:bg-white hover:text-navy h-14 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none bg-transparent">
+                    <Link href="tel:+96824284771">
                       Call +968 24 284771
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </div>
               </div>
 
@@ -335,6 +335,7 @@ export default function AdmissionsPage() {
                   src="/images/final/primary-project.webp"
                   alt="Learning at Al Shomoukh International Private School"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -407,16 +408,16 @@ export default function AdmissionsPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Link href="/contact">
-                  <Button className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
+                <Button asChild className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
+                  <Link href="/contact">
                     Contact Admissions
-                  </Button>
-                </Link>
-                <Link href="/book-a-tour">
-                  <Button className="bg-transparent border border-white/60 text-white hover:bg-white hover:text-navy h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all">
+                  </Link>
+                </Button>
+                <Button asChild className="bg-transparent border border-white/60 text-white hover:bg-white hover:text-navy h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all">
+                  <Link href="/book-a-tour">
                     Book a Campus Tour
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </Scroll3DReveal>
           </div>

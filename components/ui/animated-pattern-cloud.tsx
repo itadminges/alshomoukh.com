@@ -193,24 +193,46 @@ export function AnimatedPatternCloud({
     resize()
 
     let animationFrameId = 0
+    let isIntersecting = false
+    let isAnimating = false
     const frozenTime = 0
 
     const render = (time: number) => {
       gl.uniform1f(timeLoc, prefersReducedMotion ? frozenTime : time * 0.001 * speed)
       gl.drawArrays(gl.TRIANGLES, 0, 6)
-      if (!prefersReducedMotion) {
+      if (!prefersReducedMotion && isAnimating) {
         animationFrameId = requestAnimationFrame(render)
       }
     }
 
-    if (prefersReducedMotion) {
-      render(frozenTime)
-    } else {
-      animationFrameId = requestAnimationFrame(render)
+    const updateAnimation = () => {
+      const shouldAnimate = isIntersecting && !document.hidden && !prefersReducedMotion
+      if (shouldAnimate === isAnimating) return
+
+      isAnimating = shouldAnimate
+      if (isAnimating) {
+        animationFrameId = requestAnimationFrame(render)
+      } else {
+        cancelAnimationFrame(animationFrameId)
+      }
     }
+
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      isIntersecting = entry.isIntersecting
+      updateAnimation()
+    }, { rootMargin: "100px" })
+
+    const handleVisibilityChange = () => updateAnimation()
+    visibilityObserver.observe(container)
+    document.addEventListener("visibilitychange", handleVisibilityChange)
+
+    // Paint a static frame immediately; animation starts only near the viewport.
+    render(frozenTime)
 
     return () => {
       observer.disconnect()
+      visibilityObserver.disconnect()
+      document.removeEventListener("visibilitychange", handleVisibilityChange)
       cancelAnimationFrame(animationFrameId)
       gl.deleteProgram(program)
       gl.deleteShader(vs)

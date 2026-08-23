@@ -54,11 +54,11 @@ export function HeroSection() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Link href="/admissions">
-                  <Button className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
+                <Button asChild className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
+                  <Link href="/admissions">
                     Begin Admissions
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
 
               </div>
             </div>

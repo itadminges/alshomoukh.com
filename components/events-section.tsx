@@ -100,7 +100,7 @@ export function EventsSection() {
             >
               <div className="flex items-center gap-2 mb-3">
                 <Clock className="w-4 h-4 text-gold" />
-                <h4 className="text-sm font-bold uppercase text-gold tracking-wider">Academic Year at a Glance</h4>
+                <h3 className="text-sm font-bold uppercase text-gold tracking-wider">Academic Year at a Glance</h3>
               </div>
               <ul className="text-[11px] text-ivory/80 space-y-2.5 font-medium mb-6">
                 <li className="flex items-center gap-2">
@@ -116,11 +116,11 @@ export function EventsSection() {
                   <span><strong>Term 3:</strong> Mar 28, 2027 – Jun 22, 2027</span>
                 </li>
               </ul>
-              <Link href="/calendar">
-                <Button className="w-full bg-gold text-navy hover:bg-white hover:text-navy h-11 rounded-none text-[9px] font-bold tracking-[0.2em] uppercase transition-all shadow-md">
+              <Button asChild className="w-full bg-gold text-navy hover:bg-white hover:text-navy h-11 rounded-none text-[9px] font-bold tracking-[0.2em] uppercase transition-all shadow-md">
+                <Link href="/calendar">
                   View Full Calendar
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </div>
 
@@ -229,13 +229,13 @@ export function EventsSection() {
               transition={{ delay: 0.4 }}
               className="mt-8 flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-navy/5"
             >
-              <Link href="/calendar">
-                <Button variant="ghost" className="text-navy hover:text-gold text-[9px] font-bold tracking-[0.2em] uppercase group flex items-center gap-2 p-0">
+              <Button asChild variant="ghost" className="text-navy hover:text-gold text-[9px] font-bold tracking-[0.2em] uppercase group flex items-center gap-2 p-0">
+                <Link href="/calendar">
                   <Calendar className="h-3.5 w-3.5 text-gold" />
                   View Complete 2026–2027 Calendar
                   <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
 
               <Link href="/news">
                 <span className="text-[9px] font-bold tracking-[0.2em] text-navy/50 hover:text-gold uppercase transition-colors">

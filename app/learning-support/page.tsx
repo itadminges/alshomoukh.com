@@ -151,6 +151,7 @@ export default function LearningSupportPage() {
                   src="/images/final/learning-support.webp"
                   alt="Students receiving focused learning support"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>

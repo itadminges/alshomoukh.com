@@ -117,11 +117,11 @@ export default function BookATourPage() {
                       <h4 className="font-bold text-gold text-sm uppercase tracking-wider mb-1">Can’t visit in person today?</h4>
                       <p className="text-ivory/70 text-xs font-medium">Contact the school to ask about current remote visit or information options.</p>
                     </div>
-                    <Link href="/contact">
-                      <Button className="bg-gold text-white hover:bg-gold/90 text-[10px] font-bold tracking-widest uppercase rounded-none h-11 px-5">
+                    <Button asChild className="bg-gold text-white hover:bg-gold/90 text-[10px] font-bold tracking-widest uppercase rounded-none h-11 px-5">
+                      <Link href="/contact">
                         Inquire
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </Scroll3DReveal>
