@@ -1,8 +1,7 @@
 "use client"
 
-import { useRef } from "react"
 import Image from "next/image"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 
 interface PageHeroProps {
   title: string
@@ -15,24 +14,12 @@ interface PageHeroProps {
 }
 
 export function PageHero({ title, subtitle, backgroundImage = "/images/final/primary-friends.webp", quote }: PageHeroProps) {
-  const containerRef = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, 150])
-
   return (
     <section 
-      ref={containerRef}
       className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-navy"
     >
       {/* Background Media Layer */}
-      <motion.div 
-        style={{ y }}
-        className="absolute inset-0 z-0"
-      >
+      <div className="absolute inset-0 z-0">
         <Image
           src={backgroundImage}
           alt={title}
@@ -42,7 +29,7 @@ export function PageHero({ title, subtitle, backgroundImage = "/images/final/pri
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy/80" />
-      </motion.div>
+      </div>
 
       {/* Content Layer */}
       <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 text-center mt-20">

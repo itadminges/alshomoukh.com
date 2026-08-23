@@ -26,23 +26,6 @@ const poppins = localFont({
   display: 'swap',
 })
 
-const cormorant = localFont({
-  src: [
-    {
-      path: '../public/Font/Helvetica-Oblique.ttf',
-      weight: '400',
-      style: 'italic',
-    },
-    {
-      path: '../public/Font/Helvetica-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-cormorant',
-  display: 'swap',
-})
-
 import { SCHOOL_SCHEMA_JSON_LD } from '@/lib/school-info'
 
 export const metadata: Metadata = {
@@ -81,7 +64,6 @@ export const metadata: Metadata = {
 
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { SmoothScroll } from "@/components/smooth-scroll"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { BackToTop } from "@/components/back-to-top"
 
@@ -91,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -99,15 +81,13 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased bg-background text-foreground flex flex-col min-h-screen">
-        <SmoothScroll>
-          <ScrollProgress />
-          <BackToTop />
-          <Navbar />
-          <div className="flex-grow">
-            {children}
-          </div>
-          <Footer />
-        </SmoothScroll>
+        <ScrollProgress />
+        <BackToTop />
+        <Navbar />
+        <div className="flex-grow">
+          {children}
+        </div>
+        <Footer />
         <Analytics />
       </body>
     </html>

@@ -84,14 +84,14 @@ export function SectionSpirals({ variant = "light", className }: SectionSpiralsP
         color={palette.primary}
         size={320}
         className="absolute -top-24 -right-16 opacity-80"
-        animated
+        animated={false}
       />
       <DecorativeSpiral
         color={palette.secondary}
         size={200}
         strokeWidth={1}
         className="absolute top-1/3 -left-20 opacity-70"
-        animated
+        animated={false}
         flip
       />
       <DecorativeSpiral
@@ -107,7 +107,7 @@ export function SectionSpirals({ variant = "light", className }: SectionSpiralsP
         size={100}
         strokeWidth={0.75}
         className="absolute bottom-1/4 left-12 opacity-50 hidden md:block"
-        animated
+        animated={false}
       />
     </div>
   )

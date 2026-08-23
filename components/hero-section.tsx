@@ -1,38 +1,19 @@
 "use client"
 
-import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { SectionSpirals } from "@/components/decorative-spirals"
 
 export function HeroSection() {
-  const containerRef = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  })
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, 200])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-  const bgRotateX = useTransform(scrollYProgress, [0, 1], [0, 14])
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.12])
-  const contentRotateX = useTransform(scrollYProgress, [0, 0.75], [0, -18])
-  const contentZ = useTransform(scrollYProgress, [0, 0.75], [0, -120])
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
-
   return (
       <section
-        ref={containerRef}
-        className="relative h-screen flex items-center justify-center overflow-hidden bg-navy scroll-3d-scene-deep"
+        className="relative h-screen flex items-center justify-center overflow-hidden bg-navy"
       >
         <SectionSpirals variant="hero" />
         {/* Background Media Layer */}
-        <motion.div
-          style={{ y: y1, rotateX: bgRotateX, scale: bgScale, transformStyle: "preserve-3d" }}
-          className="absolute inset-0 z-0 origin-center"
-        >
+        <div className="absolute inset-0 z-0 origin-center">
           <Image
             src="/images/final/kindergarten-story.webp"
             alt="Al Shomoukh kindergarten students learning together during story time"
@@ -42,7 +23,7 @@ export function HeroSection() {
             priority
           />
           <div className="absolute inset-0 bg-black/55" />
-        </motion.div>
+        </div>
 
         {/* Content Layer */}
         <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20 text-center">
@@ -52,9 +33,7 @@ export function HeroSection() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-4xl mx-auto"
           >
-            <motion.div
-              style={{ rotateX: contentRotateX, translateZ: contentZ, opacity: contentOpacity, transformStyle: "preserve-3d" }}
-            >
+            <div>
               {/* Trust Indicator */}
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="h-[1px] w-6 bg-gold/50" />
@@ -82,15 +61,12 @@ export function HeroSection() {
                 </Link>
 
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
 
         {/* Trust Strip */}
-        <motion.div
-          style={{ opacity }}
-          className="absolute bottom-10 left-0 w-full z-10 hidden lg:block"
-        >
+        <div className="absolute bottom-10 left-0 w-full z-10 hidden lg:block">
           <div className="mx-auto max-w-[1440px] px-20">
             <div className="flex justify-between items-center py-6 border-t border-white/10">
               {[
@@ -105,7 +81,7 @@ export function HeroSection() {
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
   )
 }

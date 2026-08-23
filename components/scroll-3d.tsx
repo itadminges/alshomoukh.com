@@ -1,32 +1,12 @@
 "use client"
 
-import { useRef, type ReactNode } from "react"
+import { type ReactNode } from "react"
 import {
   motion,
-  useScroll,
-  useTransform,
   useReducedMotion,
-  useMotionValue,
-  useMotionValueEvent,
-  type MotionValue,
   type UseScrollOptions,
 } from "framer-motion"
 import { cn } from "@/lib/utils"
-
-/** Scroll progress that only moves forward — animations stay at their final state when scrolling back up */
-export function useOneWayScrollProgress(scrollYProgress: MotionValue<number>) {
-  const progress = useMotionValue(0)
-  const maxRef = useRef(0)
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest > maxRef.current) {
-      maxRef.current = latest
-      progress.set(latest)
-    }
-  })
-
-  return progress
-}
 
 type Scroll3DRevealProps = {
   children: ReactNode
@@ -36,38 +16,24 @@ type Scroll3DRevealProps = {
   offset?: UseScrollOptions["offset"]
 }
 
-/** Scroll-driven 3D reveal — content tilts forward into view as you scroll */
+/** Lightweight, one-time reveal that avoids continuous scroll-linked transforms. */
 export function Scroll3DReveal({
   children,
   className,
-  rotateAmount = 18,
-  depth = 50,
-  offset = ["start end", "center center"],
 }: Scroll3DRevealProps) {
-  const ref = useRef<HTMLDivElement>(null)
   const prefersReducedMotion = useReducedMotion()
-  const { scrollYProgress } = useScroll({ target: ref, offset })
-  const progress = useOneWayScrollProgress(scrollYProgress)
-
-  const rotateX = useTransform(progress, [0, 1], [rotateAmount, 0])
-  const translateZ = useTransform(progress, [0, 0.5, 1], [-depth, depth * 0.25, 0])
-  const opacity = useTransform(progress, [0, 0.35, 1], [0.4, 0.85, 1])
-  const scale = useTransform(progress, [0, 1], [0.94, 1])
 
   if (prefersReducedMotion) {
     return <div className={className}>{children}</div>
   }
 
   return (
-    <div ref={ref} className={cn("relative scroll-3d-scene", className)}>
+    <div className={cn("relative", className)}>
       <motion.div
-        style={{
-          rotateX,
-          translateZ,
-          opacity,
-          scale,
-          transformStyle: "preserve-3d",
-        }}
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         {children}
       </motion.div>
@@ -81,34 +47,21 @@ type Scroll3DCardProps = {
   index?: number
 }
 
-/** Alternating 3D card flip on scroll — great for grids */
+/** Lightweight card reveal; index only controls a short stagger. */
 export function Scroll3DCard({ children, className, index = 0 }: Scroll3DCardProps) {
-  const ref = useRef<HTMLDivElement>(null)
   const prefersReducedMotion = useReducedMotion()
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "center center"],
-  })
-  const progress = useOneWayScrollProgress(scrollYProgress)
-
-  const direction = index % 2 === 0 ? 1 : -1
-  const rotateY = useTransform(progress, [0, 1], [22 * direction, 0])
-  const translateZ = useTransform(progress, [0, 0.6, 1], [-35, 25, 0])
-  const opacity = useTransform(progress, [0, 0.45, 1], [0, 1, 1])
 
   if (prefersReducedMotion) {
     return <div className={className}>{children}</div>
   }
 
   return (
-    <div ref={ref} className={cn("relative scroll-3d-scene", className)}>
+    <div className={cn("relative", className)}>
       <motion.div
-        style={{
-          rotateY,
-          translateZ,
-          opacity,
-          transformStyle: "preserve-3d",
-        }}
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.45, delay: Math.min(index, 3) * 0.04, ease: "easeOut" }}
       >
         {children}
       </motion.div>
@@ -124,36 +77,24 @@ type Scroll3DParallaxProps = {
   offset?: UseScrollOptions["offset"]
 }
 
-/** Depth parallax with subtle 3D rotation tied to scroll progress */
+/** One-time image reveal used in place of continuous scroll parallax. */
 export function Scroll3DParallax({
   children,
   className,
-  rotateRange = [0, 12],
-  depthRange = [0, -80],
-  offset = ["start start", "end start"],
 }: Scroll3DParallaxProps) {
-  const ref = useRef<HTMLDivElement>(null)
   const prefersReducedMotion = useReducedMotion()
-  const { scrollYProgress } = useScroll({ target: ref, offset })
-  const progress = useOneWayScrollProgress(scrollYProgress)
-
-  const rotateX = useTransform(progress, [0, 1], rotateRange)
-  const translateZ = useTransform(progress, [0, 1], depthRange)
-  const scale = useTransform(progress, [0, 1], [1, 1.08])
 
   if (prefersReducedMotion) {
     return <div className={className}>{children}</div>
   }
 
   return (
-    <div ref={ref} className={cn("relative scroll-3d-scene overflow-hidden", className)}>
+    <div className={cn("relative overflow-hidden", className)}>
       <motion.div
-        style={{
-          rotateX,
-          translateZ,
-          scale,
-          transformStyle: "preserve-3d",
-        }}
+        initial={{ opacity: 0.85, scale: 1.02 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="h-full w-full"
       >
         {children}

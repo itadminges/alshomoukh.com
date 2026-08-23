@@ -1,29 +1,17 @@
 "use client"
 
-import { useRef } from "react"
 import Image from "next/image"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Check } from "lucide-react"
-import { Scroll3DReveal, useOneWayScrollProgress } from "@/components/scroll-3d"
+import { Scroll3DReveal } from "@/components/scroll-3d"
 import { SectionSpirals } from "@/components/decorative-spirals"
 
 
 export function IntroSection() {
-  const containerRef = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  })
-
-  const progress = useOneWayScrollProgress(scrollYProgress)
-
-  const imageY = useTransform(progress, [0, 1], [-50, 50])
-  const textRotateY = useTransform(progress, [0, 0.5, 1], [12, 0, -6])
-
   return (
-    <section ref={containerRef} className="pt-24 md:pt-40 bg-white relative overflow-hidden scroll-3d-scene">
+    <section className="pt-24 md:pt-40 bg-white relative overflow-hidden">
       <SectionSpirals variant="light" />
       <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 lg:px-20">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
@@ -36,7 +24,7 @@ export function IntroSection() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative z-10 aspect-[4/5] overflow-hidden shadow-strong"
             >
-              <motion.div style={{ y: imageY }} className="absolute inset-x-0 -inset-y-20">
+              <div className="absolute inset-x-0 -inset-y-20">
                 <Image 
                   src="/images/final/primary-project.webp" 
                   alt="Al Shomoukh students learning together" 
@@ -44,7 +32,7 @@ export function IntroSection() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
-              </motion.div>
+              </div>
             </motion.div>
             
             {/* Artistic Decoration */}
@@ -69,7 +57,6 @@ export function IntroSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              style={{ rotateY: textRotateY, transformStyle: "preserve-3d" }}
             >
               <div className="flex items-center gap-4 mb-8">
                 <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
