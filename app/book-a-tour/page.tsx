@@ -157,22 +157,22 @@ export default function BookATourPage() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
                           <label htmlFor="tour-parent-name" className="text-xs font-bold text-navy uppercase tracking-wider">Parent Full Name *</label>
-                          <Input id="tour-parent-name" name="parentName" required autoComplete="name" placeholder="e.g. Salim Al Hashmi" className="border-navy/15 h-12 rounded-none focus:border-gold" />
+                          <Input id="tour-parent-name" name="parentName" required maxLength={120} autoComplete="name" placeholder="e.g. Salim Al Hashmi" className="border-navy/15 h-12 rounded-none focus:border-gold" />
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="tour-email" className="text-xs font-bold text-navy uppercase tracking-wider">Email Address *</label>
-                          <Input id="tour-email" name="email" required type="email" autoComplete="email" placeholder="e.g. parent@example.com" className="border-navy/15 h-12 rounded-none focus:border-gold" />
+                          <Input id="tour-email" name="email" required maxLength={254} type="email" autoComplete="email" placeholder="e.g. parent@example.com" className="border-navy/15 h-12 rounded-none focus:border-gold" />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
                           <label htmlFor="tour-phone" className="text-xs font-bold text-navy uppercase tracking-wider">Phone / WhatsApp Number *</label>
-                          <Input id="tour-phone" name="phone" required type="tel" autoComplete="tel" placeholder="+968 9XXXXXXX" className="border-navy/15 h-12 rounded-none focus:border-gold" />
+                          <Input id="tour-phone" name="phone" required maxLength={40} type="tel" autoComplete="tel" placeholder="+968 9XXXXXXX" className="border-navy/15 h-12 rounded-none focus:border-gold" />
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="tour-grade" className="text-xs font-bold text-navy uppercase tracking-wider">Grade / Year Group Interested In *</label>
-                          <Input id="tour-grade" name="grade" required placeholder="e.g. KG1, Primary, Grade 9 (IGCSE)" className="border-navy/15 h-12 rounded-none focus:border-gold" />
+                          <Input id="tour-grade" name="grade" required maxLength={80} placeholder="e.g. KG1, Primary, Grade 9 (IGCSE)" className="border-navy/15 h-12 rounded-none focus:border-gold" />
                         </div>
                       </div>
 
@@ -183,13 +183,13 @@ export default function BookATourPage() {
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="tour-time" className="text-xs font-bold text-navy uppercase tracking-wider">Preferred Time Slot *</label>
-                          <Input id="tour-time" name="time" required placeholder="e.g. 9:00 AM or 1:00 PM" className="border-navy/15 h-12 rounded-none focus:border-gold" />
+                          <Input id="tour-time" name="time" required maxLength={40} placeholder="e.g. 9:00 AM or 1:00 PM" className="border-navy/15 h-12 rounded-none focus:border-gold" />
                         </div>
                       </div>
 
                       <div className="space-y-2">
                         <label htmlFor="tour-comments" className="text-xs font-bold text-navy uppercase tracking-wider">Additional Questions or Comments</label>
-                        <Textarea id="tour-comments" name="comments" placeholder="Please tell us about your child's interests or any specific areas of the school you would like to explore." className="border-navy/15 min-h-[120px] rounded-none focus:border-gold" />
+                        <Textarea id="tour-comments" name="comments" maxLength={3000} placeholder="Please tell us about your child's interests or any specific areas of the school you would like to explore." className="border-navy/15 min-h-[120px] rounded-none focus:border-gold" />
                       </div>
 
                       <Button type="submit" className="w-full bg-gold text-white hover:bg-gold/90 h-14 uppercase tracking-[0.25em] font-bold rounded-none flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-gold/20">

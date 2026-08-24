@@ -28,6 +28,13 @@ const poppins = localFont({
 
 import { SCHOOL_SCHEMA_JSON_LD } from '@/lib/school-info'
 
+// JSON-LD is currently static, but escape HTML-significant characters so a future
+// content source cannot terminate the script element and inject markup.
+const schoolSchemaJsonLd = JSON.stringify(SCHOOL_SCHEMA_JSON_LD)
+  .replace(/</g, '\\u003c')
+  .replace(/\u2028/g, '\\u2028')
+  .replace(/\u2029/g, '\\u2029')
+
 export const metadata: Metadata = {
   title: {
     default: 'Al Shomoukh International Private School',
@@ -77,7 +84,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHOOL_SCHEMA_JSON_LD) }}
+          dangerouslySetInnerHTML={{ __html: schoolSchemaJsonLd }}
         />
       </head>
       <body className="font-sans antialiased bg-background text-foreground flex flex-col min-h-screen">

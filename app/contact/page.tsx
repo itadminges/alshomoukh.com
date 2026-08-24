@@ -29,6 +29,8 @@ export default function ContactPage() {
     event.preventDefault()
     const form = new FormData(event.currentTarget)
     const subject = String(form.get("subject") || "General enquiry")
+      .replace(/[\r\n]+/g, " ")
+      .slice(0, 120)
     const body = [
       `Name: ${String(form.get("name") || "")}`,
       `Email: ${String(form.get("email") || "")}`,
@@ -55,14 +57,14 @@ export default function ContactPage() {
               <h2 className="font-bold text-3xl text-navy mb-8 tracking-tight uppercase">General Enquiry</h2>
               <form className="space-y-6" onSubmit={handleEnquiry}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Input name="name" aria-label="Full name" required autoComplete="name" placeholder="Full Name" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
-                  <Input name="email" aria-label="Email address" required autoComplete="email" placeholder="Email Address" type="email" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
+                  <Input name="name" aria-label="Full name" required maxLength={120} autoComplete="name" placeholder="Full Name" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
+                  <Input name="email" aria-label="Email address" required maxLength={254} autoComplete="email" placeholder="Email Address" type="email" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Input name="phone" aria-label="Phone number" autoComplete="tel" placeholder="Phone Number" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
-                  <Input name="subject" aria-label="Subject" required placeholder="Subject" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
+                  <Input name="phone" aria-label="Phone number" maxLength={40} type="tel" autoComplete="tel" placeholder="Phone Number" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
+                  <Input name="subject" aria-label="Subject" required maxLength={120} placeholder="Subject" className="border-navy/10 h-12 rounded-none focus:border-gold transition-colors" />
                 </div>
-                <Textarea name="message" aria-label="Message" required placeholder="Message" className="border-navy/10 min-h-[150px] rounded-none focus:border-gold transition-colors" />
+                <Textarea name="message" aria-label="Message" required maxLength={5000} placeholder="Message" className="border-navy/10 min-h-[150px] rounded-none focus:border-gold transition-colors" />
                 <Button type="submit" className="bg-gold text-white hover:bg-gold/90 w-full h-14 uppercase tracking-[0.25em] font-bold rounded-none flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-gold/20">
                   <Send className="w-4 h-4" />
                   Prepare Email
@@ -138,6 +140,7 @@ export default function ContactPage() {
       {/* Map Section */}
       <section className="h-[500px] w-full bg-ivory grayscale hover:grayscale-0 transition-all duration-700">
         <iframe 
+          title="Map showing Al Shomoukh International Private School"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4997.835920105378!2d58.22425847533191!3d23.620108478759505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8de5b4dda92199%3A0xd6218124d8f78b32!2sAl%20Shomoukh%20International%20Private%20School!5e1!3m2!1sen!2som!4v1785906801032!5m2!1sen!2som" 
           width="100%" 
           height="100%" 
@@ -145,6 +148,7 @@ export default function ContactPage() {
           allowFullScreen 
           loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
         />
       </section>
     </main>
