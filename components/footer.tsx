@@ -217,7 +217,6 @@ export function Footer() {
           </div>
 
           <div className="flex w-full items-center justify-center gap-2.5 border-b border-white/10 px-6 py-8 order-1 md:order-2 md:w-auto md:justify-start md:border-b-0 md:px-0 md:py-0">
-            <span className="text-[10.5px] font-bold uppercase tracking-[0.2em] text-white/40">Powered by</span>
             <Image
               src="/ges-logo.png"
               alt="GES - Global Education Services"
