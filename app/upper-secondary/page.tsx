@@ -104,7 +104,7 @@ export default function UpperSecondaryPage() {
                       alt="Pearson BTEC Approved Centre"
                       width={140}
                       height={50}
-                      className="h-8 w-auto object-contain"
+                      className="h-8 w-auto object-contain shrink-0"
                     />
                   </div>
                 )}

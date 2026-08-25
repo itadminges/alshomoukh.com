@@ -92,7 +92,7 @@ export default function KindergartenPage() {
                     </p>
                   </div>
                   <div className="pt-6 mt-6 border-t border-white/10 flex items-center gap-2 text-gold text-xs font-bold uppercase tracking-wider">
-                    <Check className="w-4 h-4" /> Core Foundation
+                    <Check className="w-4 h-4 shrink-0" /> Core Foundation
                   </div>
                 </div>
               </Scroll3DCard>

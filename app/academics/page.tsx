@@ -163,14 +163,14 @@ export default function AcademicsPage() {
                     href="/curriculum"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-navy text-gold text-xs font-bold uppercase tracking-[0.2em] hover:bg-gold hover:text-navy transition-all duration-300 shadow-sm"
                   >
-                    <BookOpen className="w-4 h-4" /> Explore Curriculum
+                    <BookOpen className="w-4 h-4 shrink-0" /> Explore Curriculum
                   </Link>
                   <Link
                     href="/upper-secondary"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-white text-navy border border-navy/15 text-xs font-bold uppercase tracking-[0.2em] hover:border-gold hover:text-navy transition-all duration-300"
                   >
                     <span>Senior Pathways</span>
-                    <ArrowRight className="w-4 h-4 text-gold" />
+                    <ArrowRight className="w-4 h-4 text-gold shrink-0" />
                   </Link>
                 </div>
               </div>
@@ -272,7 +272,7 @@ export default function AcademicsPage() {
 
                     <div className="px-6 pt-4 border-t border-navy/5 flex items-center justify-between text-gold font-bold text-[9px] tracking-widest uppercase">
                       <span>Explore Stage</span>
-                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
                     </div>
                   </article>
                 </Link>
@@ -416,7 +416,7 @@ export default function AcademicsPage() {
               </p>
             </div>
             <div className="w-16 h-16 bg-navy text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-navy transition-colors duration-500 shrink-0">
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform shrink-0" />
             </div>
           </Link>
         </div>
