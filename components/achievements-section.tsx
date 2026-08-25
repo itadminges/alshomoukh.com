@@ -97,7 +97,7 @@ export function AchievementsSection() {
                 
                 <div className="mt-6 flex items-center justify-center sm:justify-start gap-1.5 opacity-40">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-2 w-2 fill-gold text-gold" />
+                    <Star key={i} className="h-2 w-2 fill-gold text-gold shrink-0" />
                   ))}
                 </div>
               </div>

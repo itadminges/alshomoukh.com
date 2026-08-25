@@ -315,7 +315,7 @@ export function AcademicSubPageLayout({
                             alt={section.logo.alt}
                             width={section.logo.width || 200}
                             height={section.logo.height || 80}
-                            className="h-10 md:h-12 w-auto object-contain"
+                            className="h-10 md:h-12 w-auto object-contain shrink-0"
                           />
                         </div>
                       )}
@@ -468,7 +468,7 @@ export function AcademicSubPageLayout({
                       </div>
                     </div>
                     <div className="pt-8 mt-8 border-t border-navy/10 flex items-center gap-2 text-navy/60 text-xs font-medium">
-                      <Compass className="w-4 h-4 text-gold" /> Clear progression through graduation and university entry.
+                      <Compass className="w-4 h-4 text-gold shrink-0" /> Clear progression through graduation and university entry.
                     </div>
                   </div>
                 </Scroll3DReveal>
@@ -500,7 +500,7 @@ export function AcademicSubPageLayout({
                 </p>
               </div>
               <div className="w-16 h-16 bg-navy text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-navy transition-colors duration-500 shrink-0">
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform shrink-0" />
               </div>
             </Link>
           </div>

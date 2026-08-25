@@ -24,9 +24,12 @@ export const SCHOOL_INFO = {
   },
 
   contact: {
-    phone: "+968 24 284771",
+    phone: "+968 24284771",
     phoneTel: "tel:+96824284771",
     phoneRaw: "+96824284771",
+    phoneSecondary: "+968 24284756",
+    phoneSecondaryTel: "tel:+96824284756",
+    phoneSecondaryRaw: "+96824284756",
     emailAdmissions: "admission@alshomoukh.com",
     emailAdmissionsMailto: "mailto:admission@alshomoukh.com",
     emailGeneral: "info@alshomoukh.com",
@@ -57,7 +60,7 @@ export const SCHOOL_SCHEMA_JSON_LD = {
   "alternateName": "Al Shomoukh International Private School",
   "url": "https://alshomoukh.com",
   "logo": "https://alshomoukh.com/SIS%20Logo-01.png",
-  "telephone": SCHOOL_INFO.contact.phone,
+  "telephone": [SCHOOL_INFO.contact.phone, SCHOOL_INFO.contact.phoneSecondary],
   "email": SCHOOL_INFO.contact.emailAdmissions,
   "address": {
     "@type": "PostalAddress",

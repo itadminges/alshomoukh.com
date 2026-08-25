@@ -54,26 +54,26 @@ export function Footer() {
   }
 
   return (
-    <footer id="site-footer" className="scroll-mt-20 bg-[#0B3958] text-white pb-0 pt-0 overflow-hidden border-t border-white/5 md:pb-12 md:pt-24">
-      <div className="mx-auto max-w-[1440px] px-0 md:px-10 lg:px-16">
-        <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-12 md:gap-16 lg:gap-12 mb-0 md:mb-24">
+    <footer id="site-footer" className="scroll-mt-20 bg-[#0B3958] text-white pb-0 pt-0 overflow-hidden border-t border-white/5 md:pb-7 md:pt-12">
+      <div className="mx-auto max-w-[1440px] px-0 md:px-8 lg:px-12">
+        <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-12 md:gap-10 lg:gap-8 xl:gap-10 mb-0 md:mb-8">
 
           {/* Brand Column */}
-          <div className="lg:col-span-4 flex flex-col items-center md:items-start gap-5 md:gap-8 order-last lg:order-first mt-10 pt-0 px-6 md:px-0 md:pt-0 md:border-t-0 md:mt-0 text-center md:text-left">
+          <div className="lg:col-span-4 flex flex-col items-center md:items-start gap-5 md:gap-4 order-last lg:order-first mt-10 pt-0 px-6 md:px-0 md:pt-0 md:border-t-0 md:mt-0 text-center md:text-left">
             <Link href="/" className="inline-block transition-transform hover:scale-[1.02] duration-500">
               <Image
                 src="/White SIS Logo-01.png"
                 alt="Al Shomoukh Logo"
                 width={120}
                 height={199}
-                className="h-auto w-[76px] object-contain md:h-20 md:w-auto"
+                className="h-auto w-[76px] object-contain md:h-14 md:w-auto"
                 priority
               />
             </Link>
             <p className="max-w-[280px] text-[14px] leading-[1.6] font-medium font-sans text-white/70 md:hidden">
               Inspiring students to learn, lead, and make a difference.
             </p>
-            <p className="hidden text-white/70 text-[15px] leading-[1.8] font-medium font-sans max-w-sm md:block">
+            <p className="hidden text-white/70 text-[13px] leading-[1.6] font-medium font-sans max-w-xs md:block">
               Providing a world-class education that empowers students to lead with integrity, innovate with passion, and succeed with purpose in a global community.
             </p>
             <div className="mt-1 flex gap-3 md:mt-0">
@@ -83,10 +83,10 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 md:w-10 md:h-10 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-500"
+                  className="w-11 h-11 md:w-10 md:h-10 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-500 shrink-0"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-4 h-4" />
+                  <social.icon className="w-4 h-4 shrink-0" />
                 </Link>
               ))}
             </div>
@@ -104,8 +104,8 @@ export function Footer() {
                 <h2 className="text-[13px] md:text-[11px] font-extrabold tracking-[0.16em] md:tracking-[0.25em] uppercase text-white md:text-white/40 text-center md:text-left md:mb-10">
                   {cluster.title}
                 </h2>
-                <div className="md:hidden text-[#BB9268]">
-                  {openSection === cluster.title ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+                <div className="md:hidden text-[#BB9268] shrink-0">
+                  {openSection === cluster.title ? <Minus className="h-5 w-5 shrink-0" /> : <Plus className="h-5 w-5 shrink-0" />}
                 </div>
               </button>
               <div
@@ -142,8 +142,8 @@ export function Footer() {
               <h2 className="text-[13px] md:text-[11px] font-extrabold tracking-[0.16em] md:tracking-[0.25em] uppercase text-white md:text-white/40 text-center md:text-left md:mb-10">
                 Contact
               </h2>
-              <div className="md:hidden text-[#BB9268]">
-                {openSection === 'Contact' ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+              <div className="md:hidden text-[#BB9268] shrink-0">
+                {openSection === 'Contact' ? <Minus className="h-5 w-5 shrink-0" /> : <Plus className="h-5 w-5 shrink-0" />}
               </div>
             </button>
             <div
@@ -153,8 +153,8 @@ export function Footer() {
               <ul className="flex flex-col gap-6 md:gap-8 w-full items-center md:items-start text-center md:text-left pb-2 md:pb-0">
                 <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
                   <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
-                    <span className="inline-block md:hidden"><MapPin className="h-4 w-4" /></span>
-                    <span className="hidden md:inline-block"><MapPin className="h-3.5 w-3.5" /></span>
+                    <span className="inline-block md:hidden shrink-0"><MapPin className="h-4 w-4 shrink-0" /></span>
+                    <span className="hidden md:inline-block shrink-0"><MapPin className="h-3.5 w-3.5 shrink-0" /></span>
                     <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Location</span>
                   </div>
                   <span className="text-[15px] md:text-[13px] font-medium text-white/70 leading-relaxed md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300">
@@ -166,26 +166,32 @@ export function Footer() {
                 </li>
                 <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
                   <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
-                    <span className="inline-block md:hidden"><Phone className="h-4 w-4" /></span>
-                    <span className="hidden md:inline-block"><Phone className="h-3.5 w-3.5" /></span>
+                    <span className="inline-block md:hidden shrink-0"><Phone className="h-4 w-4 shrink-0" /></span>
+                    <span className="hidden md:inline-block shrink-0"><Phone className="h-3.5 w-3.5 shrink-0" /></span>
                     <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Inquiries</span>
                   </div>
                   <a
                     href="tel:+96824284771"
                     className="text-[15px] md:text-[13px] font-medium text-white/70 hover:text-white md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300"
                   >
-                    +968 24 284771
+                    +968 24284771
+                  </a>
+                  <a
+                    href="tel:+96824284756"
+                    className="text-[15px] md:text-[13px] font-medium text-white/70 hover:text-white md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300"
+                  >
+                    +968 24284756
                   </a>
                 </li>
                 <li className="flex flex-col gap-2 group cursor-default items-center md:items-start">
                   <div className="flex items-center gap-3 text-white/40 group-hover:text-secondary transition-colors duration-300">
-                    <span className="inline-block md:hidden"><Mail className="h-4 w-4" /></span>
-                    <span className="hidden md:inline-block"><Mail className="h-3.5 w-3.5" /></span>
+                    <span className="inline-block md:hidden shrink-0"><Mail className="h-4 w-4 shrink-0" /></span>
+                    <span className="hidden md:inline-block shrink-0"><Mail className="h-3.5 w-3.5 shrink-0" /></span>
                     <span className="text-[12px] md:text-[10px] font-bold tracking-widest uppercase">Email</span>
                   </div>
                   <a
                     href="mailto:admission@alshomoukh.com"
-                    className="text-[15px] md:text-[13px] font-medium text-white/70 hover:text-white md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300"
+                    className="break-all text-[15px] md:text-[13px] font-medium text-white/70 hover:text-white md:pl-6.5 md:border-l border-white/10 group-hover:border-secondary/30 transition-colors duration-300"
                   >
                     admission@alshomoukh.com
                   </a>
@@ -200,7 +206,7 @@ export function Footer() {
         <div className="mt-10 border-t border-white/10 flex flex-col md:mt-0 md:pt-12 md:flex-row md:justify-between md:items-center md:gap-10">
           <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8 order-2 md:order-1 px-6 py-7 md:px-0 md:py-0">
             <p className="max-w-[260px] text-center text-[12px] font-normal leading-relaxed text-white/55 tracking-normal md:max-w-none md:text-left md:text-[11px] md:font-bold md:text-white/30 md:tracking-[0.2em] md:uppercase">
-              &copy; {new Date().getFullYear()} Al Shomoukh International Private School
+              Copyright &copy; {new Date().getFullYear()}
             </p>
             <div className="hidden md:block h-3 w-[1px] bg-white/10" />
             <div className="flex items-center gap-2 text-white/45">
@@ -211,12 +217,13 @@ export function Footer() {
           </div>
 
           <div className="flex w-full items-center justify-center gap-3 border-b border-white/10 px-6 py-8 order-1 md:order-2 md:w-auto md:justify-start md:border-b-0 md:px-0 md:py-0">
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/40">Powered by</span>
             <Image
               src="/ges-logo.png"
-              alt="Global Educational Services (GES)"
+              alt="GES - Global Education Services"
               width={200}
               height={51}
-              className="h-7 w-auto object-contain opacity-100 transition-opacity duration-300 md:h-10"
+              className="h-7 w-auto object-contain opacity-100 transition-opacity duration-300 md:h-10 shrink-0"
             />
           </div>
         </div>

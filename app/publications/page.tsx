@@ -48,14 +48,14 @@ export default function PublicationsPage() {
                 transition={{ delay: index * 0.08 }}
                 className="flex h-full flex-col border border-navy/10 bg-white p-8 shadow-sm md:p-10"
               >
-                <publication.icon className="mb-7 h-9 w-9 text-gold" />
+                <publication.icon className="mb-7 h-9 w-9 text-gold shrink-0" />
                 <h3 className="mb-4 text-2xl font-bold uppercase tracking-tight text-navy">{publication.title}</h3>
                 <p className="mb-8 flex-1 text-sm font-medium leading-relaxed text-navy/70">{publication.description}</p>
                 <Link
                   href={`mailto:admission@alshomoukh.com?subject=${encodeURIComponent(publication.subject)}`}
                   className="inline-flex h-12 items-center justify-center gap-3 bg-navy px-6 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-gold"
                 >
-                  <Mail className="h-4 w-4" /> Request by Email
+                  <Mail className="h-4 w-4 shrink-0" /> Request by Email
                 </Link>
               </motion.article>
             ))}

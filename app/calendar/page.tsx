@@ -190,7 +190,7 @@ export default function CalendarPage() {
             {/* Search Input & Print Actions */}
             <div className="flex items-center gap-3">
               <div className="relative flex-grow sm:w-64">
-                <Search className="w-4 h-4 text-navy/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Search className="w-4 h-4 text-navy/40 absolute left-3.5 top-1/2 -translate-y-1/2 shrink-0 pointer-events-none" />
                 <input
                   type="text"
                   aria-label="Search calendar events"
@@ -206,7 +206,7 @@ export default function CalendarPage() {
                 onClick={handlePrint}
                 className="border-navy/15 text-navy hover:bg-navy hover:text-white text-[10px] font-bold tracking-widest uppercase h-9 px-4 hidden sm:flex items-center gap-2"
               >
-                <Printer className="w-3.5 h-3.5" />
+                <Printer className="w-3.5 h-3.5 shrink-0" />
                 Print
               </Button>
             </div>
@@ -228,7 +228,7 @@ export default function CalendarPage() {
                     {/* Month Header */}
                     <div className="p-5 bg-navy text-white flex items-center justify-between border-b border-gold/30">
                       <div className="flex items-center gap-2">
-                        <CalendarDays className="w-4 h-4 text-gold" />
+                        <CalendarDays className="w-4 h-4 text-gold shrink-0" />
                         <h3 className="font-bold text-sm tracking-widest uppercase text-white">
                           {group.monthName}
                         </h3>
@@ -285,7 +285,7 @@ export default function CalendarPage() {
                         </div>
                       ) : (
                         <div className="py-8 text-center flex flex-col items-center justify-center text-navy/40">
-                          <Clock className="w-6 h-6 mb-2 opacity-30" />
+                          <Clock className="w-6 h-6 mb-2 opacity-30 shrink-0" />
                           <p className="text-xs font-semibold uppercase tracking-wider">No specific events shown</p>
                           <p className="text-[10px] text-navy/40 mt-1 max-w-[200px]">
                             No events match the selected filters for this month.

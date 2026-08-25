@@ -21,36 +21,32 @@ import { Button } from "@/components/ui/button"
 export default function AdmissionsPage() {
   const steps = [
     { num: "01", title: "Inquiry", desc: "Discover our curriculum, learn about our programmes, and arrange a visit to experience our campus.", icon: BookOpen },
-    { num: "02", title: "Application", desc: "Contact Admissions and submit the required documents according to the current application guidance.", icon: FileText },
+    { num: "02", title: "Application", desc: "Complete the online application and submit the required documents to begin the admissions process.", icon: FileText },
     { num: "03", title: "Assessment", desc: "Participate in an age-appropriate student placement assessment to understand learning readiness.", icon: CheckSquare },
     { num: "04", title: "Offer", desc: "Receive an admission decision and offer of placement following the assessment process.", icon: Award },
-    { num: "05", title: "Enrollment", desc: "Complete registration requirements and welcome your child into the Al Shomoukh community.", icon: UserPlus },
+    { num: "05", title: "Enrolment", desc: "Complete registration requirements and welcome your child into the Al Shomoukh community.", icon: UserPlus },
   ]
 
   const faqs = [
     {
-      q: "What is the academic readiness criteria for admission to Al Shomoukh?",
-      a: "At Al Shomoukh International Private School, all students undergo an age-appropriate placement test to assess academic readiness and ensure they are placed in the ideal grade level to thrive in our British and international curriculum."
+      q: "What is the academic level criteria that has to be met in order to admit my child to Al Shomoukh International Private School?",
+      a: "At Al Shomoukh International Private School, we assess each child's academic readiness through a placement test to ensure they are well-prepared for the curriculum and will thrive in our learning environment. Our goal is to provide the necessary support for students to succeed and achieve their potential."
     },
     {
-      q: "What are the age requirements for Kindergarten and Grade 1?",
-      a: "Age requirements follow the current Ministry of Education and school admissions policy for the enrolling academic year. Please contact Admissions to confirm the applicable cut-off dates before applying."
+      q: "What is the age criteria for accepting students in KG1, KG2, and Grade 1?",
+      a: "• KG1: Children must be 3 years old and 2 months by September 1st of the academic year.\n• KG2: Children must be 4 years and 2 months old by September 1st of the academic year.\n• Grade 1: Children must be 6 years and 2 months old by September 1st of the academic year."
     },
     {
-      q: "Are fee discounts or payment options available?",
-      a: "Fee policies can change by academic year. Please request the current fee schedule from Admissions and ask about any available sibling-discount eligibility or payment arrangements."
+      q: "Can I meet the teachers?",
+      a: "Yes, we encourage parent-teacher collaboration. You can meet with teachers during scheduled parent-teacher conferences or by making an appointment through our school administration. Our teachers are always available to discuss your child’s progress and address any questions or concerns."
     },
     {
-      q: "Can parents meet teachers and visit the campus before enrolling?",
-      a: "Absolutely. We warmly encourage campus visits from Sunday to Thursday (7:30 AM – 3:30 PM). Parents can meet our academic leaders and teachers during scheduled tours and orientation sessions."
+      q: "When do students start learning French?",
+      a: "Students begin learning French from Grade 1 as part of our foreign language curriculum. This provides early exposure to the language and fosters bilingual communication skills, which are valuable in today’s globalized world."
     },
     {
-      q: "Which documents are required for an application?",
-      a: "Admissions will provide the current document checklist for the student's year group. Requirements may include identification, previous school records, and other supporting documents."
-    },
-    {
-      q: "How can families confirm current programmes and activities?",
-      a: "Programme and activity availability may vary by year group and term. Contact the school for the latest confirmed options before making arrangements."
+      q: "Do you organize trips outside Oman?",
+      a: "Yes, we believe that learning extends beyond the classroom. We organize educational trips outside of Oman for older students to enhance their learning experiences. These trips are carefully planned to complement the curriculum and provide cultural, historical, and practical learning opportunities. We also arrange local trips within Oman to support student learning in various subjects."
     }
   ]
 
@@ -59,7 +55,7 @@ export default function AdmissionsPage() {
       {/* Hero Section */}
       <PageHero 
         title="Admissions" 
-        subtitle="Begin Your Child’s Journey Towards Excellence."
+        subtitle="A great school is a place where students not only learn but thrive."
         backgroundImage="/images/final/primary-students.webp"
       />
 
@@ -70,7 +66,7 @@ export default function AdmissionsPage() {
           <div className="max-w-3xl mx-auto">
             <Scroll3DReveal rotateAmount={10} depth={30}>
               <p className="text-navy/80 text-base md:text-xl leading-[1.8] font-medium">
-                At Al Shomoukh International Private School, every student is encouraged to discover their potential through a journey of academic achievement, personal growth, and global opportunity. Our admissions process is designed to be clear, supportive, and welcoming, ensuring that every family feels confident from the very first step.
+                Thank you for considering Al Shomoukh International Private School and entrusting us with your child's education. We understand that choosing the right school is one of the most important decisions you’ll make for your child’s future.
               </p>
             </Scroll3DReveal>
           </div>
@@ -97,16 +93,16 @@ export default function AdmissionsPage() {
               
               <div className="text-navy/80 leading-[1.8] space-y-6 mb-8 text-base md:text-lg font-medium">
                 <p>
-                  Thank you for considering Al Shomoukh International Private School as your child’s educational partner. We understand that selecting the right school is a significant decision, and we are committed to providing families with the guidance, information, and support they need throughout the admissions journey.
+                  Located in the heart of Muscat, Sultanate of Oman, Al Shomoukh International Private School is a leader in providing high-quality education. We strive to make our admissions process as clear and seamless as possible, ensuring you have all the information needed to make the right choice for your child.
                 </p>
                 <p>
-                  Located in Muscat, Sultanate of Oman, Al Shomoukh International Private School offers a high-quality international education built on academic excellence, strong values, and a commitment to every student’s success.
+                  We would be delighted to assist you throughout the entire admissions process and guide you every step of the way.
                 </p>
               </div>
 
               <div className="bg-ivory/40 p-6 md:p-8 border-l-4 border-gold shadow-strong">
                 <p className="text-lg md:text-xl text-navy font-serif italic leading-[1.6]">
-                  "Our admissions team is dedicated to making the enrolment process clear, welcoming, and seamless, guiding your family every step of the way with care, transparency, and confidence."
+                  "You don’t choose a school; you choose a community."
                 </p>
               </div>
             </Scroll3DReveal>
@@ -149,12 +145,12 @@ export default function AdmissionsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {steps.map((step, idx) => (
-              <Scroll3DReveal key={step.num} rotateAmount={12 + idx * 2} depth={30 + idx * 8}>
+              <Scroll3DReveal key={step.num} rotateAmount={12 + idx * 2} depth={30 + idx * 8} className="h-full">
                 <div className="bg-white p-8 shadow-strong border border-navy/5 h-full flex flex-col justify-between group hover:border-gold/40 transition-colors duration-500 relative">
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-500">
-                        <step.icon className="w-6 h-6 stroke-[1.5]" />
+                      <div className="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-500 shrink-0">
+                        <step.icon className="w-6 h-6 stroke-[1.5] shrink-0" />
                       </div>
                       <span className="text-gold text-xs font-bold tracking-[0.25em] uppercase">
                         {step.num}
@@ -184,8 +180,15 @@ export default function AdmissionsPage() {
             <div className="lg:col-span-5">
               <Scroll3DReveal rotateAmount={14} depth={40}>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="flex h-11 w-11 items-center justify-center bg-gold/10 text-gold" aria-label="Omani rial">
-                    <span className="text-sm font-extrabold" dir="rtl">ر.ع.</span>
+                  <div className="flex h-11 w-11 items-center justify-center bg-gold/10 text-gold shrink-0" aria-label="Omani rial">
+                    <Image
+                      src="/omani-rial-symbol.svg"
+                      alt=""
+                      width={30}
+                      height={24}
+                      aria-hidden="true"
+                      className="h-6 w-auto object-contain shrink-0"
+                    />
                   </div>
                   <span className="text-gold font-bold tracking-[0.3em] uppercase text-xs">
                     Tuition & Finance
@@ -260,7 +263,7 @@ export default function AdmissionsPage() {
                     </div>
                     <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white h-12 px-6 text-[10px] font-bold tracking-[0.2em] uppercase rounded-none bg-transparent">
                       <Link href="tel:+96824284771">
-                        Call +968 24 284771
+                        Call +968 24284771
                       </Link>
                     </Button>
                   </div>
@@ -291,13 +294,13 @@ export default function AdmissionsPage() {
                 </h2>
 
                 <p className="text-ivory/80 text-base leading-[1.8] font-medium mb-8">
-                  We warmly invite you to visit Al Shomoukh International Private School and experience firsthand what makes our school a place of excellence and growth. A personal tour is the best way to gain a true understanding of our campus, facilities, and unique learning atmosphere.
+                  We warmly invite you to visit Al Shomoukh International Private School and experience firsthand what makes our school a place of excellence and growth. A personal tour is the best way to gain a true understanding of our campus, facilities, and the unique atmosphere that fosters learning and development. To schedule a tour, call us at +968 24284756 / +968 24284771.
                 </p>
 
                 <div className="space-y-4 mb-10">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
-                      <Calendar className="w-5 h-5" />
+                    <div className="w-10 h-10 bg-gold/10 border border-gold/20 flex items-center justify-center text-gold shrink-0">
+                      <Calendar className="w-5 h-5 shrink-0" />
                     </div>
                     <div>
                       <p className="text-xs text-gold font-bold uppercase tracking-wider">Days of Operation</p>
@@ -306,8 +309,8 @@ export default function AdmissionsPage() {
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
-                      <Clock className="w-5 h-5" />
+                    <div className="w-10 h-10 bg-gold/10 border border-gold/20 flex items-center justify-center text-gold shrink-0">
+                      <Clock className="w-5 h-5 shrink-0" />
                     </div>
                     <div>
                       <p className="text-xs text-gold font-bold uppercase tracking-wider">Visiting Hours</p>
@@ -324,7 +327,7 @@ export default function AdmissionsPage() {
                   </Button>
                   <Button asChild variant="outline" className="border-white/40 text-white hover:bg-white hover:text-navy h-14 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none bg-transparent">
                     <Link href="tel:+96824284771">
-                      Call +968 24 284771
+                      Call +968 24284771
                     </Link>
                   </Button>
                 </div>
@@ -361,7 +364,7 @@ export default function AdmissionsPage() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {faqs.map((faq, idx) => (
-              <Scroll3DReveal key={idx} rotateAmount={10} depth={25}>
+              <Scroll3DReveal key={idx} rotateAmount={10} depth={25} className="h-full">
                 <div className="bg-white p-8 border border-navy/5 shadow-sm h-full flex flex-col justify-between">
                   <div>
                     <div className="flex items-start gap-3 mb-4">
@@ -404,13 +407,13 @@ export default function AdmissionsPage() {
               </h3>
 
               <p className="text-ivory/80 text-base md:text-xl leading-[1.7] mb-12 font-medium">
-                Our admissions team is ready to guide your family through the application and placement test process. Feel free to contact the Administration at <a href="mailto:admission@alshomoukh.com" className="text-gold font-bold hover:underline">admission@alshomoukh.com</a> or call <a href="tel:+96824284771" className="text-gold font-bold hover:underline">+968 24 284771</a>.
+                Once your child has been accepted following the placement test, parents can proceed with completing the necessary application requirements. To begin the application, contact the Administration at <a href="mailto:admission@alshomoukh.com" className="text-gold font-bold hover:underline">admission@alshomoukh.com</a> or call <a href="tel:+96824284756" className="text-gold font-bold hover:underline">+968 24284756</a> / <a href="tel:+96824284771" className="text-gold font-bold hover:underline">+968 24284771</a>.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button asChild className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
-                  <Link href="/contact">
-                    Contact Admissions
+                  <Link href="/enrolment">
+                    Apply Online
                   </Link>
                 </Button>
                 <Button asChild className="bg-transparent border border-white/60 text-white hover:bg-white hover:text-navy h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all">

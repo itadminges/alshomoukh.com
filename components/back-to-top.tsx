@@ -33,12 +33,12 @@ export function BackToTop() {
           onClick={scrollToTop}
           type="button"
           aria-label="Back to top"
-          className="fixed bottom-5 right-5 z-[50] w-12 h-12 bg-[#BB9268] text-white rounded-full shadow-strong flex items-center justify-center group md:bottom-10 md:right-10"
+          className="fixed bottom-5 right-5 z-[50] w-12 h-12 bg-[#BB9268] text-white rounded-full shadow-strong flex items-center justify-center group md:bottom-10 md:right-10 shrink-0"
           whileHover={{ y: -5 }}
           whileTap={{ scale: 0.9 }}
           style={{ willChange: "transform, opacity" }}
         >
-          <ArrowUp className="h-5 w-5 transition-transform group-hover:-translate-y-1 md:h-6 md:w-6" />
+          <ArrowUp className="h-5 w-5 transition-transform group-hover:-translate-y-1 md:h-6 md:w-6 shrink-0" />
         </motion.button>
       )}
     </AnimatePresence>

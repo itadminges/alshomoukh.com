@@ -107,7 +107,7 @@ export function Navbar() {
                   )}
                 >
                   {link.label}
-                  {link.submenu && <ChevronDown className="h-3 w-3 transition-transform duration-300 group-hover:rotate-180" />}
+                  {link.submenu && <ChevronDown className="h-3 w-3 transition-transform duration-300 group-hover:rotate-180 shrink-0" />}
                   <span className={cn(
                     "absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full",
                     forceSolid ? "bg-secondary" : "bg-white"
@@ -157,8 +157,8 @@ export function Navbar() {
                     : "bg-white text-primary hover:bg-secondary hover:text-white"
                 )}
               >
-                <Link href="/admissions">
-                  Admissions
+                <Link href="/enrolment">
+                  Apply Now
                 </Link>
               </Button>
             </div>
@@ -176,7 +176,7 @@ export function Navbar() {
                   forceSolid ? "text-primary" : "text-white"
                 )}
               >
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 shrink-0" />
               </Button>
             </div>
 
@@ -200,7 +200,7 @@ export function Navbar() {
               alt="Al Shomoukh International Private School Logo" 
               width={180} 
               height={50} 
-              className="h-10 w-auto object-contain"
+              className="h-10 w-auto object-contain shrink-0"
               style={{ width: "auto" }}
             />
             <Button 
@@ -210,7 +210,7 @@ export function Navbar() {
               aria-label="Close navigation menu"
               className="text-primary hover:bg-muted/50 rounded-full h-11 w-11"
             >
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6 shrink-0" />
             </Button>
           </div>
 
@@ -283,7 +283,7 @@ export function Navbar() {
               <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">Parent Portal</Link>
             </Button>
             <Button className="bg-primary text-white hover:bg-primary/90 w-full sm:w-1/2 py-5 text-[13px] font-extrabold tracking-widest uppercase rounded-sm shadow-lg h-auto" asChild>
-              <Link href="/admissions">Admissions</Link>
+              <Link href="/enrolment">Apply Now</Link>
             </Button>
           </motion.div>
         </motion.div>

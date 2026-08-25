@@ -97,7 +97,7 @@ export function GlobalReach() {
                   className="reveal opacity-0 translate-x-[-20px] transition-all duration-500 flex items-center gap-3 group cursor-default"
                   style={{ transitionDelay: `${200 + i * 40}ms` }}
                 >
-                  <div className="relative w-8 h-5 overflow-hidden ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-110">
+                  <div className="relative w-8 h-5 overflow-hidden ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-110 shrink-0">
                     <Image src={country.flag} alt={country.name} fill sizes="32px" className="object-cover" />
                   </div>
                   <span className="text-sm font-medium text-white/90 group-hover:text-secondary transition-colors duration-300">{country.name}</span>

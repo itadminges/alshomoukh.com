@@ -50,8 +50,8 @@ export default function InvolvementPage() {
                 transition={{ delay: index * 0.08 }}
                 className="h-full border border-navy/10 bg-white p-8 text-center shadow-sm"
               >
-                <div className="mx-auto mb-7 flex h-14 w-14 items-center justify-center bg-navy text-gold">
-                  <item.icon className="h-7 w-7" />
+                <div className="mx-auto mb-7 flex h-14 w-14 items-center justify-center bg-navy text-gold shrink-0">
+                  <item.icon className="h-7 w-7 shrink-0" />
                 </div>
                 <h3 className="mb-4 text-xl font-bold uppercase tracking-tight text-navy">{item.title}</h3>
                 <p className="text-sm font-medium leading-relaxed text-navy/65">{item.description}</p>
@@ -68,7 +68,7 @@ export default function InvolvementPage() {
               href="mailto:info@alshomoukh.com?subject=Community%20Involvement%20Inquiry"
               className="inline-flex h-12 shrink-0 items-center gap-3 bg-gold px-7 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-white hover:text-navy"
             >
-              <Mail className="h-4 w-4" /> Contact the School
+              <Mail className="h-4 w-4 shrink-0" /> Contact the School
             </Link>
           </div>
         </div>

@@ -83,8 +83,8 @@ export function IntroSection() {
                   "Character, Leadership and Global Citizenship"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4">
-                    <div className="w-5 h-5 rounded-full bg-gold/10 flex items-center justify-center">
-                      <Check className="h-3 w-3 text-gold" />
+                    <div className="w-5 h-5 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
+                      <Check className="h-3 w-3 text-gold shrink-0" />
                     </div>
                     <span className="text-navy/80 text-sm font-bold tracking-wide">{item}</span>
                   </div>

@@ -91,7 +91,7 @@ export function CommunitySection() {
               <Button asChild className="bg-primary text-white hover:bg-primary/90 h-14 px-12 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-xl group">
                 <Link href="/about">
                   Discover Our Story
-                  <Globe className="ml-3 h-4 w-4 transition-transform group-hover:rotate-12" />
+                  <Globe className="ml-3 h-4 w-4 transition-transform group-hover:rotate-12 shrink-0" />
                 </Link>
               </Button>
             </div>
@@ -105,8 +105,8 @@ export function CommunitySection() {
                 className="reveal opacity-0 transition-all duration-700 p-8 bg-white shadow-premium hover:shadow-strong transition-all duration-500 border-l-4 border-transparent hover:border-secondary group"
                 style={{ transitionDelay: `${300 + index * 100}ms` }}
               >
-                <div className="w-14 h-14 bg-muted/50 rounded-full flex items-center justify-center text-primary mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-500">
-                  <item.icon className="h-7 w-7" />
+                <div className="w-14 h-14 bg-muted/50 rounded-full flex items-center justify-center text-primary mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-500 shrink-0">
+                  <item.icon className="h-7 w-7 shrink-0" />
                 </div>
                 <h3 className="font-serif text-xl text-primary mb-3 font-bold tracking-tight group-hover:text-gold transition-colors">
                   {item.title}

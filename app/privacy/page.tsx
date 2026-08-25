@@ -44,7 +44,7 @@ export default function PrivacyPage() {
     },
     {
       title: "6. Contact Us",
-      content: "For privacy questions, contact the school at info@alshomoukh.com or call +968 24 284771."
+      content: "For privacy questions, contact the school at info@alshomoukh.com or call +968 24284756 / +968 24284771."
     }
   ]
 

@@ -115,7 +115,7 @@ export function AcademicPrograms() {
                     
                     <div className="flex items-center gap-2 text-gold font-bold text-[9px] tracking-widest uppercase">
                       <span>Explore</span>
-                      <ArrowRight className="h-2 w-2 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform shrink-0" />
                     </div>
                   </div>
                 </article>

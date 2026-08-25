@@ -69,8 +69,8 @@ export default function AboutPage() {
               <div className="bg-white p-8 md:p-12 shadow-strong border border-navy/5 h-full flex flex-col justify-between relative group hover:border-gold/30 transition-colors duration-500">
                 <div>
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="w-14 h-14 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center">
-                      <Target className="w-7 h-7 text-gold" />
+                    <div className="w-14 h-14 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                      <Target className="w-7 h-7 text-gold shrink-0" />
                     </div>
                     <div>
                       <span className="text-gold font-bold tracking-[0.2em] uppercase text-[10px]">Guiding Principle</span>
@@ -87,8 +87,8 @@ export default function AboutPage() {
             <Scroll3DReveal rotateAmount={18} depth={50}>
               <div className="bg-white p-8 md:p-12 shadow-strong border border-navy/5 h-full relative group hover:border-gold/30 transition-colors duration-500">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center">
-                    <CheckCircle className="w-7 h-7 text-gold" />
+                  <div className="w-14 h-14 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                    <CheckCircle className="w-7 h-7 text-gold shrink-0" />
                   </div>
                   <div>
                     <span className="text-gold font-bold tracking-[0.2em] uppercase text-[10px]">Our Core Commitment</span>
@@ -109,7 +109,7 @@ export default function AboutPage() {
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-4 p-4 bg-ivory/40 border-l-2 border-gold">
                       <div className="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center mt-0.5 shrink-0">
-                        <Check className="h-3.5 w-3.5 text-navy font-bold" />
+                        <Check className="h-3.5 w-3.5 text-navy font-bold shrink-0" />
                       </div>
                       <div>
                         <span className="text-gold font-bold uppercase tracking-wider text-sm block mb-0.5">{item.label}</span>
@@ -138,8 +138,8 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-center gap-4 mb-10">
-                <div className="p-3 bg-gold/10 border-l-4 border-gold">
-                  <BookOpen className="w-8 h-8 text-gold" />
+                <div className="p-3 bg-gold/10 border-l-4 border-gold shrink-0">
+                  <BookOpen className="w-8 h-8 text-gold shrink-0" />
                 </div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl text-navy leading-[1.1] tracking-tight font-bold uppercase">
                   Our <span className="text-gold">Story</span>
@@ -148,16 +148,16 @@ export default function AboutPage() {
 
               <div className="text-navy/80 text-base md:text-lg leading-[1.8] space-y-6 font-medium">
                 <p>
-                  Al Shomoukh International Private School is a homegrown educational brand and the lifelong vision of its founder, Honourable Sheikh Salim bin Hamood Al Hashmi.
+                  Al Shomoukh International Private School is a proudly Omani educational institution founded upon the lifelong vision of The Honorable Sheikh Salim bin Hamood Al Hashmi and Sheikha Thuriya Mohamed Salim Al Rahbi.
                 </p>
                 <p>
-                  The school was established by Global Education Services (GES) to provide premium education based on the British Curriculum for both Omani and international students.
+                  Established as part of Global Education Services LLC (GES Quality Education) Group, the school was founded with a commitment to providing premium British-curriculum education to Omani and international students, while contributing to the advancement of education in the Sultanate of Oman.
                 </p>
                 <p>
-                  Since its establishment, Al Shomoukh International Private School has been committed to creating a supportive learning community that combines the personal care of a close-knit environment with the high standards of an international education.
+                  From its inception, Al Shomoukh International Private School has been committed to creating a supportive and inspiring learning environment that combines the personal care and sense of community of a close-knit school with the academic rigour, breadth, and global outlook of an international education.
                 </p>
                 <p>
-                  Today, we provide a comprehensive educational journey from Kindergarten to Grade 12, welcoming students from diverse backgrounds and cultures. Our school community is built on academic excellence, strong values, and a commitment to developing confident, independent, and globally minded learners.
+                  Today, the school offers a comprehensive educational journey from Kindergarten through Grade 12, welcoming students from diverse nationalities, backgrounds, and cultures. Our school community is built upon academic excellence, strong values, character development, and a commitment to nurturing confident, independent, and globally minded young people.
                 </p>
                 <p className="p-6 bg-navy text-white border-l-4 border-gold shadow-strong">
                   Our leadership team brings together experienced educators and school professionals from diverse international backgrounds, united by a shared passion for inspiring students and delivering excellence in teaching and learning.
@@ -190,8 +190,8 @@ export default function AboutPage() {
               <div className="bg-white/5 border border-white/10 backdrop-blur-sm p-8 md:p-12 shadow-strong h-full flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center">
-                      <Users className="w-7 h-7 text-gold" />
+                    <div className="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center shrink-0">
+                      <Users className="w-7 h-7 text-gold shrink-0" />
                     </div>
                     <div>
                       <span className="text-gold font-bold tracking-[0.2em] uppercase text-[10px]">Involvement</span>
@@ -220,8 +220,8 @@ export default function AboutPage() {
               <div className="bg-white/5 border border-white/10 backdrop-blur-sm p-8 md:p-12 shadow-strong h-full flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center">
-                      <Heart className="w-7 h-7 text-gold" />
+                    <div className="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center shrink-0">
+                      <Heart className="w-7 h-7 text-gold shrink-0" />
                     </div>
                     <div>
                       <span className="text-gold font-bold tracking-[0.2em] uppercase text-[10px]">Impact</span>

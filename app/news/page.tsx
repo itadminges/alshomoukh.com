@@ -43,7 +43,7 @@ export default function NewsPage() {
             viewport={{ once: true }}
             className="mx-auto mb-14 max-w-3xl text-center"
           >
-            <Newspaper className="mx-auto mb-5 h-9 w-9 text-gold" />
+            <Newspaper className="mx-auto mb-5 h-9 w-9 text-gold shrink-0" />
             <h2 className="mb-5 text-3xl font-bold uppercase tracking-tight text-navy md:text-4xl">
               Official School Updates
             </h2>
@@ -67,11 +67,11 @@ export default function NewsPage() {
                   rel="noopener noreferrer"
                   className="group flex h-full flex-col border border-navy/10 bg-white p-8 shadow-sm transition-all hover:border-gold/40 hover:shadow-md"
                 >
-                  <channel.icon className="mb-7 h-7 w-7 text-gold" />
+                  <channel.icon className="mb-7 h-7 w-7 text-gold shrink-0" />
                   <h3 className="mb-3 text-xl font-bold uppercase tracking-tight text-navy">{channel.label}</h3>
                   <p className="mb-8 flex-1 text-sm font-medium leading-relaxed text-navy/65">{channel.description}</p>
                   <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
-                    Open official channel <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    Open official channel <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 shrink-0" />
                   </span>
                 </Link>
               </motion.div>
@@ -84,10 +84,10 @@ export default function NewsPage() {
               <p className="text-sm font-medium text-navy/65">Contact the school directly for publication or event information.</p>
             </div>
             <Link
-              href="mailto:admission@alshomoukh.com?subject=School%20Updates%20Inquiry"
+              href="/contact"
               className="inline-flex h-12 shrink-0 items-center gap-3 bg-navy px-7 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-gold"
             >
-              <Mail className="h-4 w-4" /> Contact the School
+              <Mail className="h-4 w-4 shrink-0" /> Contact the School
             </Link>
           </div>
         </div>

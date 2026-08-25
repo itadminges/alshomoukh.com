@@ -68,7 +68,7 @@ export default function BookATourPage() {
                 <div className="space-y-6 bg-ivory/40 p-8 border-l-4 border-gold shadow-sm">
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-navy text-gold rounded-none shrink-0">
-                      <Calendar className="w-5 h-5" />
+                      <Calendar className="w-5 h-5 shrink-0" />
                     </div>
                     <div>
                       <h4 className="font-bold text-navy text-base uppercase tracking-tight mb-1">Tour Days</h4>
@@ -78,7 +78,7 @@ export default function BookATourPage() {
 
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-navy text-gold rounded-none shrink-0">
-                      <Clock className="w-5 h-5" />
+                      <Clock className="w-5 h-5 shrink-0" />
                     </div>
                     <div>
                       <h4 className="font-bold text-navy text-base uppercase tracking-tight mb-1">Visiting Hours</h4>
@@ -88,19 +88,20 @@ export default function BookATourPage() {
 
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-navy text-gold rounded-none shrink-0">
-                      <Phone className="w-5 h-5" />
+                      <Phone className="w-5 h-5 shrink-0" />
                     </div>
                     <div>
                       <h4 className="font-bold text-navy text-base uppercase tracking-tight mb-1">Direct Phone</h4>
                       <p className="text-navy/70 text-sm font-medium">
-                        <a href="tel:+96824284771" className="hover:text-gold transition-colors">+968 24 284771</a>
+                        <a href="tel:+96824284756" className="hover:text-gold transition-colors">+968 24284756</a><br />
+                        <a href="tel:+96824284771" className="hover:text-gold transition-colors">+968 24284771</a>
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-navy text-gold rounded-none shrink-0">
-                      <Mail className="w-5 h-5" />
+                      <Mail className="w-5 h-5 shrink-0" />
                     </div>
                     <div>
                       <h4 className="font-bold text-navy text-base uppercase tracking-tight mb-1">Admissions Email</h4>
@@ -132,14 +133,14 @@ export default function BookATourPage() {
               <Scroll3DReveal rotateAmount={16} depth={50}>
                 <div className="bg-white p-8 md:p-12 border border-navy/10 shadow-strong">
                   <div className="flex items-center gap-3 mb-6">
-                    <Sparkles className="w-5 h-5 text-gold" />
+                    <Sparkles className="w-5 h-5 text-gold shrink-0" />
                     <h3 className="font-bold text-2xl text-navy uppercase tracking-tight">Schedule Your Tour</h3>
                   </div>
 
                   {emailPrepared ? (
                     <div className="py-16 text-center space-y-6">
-                      <div className="w-16 h-16 bg-gold/10 text-gold rounded-full flex items-center justify-center mx-auto border border-gold/20">
-                        <CheckCircle2 className="w-8 h-8" />
+                      <div className="w-16 h-16 bg-gold/10 text-gold rounded-full flex items-center justify-center mx-auto border border-gold/20 shrink-0">
+                        <CheckCircle2 className="w-8 h-8 shrink-0" />
                       </div>
                       <h4 className="text-2xl font-bold text-navy uppercase tracking-tight">Email Prepared</h4>
                       <p className="text-navy/70 text-base max-w-md mx-auto font-medium">
@@ -193,7 +194,7 @@ export default function BookATourPage() {
                       </div>
 
                       <Button type="submit" className="w-full bg-gold text-white hover:bg-gold/90 h-14 uppercase tracking-[0.25em] font-bold rounded-none flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-gold/20">
-                        <Send className="w-4 h-4" />
+                        <Send className="w-4 h-4 shrink-0" />
                         Prepare Tour Request Email
                       </Button>
                       <p className="text-xs font-medium leading-relaxed text-navy/55">

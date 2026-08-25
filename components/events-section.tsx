@@ -59,7 +59,7 @@ export function EventsSection() {
               className="flex items-center gap-4 mb-6"
             >
               <span className="text-gold font-bold tracking-[0.3em] uppercase text-[9px] flex items-center gap-2">
-                <Sparkles className="w-3 h-3 text-gold" />
+                <Sparkles className="w-3 h-3 text-gold shrink-0" />
                 Academic Calendar 2026–2027
               </span>
               <div className="h-[1px] w-12 bg-gold/30" />
@@ -99,7 +99,7 @@ export function EventsSection() {
               className="p-8 bg-navy text-white relative group overflow-hidden border border-gold/20 shadow-xl mb-8"
             >
               <div className="flex items-center gap-2 mb-3">
-                <Clock className="w-4 h-4 text-gold" />
+                <Clock className="w-4 h-4 text-gold shrink-0" />
                 <h3 className="text-sm font-bold uppercase text-gold tracking-wider">Academic Year at a Glance</h3>
               </div>
               <ul className="text-[11px] text-ivory/80 space-y-2.5 font-medium mb-6">
@@ -206,8 +206,8 @@ export function EventsSection() {
 
                       {/* Arrow CTA */}
                       <div className="flex items-center sm:justify-end shrink-0">
-                        <div className="w-10 h-10 rounded-full border border-navy/10 flex items-center justify-center text-navy group-hover:bg-gold group-hover:text-navy group-hover:border-gold transition-all duration-500">
-                          <ArrowRight className="h-3.5 w-3.5" />
+                        <div className="w-10 h-10 rounded-full border border-navy/10 flex items-center justify-center text-navy group-hover:bg-gold group-hover:text-navy group-hover:border-gold transition-all duration-500 shrink-0">
+                          <ArrowRight className="h-3.5 w-3.5 shrink-0" />
                         </div>
                       </div>
                     </Link>
@@ -231,9 +231,9 @@ export function EventsSection() {
             >
               <Button asChild variant="ghost" className="text-navy hover:text-gold text-[9px] font-bold tracking-[0.2em] uppercase group flex items-center gap-2 p-0">
                 <Link href="/calendar">
-                  <Calendar className="h-3.5 w-3.5 text-gold" />
+                  <Calendar className="h-3.5 w-3.5 text-gold shrink-0" />
                   View Complete 2026–2027 Calendar
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform shrink-0" />
                 </Link>
               </Button>
 

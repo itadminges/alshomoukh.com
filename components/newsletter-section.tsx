@@ -48,7 +48,7 @@ export function NewsletterSection() {
                   <Button asChild className="bg-gold text-white hover:bg-gold/90 h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all">
                     <Link href="/admissions#apply">
                       Admissions
-                      <ArrowRight className="ml-2 h-3 w-3" />
+                      <ArrowRight className="ml-2 h-3 w-3 shrink-0" />
                     </Link>
                   </Button>
                   <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white h-12 px-8 text-[11px] font-bold tracking-[0.2em] uppercase rounded-none transition-all bg-transparent">
@@ -63,10 +63,11 @@ export function NewsletterSection() {
             {/* Quick Contact Grid */}
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { icon: Phone, title: "Call Us", detail: "+968 24 284771", href: "tel:+96824284771" },
+                { icon: Phone, title: "Call Us", detail: "+968 24284771", href: "tel:+96824284771" },
+                { icon: Phone, title: "Call Us", detail: "+968 24284756", href: "tel:+96824284756" },
                 { icon: Mail, title: "Email", detail: "admission@alshomoukh.com", href: "mailto:admission@alshomoukh.com" },
                 { icon: Calendar, title: "Book a Tour", detail: "Sunday - Thursday", href: "/book-a-tour" },
-                { icon: Phone, title: "WhatsApp", detail: "+968 24 284771", href: "https://wa.me/96824284771" },
+                { icon: Phone, title: "WhatsApp", detail: "+968 24284771", href: "https://wa.me/96824284771" },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -79,7 +80,7 @@ export function NewsletterSection() {
                     href={item.href}
                     className="block p-5 bg-white/5 border border-white/5 hover:bg-white/10 transition-colors group"
                   >
-                    <item.icon className="h-3 w-3 text-gold mb-3" />
+                    <item.icon className="h-3 w-3 text-gold mb-3 shrink-0" />
                     <h3 className="text-[10px] font-bold text-gold uppercase tracking-widest mb-1">{item.title}</h3>
                     <p className="text-[12px] font-bold text-white uppercase">{item.detail}</p>
                   </Link>

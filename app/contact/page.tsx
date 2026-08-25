@@ -66,7 +66,7 @@ export default function ContactPage() {
                 </div>
                 <Textarea name="message" aria-label="Message" required maxLength={5000} placeholder="Message" className="border-navy/10 min-h-[150px] rounded-none focus:border-gold transition-colors" />
                 <Button type="submit" className="bg-gold text-white hover:bg-gold/90 w-full h-14 uppercase tracking-[0.25em] font-bold rounded-none flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-gold/20">
-                  <Send className="w-4 h-4" />
+                  <Send className="w-4 h-4 shrink-0" />
                   Prepare Email
                 </Button>
                 <p className="text-xs font-medium leading-relaxed text-navy/55">
@@ -84,26 +84,27 @@ export default function ContactPage() {
                 We encourage you to visit the school and take a tour around as this is the best way to get a true insight of Al Shomoukh International Private School.
               </p>
               <p className="text-navy/80 text-base leading-[1.8] font-medium mb-10 bg-ivory/50 p-6 border-l-4 border-gold shadow-sm">
-                Please send an email to <a href="mailto:admission@alshomoukh.com" className="text-gold font-bold hover:underline">admission@alshomoukh.com</a> or call <a href="tel:+96824284771" className="text-gold font-bold hover:underline">+968 24 284771</a> to discuss convenient dates and times for your visit (Sunday – Thursday).
+                Please send an email to <a href="mailto:admission@alshomoukh.com" className="text-gold font-bold hover:underline">admission@alshomoukh.com</a> or call us at <a href="tel:+96824284756" className="text-gold font-bold hover:underline">+968 24284756</a> / <a href="tel:+96824284771" className="text-gold font-bold hover:underline">+968 24284771</a> to discuss convenient dates and times for your visit (Sunday – Thursday).
               </p>
               
               <div className="space-y-10">
                 <div className="flex gap-6 items-start group">
-                  <div className="p-4 bg-navy text-gold rounded-none transition-colors group-hover:bg-gold group-hover:text-white">
-                    <Phone className="w-6 h-6" />
+                  <div className="p-4 bg-navy text-gold rounded-none transition-colors group-hover:bg-gold group-hover:text-white shrink-0">
+                    <Phone className="w-6 h-6 shrink-0" />
                   </div>
                   <div>
                     <h4 className="font-bold text-navy text-xl uppercase mb-2 tracking-tight">Call Us</h4>
                     <p className="text-navy/70 font-medium">
-                      <a href="tel:+96824284771" className="hover:text-gold transition-colors">+968 24 284771</a>
+                      <a href="tel:+96824284771" className="hover:text-gold transition-colors">+968 24284771</a><br />
+                      <a href="tel:+96824284756" className="hover:text-gold transition-colors">+968 24284756</a>
                     </p>
                     <p className="text-navy/70 font-bold text-gold">Sunday – Thursday: 7:30 AM – 3:30 PM</p>
                   </div>
                 </div>
 
                 <div className="flex gap-6 items-start group">
-                  <div className="p-4 bg-navy text-gold rounded-none transition-colors group-hover:bg-gold group-hover:text-white">
-                    <Mail className="w-6 h-6" />
+                  <div className="p-4 bg-navy text-gold rounded-none transition-colors group-hover:bg-gold group-hover:text-white shrink-0">
+                    <Mail className="w-6 h-6 shrink-0" />
                   </div>
                   <div>
                     <h4 className="font-bold text-navy text-xl uppercase mb-2 tracking-tight">Email Us</h4>
@@ -117,8 +118,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex gap-6 items-start group">
-                  <div className="p-4 bg-navy text-gold rounded-none transition-colors group-hover:bg-gold group-hover:text-white">
-                    <MapPin className="w-6 h-6" />
+                  <div className="p-4 bg-navy text-gold rounded-none transition-colors group-hover:bg-gold group-hover:text-white shrink-0">
+                    <MapPin className="w-6 h-6 shrink-0" />
                   </div>
                   <div>
                     <h4 className="font-bold text-navy text-xl uppercase mb-2 tracking-tight">Our Location</h4>
