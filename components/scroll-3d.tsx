@@ -1,11 +1,7 @@
 "use client"
 
 import { type ReactNode } from "react"
-import {
-  motion,
-  useReducedMotion,
-  type UseScrollOptions,
-} from "framer-motion"
+import { motion, type UseScrollOptions } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 type Scroll3DRevealProps = {
@@ -21,12 +17,6 @@ export function Scroll3DReveal({
   children,
   className,
 }: Scroll3DRevealProps) {
-  const prefersReducedMotion = useReducedMotion()
-
-  if (prefersReducedMotion) {
-    return <div className={className}>{children}</div>
-  }
-
   return (
     <div className={cn("relative", className)}>
       <motion.div
@@ -50,12 +40,6 @@ type Scroll3DCardProps = {
 
 /** Lightweight card reveal; index only controls a short stagger. */
 export function Scroll3DCard({ children, className, index = 0 }: Scroll3DCardProps) {
-  const prefersReducedMotion = useReducedMotion()
-
-  if (prefersReducedMotion) {
-    return <div className={className}>{children}</div>
-  }
-
   return (
     <div className={cn("relative", className)}>
       <motion.div
@@ -83,12 +67,6 @@ export function Scroll3DParallax({
   children,
   className,
 }: Scroll3DParallaxProps) {
-  const prefersReducedMotion = useReducedMotion()
-
-  if (prefersReducedMotion) {
-    return <div className={className}>{children}</div>
-  }
-
   return (
     <div className={cn("relative overflow-hidden", className)}>
       <motion.div
