@@ -7,6 +7,7 @@ export default tseslint.config(
   {
     ignores: [
       ".next/**",
+      ".open-next/**",
       "node_modules/**",
       "next-env.d.ts",
     ],
