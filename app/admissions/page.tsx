@@ -412,8 +412,8 @@ export default function AdmissionsPage() {
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button asChild className="bg-gold text-white hover:bg-gold/90 h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all shadow-lg hover:shadow-gold/20">
-                  <Link href="/enrolment">
-                    Apply Online
+                  <Link href="/contact">
+                    Contact Admissions
                   </Link>
                 </Button>
                 <Button asChild className="bg-transparent border border-white/60 text-white hover:bg-white hover:text-navy h-14 px-10 text-[11px] font-bold tracking-[0.25em] uppercase rounded-none transition-all">

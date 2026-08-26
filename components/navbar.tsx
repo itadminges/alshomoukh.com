@@ -148,19 +148,6 @@ export function Navbar() {
                   Parent Portal
                 </Link>
               </Button>
-              <Button
-                asChild
-                className={cn(
-                  "px-8 text-[11px] font-extrabold tracking-[0.25em] uppercase rounded-none transition-all duration-500 h-11",
-                  forceSolid
-                    ? "bg-primary text-white hover:bg-primary/90 shadow-md"
-                    : "bg-white text-primary hover:bg-secondary hover:text-white"
-                )}
-              >
-                <Link href="/enrolment">
-                  Apply Now
-                </Link>
-              </Button>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -279,11 +266,8 @@ export function Navbar() {
             transition={{ delay: 0.5 }}
             className="p-6 bg-muted/10 flex flex-col sm:flex-row gap-3 mt-auto shrink-0 justify-center items-center border-t border-border/10"
           >
-            <Button className="bg-secondary text-white hover:bg-secondary/90 w-full sm:w-1/2 py-5 text-[13px] font-extrabold tracking-widest uppercase rounded-sm shadow-md transition-all h-auto" asChild>
+            <Button className="bg-secondary text-white hover:bg-secondary/90 w-full py-5 text-[13px] font-extrabold tracking-widest uppercase rounded-sm shadow-md transition-all h-auto" asChild>
               <Link href="https://portal.alshomoukh.com/" target="_blank" rel="noopener noreferrer">Parent Portal</Link>
-            </Button>
-            <Button className="bg-primary text-white hover:bg-primary/90 w-full sm:w-1/2 py-5 text-[13px] font-extrabold tracking-widest uppercase rounded-sm shadow-lg h-auto" asChild>
-              <Link href="/enrolment">Apply Now</Link>
             </Button>
           </motion.div>
         </motion.div>

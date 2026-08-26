@@ -1,11 +1,15 @@
 "use client"
 
 import { useState } from "react"
-import { CheckCircle2, Send } from "lucide-react"
+import Link from "next/link"
+import { CheckCircle2, Send, Phone, Mail, Clock, Calendar, ArrowRight, AlertCircle, Info } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+
+// Set to true to re-enable the online enrolment form
+const SHOW_ENROLMENT_FORM = false
 
 type SubmissionState = "idle" | "submitting" | "success" | "error"
 
@@ -18,6 +22,114 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 const years = Array.from({ length: 20 }, (_, index) => String(2026 - index))
 
 export default function EnrolmentPage() {
+  if (!SHOW_ENROLMENT_FORM) {
+    return <EnrolmentNotice />
+  }
+
+  return <EnrolmentForm />
+}
+
+function EnrolmentNotice() {
+  return (
+    <main className="min-h-screen overflow-hidden bg-white">
+      <PageHero
+        title="Admissions & Enrolment"
+        subtitle="School Year 2026/2027 | العام الدراسي ٢٠٢٧/٢٠٢٦م"
+        backgroundImage="/images/final/primary-classroom.webp"
+      />
+
+      <section className="bg-ivory/30 py-16 md:py-24">
+        <div className="mx-auto max-w-4xl px-6 md:px-10">
+          <div className="border border-navy/10 bg-white p-8 shadow-strong md:p-12">
+            
+            {/* Header Status */}
+            <div className="flex flex-col items-center text-center">
+              <div className="mb-4 inline-flex items-center gap-2 border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-gold">
+                <Info className="h-4 w-4" />
+                <span>Notice | تنويه</span>
+              </div>
+              <h2 className="text-2xl font-bold uppercase tracking-tight text-navy md:text-3xl">
+                Online Enrolment Form is Currently Offline
+              </h2>
+              <p dir="rtl" className="mt-2 text-xl font-bold text-gold">
+                نموذج التسجيل الإلكتروني مغلق حالياً
+              </p>
+            </div>
+
+            {/* Description */}
+            <div className="mt-8 space-y-4 border-y border-navy/10 py-8 text-center text-sm font-medium leading-relaxed text-navy/75 md:text-base">
+              <p>
+                The online enrolment form is temporarily paused. For new admissions, student registration, seat reservations, and enquiries for the upcoming academic year 2026/2027, please contact our Admissions Office directly or schedule a campus visit.
+              </p>
+              <p dir="rtl" className="text-navy/70">
+                يرجى العلم بأن نموذج التسجيل الإلكتروني غير متاح حالياً. لجميع استفسارات التسجيل والقبول وحجز المقاعد للعام الدراسي ٢٠٢٧/٢٠٢٦م، يرجى التواصل مباشرة مع قسم القبول والتسجيل أو حجز موعد لزيارة المدرسة.
+              </p>
+            </div>
+
+            {/* Contact Details Grid */}
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="flex items-start gap-4 border border-navy/10 bg-ivory/20 p-5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-none bg-navy text-gold">
+                  <Phone className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-navy">Direct Calls</h3>
+                  <div className="mt-1 space-y-1">
+                    <a href="tel:+96824284756" className="block text-sm font-semibold text-gold hover:underline">
+                      +968 24284756
+                    </a>
+                    <a href="tel:+96824284771" className="block text-sm font-semibold text-gold hover:underline">
+                      +968 24284771
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 border border-navy/10 bg-ivory/20 p-5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-none bg-navy text-gold">
+                  <Mail className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-navy">Email Admissions</h3>
+                  <div className="mt-1">
+                    <a href="mailto:admission@alshomoukh.com" className="text-sm font-semibold text-gold hover:underline break-all">
+                      admission@alshomoukh.com
+                    </a>
+                  </div>
+                  <p className="mt-1 text-xs text-navy/60">Sunday – Thursday</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <Button asChild className="h-13 bg-gold px-8 font-bold uppercase tracking-widest text-white hover:bg-gold/90 rounded-none">
+                <Link href="/contact">
+                  Contact Admissions
+                  <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="h-13 border-navy/20 bg-transparent px-8 font-bold uppercase tracking-widest text-navy hover:bg-navy hover:text-white rounded-none">
+                <Link href="/book-a-tour">
+                  <Calendar className="mr-2 h-4 w-4 shrink-0" />
+                  Book a Campus Tour
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="h-13 border-navy/20 bg-transparent px-8 font-bold uppercase tracking-widest text-navy hover:bg-navy hover:text-white rounded-none">
+                <Link href="/admissions">
+                  Admissions Overview
+                </Link>
+              </Button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
+
+function EnrolmentForm() {
   const [state, setState] = useState<SubmissionState>("idle")
   const [message, setMessage] = useState("")
   const [enrolmentDecision, setEnrolmentDecision] = useState("")
