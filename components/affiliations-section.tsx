@@ -4,22 +4,22 @@ import Image from "next/image"
 
 const organisations = [
   {
-    image: "https://www.alshomoukh.com:443/uploads/affiliations/20200807213934-2020-08-07affiliations213852.jpg",
+    image: "/affiliation-ministry-of-education.jpg",
     href: "https://home.moe.gov.om/?GetLang=en",
     alt: "Ministry of Education",
   },
   {
-    image: "https://www.alshomoukh.com:443/uploads/affiliations/20200807213952-2020-08-07affiliations213944.jpg",
+    image: "/affiliation-cognia.jpg",
     href: "https://www.cognia.org/",
     alt: "Cognia",
   },
   {
-    image: "https://www.alshomoukh.com:443/uploads/affiliations/20200807214011-2020-08-07affiliations214001.jpg",
+    image: "/affiliation-ecis.jpg",
     href: "https://www.ecis.org/",
     alt: "ECIS",
   },
   {
-    image: "https://www.alshomoukh.com:443/uploads/affiliations/20200808182038-2020-08-08affiliations182014.jpg",
+    image: "/affiliation-pearson.jpg",
     href: "https://qualifications.pearson.com/en/home.html",
     alt: "Pearson Qualifications",
   },
@@ -29,7 +29,7 @@ const organisations = [
     alt: "Pearson BTEC Approved Centre",
   },
   {
-    image: "https://www.alshomoukh.com:443/uploads/affiliations/20221208222839-2022-12-08affiliations222835.jpg",
+    image: "/affiliation-al-shomoukh.jpg",
     href: "https://shomoukh.com",
     alt: "Al Shomoukh",
   },
